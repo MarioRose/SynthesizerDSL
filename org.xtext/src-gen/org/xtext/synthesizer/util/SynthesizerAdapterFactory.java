@@ -81,9 +81,9 @@ public class SynthesizerAdapterFactory extends AdapterFactoryImpl
         return createModelAdapter();
       }
       @Override
-      public Adapter caseGreeting(Greeting object)
+      public Adapter caseControls(Controls object)
       {
-        return createGreetingAdapter();
+        return createControlsAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -123,16 +123,16 @@ public class SynthesizerAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.synthesizer.Greeting <em>Greeting</em>}'.
+   * Creates a new adapter for an object of class '{@link org.xtext.synthesizer.Controls <em>Controls</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.xtext.synthesizer.Greeting
+   * @see org.xtext.synthesizer.Controls
    * @generated
    */
-  public Adapter createGreetingAdapter()
+  public Adapter createControlsAdapter()
   {
     return null;
   }

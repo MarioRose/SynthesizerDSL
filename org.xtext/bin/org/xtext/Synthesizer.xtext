@@ -3,7 +3,7 @@ grammar org.xtext.Synthesizer with org.eclipse.xtext.common.Terminals
 generate synthesizer "http://www.xtext.org/Synthesizer"
 
 Model:
-	greetings+=Greeting*;
+	controls+=Controls*;
 	
-Greeting:
-	'Hello' name=ID '!';
+Controls:
+	'Button' name=ID;

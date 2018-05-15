@@ -31,9 +31,9 @@ public class SynthesizerParser extends AbstractContentAssistParser {
 			nameMappings = new HashMap<AbstractElement, String>() {
 				private static final long serialVersionUID = 1L;
 				{
-					put(grammarAccess.getGreetingAccess().getGroup(), "rule__Greeting__Group__0");
-					put(grammarAccess.getModelAccess().getGreetingsAssignment(), "rule__Model__GreetingsAssignment");
-					put(grammarAccess.getGreetingAccess().getNameAssignment_1(), "rule__Greeting__NameAssignment_1");
+					put(grammarAccess.getControlsAccess().getGroup(), "rule__Controls__Group__0");
+					put(grammarAccess.getModelAccess().getControlsAssignment(), "rule__Model__ControlsAssignment");
+					put(grammarAccess.getControlsAccess().getNameAssignment_1(), "rule__Controls__NameAssignment_1");
 				}
 			};
 		}

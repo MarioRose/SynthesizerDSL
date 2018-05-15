@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalSynthesizerParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'Hello'", "'!'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'Button'"
     };
     public static final int RULE_ID=4;
     public static final int RULE_WS=9;
@@ -32,7 +32,6 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
     public static final int RULE_INT=5;
     public static final int T__11=11;
     public static final int RULE_ML_COMMENT=7;
-    public static final int T__12=12;
     public static final int EOF=-1;
 
     // delegates
@@ -101,20 +100,20 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "ruleModel"
-    // InternalSynthesizer.g:62:1: ruleModel : ( ( rule__Model__GreetingsAssignment )* ) ;
+    // InternalSynthesizer.g:62:1: ruleModel : ( ( rule__Model__ControlsAssignment )* ) ;
     public final void ruleModel() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:66:2: ( ( ( rule__Model__GreetingsAssignment )* ) )
-            // InternalSynthesizer.g:67:2: ( ( rule__Model__GreetingsAssignment )* )
+            // InternalSynthesizer.g:66:2: ( ( ( rule__Model__ControlsAssignment )* ) )
+            // InternalSynthesizer.g:67:2: ( ( rule__Model__ControlsAssignment )* )
             {
-            // InternalSynthesizer.g:67:2: ( ( rule__Model__GreetingsAssignment )* )
-            // InternalSynthesizer.g:68:3: ( rule__Model__GreetingsAssignment )*
+            // InternalSynthesizer.g:67:2: ( ( rule__Model__ControlsAssignment )* )
+            // InternalSynthesizer.g:68:3: ( rule__Model__ControlsAssignment )*
             {
-             before(grammarAccess.getModelAccess().getGreetingsAssignment()); 
-            // InternalSynthesizer.g:69:3: ( rule__Model__GreetingsAssignment )*
+             before(grammarAccess.getModelAccess().getControlsAssignment()); 
+            // InternalSynthesizer.g:69:3: ( rule__Model__ControlsAssignment )*
             loop1:
             do {
                 int alt1=2;
@@ -127,10 +126,10 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
                 switch (alt1) {
             	case 1 :
-            	    // InternalSynthesizer.g:69:4: rule__Model__GreetingsAssignment
+            	    // InternalSynthesizer.g:69:4: rule__Model__ControlsAssignment
             	    {
             	    pushFollow(FOLLOW_3);
-            	    rule__Model__GreetingsAssignment();
+            	    rule__Model__ControlsAssignment();
 
             	    state._fsp--;
 
@@ -143,7 +142,7 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
                 }
             } while (true);
 
-             after(grammarAccess.getModelAccess().getGreetingsAssignment()); 
+             after(grammarAccess.getModelAccess().getControlsAssignment()); 
 
             }
 
@@ -165,20 +164,20 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
     // $ANTLR end "ruleModel"
 
 
-    // $ANTLR start "entryRuleGreeting"
-    // InternalSynthesizer.g:78:1: entryRuleGreeting : ruleGreeting EOF ;
-    public final void entryRuleGreeting() throws RecognitionException {
+    // $ANTLR start "entryRuleControls"
+    // InternalSynthesizer.g:78:1: entryRuleControls : ruleControls EOF ;
+    public final void entryRuleControls() throws RecognitionException {
         try {
-            // InternalSynthesizer.g:79:1: ( ruleGreeting EOF )
-            // InternalSynthesizer.g:80:1: ruleGreeting EOF
+            // InternalSynthesizer.g:79:1: ( ruleControls EOF )
+            // InternalSynthesizer.g:80:1: ruleControls EOF
             {
-             before(grammarAccess.getGreetingRule()); 
+             before(grammarAccess.getControlsRule()); 
             pushFollow(FOLLOW_1);
-            ruleGreeting();
+            ruleControls();
 
             state._fsp--;
 
-             after(grammarAccess.getGreetingRule()); 
+             after(grammarAccess.getControlsRule()); 
             match(input,EOF,FOLLOW_2); 
 
             }
@@ -192,35 +191,35 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "entryRuleGreeting"
+    // $ANTLR end "entryRuleControls"
 
 
-    // $ANTLR start "ruleGreeting"
-    // InternalSynthesizer.g:87:1: ruleGreeting : ( ( rule__Greeting__Group__0 ) ) ;
-    public final void ruleGreeting() throws RecognitionException {
+    // $ANTLR start "ruleControls"
+    // InternalSynthesizer.g:87:1: ruleControls : ( ( rule__Controls__Group__0 ) ) ;
+    public final void ruleControls() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:91:2: ( ( ( rule__Greeting__Group__0 ) ) )
-            // InternalSynthesizer.g:92:2: ( ( rule__Greeting__Group__0 ) )
+            // InternalSynthesizer.g:91:2: ( ( ( rule__Controls__Group__0 ) ) )
+            // InternalSynthesizer.g:92:2: ( ( rule__Controls__Group__0 ) )
             {
-            // InternalSynthesizer.g:92:2: ( ( rule__Greeting__Group__0 ) )
-            // InternalSynthesizer.g:93:3: ( rule__Greeting__Group__0 )
+            // InternalSynthesizer.g:92:2: ( ( rule__Controls__Group__0 ) )
+            // InternalSynthesizer.g:93:3: ( rule__Controls__Group__0 )
             {
-             before(grammarAccess.getGreetingAccess().getGroup()); 
-            // InternalSynthesizer.g:94:3: ( rule__Greeting__Group__0 )
-            // InternalSynthesizer.g:94:4: rule__Greeting__Group__0
+             before(grammarAccess.getControlsAccess().getGroup()); 
+            // InternalSynthesizer.g:94:3: ( rule__Controls__Group__0 )
+            // InternalSynthesizer.g:94:4: rule__Controls__Group__0
             {
             pushFollow(FOLLOW_2);
-            rule__Greeting__Group__0();
+            rule__Controls__Group__0();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getGreetingAccess().getGroup()); 
+             after(grammarAccess.getControlsAccess().getGroup()); 
 
             }
 
@@ -239,26 +238,26 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "ruleGreeting"
+    // $ANTLR end "ruleControls"
 
 
-    // $ANTLR start "rule__Greeting__Group__0"
-    // InternalSynthesizer.g:102:1: rule__Greeting__Group__0 : rule__Greeting__Group__0__Impl rule__Greeting__Group__1 ;
-    public final void rule__Greeting__Group__0() throws RecognitionException {
+    // $ANTLR start "rule__Controls__Group__0"
+    // InternalSynthesizer.g:102:1: rule__Controls__Group__0 : rule__Controls__Group__0__Impl rule__Controls__Group__1 ;
+    public final void rule__Controls__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:106:1: ( rule__Greeting__Group__0__Impl rule__Greeting__Group__1 )
-            // InternalSynthesizer.g:107:2: rule__Greeting__Group__0__Impl rule__Greeting__Group__1
+            // InternalSynthesizer.g:106:1: ( rule__Controls__Group__0__Impl rule__Controls__Group__1 )
+            // InternalSynthesizer.g:107:2: rule__Controls__Group__0__Impl rule__Controls__Group__1
             {
             pushFollow(FOLLOW_4);
-            rule__Greeting__Group__0__Impl();
+            rule__Controls__Group__0__Impl();
 
             state._fsp--;
 
             pushFollow(FOLLOW_2);
-            rule__Greeting__Group__1();
+            rule__Controls__Group__1();
 
             state._fsp--;
 
@@ -277,25 +276,25 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__Greeting__Group__0"
+    // $ANTLR end "rule__Controls__Group__0"
 
 
-    // $ANTLR start "rule__Greeting__Group__0__Impl"
-    // InternalSynthesizer.g:114:1: rule__Greeting__Group__0__Impl : ( 'Hello' ) ;
-    public final void rule__Greeting__Group__0__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Controls__Group__0__Impl"
+    // InternalSynthesizer.g:114:1: rule__Controls__Group__0__Impl : ( 'Button' ) ;
+    public final void rule__Controls__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:118:1: ( ( 'Hello' ) )
-            // InternalSynthesizer.g:119:1: ( 'Hello' )
+            // InternalSynthesizer.g:118:1: ( ( 'Button' ) )
+            // InternalSynthesizer.g:119:1: ( 'Button' )
             {
-            // InternalSynthesizer.g:119:1: ( 'Hello' )
-            // InternalSynthesizer.g:120:2: 'Hello'
+            // InternalSynthesizer.g:119:1: ( 'Button' )
+            // InternalSynthesizer.g:120:2: 'Button'
             {
-             before(grammarAccess.getGreetingAccess().getHelloKeyword_0()); 
+             before(grammarAccess.getControlsAccess().getButtonKeyword_0()); 
             match(input,11,FOLLOW_2); 
-             after(grammarAccess.getGreetingAccess().getHelloKeyword_0()); 
+             after(grammarAccess.getControlsAccess().getButtonKeyword_0()); 
 
             }
 
@@ -314,75 +313,23 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__Greeting__Group__0__Impl"
+    // $ANTLR end "rule__Controls__Group__0__Impl"
 
 
-    // $ANTLR start "rule__Greeting__Group__1"
-    // InternalSynthesizer.g:129:1: rule__Greeting__Group__1 : rule__Greeting__Group__1__Impl rule__Greeting__Group__2 ;
-    public final void rule__Greeting__Group__1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSynthesizer.g:133:1: ( rule__Greeting__Group__1__Impl rule__Greeting__Group__2 )
-            // InternalSynthesizer.g:134:2: rule__Greeting__Group__1__Impl rule__Greeting__Group__2
-            {
-            pushFollow(FOLLOW_5);
-            rule__Greeting__Group__1__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_2);
-            rule__Greeting__Group__2();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Greeting__Group__1"
-
-
-    // $ANTLR start "rule__Greeting__Group__1__Impl"
-    // InternalSynthesizer.g:141:1: rule__Greeting__Group__1__Impl : ( ( rule__Greeting__NameAssignment_1 ) ) ;
-    public final void rule__Greeting__Group__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Controls__Group__1"
+    // InternalSynthesizer.g:129:1: rule__Controls__Group__1 : rule__Controls__Group__1__Impl ;
+    public final void rule__Controls__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:145:1: ( ( ( rule__Greeting__NameAssignment_1 ) ) )
-            // InternalSynthesizer.g:146:1: ( ( rule__Greeting__NameAssignment_1 ) )
-            {
-            // InternalSynthesizer.g:146:1: ( ( rule__Greeting__NameAssignment_1 ) )
-            // InternalSynthesizer.g:147:2: ( rule__Greeting__NameAssignment_1 )
-            {
-             before(grammarAccess.getGreetingAccess().getNameAssignment_1()); 
-            // InternalSynthesizer.g:148:2: ( rule__Greeting__NameAssignment_1 )
-            // InternalSynthesizer.g:148:3: rule__Greeting__NameAssignment_1
+            // InternalSynthesizer.g:133:1: ( rule__Controls__Group__1__Impl )
+            // InternalSynthesizer.g:134:2: rule__Controls__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
-            rule__Greeting__NameAssignment_1();
+            rule__Controls__Group__1__Impl();
 
             state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getGreetingAccess().getNameAssignment_1()); 
-
-            }
 
 
             }
@@ -399,58 +346,35 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__Greeting__Group__1__Impl"
+    // $ANTLR end "rule__Controls__Group__1"
 
 
-    // $ANTLR start "rule__Greeting__Group__2"
-    // InternalSynthesizer.g:156:1: rule__Greeting__Group__2 : rule__Greeting__Group__2__Impl ;
-    public final void rule__Greeting__Group__2() throws RecognitionException {
+    // $ANTLR start "rule__Controls__Group__1__Impl"
+    // InternalSynthesizer.g:140:1: rule__Controls__Group__1__Impl : ( ( rule__Controls__NameAssignment_1 ) ) ;
+    public final void rule__Controls__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:160:1: ( rule__Greeting__Group__2__Impl )
-            // InternalSynthesizer.g:161:2: rule__Greeting__Group__2__Impl
+            // InternalSynthesizer.g:144:1: ( ( ( rule__Controls__NameAssignment_1 ) ) )
+            // InternalSynthesizer.g:145:1: ( ( rule__Controls__NameAssignment_1 ) )
+            {
+            // InternalSynthesizer.g:145:1: ( ( rule__Controls__NameAssignment_1 ) )
+            // InternalSynthesizer.g:146:2: ( rule__Controls__NameAssignment_1 )
+            {
+             before(grammarAccess.getControlsAccess().getNameAssignment_1()); 
+            // InternalSynthesizer.g:147:2: ( rule__Controls__NameAssignment_1 )
+            // InternalSynthesizer.g:147:3: rule__Controls__NameAssignment_1
             {
             pushFollow(FOLLOW_2);
-            rule__Greeting__Group__2__Impl();
+            rule__Controls__NameAssignment_1();
 
             state._fsp--;
 
 
             }
 
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Greeting__Group__2"
-
-
-    // $ANTLR start "rule__Greeting__Group__2__Impl"
-    // InternalSynthesizer.g:167:1: rule__Greeting__Group__2__Impl : ( '!' ) ;
-    public final void rule__Greeting__Group__2__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSynthesizer.g:171:1: ( ( '!' ) )
-            // InternalSynthesizer.g:172:1: ( '!' )
-            {
-            // InternalSynthesizer.g:172:1: ( '!' )
-            // InternalSynthesizer.g:173:2: '!'
-            {
-             before(grammarAccess.getGreetingAccess().getExclamationMarkKeyword_2()); 
-            match(input,12,FOLLOW_2); 
-             after(grammarAccess.getGreetingAccess().getExclamationMarkKeyword_2()); 
+             after(grammarAccess.getControlsAccess().getNameAssignment_1()); 
 
             }
 
@@ -469,29 +393,29 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__Greeting__Group__2__Impl"
+    // $ANTLR end "rule__Controls__Group__1__Impl"
 
 
-    // $ANTLR start "rule__Model__GreetingsAssignment"
-    // InternalSynthesizer.g:183:1: rule__Model__GreetingsAssignment : ( ruleGreeting ) ;
-    public final void rule__Model__GreetingsAssignment() throws RecognitionException {
+    // $ANTLR start "rule__Model__ControlsAssignment"
+    // InternalSynthesizer.g:156:1: rule__Model__ControlsAssignment : ( ruleControls ) ;
+    public final void rule__Model__ControlsAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:187:1: ( ( ruleGreeting ) )
-            // InternalSynthesizer.g:188:2: ( ruleGreeting )
+            // InternalSynthesizer.g:160:1: ( ( ruleControls ) )
+            // InternalSynthesizer.g:161:2: ( ruleControls )
             {
-            // InternalSynthesizer.g:188:2: ( ruleGreeting )
-            // InternalSynthesizer.g:189:3: ruleGreeting
+            // InternalSynthesizer.g:161:2: ( ruleControls )
+            // InternalSynthesizer.g:162:3: ruleControls
             {
-             before(grammarAccess.getModelAccess().getGreetingsGreetingParserRuleCall_0()); 
+             before(grammarAccess.getModelAccess().getControlsControlsParserRuleCall_0()); 
             pushFollow(FOLLOW_2);
-            ruleGreeting();
+            ruleControls();
 
             state._fsp--;
 
-             after(grammarAccess.getModelAccess().getGreetingsGreetingParserRuleCall_0()); 
+             after(grammarAccess.getModelAccess().getControlsControlsParserRuleCall_0()); 
 
             }
 
@@ -510,25 +434,25 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__Model__GreetingsAssignment"
+    // $ANTLR end "rule__Model__ControlsAssignment"
 
 
-    // $ANTLR start "rule__Greeting__NameAssignment_1"
-    // InternalSynthesizer.g:198:1: rule__Greeting__NameAssignment_1 : ( RULE_ID ) ;
-    public final void rule__Greeting__NameAssignment_1() throws RecognitionException {
+    // $ANTLR start "rule__Controls__NameAssignment_1"
+    // InternalSynthesizer.g:171:1: rule__Controls__NameAssignment_1 : ( RULE_ID ) ;
+    public final void rule__Controls__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:202:1: ( ( RULE_ID ) )
-            // InternalSynthesizer.g:203:2: ( RULE_ID )
+            // InternalSynthesizer.g:175:1: ( ( RULE_ID ) )
+            // InternalSynthesizer.g:176:2: ( RULE_ID )
             {
-            // InternalSynthesizer.g:203:2: ( RULE_ID )
-            // InternalSynthesizer.g:204:3: RULE_ID
+            // InternalSynthesizer.g:176:2: ( RULE_ID )
+            // InternalSynthesizer.g:177:3: RULE_ID
             {
-             before(grammarAccess.getGreetingAccess().getNameIDTerminalRuleCall_1_0()); 
+             before(grammarAccess.getControlsAccess().getNameIDTerminalRuleCall_1_0()); 
             match(input,RULE_ID,FOLLOW_2); 
-             after(grammarAccess.getGreetingAccess().getNameIDTerminalRuleCall_1_0()); 
+             after(grammarAccess.getControlsAccess().getNameIDTerminalRuleCall_1_0()); 
 
             }
 
@@ -547,7 +471,7 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
         }
         return ;
     }
-    // $ANTLR end "rule__Greeting__NameAssignment_1"
+    // $ANTLR end "rule__Controls__NameAssignment_1"
 
     // Delegated rules
 
@@ -558,6 +482,5 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
     public static final BitSet FOLLOW_2 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000000000802L});
     public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000001000L});
 
 }

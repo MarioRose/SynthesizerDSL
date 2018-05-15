@@ -17,7 +17,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import org.xtext.synthesizer.Greeting;
+import org.xtext.synthesizer.Controls;
 import org.xtext.synthesizer.Model;
 import org.xtext.synthesizer.SynthesizerPackage;
 
@@ -29,7 +29,7 @@ import org.xtext.synthesizer.SynthesizerPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.synthesizer.impl.ModelImpl#getGreetings <em>Greetings</em>}</li>
+ *   <li>{@link org.xtext.synthesizer.impl.ModelImpl#getControls <em>Controls</em>}</li>
  * </ul>
  *
  * @generated
@@ -37,14 +37,14 @@ import org.xtext.synthesizer.SynthesizerPackage;
 public class ModelImpl extends MinimalEObjectImpl.Container implements Model
 {
   /**
-   * The cached value of the '{@link #getGreetings() <em>Greetings</em>}' containment reference list.
+   * The cached value of the '{@link #getControls() <em>Controls</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getGreetings()
+   * @see #getControls()
    * @generated
    * @ordered
    */
-  protected EList<Greeting> greetings;
+  protected EList<Controls> controls;
 
   /**
    * <!-- begin-user-doc -->
@@ -72,13 +72,13 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Greeting> getGreetings()
+  public EList<Controls> getControls()
   {
-    if (greetings == null)
+    if (controls == null)
     {
-      greetings = new EObjectContainmentEList<Greeting>(Greeting.class, this, SynthesizerPackage.MODEL__GREETINGS);
+      controls = new EObjectContainmentEList<Controls>(Controls.class, this, SynthesizerPackage.MODEL__CONTROLS);
     }
-    return greetings;
+    return controls;
   }
 
   /**
@@ -91,8 +91,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case SynthesizerPackage.MODEL__GREETINGS:
-        return ((InternalEList<?>)getGreetings()).basicRemove(otherEnd, msgs);
+      case SynthesizerPackage.MODEL__CONTROLS:
+        return ((InternalEList<?>)getControls()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -107,8 +107,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case SynthesizerPackage.MODEL__GREETINGS:
-        return getGreetings();
+      case SynthesizerPackage.MODEL__CONTROLS:
+        return getControls();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -124,9 +124,9 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case SynthesizerPackage.MODEL__GREETINGS:
-        getGreetings().clear();
-        getGreetings().addAll((Collection<? extends Greeting>)newValue);
+      case SynthesizerPackage.MODEL__CONTROLS:
+        getControls().clear();
+        getControls().addAll((Collection<? extends Controls>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -142,8 +142,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case SynthesizerPackage.MODEL__GREETINGS:
-        getGreetings().clear();
+      case SynthesizerPackage.MODEL__CONTROLS:
+        getControls().clear();
         return;
     }
     super.eUnset(featureID);
@@ -159,8 +159,8 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
   {
     switch (featureID)
     {
-      case SynthesizerPackage.MODEL__GREETINGS:
-        return greetings != null && !greetings.isEmpty();
+      case SynthesizerPackage.MODEL__CONTROLS:
+        return controls != null && !controls.isEmpty();
     }
     return super.eIsSet(featureID);
   }

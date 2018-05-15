@@ -21,7 +21,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalSynthesizerParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'Hello'", "'!'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'Button'"
     };
     public static final int RULE_ID=4;
     public static final int RULE_WS=9;
@@ -31,7 +31,6 @@ public class InternalSynthesizerParser extends AbstractInternalAntlrParser {
     public static final int RULE_INT=5;
     public static final int T__11=11;
     public static final int RULE_ML_COMMENT=7;
-    public static final int T__12=12;
     public static final int EOF=-1;
 
     // delegates
@@ -110,21 +109,21 @@ public class InternalSynthesizerParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleModel"
-    // InternalSynthesizer.g:71:1: ruleModel returns [EObject current=null] : ( (lv_greetings_0_0= ruleGreeting ) )* ;
+    // InternalSynthesizer.g:71:1: ruleModel returns [EObject current=null] : ( (lv_controls_0_0= ruleControls ) )* ;
     public final EObject ruleModel() throws RecognitionException {
         EObject current = null;
 
-        EObject lv_greetings_0_0 = null;
+        EObject lv_controls_0_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalSynthesizer.g:77:2: ( ( (lv_greetings_0_0= ruleGreeting ) )* )
-            // InternalSynthesizer.g:78:2: ( (lv_greetings_0_0= ruleGreeting ) )*
+            // InternalSynthesizer.g:77:2: ( ( (lv_controls_0_0= ruleControls ) )* )
+            // InternalSynthesizer.g:78:2: ( (lv_controls_0_0= ruleControls ) )*
             {
-            // InternalSynthesizer.g:78:2: ( (lv_greetings_0_0= ruleGreeting ) )*
+            // InternalSynthesizer.g:78:2: ( (lv_controls_0_0= ruleControls ) )*
             loop1:
             do {
                 int alt1=2;
@@ -137,16 +136,16 @@ public class InternalSynthesizerParser extends AbstractInternalAntlrParser {
 
                 switch (alt1) {
             	case 1 :
-            	    // InternalSynthesizer.g:79:3: (lv_greetings_0_0= ruleGreeting )
+            	    // InternalSynthesizer.g:79:3: (lv_controls_0_0= ruleControls )
             	    {
-            	    // InternalSynthesizer.g:79:3: (lv_greetings_0_0= ruleGreeting )
-            	    // InternalSynthesizer.g:80:4: lv_greetings_0_0= ruleGreeting
+            	    // InternalSynthesizer.g:79:3: (lv_controls_0_0= ruleControls )
+            	    // InternalSynthesizer.g:80:4: lv_controls_0_0= ruleControls
             	    {
 
-            	    				newCompositeNode(grammarAccess.getModelAccess().getGreetingsGreetingParserRuleCall_0());
+            	    				newCompositeNode(grammarAccess.getModelAccess().getControlsControlsParserRuleCall_0());
             	    			
             	    pushFollow(FOLLOW_3);
-            	    lv_greetings_0_0=ruleGreeting();
+            	    lv_controls_0_0=ruleControls();
 
             	    state._fsp--;
 
@@ -156,9 +155,9 @@ public class InternalSynthesizerParser extends AbstractInternalAntlrParser {
             	    				}
             	    				add(
             	    					current,
-            	    					"greetings",
-            	    					lv_greetings_0_0,
-            	    					"org.xtext.Synthesizer.Greeting");
+            	    					"controls",
+            	    					lv_controls_0_0,
+            	    					"org.xtext.Synthesizer.Controls");
             	    				afterParserOrEnumRuleCall();
             	    			
 
@@ -192,25 +191,25 @@ public class InternalSynthesizerParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleModel"
 
 
-    // $ANTLR start "entryRuleGreeting"
-    // InternalSynthesizer.g:100:1: entryRuleGreeting returns [EObject current=null] : iv_ruleGreeting= ruleGreeting EOF ;
-    public final EObject entryRuleGreeting() throws RecognitionException {
+    // $ANTLR start "entryRuleControls"
+    // InternalSynthesizer.g:100:1: entryRuleControls returns [EObject current=null] : iv_ruleControls= ruleControls EOF ;
+    public final EObject entryRuleControls() throws RecognitionException {
         EObject current = null;
 
-        EObject iv_ruleGreeting = null;
+        EObject iv_ruleControls = null;
 
 
         try {
-            // InternalSynthesizer.g:100:49: (iv_ruleGreeting= ruleGreeting EOF )
-            // InternalSynthesizer.g:101:2: iv_ruleGreeting= ruleGreeting EOF
+            // InternalSynthesizer.g:100:49: (iv_ruleControls= ruleControls EOF )
+            // InternalSynthesizer.g:101:2: iv_ruleControls= ruleControls EOF
             {
-             newCompositeNode(grammarAccess.getGreetingRule()); 
+             newCompositeNode(grammarAccess.getControlsRule()); 
             pushFollow(FOLLOW_1);
-            iv_ruleGreeting=ruleGreeting();
+            iv_ruleControls=ruleControls();
 
             state._fsp--;
 
-             current =iv_ruleGreeting; 
+             current =iv_ruleControls; 
             match(input,EOF,FOLLOW_2); 
 
             }
@@ -225,31 +224,30 @@ public class InternalSynthesizerParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "entryRuleGreeting"
+    // $ANTLR end "entryRuleControls"
 
 
-    // $ANTLR start "ruleGreeting"
-    // InternalSynthesizer.g:107:1: ruleGreeting returns [EObject current=null] : (otherlv_0= 'Hello' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '!' ) ;
-    public final EObject ruleGreeting() throws RecognitionException {
+    // $ANTLR start "ruleControls"
+    // InternalSynthesizer.g:107:1: ruleControls returns [EObject current=null] : (otherlv_0= 'Button' ( (lv_name_1_0= RULE_ID ) ) ) ;
+    public final EObject ruleControls() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
         Token lv_name_1_0=null;
-        Token otherlv_2=null;
 
 
         	enterRule();
 
         try {
-            // InternalSynthesizer.g:113:2: ( (otherlv_0= 'Hello' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '!' ) )
-            // InternalSynthesizer.g:114:2: (otherlv_0= 'Hello' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '!' )
+            // InternalSynthesizer.g:113:2: ( (otherlv_0= 'Button' ( (lv_name_1_0= RULE_ID ) ) ) )
+            // InternalSynthesizer.g:114:2: (otherlv_0= 'Button' ( (lv_name_1_0= RULE_ID ) ) )
             {
-            // InternalSynthesizer.g:114:2: (otherlv_0= 'Hello' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '!' )
-            // InternalSynthesizer.g:115:3: otherlv_0= 'Hello' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '!'
+            // InternalSynthesizer.g:114:2: (otherlv_0= 'Button' ( (lv_name_1_0= RULE_ID ) ) )
+            // InternalSynthesizer.g:115:3: otherlv_0= 'Button' ( (lv_name_1_0= RULE_ID ) )
             {
             otherlv_0=(Token)match(input,11,FOLLOW_4); 
 
-            			newLeafNode(otherlv_0, grammarAccess.getGreetingAccess().getHelloKeyword_0());
+            			newLeafNode(otherlv_0, grammarAccess.getControlsAccess().getButtonKeyword_0());
             		
             // InternalSynthesizer.g:119:3: ( (lv_name_1_0= RULE_ID ) )
             // InternalSynthesizer.g:120:4: (lv_name_1_0= RULE_ID )
@@ -257,13 +255,13 @@ public class InternalSynthesizerParser extends AbstractInternalAntlrParser {
             // InternalSynthesizer.g:120:4: (lv_name_1_0= RULE_ID )
             // InternalSynthesizer.g:121:5: lv_name_1_0= RULE_ID
             {
-            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_5); 
+            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_2); 
 
-            					newLeafNode(lv_name_1_0, grammarAccess.getGreetingAccess().getNameIDTerminalRuleCall_1_0());
+            					newLeafNode(lv_name_1_0, grammarAccess.getControlsAccess().getNameIDTerminalRuleCall_1_0());
             				
 
             					if (current==null) {
-            						current = createModelElement(grammarAccess.getGreetingRule());
+            						current = createModelElement(grammarAccess.getControlsRule());
             					}
             					setWithLastConsumed(
             						current,
@@ -277,10 +275,6 @@ public class InternalSynthesizerParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,12,FOLLOW_2); 
-
-            			newLeafNode(otherlv_2, grammarAccess.getGreetingAccess().getExclamationMarkKeyword_2());
-            		
 
             }
 
@@ -300,7 +294,7 @@ public class InternalSynthesizerParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
-    // $ANTLR end "ruleGreeting"
+    // $ANTLR end "ruleControls"
 
     // Delegated rules
 
@@ -311,6 +305,5 @@ public class InternalSynthesizerParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_2 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000000000802L});
     public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000001000L});
 
 }

@@ -7,10 +7,10 @@
   <genPackages prefix="Synthesizer" basePackage="org.xtext" disposableProviderFactory="true"
       fileExtensions="syn" ecorePackage="Synthesizer.ecore#/">
     <genClasses ecoreClass="Synthesizer.ecore#//Model">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Synthesizer.ecore#//Model/greetings"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Synthesizer.ecore#//Model/controls"/>
     </genClasses>
-    <genClasses ecoreClass="Synthesizer.ecore#//Greeting">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Synthesizer.ecore#//Greeting/name"/>
+    <genClasses ecoreClass="Synthesizer.ecore#//Controls">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Synthesizer.ecore#//Controls/name"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

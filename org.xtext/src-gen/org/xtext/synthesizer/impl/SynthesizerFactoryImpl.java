@@ -66,7 +66,7 @@ public class SynthesizerFactoryImpl extends EFactoryImpl implements SynthesizerF
     switch (eClass.getClassifierID())
     {
       case SynthesizerPackage.MODEL: return createModel();
-      case SynthesizerPackage.GREETING: return createGreeting();
+      case SynthesizerPackage.CONTROLS: return createControls();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -88,10 +88,10 @@ public class SynthesizerFactoryImpl extends EFactoryImpl implements SynthesizerF
    * <!-- end-user-doc -->
    * @generated
    */
-  public Greeting createGreeting()
+  public Controls createControls()
   {
-    GreetingImpl greeting = new GreetingImpl();
-    return greeting;
+    ControlsImpl controls = new ControlsImpl();
+    return controls;
   }
 
   /**

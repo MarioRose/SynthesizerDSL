@@ -15,7 +15,7 @@ import org.eclipse.xtext.serializer.acceptor.SequenceFeeder;
 import org.eclipse.xtext.serializer.sequencer.AbstractDelegatingSemanticSequencer;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
 import org.xtext.services.SynthesizerGrammarAccess;
-import org.xtext.synthesizer.Greeting;
+import org.xtext.synthesizer.Controls;
 import org.xtext.synthesizer.Model;
 import org.xtext.synthesizer.SynthesizerPackage;
 
@@ -33,8 +33,8 @@ public class SynthesizerSemanticSequencer extends AbstractDelegatingSemanticSequ
 		Set<Parameter> parameters = context.getEnabledBooleanParameters();
 		if (epackage == SynthesizerPackage.eINSTANCE)
 			switch (semanticObject.eClass().getClassifierID()) {
-			case SynthesizerPackage.GREETING:
-				sequence_Greeting(context, (Greeting) semanticObject); 
+			case SynthesizerPackage.CONTROLS:
+				sequence_Controls(context, (Controls) semanticObject); 
 				return; 
 			case SynthesizerPackage.MODEL:
 				sequence_Model(context, (Model) semanticObject); 
@@ -46,18 +46,18 @@ public class SynthesizerSemanticSequencer extends AbstractDelegatingSemanticSequ
 	
 	/**
 	 * Contexts:
-	 *     Greeting returns Greeting
+	 *     Controls returns Controls
 	 *
 	 * Constraint:
 	 *     name=ID
 	 */
-	protected void sequence_Greeting(ISerializationContext context, Greeting semanticObject) {
+	protected void sequence_Controls(ISerializationContext context, Controls semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, SynthesizerPackage.Literals.GREETING__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SynthesizerPackage.Literals.GREETING__NAME));
+			if (transientValues.isValueTransient(semanticObject, SynthesizerPackage.Literals.CONTROLS__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SynthesizerPackage.Literals.CONTROLS__NAME));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getGreetingAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getControlsAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
 		feeder.finish();
 	}
 	
@@ -67,7 +67,7 @@ public class SynthesizerSemanticSequencer extends AbstractDelegatingSemanticSequ
 	 *     Model returns Model
 	 *
 	 * Constraint:
-	 *     greetings+=Greeting+
+	 *     controls+=Controls+
 	 */
 	protected void sequence_Model(ISerializationContext context, Model semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

@@ -68,13 +68,13 @@ public interface SynthesizerPackage extends EPackage
   int MODEL = 0;
 
   /**
-   * The feature id for the '<em><b>Greetings</b></em>' containment reference list.
+   * The feature id for the '<em><b>Controls</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int MODEL__GREETINGS = 0;
+  int MODEL__CONTROLS = 0;
 
   /**
    * The number of structural features of the '<em>Model</em>' class.
@@ -86,14 +86,14 @@ public interface SynthesizerPackage extends EPackage
   int MODEL_FEATURE_COUNT = 1;
 
   /**
-   * The meta object id for the '{@link org.xtext.synthesizer.impl.GreetingImpl <em>Greeting</em>}' class.
+   * The meta object id for the '{@link org.xtext.synthesizer.impl.ControlsImpl <em>Controls</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see org.xtext.synthesizer.impl.GreetingImpl
-   * @see org.xtext.synthesizer.impl.SynthesizerPackageImpl#getGreeting()
+   * @see org.xtext.synthesizer.impl.ControlsImpl
+   * @see org.xtext.synthesizer.impl.SynthesizerPackageImpl#getControls()
    * @generated
    */
-  int GREETING = 1;
+  int CONTROLS = 1;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -102,16 +102,16 @@ public interface SynthesizerPackage extends EPackage
    * @generated
    * @ordered
    */
-  int GREETING__NAME = 0;
+  int CONTROLS__NAME = 0;
 
   /**
-   * The number of structural features of the '<em>Greeting</em>' class.
+   * The number of structural features of the '<em>Controls</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int GREETING_FEATURE_COUNT = 1;
+  int CONTROLS_FEATURE_COUNT = 1;
 
 
   /**
@@ -125,36 +125,36 @@ public interface SynthesizerPackage extends EPackage
   EClass getModel();
 
   /**
-   * Returns the meta object for the containment reference list '{@link org.xtext.synthesizer.Model#getGreetings <em>Greetings</em>}'.
+   * Returns the meta object for the containment reference list '{@link org.xtext.synthesizer.Model#getControls <em>Controls</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Greetings</em>'.
-   * @see org.xtext.synthesizer.Model#getGreetings()
+   * @return the meta object for the containment reference list '<em>Controls</em>'.
+   * @see org.xtext.synthesizer.Model#getControls()
    * @see #getModel()
    * @generated
    */
-  EReference getModel_Greetings();
+  EReference getModel_Controls();
 
   /**
-   * Returns the meta object for class '{@link org.xtext.synthesizer.Greeting <em>Greeting</em>}'.
+   * Returns the meta object for class '{@link org.xtext.synthesizer.Controls <em>Controls</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Greeting</em>'.
-   * @see org.xtext.synthesizer.Greeting
+   * @return the meta object for class '<em>Controls</em>'.
+   * @see org.xtext.synthesizer.Controls
    * @generated
    */
-  EClass getGreeting();
+  EClass getControls();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.synthesizer.Greeting#getName <em>Name</em>}'.
+   * Returns the meta object for the attribute '{@link org.xtext.synthesizer.Controls#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Name</em>'.
-   * @see org.xtext.synthesizer.Greeting#getName()
-   * @see #getGreeting()
+   * @see org.xtext.synthesizer.Controls#getName()
+   * @see #getControls()
    * @generated
    */
-  EAttribute getGreeting_Name();
+  EAttribute getControls_Name();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -190,22 +190,22 @@ public interface SynthesizerPackage extends EPackage
     EClass MODEL = eINSTANCE.getModel();
 
     /**
-     * The meta object literal for the '<em><b>Greetings</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Controls</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference MODEL__GREETINGS = eINSTANCE.getModel_Greetings();
+    EReference MODEL__CONTROLS = eINSTANCE.getModel_Controls();
 
     /**
-     * The meta object literal for the '{@link org.xtext.synthesizer.impl.GreetingImpl <em>Greeting</em>}' class.
+     * The meta object literal for the '{@link org.xtext.synthesizer.impl.ControlsImpl <em>Controls</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see org.xtext.synthesizer.impl.GreetingImpl
-     * @see org.xtext.synthesizer.impl.SynthesizerPackageImpl#getGreeting()
+     * @see org.xtext.synthesizer.impl.ControlsImpl
+     * @see org.xtext.synthesizer.impl.SynthesizerPackageImpl#getControls()
      * @generated
      */
-    EClass GREETING = eINSTANCE.getGreeting();
+    EClass CONTROLS = eINSTANCE.getControls();
 
     /**
      * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -213,7 +213,7 @@ public interface SynthesizerPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute GREETING__NAME = eINSTANCE.getGreeting_Name();
+    EAttribute CONTROLS__NAME = eINSTANCE.getControls_Name();
 
   }
 

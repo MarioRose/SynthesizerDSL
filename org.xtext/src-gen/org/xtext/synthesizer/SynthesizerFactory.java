@@ -33,13 +33,13 @@ public interface SynthesizerFactory extends EFactory
   Model createModel();
 
   /**
-   * Returns a new object of class '<em>Greeting</em>'.
+   * Returns a new object of class '<em>Controls</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Greeting</em>'.
+   * @return a new object of class '<em>Controls</em>'.
    * @generated
    */
-  Greeting createGreeting();
+  Controls createControls();
 
   /**
    * Returns the package supported by this factory.
