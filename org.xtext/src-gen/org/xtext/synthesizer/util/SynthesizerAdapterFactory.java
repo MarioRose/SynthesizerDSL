@@ -81,9 +81,14 @@ public class SynthesizerAdapterFactory extends AdapterFactoryImpl
         return createModelAdapter();
       }
       @Override
-      public Adapter caseControls(Controls object)
+      public Adapter caseControlElement(ControlElement object)
       {
-        return createControlsAdapter();
+        return createControlElementAdapter();
+      }
+      @Override
+      public Adapter caseButton(Button object)
+      {
+        return createButtonAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -123,16 +128,31 @@ public class SynthesizerAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.synthesizer.Controls <em>Controls</em>}'.
+   * Creates a new adapter for an object of class '{@link org.xtext.synthesizer.ControlElement <em>Control Element</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.xtext.synthesizer.Controls
+   * @see org.xtext.synthesizer.ControlElement
    * @generated
    */
-  public Adapter createControlsAdapter()
+  public Adapter createControlElementAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.synthesizer.Button <em>Button</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.synthesizer.Button
+   * @generated
+   */
+  public Adapter createButtonAdapter()
   {
     return null;
   }

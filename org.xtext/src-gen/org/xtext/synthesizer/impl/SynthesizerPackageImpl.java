@@ -10,7 +10,8 @@ import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
-import org.xtext.synthesizer.Controls;
+import org.xtext.synthesizer.Button;
+import org.xtext.synthesizer.ControlElement;
 import org.xtext.synthesizer.Model;
 import org.xtext.synthesizer.SynthesizerFactory;
 import org.xtext.synthesizer.SynthesizerPackage;
@@ -35,7 +36,14 @@ public class SynthesizerPackageImpl extends EPackageImpl implements SynthesizerP
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass controlsEClass = null;
+  private EClass controlElementEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass buttonEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -125,9 +133,9 @@ public class SynthesizerPackageImpl extends EPackageImpl implements SynthesizerP
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getControls()
+  public EClass getControlElement()
   {
-    return controlsEClass;
+    return controlElementEClass;
   }
 
   /**
@@ -135,9 +143,69 @@ public class SynthesizerPackageImpl extends EPackageImpl implements SynthesizerP
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getControls_Name()
+  public EClass getButton()
   {
-    return (EAttribute)controlsEClass.getEStructuralFeatures().get(0);
+    return buttonEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getButton_Name()
+  {
+    return (EAttribute)buttonEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getButton_X()
+  {
+    return (EAttribute)buttonEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getButton_Y()
+  {
+    return (EAttribute)buttonEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getButton_Width()
+  {
+    return (EAttribute)buttonEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getButton_Height()
+  {
+    return (EAttribute)buttonEClass.getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getButton_Frequency()
+  {
+    return (EAttribute)buttonEClass.getEStructuralFeatures().get(5);
   }
 
   /**
@@ -173,8 +241,15 @@ public class SynthesizerPackageImpl extends EPackageImpl implements SynthesizerP
     modelEClass = createEClass(MODEL);
     createEReference(modelEClass, MODEL__CONTROLS);
 
-    controlsEClass = createEClass(CONTROLS);
-    createEAttribute(controlsEClass, CONTROLS__NAME);
+    controlElementEClass = createEClass(CONTROL_ELEMENT);
+
+    buttonEClass = createEClass(BUTTON);
+    createEAttribute(buttonEClass, BUTTON__NAME);
+    createEAttribute(buttonEClass, BUTTON__X);
+    createEAttribute(buttonEClass, BUTTON__Y);
+    createEAttribute(buttonEClass, BUTTON__WIDTH);
+    createEAttribute(buttonEClass, BUTTON__HEIGHT);
+    createEAttribute(buttonEClass, BUTTON__FREQUENCY);
   }
 
   /**
@@ -206,13 +281,21 @@ public class SynthesizerPackageImpl extends EPackageImpl implements SynthesizerP
     // Set bounds for type parameters
 
     // Add supertypes to classes
+    buttonEClass.getESuperTypes().add(this.getControlElement());
 
     // Initialize classes and features; add operations and parameters
     initEClass(modelEClass, Model.class, "Model", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getModel_Controls(), this.getControls(), null, "controls", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getModel_Controls(), this.getControlElement(), null, "controls", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(controlsEClass, Controls.class, "Controls", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getControls_Name(), ecorePackage.getEString(), "name", null, 0, 1, Controls.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(controlElementEClass, ControlElement.class, "ControlElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(buttonEClass, Button.class, "Button", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getButton_Name(), ecorePackage.getEString(), "name", null, 0, 1, Button.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getButton_X(), ecorePackage.getEInt(), "x", null, 0, 1, Button.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getButton_Y(), ecorePackage.getEInt(), "y", null, 0, 1, Button.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getButton_Width(), ecorePackage.getEInt(), "width", null, 0, 1, Button.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getButton_Height(), ecorePackage.getEInt(), "height", null, 0, 1, Button.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getButton_Frequency(), ecorePackage.getEInt(), "frequency", null, 0, 1, Button.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

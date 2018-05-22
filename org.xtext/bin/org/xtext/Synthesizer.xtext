@@ -3,7 +3,25 @@ grammar org.xtext.Synthesizer with org.eclipse.xtext.common.Terminals
 generate synthesizer "http://www.xtext.org/Synthesizer"
 
 Model:
-	controls+=Controls*;
+	'Controls{'
+	controls+=ControlElement*
+	'}'
+;
 	
-Controls:
-	'Button' name=ID;
+ControlElement:
+	Button | RotaryKnob
+;
+
+RotaryKnob:
+	'Rot'
+;
+
+Button:
+	'button' name = ID '('
+		'x' x = INT
+		'y' y = INT
+		'width' width = INT
+		'height' height = INT
+		'frequency' frequency = INT
+	')'
+;

@@ -6,6 +6,7 @@ package org.xtext.services;
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
 import java.util.List;
+import org.eclipse.xtext.Alternatives;
 import org.eclipse.xtext.Assignment;
 import org.eclipse.xtext.Grammar;
 import org.eclipse.xtext.GrammarUtil;
@@ -23,34 +24,101 @@ public class SynthesizerGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public class ModelElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Synthesizer.Model");
-		private final Assignment cControlsAssignment = (Assignment)rule.eContents().get(1);
-		private final RuleCall cControlsControlsParserRuleCall_0 = (RuleCall)cControlsAssignment.eContents().get(0);
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cControlsKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cControlsAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cControlsControlElementParserRuleCall_1_0 = (RuleCall)cControlsAssignment_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		
 		//Model:
-		//	controls+=Controls*;
+		//	'Controls{'
+		//	controls+=ControlElement*
+		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//controls+=Controls*
-		public Assignment getControlsAssignment() { return cControlsAssignment; }
+		//'Controls{' controls+=ControlElement* '}'
+		public Group getGroup() { return cGroup; }
 		
-		//Controls
-		public RuleCall getControlsControlsParserRuleCall_0() { return cControlsControlsParserRuleCall_0; }
+		//'Controls{'
+		public Keyword getControlsKeyword_0() { return cControlsKeyword_0; }
+		
+		//controls+=ControlElement*
+		public Assignment getControlsAssignment_1() { return cControlsAssignment_1; }
+		
+		//ControlElement
+		public RuleCall getControlsControlElementParserRuleCall_1_0() { return cControlsControlElementParserRuleCall_1_0; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_2() { return cRightCurlyBracketKeyword_2; }
 	}
-	public class ControlsElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Synthesizer.Controls");
+	public class ControlElementElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Synthesizer.ControlElement");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cButtonParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cRotaryKnobParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		
+		//ControlElement:
+		//	Button | RotaryKnob;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//Button | RotaryKnob
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//Button
+		public RuleCall getButtonParserRuleCall_0() { return cButtonParserRuleCall_0; }
+		
+		//RotaryKnob
+		public RuleCall getRotaryKnobParserRuleCall_1() { return cRotaryKnobParserRuleCall_1; }
+	}
+	public class RotaryKnobElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Synthesizer.RotaryKnob");
+		private final Keyword cRotKeyword = (Keyword)rule.eContents().get(1);
+		
+		//RotaryKnob:
+		//	'Rot';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'Rot'
+		public Keyword getRotKeyword() { return cRotKeyword; }
+	}
+	public class ButtonElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Synthesizer.Button");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cButtonKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Keyword cLeftParenthesisKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Keyword cXKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cXAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cXINTTerminalRuleCall_4_0 = (RuleCall)cXAssignment_4.eContents().get(0);
+		private final Keyword cYKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Assignment cYAssignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final RuleCall cYINTTerminalRuleCall_6_0 = (RuleCall)cYAssignment_6.eContents().get(0);
+		private final Keyword cWidthKeyword_7 = (Keyword)cGroup.eContents().get(7);
+		private final Assignment cWidthAssignment_8 = (Assignment)cGroup.eContents().get(8);
+		private final RuleCall cWidthINTTerminalRuleCall_8_0 = (RuleCall)cWidthAssignment_8.eContents().get(0);
+		private final Keyword cHeightKeyword_9 = (Keyword)cGroup.eContents().get(9);
+		private final Assignment cHeightAssignment_10 = (Assignment)cGroup.eContents().get(10);
+		private final RuleCall cHeightINTTerminalRuleCall_10_0 = (RuleCall)cHeightAssignment_10.eContents().get(0);
+		private final Keyword cFrequencyKeyword_11 = (Keyword)cGroup.eContents().get(11);
+		private final Assignment cFrequencyAssignment_12 = (Assignment)cGroup.eContents().get(12);
+		private final RuleCall cFrequencyINTTerminalRuleCall_12_0 = (RuleCall)cFrequencyAssignment_12.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_13 = (Keyword)cGroup.eContents().get(13);
 		
-		//Controls:
-		//	'Button' name=ID;
+		//Button:
+		//	'button' name=ID '('
+		//	'x' x=INT
+		//	'y' y=INT
+		//	'width' width=INT
+		//	'height' height=INT
+		//	'frequency' frequency=INT
+		//	')';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'Button' name=ID
+		//'button' name=ID '(' 'x' x=INT 'y' y=INT 'width' width=INT 'height' height=INT 'frequency' frequency=INT ')'
 		public Group getGroup() { return cGroup; }
 		
-		//'Button'
+		//'button'
 		public Keyword getButtonKeyword_0() { return cButtonKeyword_0; }
 		
 		//name=ID
@@ -58,11 +126,64 @@ public class SynthesizerGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
+		
+		//'('
+		public Keyword getLeftParenthesisKeyword_2() { return cLeftParenthesisKeyword_2; }
+		
+		//'x'
+		public Keyword getXKeyword_3() { return cXKeyword_3; }
+		
+		//x=INT
+		public Assignment getXAssignment_4() { return cXAssignment_4; }
+		
+		//INT
+		public RuleCall getXINTTerminalRuleCall_4_0() { return cXINTTerminalRuleCall_4_0; }
+		
+		//'y'
+		public Keyword getYKeyword_5() { return cYKeyword_5; }
+		
+		//y=INT
+		public Assignment getYAssignment_6() { return cYAssignment_6; }
+		
+		//INT
+		public RuleCall getYINTTerminalRuleCall_6_0() { return cYINTTerminalRuleCall_6_0; }
+		
+		//'width'
+		public Keyword getWidthKeyword_7() { return cWidthKeyword_7; }
+		
+		//width=INT
+		public Assignment getWidthAssignment_8() { return cWidthAssignment_8; }
+		
+		//INT
+		public RuleCall getWidthINTTerminalRuleCall_8_0() { return cWidthINTTerminalRuleCall_8_0; }
+		
+		//'height'
+		public Keyword getHeightKeyword_9() { return cHeightKeyword_9; }
+		
+		//height=INT
+		public Assignment getHeightAssignment_10() { return cHeightAssignment_10; }
+		
+		//INT
+		public RuleCall getHeightINTTerminalRuleCall_10_0() { return cHeightINTTerminalRuleCall_10_0; }
+		
+		//'frequency'
+		public Keyword getFrequencyKeyword_11() { return cFrequencyKeyword_11; }
+		
+		//frequency=INT
+		public Assignment getFrequencyAssignment_12() { return cFrequencyAssignment_12; }
+		
+		//INT
+		public RuleCall getFrequencyINTTerminalRuleCall_12_0() { return cFrequencyINTTerminalRuleCall_12_0; }
+		
+		//')'
+		public Keyword getRightParenthesisKeyword_13() { return cRightParenthesisKeyword_13; }
 	}
 	
 	
 	private final ModelElements pModel;
-	private final ControlsElements pControls;
+	private final ControlElementElements pControlElement;
+	private final RotaryKnobElements pRotaryKnob;
+	private final ButtonElements pButton;
 	
 	private final Grammar grammar;
 	
@@ -74,7 +195,9 @@ public class SynthesizerGrammarAccess extends AbstractGrammarElementFinder {
 		this.grammar = internalFindGrammar(grammarProvider);
 		this.gaTerminals = gaTerminals;
 		this.pModel = new ModelElements();
-		this.pControls = new ControlsElements();
+		this.pControlElement = new ControlElementElements();
+		this.pRotaryKnob = new RotaryKnobElements();
+		this.pButton = new ButtonElements();
 	}
 	
 	protected Grammar internalFindGrammar(GrammarProvider grammarProvider) {
@@ -105,7 +228,9 @@ public class SynthesizerGrammarAccess extends AbstractGrammarElementFinder {
 
 	
 	//Model:
-	//	controls+=Controls*;
+	//	'Controls{'
+	//	controls+=ControlElement*
+	//	'}';
 	public ModelElements getModelAccess() {
 		return pModel;
 	}
@@ -114,14 +239,40 @@ public class SynthesizerGrammarAccess extends AbstractGrammarElementFinder {
 		return getModelAccess().getRule();
 	}
 	
-	//Controls:
-	//	'Button' name=ID;
-	public ControlsElements getControlsAccess() {
-		return pControls;
+	//ControlElement:
+	//	Button | RotaryKnob;
+	public ControlElementElements getControlElementAccess() {
+		return pControlElement;
 	}
 	
-	public ParserRule getControlsRule() {
-		return getControlsAccess().getRule();
+	public ParserRule getControlElementRule() {
+		return getControlElementAccess().getRule();
+	}
+	
+	//RotaryKnob:
+	//	'Rot';
+	public RotaryKnobElements getRotaryKnobAccess() {
+		return pRotaryKnob;
+	}
+	
+	public ParserRule getRotaryKnobRule() {
+		return getRotaryKnobAccess().getRule();
+	}
+	
+	//Button:
+	//	'button' name=ID '('
+	//	'x' x=INT
+	//	'y' y=INT
+	//	'width' width=INT
+	//	'height' height=INT
+	//	'frequency' frequency=INT
+	//	')';
+	public ButtonElements getButtonAccess() {
+		return pButton;
+	}
+	
+	public ParserRule getButtonRule() {
+		return getButtonAccess().getRule();
 	}
 	
 	//terminal ID:

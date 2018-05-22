@@ -17,7 +17,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import org.xtext.synthesizer.Controls;
+import org.xtext.synthesizer.ControlElement;
 import org.xtext.synthesizer.Model;
 import org.xtext.synthesizer.SynthesizerPackage;
 
@@ -44,7 +44,7 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
    * @generated
    * @ordered
    */
-  protected EList<Controls> controls;
+  protected EList<ControlElement> controls;
 
   /**
    * <!-- begin-user-doc -->
@@ -72,11 +72,11 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Controls> getControls()
+  public EList<ControlElement> getControls()
   {
     if (controls == null)
     {
-      controls = new EObjectContainmentEList<Controls>(Controls.class, this, SynthesizerPackage.MODEL__CONTROLS);
+      controls = new EObjectContainmentEList<ControlElement>(ControlElement.class, this, SynthesizerPackage.MODEL__CONTROLS);
     }
     return controls;
   }
@@ -126,7 +126,7 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model
     {
       case SynthesizerPackage.MODEL__CONTROLS:
         getControls().clear();
-        getControls().addAll((Collection<? extends Controls>)newValue);
+        getControls().addAll((Collection<? extends ControlElement>)newValue);
         return;
     }
     super.eSet(featureID, newValue);

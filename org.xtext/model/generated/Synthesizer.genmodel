@@ -9,8 +9,14 @@
     <genClasses ecoreClass="Synthesizer.ecore#//Model">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Synthesizer.ecore#//Model/controls"/>
     </genClasses>
-    <genClasses ecoreClass="Synthesizer.ecore#//Controls">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Synthesizer.ecore#//Controls/name"/>
+    <genClasses ecoreClass="Synthesizer.ecore#//ControlElement"/>
+    <genClasses ecoreClass="Synthesizer.ecore#//Button">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Synthesizer.ecore#//Button/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Synthesizer.ecore#//Button/x"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Synthesizer.ecore#//Button/y"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Synthesizer.ecore#//Button/width"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Synthesizer.ecore#//Button/height"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Synthesizer.ecore#//Button/frequency"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

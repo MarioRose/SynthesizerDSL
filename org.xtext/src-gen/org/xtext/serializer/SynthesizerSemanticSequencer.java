@@ -15,7 +15,7 @@ import org.eclipse.xtext.serializer.acceptor.SequenceFeeder;
 import org.eclipse.xtext.serializer.sequencer.AbstractDelegatingSemanticSequencer;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
 import org.xtext.services.SynthesizerGrammarAccess;
-import org.xtext.synthesizer.Controls;
+import org.xtext.synthesizer.Button;
 import org.xtext.synthesizer.Model;
 import org.xtext.synthesizer.SynthesizerPackage;
 
@@ -33,8 +33,8 @@ public class SynthesizerSemanticSequencer extends AbstractDelegatingSemanticSequ
 		Set<Parameter> parameters = context.getEnabledBooleanParameters();
 		if (epackage == SynthesizerPackage.eINSTANCE)
 			switch (semanticObject.eClass().getClassifierID()) {
-			case SynthesizerPackage.CONTROLS:
-				sequence_Controls(context, (Controls) semanticObject); 
+			case SynthesizerPackage.BUTTON:
+				sequence_Button(context, (Button) semanticObject); 
 				return; 
 			case SynthesizerPackage.MODEL:
 				sequence_Model(context, (Model) semanticObject); 
@@ -46,18 +46,41 @@ public class SynthesizerSemanticSequencer extends AbstractDelegatingSemanticSequ
 	
 	/**
 	 * Contexts:
-	 *     Controls returns Controls
+	 *     ControlElement returns Button
+	 *     Button returns Button
 	 *
 	 * Constraint:
-	 *     name=ID
+	 *     (
+	 *         name=ID 
+	 *         x=INT 
+	 *         y=INT 
+	 *         width=INT 
+	 *         height=INT 
+	 *         frequency=INT
+	 *     )
 	 */
-	protected void sequence_Controls(ISerializationContext context, Controls semanticObject) {
+	protected void sequence_Button(ISerializationContext context, Button semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, SynthesizerPackage.Literals.CONTROLS__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SynthesizerPackage.Literals.CONTROLS__NAME));
+			if (transientValues.isValueTransient(semanticObject, SynthesizerPackage.Literals.BUTTON__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SynthesizerPackage.Literals.BUTTON__NAME));
+			if (transientValues.isValueTransient(semanticObject, SynthesizerPackage.Literals.BUTTON__X) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SynthesizerPackage.Literals.BUTTON__X));
+			if (transientValues.isValueTransient(semanticObject, SynthesizerPackage.Literals.BUTTON__Y) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SynthesizerPackage.Literals.BUTTON__Y));
+			if (transientValues.isValueTransient(semanticObject, SynthesizerPackage.Literals.BUTTON__WIDTH) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SynthesizerPackage.Literals.BUTTON__WIDTH));
+			if (transientValues.isValueTransient(semanticObject, SynthesizerPackage.Literals.BUTTON__HEIGHT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SynthesizerPackage.Literals.BUTTON__HEIGHT));
+			if (transientValues.isValueTransient(semanticObject, SynthesizerPackage.Literals.BUTTON__FREQUENCY) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SynthesizerPackage.Literals.BUTTON__FREQUENCY));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getControlsAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getButtonAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getButtonAccess().getXINTTerminalRuleCall_4_0(), semanticObject.getX());
+		feeder.accept(grammarAccess.getButtonAccess().getYINTTerminalRuleCall_6_0(), semanticObject.getY());
+		feeder.accept(grammarAccess.getButtonAccess().getWidthINTTerminalRuleCall_8_0(), semanticObject.getWidth());
+		feeder.accept(grammarAccess.getButtonAccess().getHeightINTTerminalRuleCall_10_0(), semanticObject.getHeight());
+		feeder.accept(grammarAccess.getButtonAccess().getFrequencyINTTerminalRuleCall_12_0(), semanticObject.getFrequency());
 		feeder.finish();
 	}
 	
@@ -67,7 +90,7 @@ public class SynthesizerSemanticSequencer extends AbstractDelegatingSemanticSequ
 	 *     Model returns Model
 	 *
 	 * Constraint:
-	 *     controls+=Controls+
+	 *     controls+=ControlElement+
 	 */
 	protected void sequence_Model(ISerializationContext context, Model semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

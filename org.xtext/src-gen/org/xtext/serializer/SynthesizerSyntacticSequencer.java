@@ -26,9 +26,21 @@ public class SynthesizerSyntacticSequencer extends AbstractSyntacticSequencer {
 	
 	@Override
 	protected String getUnassignedRuleCallToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (ruleCall.getRule() == grammarAccess.getRotaryKnobRule())
+			return getRotaryKnobToken(semanticObject, ruleCall, node);
 		return "";
 	}
 	
+	/**
+	 * RotaryKnob:
+	 * 	'Rot'
+	 * ;
+	 */
+	protected String getRotaryKnobToken(EObject semanticObject, RuleCall ruleCall, INode node) {
+		if (node != null)
+			return getTokenText(node);
+		return "Rot";
+	}
 	
 	@Override
 	protected void emitUnassignedTokens(EObject semanticObject, ISynTransition transition, INode fromNode, INode toNode) {

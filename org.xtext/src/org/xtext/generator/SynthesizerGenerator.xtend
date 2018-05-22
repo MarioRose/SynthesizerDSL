@@ -7,7 +7,8 @@ import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.AbstractGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
-import org.xtext.synthesizer.Controls
+import org.xtext.synthesizer.ControlElement
+import org.xtext.synthesizer.Button
 
 /**
  * Generates code from your model files on save.
@@ -70,7 +71,7 @@ class SynthesizerGenerator extends AbstractGenerator {
 		        
 		        //Create Buttons
 				'+ resource.allContents
-				.filter(Controls)
+				.filter(Button)
 				.map["JButton b" + name + " = new JButton(\"b" + name + "\");\nb"
 				+ name + '.addActionListener(new ActionListener() {
 		        @Override
@@ -98,7 +99,8 @@ class SynthesizerGenerator extends AbstractGenerator {
 		            osc.output.connect(0, lineOut.input, 1);
 		
 		            // Set the frequency and amplitude for the sine wave.
-		            osc.frequency.set(545.0);
+					int frequ = ' + frequency + ';
+		            osc.frequency.set(frequ);
 		            osc.amplitude.set(0.6);
 		
 		            // We only need to start the LineOut. It will pull data from the
@@ -123,7 +125,7 @@ class SynthesizerGenerator extends AbstractGenerator {
 		        }
 		    	});
 
-				b' + name + '.setBounds(10, yPos, 200, 20);  // x, y, width, height
+				b' + name + '.setBounds(' + x + ', ' + y + ', ' + width + ', ' + height + ');  // x, y, width, height
 				yPos += 25;
         		frame.add(b' + name + ');
 

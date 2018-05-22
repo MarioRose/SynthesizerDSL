@@ -86,14 +86,33 @@ public interface SynthesizerPackage extends EPackage
   int MODEL_FEATURE_COUNT = 1;
 
   /**
-   * The meta object id for the '{@link org.xtext.synthesizer.impl.ControlsImpl <em>Controls</em>}' class.
+   * The meta object id for the '{@link org.xtext.synthesizer.impl.ControlElementImpl <em>Control Element</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see org.xtext.synthesizer.impl.ControlsImpl
-   * @see org.xtext.synthesizer.impl.SynthesizerPackageImpl#getControls()
+   * @see org.xtext.synthesizer.impl.ControlElementImpl
+   * @see org.xtext.synthesizer.impl.SynthesizerPackageImpl#getControlElement()
    * @generated
    */
-  int CONTROLS = 1;
+  int CONTROL_ELEMENT = 1;
+
+  /**
+   * The number of structural features of the '<em>Control Element</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONTROL_ELEMENT_FEATURE_COUNT = 0;
+
+  /**
+   * The meta object id for the '{@link org.xtext.synthesizer.impl.ButtonImpl <em>Button</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.synthesizer.impl.ButtonImpl
+   * @see org.xtext.synthesizer.impl.SynthesizerPackageImpl#getButton()
+   * @generated
+   */
+  int BUTTON = 2;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -102,16 +121,61 @@ public interface SynthesizerPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONTROLS__NAME = 0;
+  int BUTTON__NAME = CONTROL_ELEMENT_FEATURE_COUNT + 0;
 
   /**
-   * The number of structural features of the '<em>Controls</em>' class.
+   * The feature id for the '<em><b>X</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CONTROLS_FEATURE_COUNT = 1;
+  int BUTTON__X = CONTROL_ELEMENT_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Y</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BUTTON__Y = CONTROL_ELEMENT_FEATURE_COUNT + 2;
+
+  /**
+   * The feature id for the '<em><b>Width</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BUTTON__WIDTH = CONTROL_ELEMENT_FEATURE_COUNT + 3;
+
+  /**
+   * The feature id for the '<em><b>Height</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BUTTON__HEIGHT = CONTROL_ELEMENT_FEATURE_COUNT + 4;
+
+  /**
+   * The feature id for the '<em><b>Frequency</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BUTTON__FREQUENCY = CONTROL_ELEMENT_FEATURE_COUNT + 5;
+
+  /**
+   * The number of structural features of the '<em>Button</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int BUTTON_FEATURE_COUNT = CONTROL_ELEMENT_FEATURE_COUNT + 6;
 
 
   /**
@@ -136,25 +200,90 @@ public interface SynthesizerPackage extends EPackage
   EReference getModel_Controls();
 
   /**
-   * Returns the meta object for class '{@link org.xtext.synthesizer.Controls <em>Controls</em>}'.
+   * Returns the meta object for class '{@link org.xtext.synthesizer.ControlElement <em>Control Element</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Controls</em>'.
-   * @see org.xtext.synthesizer.Controls
+   * @return the meta object for class '<em>Control Element</em>'.
+   * @see org.xtext.synthesizer.ControlElement
    * @generated
    */
-  EClass getControls();
+  EClass getControlElement();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.synthesizer.Controls#getName <em>Name</em>}'.
+   * Returns the meta object for class '{@link org.xtext.synthesizer.Button <em>Button</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Button</em>'.
+   * @see org.xtext.synthesizer.Button
+   * @generated
+   */
+  EClass getButton();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.synthesizer.Button#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Name</em>'.
-   * @see org.xtext.synthesizer.Controls#getName()
-   * @see #getControls()
+   * @see org.xtext.synthesizer.Button#getName()
+   * @see #getButton()
    * @generated
    */
-  EAttribute getControls_Name();
+  EAttribute getButton_Name();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.synthesizer.Button#getX <em>X</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>X</em>'.
+   * @see org.xtext.synthesizer.Button#getX()
+   * @see #getButton()
+   * @generated
+   */
+  EAttribute getButton_X();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.synthesizer.Button#getY <em>Y</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Y</em>'.
+   * @see org.xtext.synthesizer.Button#getY()
+   * @see #getButton()
+   * @generated
+   */
+  EAttribute getButton_Y();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.synthesizer.Button#getWidth <em>Width</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Width</em>'.
+   * @see org.xtext.synthesizer.Button#getWidth()
+   * @see #getButton()
+   * @generated
+   */
+  EAttribute getButton_Width();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.synthesizer.Button#getHeight <em>Height</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Height</em>'.
+   * @see org.xtext.synthesizer.Button#getHeight()
+   * @see #getButton()
+   * @generated
+   */
+  EAttribute getButton_Height();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.synthesizer.Button#getFrequency <em>Frequency</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Frequency</em>'.
+   * @see org.xtext.synthesizer.Button#getFrequency()
+   * @see #getButton()
+   * @generated
+   */
+  EAttribute getButton_Frequency();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -198,14 +327,24 @@ public interface SynthesizerPackage extends EPackage
     EReference MODEL__CONTROLS = eINSTANCE.getModel_Controls();
 
     /**
-     * The meta object literal for the '{@link org.xtext.synthesizer.impl.ControlsImpl <em>Controls</em>}' class.
+     * The meta object literal for the '{@link org.xtext.synthesizer.impl.ControlElementImpl <em>Control Element</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see org.xtext.synthesizer.impl.ControlsImpl
-     * @see org.xtext.synthesizer.impl.SynthesizerPackageImpl#getControls()
+     * @see org.xtext.synthesizer.impl.ControlElementImpl
+     * @see org.xtext.synthesizer.impl.SynthesizerPackageImpl#getControlElement()
      * @generated
      */
-    EClass CONTROLS = eINSTANCE.getControls();
+    EClass CONTROL_ELEMENT = eINSTANCE.getControlElement();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.synthesizer.impl.ButtonImpl <em>Button</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.synthesizer.impl.ButtonImpl
+     * @see org.xtext.synthesizer.impl.SynthesizerPackageImpl#getButton()
+     * @generated
+     */
+    EClass BUTTON = eINSTANCE.getButton();
 
     /**
      * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -213,7 +352,47 @@ public interface SynthesizerPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute CONTROLS__NAME = eINSTANCE.getControls_Name();
+    EAttribute BUTTON__NAME = eINSTANCE.getButton_Name();
+
+    /**
+     * The meta object literal for the '<em><b>X</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute BUTTON__X = eINSTANCE.getButton_X();
+
+    /**
+     * The meta object literal for the '<em><b>Y</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute BUTTON__Y = eINSTANCE.getButton_Y();
+
+    /**
+     * The meta object literal for the '<em><b>Width</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute BUTTON__WIDTH = eINSTANCE.getButton_Width();
+
+    /**
+     * The meta object literal for the '<em><b>Height</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute BUTTON__HEIGHT = eINSTANCE.getButton_Height();
+
+    /**
+     * The meta object literal for the '<em><b>Frequency</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute BUTTON__FREQUENCY = eINSTANCE.getButton_Frequency();
 
   }
 

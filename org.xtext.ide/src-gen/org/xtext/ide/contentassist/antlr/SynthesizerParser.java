@@ -31,9 +31,16 @@ public class SynthesizerParser extends AbstractContentAssistParser {
 			nameMappings = new HashMap<AbstractElement, String>() {
 				private static final long serialVersionUID = 1L;
 				{
-					put(grammarAccess.getControlsAccess().getGroup(), "rule__Controls__Group__0");
-					put(grammarAccess.getModelAccess().getControlsAssignment(), "rule__Model__ControlsAssignment");
-					put(grammarAccess.getControlsAccess().getNameAssignment_1(), "rule__Controls__NameAssignment_1");
+					put(grammarAccess.getControlElementAccess().getAlternatives(), "rule__ControlElement__Alternatives");
+					put(grammarAccess.getModelAccess().getGroup(), "rule__Model__Group__0");
+					put(grammarAccess.getButtonAccess().getGroup(), "rule__Button__Group__0");
+					put(grammarAccess.getModelAccess().getControlsAssignment_1(), "rule__Model__ControlsAssignment_1");
+					put(grammarAccess.getButtonAccess().getNameAssignment_1(), "rule__Button__NameAssignment_1");
+					put(grammarAccess.getButtonAccess().getXAssignment_4(), "rule__Button__XAssignment_4");
+					put(grammarAccess.getButtonAccess().getYAssignment_6(), "rule__Button__YAssignment_6");
+					put(grammarAccess.getButtonAccess().getWidthAssignment_8(), "rule__Button__WidthAssignment_8");
+					put(grammarAccess.getButtonAccess().getHeightAssignment_10(), "rule__Button__HeightAssignment_10");
+					put(grammarAccess.getButtonAccess().getFrequencyAssignment_12(), "rule__Button__FrequencyAssignment_12");
 				}
 			};
 		}

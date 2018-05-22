@@ -76,35 +76,45 @@ ruleModel returns [EObject current=null]
 	leaveRule();
 }:
 	(
+		otherlv_0='Controls{'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getModelAccess().getControlsKeyword_0());
+		}
 		(
-			{
-				newCompositeNode(grammarAccess.getModelAccess().getControlsControlsParserRuleCall_0());
-			}
-			lv_controls_0_0=ruleControls
-			{
-				if ($current==null) {
-					$current = createModelElementForParent(grammarAccess.getModelRule());
+			(
+				{
+					newCompositeNode(grammarAccess.getModelAccess().getControlsControlElementParserRuleCall_1_0());
 				}
-				add(
-					$current,
-					"controls",
-					lv_controls_0_0,
-					"org.xtext.Synthesizer.Controls");
-				afterParserOrEnumRuleCall();
-			}
-		)
-	)*
+				lv_controls_1_0=ruleControlElement
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getModelRule());
+					}
+					add(
+						$current,
+						"controls",
+						lv_controls_1_0,
+						"org.xtext.Synthesizer.ControlElement");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)*
+		otherlv_2='}'
+		{
+			newLeafNode(otherlv_2, grammarAccess.getModelAccess().getRightCurlyBracketKeyword_2());
+		}
+	)
 ;
 
-// Entry rule entryRuleControls
-entryRuleControls returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getControlsRule()); }
-	iv_ruleControls=ruleControls
-	{ $current=$iv_ruleControls.current; }
+// Entry rule entryRuleControlElement
+entryRuleControlElement returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getControlElementRule()); }
+	iv_ruleControlElement=ruleControlElement
+	{ $current=$iv_ruleControlElement.current; }
 	EOF;
 
-// Rule Controls
-ruleControls returns [EObject current=null]
+// Rule ControlElement
+ruleControlElement returns [EObject current=null]
 @init {
 	enterRule();
 }
@@ -112,19 +122,76 @@ ruleControls returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		otherlv_0='Button'
 		{
-			newLeafNode(otherlv_0, grammarAccess.getControlsAccess().getButtonKeyword_0());
+			newCompositeNode(grammarAccess.getControlElementAccess().getButtonParserRuleCall_0());
+		}
+		this_Button_0=ruleButton
+		{
+			$current = $this_Button_0.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getControlElementAccess().getRotaryKnobParserRuleCall_1());
+		}
+		ruleRotaryKnob
+		{
+			afterParserOrEnumRuleCall();
+		}
+	)
+;
+
+// Entry rule entryRuleRotaryKnob
+entryRuleRotaryKnob returns [String current=null]:
+	{ newCompositeNode(grammarAccess.getRotaryKnobRule()); }
+	iv_ruleRotaryKnob=ruleRotaryKnob
+	{ $current=$iv_ruleRotaryKnob.current.getText(); }
+	EOF;
+
+// Rule RotaryKnob
+ruleRotaryKnob returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	kw='Rot'
+	{
+		$current.merge(kw);
+		newLeafNode(kw, grammarAccess.getRotaryKnobAccess().getRotKeyword());
+	}
+;
+
+// Entry rule entryRuleButton
+entryRuleButton returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getButtonRule()); }
+	iv_ruleButton=ruleButton
+	{ $current=$iv_ruleButton.current; }
+	EOF;
+
+// Rule Button
+ruleButton returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='button'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getButtonAccess().getButtonKeyword_0());
 		}
 		(
 			(
 				lv_name_1_0=RULE_ID
 				{
-					newLeafNode(lv_name_1_0, grammarAccess.getControlsAccess().getNameIDTerminalRuleCall_1_0());
+					newLeafNode(lv_name_1_0, grammarAccess.getButtonAccess().getNameIDTerminalRuleCall_1_0());
 				}
 				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getControlsRule());
+						$current = createModelElement(grammarAccess.getButtonRule());
 					}
 					setWithLastConsumed(
 						$current,
@@ -134,6 +201,124 @@ ruleControls returns [EObject current=null]
 				}
 			)
 		)
+		otherlv_2='('
+		{
+			newLeafNode(otherlv_2, grammarAccess.getButtonAccess().getLeftParenthesisKeyword_2());
+		}
+		otherlv_3='x'
+		{
+			newLeafNode(otherlv_3, grammarAccess.getButtonAccess().getXKeyword_3());
+		}
+		(
+			(
+				lv_x_4_0=RULE_INT
+				{
+					newLeafNode(lv_x_4_0, grammarAccess.getButtonAccess().getXINTTerminalRuleCall_4_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getButtonRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"x",
+						lv_x_4_0,
+						"org.eclipse.xtext.common.Terminals.INT");
+				}
+			)
+		)
+		otherlv_5='y'
+		{
+			newLeafNode(otherlv_5, grammarAccess.getButtonAccess().getYKeyword_5());
+		}
+		(
+			(
+				lv_y_6_0=RULE_INT
+				{
+					newLeafNode(lv_y_6_0, grammarAccess.getButtonAccess().getYINTTerminalRuleCall_6_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getButtonRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"y",
+						lv_y_6_0,
+						"org.eclipse.xtext.common.Terminals.INT");
+				}
+			)
+		)
+		otherlv_7='width'
+		{
+			newLeafNode(otherlv_7, grammarAccess.getButtonAccess().getWidthKeyword_7());
+		}
+		(
+			(
+				lv_width_8_0=RULE_INT
+				{
+					newLeafNode(lv_width_8_0, grammarAccess.getButtonAccess().getWidthINTTerminalRuleCall_8_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getButtonRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"width",
+						lv_width_8_0,
+						"org.eclipse.xtext.common.Terminals.INT");
+				}
+			)
+		)
+		otherlv_9='height'
+		{
+			newLeafNode(otherlv_9, grammarAccess.getButtonAccess().getHeightKeyword_9());
+		}
+		(
+			(
+				lv_height_10_0=RULE_INT
+				{
+					newLeafNode(lv_height_10_0, grammarAccess.getButtonAccess().getHeightINTTerminalRuleCall_10_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getButtonRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"height",
+						lv_height_10_0,
+						"org.eclipse.xtext.common.Terminals.INT");
+				}
+			)
+		)
+		otherlv_11='frequency'
+		{
+			newLeafNode(otherlv_11, grammarAccess.getButtonAccess().getFrequencyKeyword_11());
+		}
+		(
+			(
+				lv_frequency_12_0=RULE_INT
+				{
+					newLeafNode(lv_frequency_12_0, grammarAccess.getButtonAccess().getFrequencyINTTerminalRuleCall_12_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getButtonRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"frequency",
+						lv_frequency_12_0,
+						"org.eclipse.xtext.common.Terminals.INT");
+				}
+			)
+		)
+		otherlv_13=')'
+		{
+			newLeafNode(otherlv_13, grammarAccess.getButtonAccess().getRightParenthesisKeyword_13());
+		}
 	)
 ;
 
