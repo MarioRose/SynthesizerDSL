@@ -7,6 +7,7 @@ import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.AbstractGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
+import org.xtext.synthesizer.Controls
 
 /**
  * Generates code from your model files on save.
@@ -23,11 +24,14 @@ class SynthesizerGenerator extends AbstractGenerator {
 //				.join(', '))
 //	}
 	
+	int yPos = 5;
 	
 	
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
 		
 	// Generate Main Java Class
+	
+	
 	fsa.generateFile('Main.java', '
 		import java.io.BufferedReader;
 		import java.io.IOException;
@@ -46,10 +50,10 @@ class SynthesizerGenerator extends AbstractGenerator {
 
 
 		public class Main {
+			static int yPos = 5;
 
 			public static void main(String[] args) {
 				System.out.println("Synthesizer started!");
-				
 				javax.swing.SwingUtilities.invokeLater(new Runnable() {
 					public void run() {
 						createAndShowGUI();
@@ -62,67 +66,72 @@ class SynthesizerGenerator extends AbstractGenerator {
 		        //Create and set up the window.
 		        JFrame frame = new JFrame("HelloWorldSwing");
 		        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		
-		        //Add the ubiquitous "Hello World" label.
-		        JLabel label = new JLabel("Hello World");
-		        frame.getContentPane().add(label);
+				frame.setSize(800,600);
 		        
-		        //Button...
-		        JButton b1 = new JButton("TestButton");
-		        b1.addActionListener(new ActionListener() {
-		            @Override
-		            public void actionPerformed(ActionEvent e) {
-		                //your actions
-		            	System.out.println("TEST");
-		            	
-		            	Synthesizer synth;
-		                UnitOscillator osc;
-		                LineOut lineOut;
-		            	
-		            	// Create a context for the synthesizer.
-		                synth = JSyn.createSynthesizer();
+		        //Create Buttons
+				'+ resource.allContents
+				.filter(Controls)
+				.map["JButton b" + name + " = new JButton(\"b" + name + "\");\nb"
+				+ name + '.addActionListener(new ActionListener() {
+		        @Override
+		        public void actionPerformed(ActionEvent e) {
+		            //your actions
+		        	System.out.println("TEST");
+		        	
+		        	Synthesizer synth;
+		            UnitOscillator osc;
+		            LineOut lineOut;
+		        	
+		        	// Create a context for the synthesizer.
+		            synth = JSyn.createSynthesizer();
 		
-		                // Start synthesizer using default stereo output at 44100 Hz.
-		                synth.start();
+		            // Start synthesizer using default stereo output at 44100 Hz.
+		            synth.start();
 		
-		                // Add a tone generator.
-		                synth.add(osc = new SineOscillator());
-		                // Add a stereo audio output unit.
-		                synth.add(lineOut = new LineOut());
+		            // Add a tone generator.
+		            synth.add(osc = new SineOscillator());
+		            // Add a stereo audio output unit.
+		            synth.add(lineOut = new LineOut());
 		
-		                // Connect the oscillator to both channels of the output.
-		                osc.output.connect(0, lineOut.input, 0);
-		                osc.output.connect(0, lineOut.input, 1);
+		            // Connect the oscillator to both channels of the output.
+		            osc.output.connect(0, lineOut.input, 0);
+		            osc.output.connect(0, lineOut.input, 1);
 		
-		                // Set the frequency and amplitude for the sine wave.
-		                osc.frequency.set(545.0);
-		                osc.amplitude.set(0.6);
+		            // Set the frequency and amplitude for the sine wave.
+		            osc.frequency.set(545.0);
+		            osc.amplitude.set(0.6);
 		
-		                // We only need to start the LineOut. It will pull data from the
-		                // oscillator.
-		                lineOut.start();
+		            // We only need to start the LineOut. It will pull data from the
+		            // oscillator.
+		            lineOut.start();
 		
-		                System.out.println("You should now be hearing a sine wave. ---------");
+		            System.out.println("You should now be hearing a sine wave. ---------");
 		
-		                // Sleep while the sound is generated in the background.
-		                try {
-		                    double time = synth.getCurrentTime();
-		                    System.out.println("time = " + time);
-		                    // Sleep for a few seconds.
-		                    synth.sleepUntil(time + 1.0);
-		                } catch (InterruptedException ex) {
-		                    ex.printStackTrace();
-		                }
-		
-		                System.out.println("Stop playing. -------------------");
-		                // Stop everything.
-		                synth.stop();
+		            // Sleep while the sound is generated in the background.
+		            try {
+		                double time = synth.getCurrentTime();
+		                System.out.println("time = " + time);
+		                // Sleep for a few seconds.
+		                synth.sleepUntil(time + 1.0);
+		            } catch (InterruptedException ex) {
+		                ex.printStackTrace();
 		            }
-		        });
-		        frame.getContentPane().add(b1);
 		
+		            System.out.println("Stop playing. -------------------");
+		            // Stop everything.
+		            synth.stop();
+		        }
+		    	});
+
+				b' + name + '.setBounds(10, yPos, 200, 20);  // x, y, width, height
+				yPos += 25;
+        		frame.add(b' + name + ');
+
+		        '].join('\n\t\t\t\t')
+		        + '
+
 		        //Display the window.
-		        frame.pack();
+		        frame.setLayout(null);  
 		        frame.setVisible(true);
 		    }
 
