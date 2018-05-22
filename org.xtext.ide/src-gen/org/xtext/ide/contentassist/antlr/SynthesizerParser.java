@@ -32,15 +32,32 @@ public class SynthesizerParser extends AbstractContentAssistParser {
 				private static final long serialVersionUID = 1L;
 				{
 					put(grammarAccess.getControlElementAccess().getAlternatives(), "rule__ControlElement__Alternatives");
+					put(grammarAccess.getSoundElementAccess().getAlternatives(), "rule__SoundElement__Alternatives");
 					put(grammarAccess.getModelAccess().getGroup(), "rule__Model__Group__0");
+					put(grammarAccess.getModelAccess().getGroup_4(), "rule__Model__Group_4__0");
+					put(grammarAccess.getModelAccess().getGroup_5(), "rule__Model__Group_5__0");
+					put(grammarAccess.getConnectionElementAccess().getGroup(), "rule__ConnectionElement__Group__0");
 					put(grammarAccess.getButtonAccess().getGroup(), "rule__Button__Group__0");
-					put(grammarAccess.getModelAccess().getControlsAssignment_1(), "rule__Model__ControlsAssignment_1");
+					put(grammarAccess.getSawToothOscillatorAccess().getGroup(), "rule__SawToothOscillator__Group__0");
+					put(grammarAccess.getSineOscillatorAccess().getGroup(), "rule__SineOscillator__Group__0");
+					put(grammarAccess.getModelAccess().getControlsAssignment_2(), "rule__Model__ControlsAssignment_2");
+					put(grammarAccess.getModelAccess().getSoundsAssignment_4_2(), "rule__Model__SoundsAssignment_4_2");
+					put(grammarAccess.getModelAccess().getConnectionsAssignment_5_2(), "rule__Model__ConnectionsAssignment_5_2");
+					put(grammarAccess.getConnectionElementAccess().getCeAssignment_1(), "rule__ConnectionElement__CeAssignment_1");
+					put(grammarAccess.getConnectionElementAccess().getSeAssignment_2(), "rule__ConnectionElement__SeAssignment_2");
 					put(grammarAccess.getButtonAccess().getNameAssignment_1(), "rule__Button__NameAssignment_1");
 					put(grammarAccess.getButtonAccess().getXAssignment_4(), "rule__Button__XAssignment_4");
 					put(grammarAccess.getButtonAccess().getYAssignment_6(), "rule__Button__YAssignment_6");
 					put(grammarAccess.getButtonAccess().getWidthAssignment_8(), "rule__Button__WidthAssignment_8");
 					put(grammarAccess.getButtonAccess().getHeightAssignment_10(), "rule__Button__HeightAssignment_10");
 					put(grammarAccess.getButtonAccess().getFrequencyAssignment_12(), "rule__Button__FrequencyAssignment_12");
+					put(grammarAccess.getSawToothOscillatorAccess().getNameAssignment_1(), "rule__SawToothOscillator__NameAssignment_1");
+					put(grammarAccess.getSawToothOscillatorAccess().getMinAssignment_4(), "rule__SawToothOscillator__MinAssignment_4");
+					put(grammarAccess.getSawToothOscillatorAccess().getMaxAssignment_6(), "rule__SawToothOscillator__MaxAssignment_6");
+					put(grammarAccess.getSawToothOscillatorAccess().getDefaultAssignment_8(), "rule__SawToothOscillator__DefaultAssignment_8");
+					put(grammarAccess.getSineOscillatorAccess().getNameAssignment_1(), "rule__SineOscillator__NameAssignment_1");
+					put(grammarAccess.getSineOscillatorAccess().getFrequencyAssignment_4(), "rule__SineOscillator__FrequencyAssignment_4");
+					put(grammarAccess.getSineOscillatorAccess().getAmplitudeAssignment_6(), "rule__SineOscillator__AmplitudeAssignment_6");
 				}
 			};
 		}

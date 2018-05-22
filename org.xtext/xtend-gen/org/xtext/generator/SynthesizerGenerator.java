@@ -11,6 +11,7 @@ import org.eclipse.xtext.generator.IGeneratorContext;
 import org.eclipse.xtext.xbase.lib.Functions.Function1;
 import org.eclipse.xtext.xbase.lib.IteratorExtensions;
 import org.xtext.synthesizer.Button;
+import org.xtext.synthesizer.SineOscillator;
 
 /**
  * Generates code from your model files on save.
@@ -19,8 +20,6 @@ import org.xtext.synthesizer.Button;
  */
 @SuppressWarnings("all")
 public class SynthesizerGenerator extends AbstractGenerator {
-  private int yPos = 5;
-  
   @Override
   public void doGenerate(final Resource resource, final IFileSystemAccess2 fsa, final IGeneratorContext context) {
     final Function1<Button, String> _function = (Button it) -> {
@@ -29,13 +28,13 @@ public class SynthesizerGenerator extends AbstractGenerator {
       String _plus_1 = (_plus + " = new JButton(\"b");
       String _name_1 = it.getName();
       String _plus_2 = (_plus_1 + _name_1);
-      String _plus_3 = (_plus_2 + "\");\nb");
+      String _plus_3 = (_plus_2 + "\");\n\t\t\t\tb");
       String _name_2 = it.getName();
       String _plus_4 = (_plus_3 + _name_2);
-      String _plus_5 = (_plus_4 + ".addActionListener(new ActionListener() {\r\n\t\t        @Override\r\n\t\t        public void actionPerformed(ActionEvent e) {\r\n\t\t            //your actions\r\n\t\t        \tSystem.out.println(\"TEST\");\r\n\t\t        \t\r\n\t\t        \tSynthesizer synth;\r\n\t\t            UnitOscillator osc;\r\n\t\t            LineOut lineOut;\r\n\t\t        \t\r\n\t\t        \t// Create a context for the synthesizer.\r\n\t\t            synth = JSyn.createSynthesizer();\r\n\t\t\r\n\t\t            // Start synthesizer using default stereo output at 44100 Hz.\r\n\t\t            synth.start();\r\n\t\t\r\n\t\t            // Add a tone generator.\r\n\t\t            synth.add(osc = new SineOscillator());\r\n\t\t            // Add a stereo audio output unit.\r\n\t\t            synth.add(lineOut = new LineOut());\r\n\t\t\r\n\t\t            // Connect the oscillator to both channels of the output.\r\n\t\t            osc.output.connect(0, lineOut.input, 0);\r\n\t\t            osc.output.connect(0, lineOut.input, 1);\r\n\t\t\r\n\t\t            // Set the frequency and amplitude for the sine wave.\r\n\t\t\t\t\tint frequ = ");
+      String _plus_5 = (_plus_4 + ".addActionListener(new ActionListener() {\r\n\t\t        @Override\r\n\t\t        public void actionPerformed(ActionEvent e) {\r\n\t\t        \t\r\n\t\t        \tSynthesizer synth;\r\n\t\t            UnitOscillator osc;\r\n\t\t            LineOut lineOut;\r\n\t\t        \t\r\n\t\t        \t// Create a context for the synthesizer.\r\n\t\t            synth = JSyn.createSynthesizer();\r\n\t\t\r\n\t\t            // Start synthesizer using default stereo output at 44100 Hz.\r\n\t\t            synth.start();\r\n\t\t\r\n\t\t            // Add a tone generator.\r\n\t\t            synth.add(osc = new SineOscillator());\r\n\t\t            // Add a stereo audio output unit.\r\n\t\t            synth.add(lineOut = new LineOut());\r\n\t\t\r\n\t\t            // Connect the oscillator to both channels of the output.\r\n\t\t            osc.output.connect(0, lineOut.input, 0);\r\n\t\t            osc.output.connect(0, lineOut.input, 1);\r\n\t\t\r\n\t\t            // Set the frequency and amplitude for the sine wave.\r\n\t\t            osc.frequency.set(");
       int _frequency = it.getFrequency();
       String _plus_6 = (_plus_5 + Integer.valueOf(_frequency));
-      String _plus_7 = (_plus_6 + ";\r\n\t\t            osc.frequency.set(frequ);\r\n\t\t            osc.amplitude.set(0.6);\r\n\t\t\r\n\t\t            // We only need to start the LineOut. It will pull data from the\r\n\t\t            // oscillator.\r\n\t\t            lineOut.start();\r\n\t\t\r\n\t\t            System.out.println(\"You should now be hearing a sine wave. ---------\");\r\n\t\t\r\n\t\t            // Sleep while the sound is generated in the background.\r\n\t\t            try {\r\n\t\t                double time = synth.getCurrentTime();\r\n\t\t                System.out.println(\"time = \" + time);\r\n\t\t                // Sleep for a few seconds.\r\n\t\t                synth.sleepUntil(time + 1.0);\r\n\t\t            } catch (InterruptedException ex) {\r\n\t\t                ex.printStackTrace();\r\n\t\t            }\r\n\t\t\r\n\t\t            System.out.println(\"Stop playing. -------------------\");\r\n\t\t            // Stop everything.\r\n\t\t            synth.stop();\r\n\t\t        }\r\n\t\t    \t});\r\n\r\n\t\t\t\tb");
+      String _plus_7 = (_plus_6 + ");\r\n\t\t            osc.amplitude.set(0.6);\r\n\t\t\r\n\t\t            // We only need to start the LineOut. It will pull data from the\r\n\t\t            // oscillator.\r\n\t\t            lineOut.start();\r\n\t\t\r\n\t\t            System.out.println(\"You should now be hearing a sine wave. ---------\");\r\n\t\t\r\n\t\t            // Sleep while the sound is generated in the background.\r\n\t\t            try {\r\n\t\t                double time = synth.getCurrentTime();\r\n\t\t                System.out.println(\"time = \" + time);\r\n\t\t                // Sleep for a few seconds.\r\n\t\t                synth.sleepUntil(time + 1.0);\r\n\t\t            } catch (InterruptedException ex) {\r\n\t\t                ex.printStackTrace();\r\n\t\t            }\r\n\t\t\r\n\t\t            System.out.println(\"Stop playing. -------------------\");\r\n\t\t            // Stop everything.\r\n\t\t            synth.stop();\r\n\t\t        }\r\n\t\t    \t});\r\n\r\n\t\t\t\tb");
       String _name_3 = it.getName();
       String _plus_8 = (_plus_7 + _name_3);
       String _plus_9 = (_plus_8 + ".setBounds(");
@@ -50,14 +49,30 @@ public class SynthesizerGenerator extends AbstractGenerator {
       String _plus_15 = (_plus_14 + ", ");
       int _height = it.getHeight();
       String _plus_16 = (_plus_15 + Integer.valueOf(_height));
-      String _plus_17 = (_plus_16 + ");  // x, y, width, height\r\n\t\t\t\tyPos += 25;\r\n        \t\tframe.add(b");
+      String _plus_17 = (_plus_16 + ");  // x, y, width, height\r\n        \t\tframe.add(b");
       String _name_4 = it.getName();
       String _plus_18 = (_plus_17 + _name_4);
       return (_plus_18 + ");\r\n\r\n\t\t        ");
     };
     String _join = IteratorExtensions.join(IteratorExtensions.<Button, String>map(Iterators.<Button>filter(resource.getAllContents(), Button.class), _function), "\n\t\t\t\t");
-    String _plus = ("\r\n\t\timport java.io.BufferedReader;\r\n\t\timport java.io.IOException;\r\n\t\timport java.io.InputStreamReader;\r\n\t\timport java.util.Scanner; \r\n\t\timport java.awt.event.ActionEvent;\r\n\t\timport java.awt.event.ActionListener;\r\n\r\n\t\timport javax.swing.*;  \r\n\r\n\t\timport com.jsyn.JSyn;\r\n\t\timport com.jsyn.Synthesizer;\r\n\t\timport com.jsyn.unitgen.LineOut;\r\n\t\timport com.jsyn.unitgen.SineOscillator;\r\n\t\timport com.jsyn.unitgen.UnitOscillator;\r\n\r\n\r\n\t\tpublic class Main {\r\n\t\t\tstatic int yPos = 5;\r\n\r\n\t\t\tpublic static void main(String[] args) {\r\n\t\t\t\tSystem.out.println(\"Synthesizer started!\");\r\n\t\t\t\tjavax.swing.SwingUtilities.invokeLater(new Runnable() {\r\n\t\t\t\t\tpublic void run() {\r\n\t\t\t\t\t\tcreateAndShowGUI();\r\n\t\t\t\t    }\r\n\t\t\t\t});\r\n\t\t\t}\r\n\r\n\t\t\t\r\n\t\t\tprivate static void createAndShowGUI() {\r\n\t\t        //Create and set up the window.\r\n\t\t        JFrame frame = new JFrame(\"HelloWorldSwing\");\r\n\t\t        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);\r\n\t\t\t\tframe.setSize(800,600);\r\n\t\t        \r\n\t\t        //Create Buttons\r\n\t\t\t\t" + _join);
-    String _plus_1 = (_plus + "\r\n\r\n\t\t        //Display the window.\r\n\t\t        frame.setLayout(null);  \r\n\t\t        frame.setVisible(true);\r\n\t\t    }\r\n\r\n\t\t}");
-    fsa.generateFile("Main.java", _plus_1);
+    String _plus = ("\r\n\t\timport java.io.BufferedReader;\r\n\t\timport java.io.IOException;\r\n\t\timport java.io.InputStreamReader;\r\n\t\timport java.util.Scanner; \r\n\t\timport java.awt.event.ActionEvent;\r\n\t\timport java.awt.event.ActionListener;\r\n\r\n\t\timport javax.swing.*;  \r\n\r\n\t\timport com.jsyn.JSyn;\r\n\t\timport com.jsyn.Synthesizer;\r\n\t\timport com.jsyn.unitgen.LineOut;\r\n\t\timport com.jsyn.unitgen.SineOscillator;\r\n\t\timport com.jsyn.unitgen.UnitOscillator;\r\n\r\n\r\n\t\tpublic class Main {\r\n\r\n\t\t\tpublic static void main(String[] args) {\r\n\t\t\t\tSystem.out.println(\"Synthesizer started!\");\r\n\t\t\t\tjavax.swing.SwingUtilities.invokeLater(new Runnable() {\r\n\t\t\t\t\tpublic void run() {\r\n\t\t\t\t\t\tcreateAndShowGUI();\r\n\t\t\t\t    }\r\n\t\t\t\t});\r\n\t\t\t}\r\n\r\n\t\t\t\r\n\t\t\tprivate static void createAndShowGUI() {\r\n\t\t        //Create and set up the window.\r\n\t\t        JFrame frame = new JFrame(\"HelloWorldSwing\");\r\n\t\t        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);\r\n\t\t\t\tframe.setSize(800,600);\r\n\t\t        \r\n\t\t        //Create Buttons\r\n\t\t\t\t" + _join);
+    String _plus_1 = (_plus + "\r\n\r\n\r\n\t\t        //Display the window.\r\n\t\t        frame.setLayout(null);  \r\n\t\t        frame.setVisible(true);\r\n\t\t    }\r\n\r\n\r\n\t\t\t//Create Sound (SineOscillators)\r\n\t\t\t");
+    final Function1<SineOscillator, String> _function_1 = (SineOscillator it) -> {
+      String _name = it.getName();
+      String _plus_2 = ("private static void createSound" + _name);
+      String _plus_3 = (_plus_2 + "() {\n\t\t\t\t");
+      String _plus_4 = (_plus_3 + 
+        "Synthesizer synth;\r\n\t\t            UnitOscillator osc;\r\n\t\t            LineOut lineOut;\r\n\t\t        \t\r\n\t\t        \t// Create a context for the synthesizer.\r\n\t\t            synth = JSyn.createSynthesizer();\r\n\t\t\r\n\t\t            // Start synthesizer using default stereo output at 44100 Hz.\r\n\t\t            synth.start();\r\n\t\t\r\n\t\t            // Add a tone generator.\r\n\t\t            synth.add(osc = new SineOscillator());\r\n\t\t            // Add a stereo audio output unit.\r\n\t\t            synth.add(lineOut = new LineOut());\r\n\t\t\r\n\t\t            // Connect the oscillator to both channels of the output.\r\n\t\t            osc.output.connect(0, lineOut.input, 0);\r\n\t\t            osc.output.connect(0, lineOut.input, 1);\r\n\t\t\r\n\t\t            // Set the frequency and amplitude for the sine wave.\r\n\t\t            osc.frequency.set(");
+      int _frequency = it.getFrequency();
+      String _plus_5 = (_plus_4 + Integer.valueOf(_frequency));
+      String _plus_6 = (_plus_5 + ");\r\n\t\t            osc.amplitude.set(");
+      int _amplitude = it.getAmplitude();
+      String _plus_7 = (_plus_6 + Integer.valueOf(_amplitude));
+      return (_plus_7 + ");\r\n\t\t\r\n\t\t            // We only need to start the LineOut. It will pull data from the\r\n\t\t            // oscillator.\r\n\t\t            lineOut.start();\r\n\t\t\r\n\t\t            System.out.println(\"You should now be hearing a sine wave. ---------\");\r\n\t\t\r\n\t\t            // Sleep while the sound is generated in the background.\r\n\t\t            try {\r\n\t\t                double time = synth.getCurrentTime();\r\n\t\t                System.out.println(\"time = \" + time);\r\n\t\t                // Sleep for a few seconds.\r\n\t\t                synth.sleepUntil(time + 1.0);\r\n\t\t            } catch (InterruptedException ex) {\r\n\t\t                ex.printStackTrace();\r\n\t\t            }\r\n\t\t\r\n\t\t            // Stop everything.\r\n\t\t            synth.stop();\r\n\t\t\t\t}\r\n\t        ");
+    };
+    String _join_1 = IteratorExtensions.join(IteratorExtensions.<SineOscillator, String>map(Iterators.<SineOscillator>filter(resource.getAllContents(), SineOscillator.class), _function_1), "\n\t\t\t\t");
+    String _plus_2 = (_plus_1 + _join_1);
+    String _plus_3 = (_plus_2 + "\r\n\r\n\t\t\t\r\n\r\n\t\t}");
+    fsa.generateFile("Main.java", _plus_3);
   }
 }

@@ -87,11 +87,41 @@ public class SynthesizerSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case SynthesizerPackage.SOUND_ELEMENT:
+      {
+        SoundElement soundElement = (SoundElement)theEObject;
+        T result = caseSoundElement(soundElement);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SynthesizerPackage.CONNECTION_ELEMENT:
+      {
+        ConnectionElement connectionElement = (ConnectionElement)theEObject;
+        T result = caseConnectionElement(connectionElement);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case SynthesizerPackage.BUTTON:
       {
         Button button = (Button)theEObject;
         T result = caseButton(button);
         if (result == null) result = caseControlElement(button);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SynthesizerPackage.SAW_TOOTH_OSCILLATOR:
+      {
+        SawToothOscillator sawToothOscillator = (SawToothOscillator)theEObject;
+        T result = caseSawToothOscillator(sawToothOscillator);
+        if (result == null) result = caseSoundElement(sawToothOscillator);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SynthesizerPackage.SINE_OSCILLATOR:
+      {
+        SineOscillator sineOscillator = (SineOscillator)theEObject;
+        T result = caseSineOscillator(sineOscillator);
+        if (result == null) result = caseSoundElement(sineOscillator);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -132,6 +162,38 @@ public class SynthesizerSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Sound Element</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Sound Element</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSoundElement(SoundElement object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Connection Element</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Connection Element</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseConnectionElement(ConnectionElement object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Button</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -143,6 +205,38 @@ public class SynthesizerSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseButton(Button object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Saw Tooth Oscillator</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Saw Tooth Oscillator</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSawToothOscillator(SawToothOscillator object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Sine Oscillator</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Sine Oscillator</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSineOscillator(SineOscillator object)
   {
     return null;
   }
