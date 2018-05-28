@@ -20,11 +20,6 @@ import org.xtext.synthesizer.SynthesizerPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.synthesizer.impl.ButtonImpl#getName <em>Name</em>}</li>
- *   <li>{@link org.xtext.synthesizer.impl.ButtonImpl#getX <em>X</em>}</li>
- *   <li>{@link org.xtext.synthesizer.impl.ButtonImpl#getY <em>Y</em>}</li>
- *   <li>{@link org.xtext.synthesizer.impl.ButtonImpl#getWidth <em>Width</em>}</li>
- *   <li>{@link org.xtext.synthesizer.impl.ButtonImpl#getHeight <em>Height</em>}</li>
  *   <li>{@link org.xtext.synthesizer.impl.ButtonImpl#getFrequency <em>Frequency</em>}</li>
  * </ul>
  *
@@ -32,106 +27,6 @@ import org.xtext.synthesizer.SynthesizerPackage;
  */
 public class ButtonImpl extends ControlElementImpl implements Button
 {
-  /**
-   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
-  protected static final String NAME_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
-  protected String name = NAME_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #getX() <em>X</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getX()
-   * @generated
-   * @ordered
-   */
-  protected static final int X_EDEFAULT = 0;
-
-  /**
-   * The cached value of the '{@link #getX() <em>X</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getX()
-   * @generated
-   * @ordered
-   */
-  protected int x = X_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #getY() <em>Y</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getY()
-   * @generated
-   * @ordered
-   */
-  protected static final int Y_EDEFAULT = 0;
-
-  /**
-   * The cached value of the '{@link #getY() <em>Y</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getY()
-   * @generated
-   * @ordered
-   */
-  protected int y = Y_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #getWidth() <em>Width</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getWidth()
-   * @generated
-   * @ordered
-   */
-  protected static final int WIDTH_EDEFAULT = 0;
-
-  /**
-   * The cached value of the '{@link #getWidth() <em>Width</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getWidth()
-   * @generated
-   * @ordered
-   */
-  protected int width = WIDTH_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #getHeight() <em>Height</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getHeight()
-   * @generated
-   * @ordered
-   */
-  protected static final int HEIGHT_EDEFAULT = 0;
-
-  /**
-   * The cached value of the '{@link #getHeight() <em>Height</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getHeight()
-   * @generated
-   * @ordered
-   */
-  protected int height = HEIGHT_EDEFAULT;
-
   /**
    * The default value of the '{@link #getFrequency() <em>Frequency</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -178,121 +73,6 @@ public class ButtonImpl extends ControlElementImpl implements Button
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getName()
-  {
-    return name;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setName(String newName)
-  {
-    String oldName = name;
-    name = newName;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SynthesizerPackage.BUTTON__NAME, oldName, name));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public int getX()
-  {
-    return x;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setX(int newX)
-  {
-    int oldX = x;
-    x = newX;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SynthesizerPackage.BUTTON__X, oldX, x));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public int getY()
-  {
-    return y;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setY(int newY)
-  {
-    int oldY = y;
-    y = newY;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SynthesizerPackage.BUTTON__Y, oldY, y));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public int getWidth()
-  {
-    return width;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setWidth(int newWidth)
-  {
-    int oldWidth = width;
-    width = newWidth;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SynthesizerPackage.BUTTON__WIDTH, oldWidth, width));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public int getHeight()
-  {
-    return height;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setHeight(int newHeight)
-  {
-    int oldHeight = height;
-    height = newHeight;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SynthesizerPackage.BUTTON__HEIGHT, oldHeight, height));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public int getFrequency()
   {
     return frequency;
@@ -321,16 +101,6 @@ public class ButtonImpl extends ControlElementImpl implements Button
   {
     switch (featureID)
     {
-      case SynthesizerPackage.BUTTON__NAME:
-        return getName();
-      case SynthesizerPackage.BUTTON__X:
-        return getX();
-      case SynthesizerPackage.BUTTON__Y:
-        return getY();
-      case SynthesizerPackage.BUTTON__WIDTH:
-        return getWidth();
-      case SynthesizerPackage.BUTTON__HEIGHT:
-        return getHeight();
       case SynthesizerPackage.BUTTON__FREQUENCY:
         return getFrequency();
     }
@@ -347,21 +117,6 @@ public class ButtonImpl extends ControlElementImpl implements Button
   {
     switch (featureID)
     {
-      case SynthesizerPackage.BUTTON__NAME:
-        setName((String)newValue);
-        return;
-      case SynthesizerPackage.BUTTON__X:
-        setX((Integer)newValue);
-        return;
-      case SynthesizerPackage.BUTTON__Y:
-        setY((Integer)newValue);
-        return;
-      case SynthesizerPackage.BUTTON__WIDTH:
-        setWidth((Integer)newValue);
-        return;
-      case SynthesizerPackage.BUTTON__HEIGHT:
-        setHeight((Integer)newValue);
-        return;
       case SynthesizerPackage.BUTTON__FREQUENCY:
         setFrequency((Integer)newValue);
         return;
@@ -379,21 +134,6 @@ public class ButtonImpl extends ControlElementImpl implements Button
   {
     switch (featureID)
     {
-      case SynthesizerPackage.BUTTON__NAME:
-        setName(NAME_EDEFAULT);
-        return;
-      case SynthesizerPackage.BUTTON__X:
-        setX(X_EDEFAULT);
-        return;
-      case SynthesizerPackage.BUTTON__Y:
-        setY(Y_EDEFAULT);
-        return;
-      case SynthesizerPackage.BUTTON__WIDTH:
-        setWidth(WIDTH_EDEFAULT);
-        return;
-      case SynthesizerPackage.BUTTON__HEIGHT:
-        setHeight(HEIGHT_EDEFAULT);
-        return;
       case SynthesizerPackage.BUTTON__FREQUENCY:
         setFrequency(FREQUENCY_EDEFAULT);
         return;
@@ -411,16 +151,6 @@ public class ButtonImpl extends ControlElementImpl implements Button
   {
     switch (featureID)
     {
-      case SynthesizerPackage.BUTTON__NAME:
-        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case SynthesizerPackage.BUTTON__X:
-        return x != X_EDEFAULT;
-      case SynthesizerPackage.BUTTON__Y:
-        return y != Y_EDEFAULT;
-      case SynthesizerPackage.BUTTON__WIDTH:
-        return width != WIDTH_EDEFAULT;
-      case SynthesizerPackage.BUTTON__HEIGHT:
-        return height != HEIGHT_EDEFAULT;
       case SynthesizerPackage.BUTTON__FREQUENCY:
         return frequency != FREQUENCY_EDEFAULT;
     }
@@ -438,17 +168,7 @@ public class ButtonImpl extends ControlElementImpl implements Button
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (name: ");
-    result.append(name);
-    result.append(", x: ");
-    result.append(x);
-    result.append(", y: ");
-    result.append(y);
-    result.append(", width: ");
-    result.append(width);
-    result.append(", height: ");
-    result.append(height);
-    result.append(", frequency: ");
+    result.append(" (frequency: ");
     result.append(frequency);
     result.append(')');
     return result.toString();

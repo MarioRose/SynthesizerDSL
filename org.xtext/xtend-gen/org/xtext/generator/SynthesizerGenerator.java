@@ -11,7 +11,8 @@ import org.eclipse.xtext.generator.IGeneratorContext;
 import org.eclipse.xtext.xbase.lib.Functions.Function1;
 import org.eclipse.xtext.xbase.lib.IteratorExtensions;
 import org.xtext.synthesizer.Button;
-import org.xtext.synthesizer.SineOscillator;
+import org.xtext.synthesizer.RotaryKnob;
+import org.xtext.synthesizer.Slider;
 
 /**
  * Generates code from your model files on save.
@@ -20,21 +21,30 @@ import org.xtext.synthesizer.SineOscillator;
  */
 @SuppressWarnings("all")
 public class SynthesizerGenerator extends AbstractGenerator {
+  private int yPos = 5;
+  
   @Override
   public void doGenerate(final Resource resource, final IFileSystemAccess2 fsa, final IGeneratorContext context) {
+    String _generateUI = this.generateUI(resource);
+    String _plus = ("\n\t\timport java.io.BufferedReader;\n\t\timport java.io.IOException;\n\t\timport java.io.InputStreamReader;\n\t\timport java.util.Scanner; \n\t\timport java.awt.event.ActionEvent;\n\t\timport java.awt.event.ActionListener;\n\t\timport java.awt.BorderLayout;\n\t\timport java.awt.GridLayout;\n\t\timport java.awt.Dimension;\n\n\t\timport javax.swing.*;  \n\t\timport javax.swing.JApplet;\n\t\timport com.jsyn.swing.JAppletFrame;\n\t\timport com.jsyn.swing.DoubleBoundedRangeSlider;\n\t\timport com.jsyn.swing.PortControllerFactory;\n\n\t\timport com.jsyn.swing.ExponentialRangeModel;\n\t\timport com.jsyn.swing.PortModelFactory;\n\t\timport com.jsyn.swing.RotaryTextController;\n\n\t\timport com.jsyn.JSyn;\n\t\timport com.jsyn.Synthesizer;\n\t\timport com.jsyn.unitgen.LineOut;\n\t\timport com.jsyn.unitgen.SineOscillator;\n\t\timport com.jsyn.unitgen.UnitOscillator;\n\t\timport com.jsyn.unitgen.LinearRamp;\n\t\timport com.jsyn.unitgen.SawtoothOscillatorBL;\n\n\n\t\tpublic class SynthesizerDSL extends JApplet{\n\t\t\tstatic int yPos = 5;\n\n\t\t\t" + _generateUI);
+    String _plus_1 = (_plus + "\n\n\t\t    @Override\n\t\t    public void start() {\n\t\t    \tcreateAndShowGUI();\n\t\t    }\n\n\t\t\tpublic static void main(String[] args) {\n\t\t\t\tSystem.out.println(\"Synthesizer started!\");\n\t\t        SynthesizerDSL applet = new SynthesizerDSL();\n\t\t        JAppletFrame frame = new JAppletFrame(\"Synthesizer\", applet);\n\t\t        frame.setSize(640, 500);\n\t\t        frame.setVisible(true);\n\t\t        frame.test();\n\t\t        frame.validate();\n\t\t\t}\n\t\t}");
+    fsa.generateFile("SynthesizerDSL.java", _plus_1);
+  }
+  
+  public String generateUI(final Resource resource) {
     final Function1<Button, String> _function = (Button it) -> {
       String _name = it.getName();
       String _plus = ("JButton b" + _name);
       String _plus_1 = (_plus + " = new JButton(\"b");
       String _name_1 = it.getName();
       String _plus_2 = (_plus_1 + _name_1);
-      String _plus_3 = (_plus_2 + "\");\n\t\t\t\tb");
+      String _plus_3 = (_plus_2 + "\");\n\n\t\t\t\tb");
       String _name_2 = it.getName();
       String _plus_4 = (_plus_3 + _name_2);
-      String _plus_5 = (_plus_4 + ".addActionListener(new ActionListener() {\r\n\t\t        @Override\r\n\t\t        public void actionPerformed(ActionEvent e) {\r\n\t\t        \t\r\n\t\t        \tSynthesizer synth;\r\n\t\t            UnitOscillator osc;\r\n\t\t            LineOut lineOut;\r\n\t\t        \t\r\n\t\t        \t// Create a context for the synthesizer.\r\n\t\t            synth = JSyn.createSynthesizer();\r\n\t\t\r\n\t\t            // Start synthesizer using default stereo output at 44100 Hz.\r\n\t\t            synth.start();\r\n\t\t\r\n\t\t            // Add a tone generator.\r\n\t\t            synth.add(osc = new SineOscillator());\r\n\t\t            // Add a stereo audio output unit.\r\n\t\t            synth.add(lineOut = new LineOut());\r\n\t\t\r\n\t\t            // Connect the oscillator to both channels of the output.\r\n\t\t            osc.output.connect(0, lineOut.input, 0);\r\n\t\t            osc.output.connect(0, lineOut.input, 1);\r\n\t\t\r\n\t\t            // Set the frequency and amplitude for the sine wave.\r\n\t\t            osc.frequency.set(");
+      String _plus_5 = (_plus_4 + ".addActionListener(new ActionListener() {\n\t\t        @Override\n\t\t        public void actionPerformed(ActionEvent e) {\n\t\t            //your actions\n\t\t        \tSystem.out.println(\"TEST\");\n\t\t        \t\n\t\t        \tSynthesizer synth;\n\t\t            UnitOscillator osc;\n\t\t            LineOut lineOut;\n\t\t        \t\n\t\t        \t// Create a context for the synthesizer.\n\t\t            synth = JSyn.createSynthesizer();\n\t\t\n\t\t            // Start synthesizer using default stereo output at 44100 Hz.\n\t\t            synth.start();\n\t\t\n\t\t            // Add a tone generator.\n\t\t            synth.add(osc = new SineOscillator());\n\t\t            // Add a stereo audio output unit.\n\t\t            synth.add(lineOut = new LineOut());\n\t\t\n\t\t            // Connect the oscillator to both channels of the output.\n\t\t            osc.output.connect(0, lineOut.input, 0);\n\t\t            osc.output.connect(0, lineOut.input, 1);\n\t\t\n\t\t            // Set the frequency and amplitude for the sine wave.\n\t\t\t\t\tint frequ = ");
       int _frequency = it.getFrequency();
       String _plus_6 = (_plus_5 + Integer.valueOf(_frequency));
-      String _plus_7 = (_plus_6 + ");\r\n\t\t            osc.amplitude.set(0.6);\r\n\t\t\r\n\t\t            // We only need to start the LineOut. It will pull data from the\r\n\t\t            // oscillator.\r\n\t\t            lineOut.start();\r\n\t\t\r\n\t\t            System.out.println(\"You should now be hearing a sine wave. ---------\");\r\n\t\t\r\n\t\t            // Sleep while the sound is generated in the background.\r\n\t\t            try {\r\n\t\t                double time = synth.getCurrentTime();\r\n\t\t                System.out.println(\"time = \" + time);\r\n\t\t                // Sleep for a few seconds.\r\n\t\t                synth.sleepUntil(time + 1.0);\r\n\t\t            } catch (InterruptedException ex) {\r\n\t\t                ex.printStackTrace();\r\n\t\t            }\r\n\t\t\r\n\t\t            System.out.println(\"Stop playing. -------------------\");\r\n\t\t            // Stop everything.\r\n\t\t            synth.stop();\r\n\t\t        }\r\n\t\t    \t});\r\n\r\n\t\t\t\tb");
+      String _plus_7 = (_plus_6 + ";\n\t\t            osc.frequency.set(frequ);\n\t\t            osc.amplitude.set(0.6);\n\t\t\n\t\t            // We only need to start the LineOut. It will pull data from the\n\t\t            // oscillator.\n\t\t            lineOut.start();\n\t\t\n\t\t            System.out.println(\"You should now be hearing a sine wave. ---------\");\n\t\t\n\t\t            // Sleep while the sound is generated in the background.\n\t\t            try {\n\t\t                double time = synth.getCurrentTime();\n\t\t                System.out.println(\"time = \" + time);\n\t\t                // Sleep for a few seconds.\n\t\t                synth.sleepUntil(time + 1.0);\n\t\t            } catch (InterruptedException ex) {\n\t\t                ex.printStackTrace();\n\t\t            }\n\t\t\n\t\t            System.out.println(\"Stop playing. -------------------\");\n\t\t            // Stop everything.\n\t\t            synth.stop();\n\t\t        }\n\t\t    \t});\n\n\t\t\t\tb");
       String _name_3 = it.getName();
       String _plus_8 = (_plus_7 + _name_3);
       String _plus_9 = (_plus_8 + ".setBounds(");
@@ -49,30 +59,74 @@ public class SynthesizerGenerator extends AbstractGenerator {
       String _plus_15 = (_plus_14 + ", ");
       int _height = it.getHeight();
       String _plus_16 = (_plus_15 + Integer.valueOf(_height));
-      String _plus_17 = (_plus_16 + ");  // x, y, width, height\r\n        \t\tframe.add(b");
+      String _plus_17 = (_plus_16 + ");  // x, y, width, height\n    \t\t\tb");
       String _name_4 = it.getName();
       String _plus_18 = (_plus_17 + _name_4);
-      return (_plus_18 + ");\r\n\r\n\t\t        ");
+      String _plus_19 = (_plus_18 + ".setPreferredSize(new Dimension(");
+      int _width_1 = it.getWidth();
+      String _plus_20 = (_plus_19 + Integer.valueOf(_width_1));
+      String _plus_21 = (_plus_20 + ", ");
+      int _height_1 = it.getHeight();
+      String _plus_22 = (_plus_21 + Integer.valueOf(_height_1));
+      String _plus_23 = (_plus_22 + "));\t\t\t\t\n\t\t\t\tyPos += 25;\n        \t\tpanel.add(b");
+      String _name_5 = it.getName();
+      String _plus_24 = (_plus_23 + _name_5);
+      return (_plus_24 + ");\n\n\t\t        ");
     };
     String _join = IteratorExtensions.join(IteratorExtensions.<Button, String>map(Iterators.<Button>filter(resource.getAllContents(), Button.class), _function), "\n\t\t\t\t");
-    String _plus = ("\r\n\t\timport java.io.BufferedReader;\r\n\t\timport java.io.IOException;\r\n\t\timport java.io.InputStreamReader;\r\n\t\timport java.util.Scanner; \r\n\t\timport java.awt.event.ActionEvent;\r\n\t\timport java.awt.event.ActionListener;\r\n\r\n\t\timport javax.swing.*;  \r\n\r\n\t\timport com.jsyn.JSyn;\r\n\t\timport com.jsyn.Synthesizer;\r\n\t\timport com.jsyn.unitgen.LineOut;\r\n\t\timport com.jsyn.unitgen.SineOscillator;\r\n\t\timport com.jsyn.unitgen.UnitOscillator;\r\n\r\n\r\n\t\tpublic class Main {\r\n\r\n\t\t\tpublic static void main(String[] args) {\r\n\t\t\t\tSystem.out.println(\"Synthesizer started!\");\r\n\t\t\t\tjavax.swing.SwingUtilities.invokeLater(new Runnable() {\r\n\t\t\t\t\tpublic void run() {\r\n\t\t\t\t\t\tcreateAndShowGUI();\r\n\t\t\t\t    }\r\n\t\t\t\t});\r\n\t\t\t}\r\n\r\n\t\t\t\r\n\t\t\tprivate static void createAndShowGUI() {\r\n\t\t        //Create and set up the window.\r\n\t\t        JFrame frame = new JFrame(\"HelloWorldSwing\");\r\n\t\t        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);\r\n\t\t\t\tframe.setSize(800,600);\r\n\t\t        \r\n\t\t        //Create Buttons\r\n\t\t\t\t" + _join);
-    String _plus_1 = (_plus + "\r\n\r\n\r\n\t\t        //Display the window.\r\n\t\t        frame.setLayout(null);  \r\n\t\t        frame.setVisible(true);\r\n\t\t    }\r\n\r\n\r\n\t\t\t//Create Sound (SineOscillators)\r\n\t\t\t");
-    final Function1<SineOscillator, String> _function_1 = (SineOscillator it) -> {
+    String _plus = ("private void createAndShowGUI() {\n\t\t        //Create and set up the window.\n        \t\tadd(BorderLayout.NORTH, new JLabel(\"Show Oscillators in an AudioScope\"));\n\t\t        \n\t\t\t\t//Create Panels\n\t\t\t\tJPanel panel = new JPanel();\n        \t\tpanel.setLayout(null);\n        \t\tadd(BorderLayout.CENTER, panel);\n\n\t\t        //Create Buttons\n\t\t\t\t" + _join);
+    String _plus_1 = (_plus + "\n\n\t\t\t\t//Example ramp for slider\n\t\t       \tLinearRamp freqRamp = new LinearRamp();\n\t\t        freqRamp.input.setup(50.0, 300.0, 20000.0);\n\t\t        freqRamp.input.setName(\"Frequency\");\n\t\t\t\tfreqRamp.time.set(0.1);\n\n\t\t        //Create Slider\n\t\t\t\t");
+    final Function1<Slider, String> _function_1 = (Slider it) -> {
       String _name = it.getName();
-      String _plus_2 = ("private static void createSound" + _name);
-      String _plus_3 = (_plus_2 + "() {\n\t\t\t\t");
-      String _plus_4 = (_plus_3 + 
-        "Synthesizer synth;\r\n\t\t            UnitOscillator osc;\r\n\t\t            LineOut lineOut;\r\n\t\t        \t\r\n\t\t        \t// Create a context for the synthesizer.\r\n\t\t            synth = JSyn.createSynthesizer();\r\n\t\t\r\n\t\t            // Start synthesizer using default stereo output at 44100 Hz.\r\n\t\t            synth.start();\r\n\t\t\r\n\t\t            // Add a tone generator.\r\n\t\t            synth.add(osc = new SineOscillator());\r\n\t\t            // Add a stereo audio output unit.\r\n\t\t            synth.add(lineOut = new LineOut());\r\n\t\t\r\n\t\t            // Connect the oscillator to both channels of the output.\r\n\t\t            osc.output.connect(0, lineOut.input, 0);\r\n\t\t            osc.output.connect(0, lineOut.input, 1);\r\n\t\t\r\n\t\t            // Set the frequency and amplitude for the sine wave.\r\n\t\t            osc.frequency.set(");
-      int _frequency = it.getFrequency();
-      String _plus_5 = (_plus_4 + Integer.valueOf(_frequency));
-      String _plus_6 = (_plus_5 + ");\r\n\t\t            osc.amplitude.set(");
-      int _amplitude = it.getAmplitude();
-      String _plus_7 = (_plus_6 + Integer.valueOf(_amplitude));
-      return (_plus_7 + ");\r\n\t\t\r\n\t\t            // We only need to start the LineOut. It will pull data from the\r\n\t\t            // oscillator.\r\n\t\t            lineOut.start();\r\n\t\t\r\n\t\t            System.out.println(\"You should now be hearing a sine wave. ---------\");\r\n\t\t\r\n\t\t            // Sleep while the sound is generated in the background.\r\n\t\t            try {\r\n\t\t                double time = synth.getCurrentTime();\r\n\t\t                System.out.println(\"time = \" + time);\r\n\t\t                // Sleep for a few seconds.\r\n\t\t                synth.sleepUntil(time + 1.0);\r\n\t\t            } catch (InterruptedException ex) {\r\n\t\t                ex.printStackTrace();\r\n\t\t            }\r\n\t\t\r\n\t\t            // Stop everything.\r\n\t\t            synth.stop();\r\n\t\t\t\t}\r\n\t        ");
+      String _plus_2 = ("DoubleBoundedRangeSlider slider" + _name);
+      String _plus_3 = (_plus_2 + " = PortControllerFactory.createExponentialPortSlider(freqRamp.input);\n\t\t\t\tslider");
+      String _name_1 = it.getName();
+      String _plus_4 = (_plus_3 + _name_1);
+      String _plus_5 = (_plus_4 + ".setBounds(");
+      int _x = it.getX();
+      String _plus_6 = (_plus_5 + Integer.valueOf(_x));
+      String _plus_7 = (_plus_6 + ", ");
+      int _y = it.getY();
+      String _plus_8 = (_plus_7 + Integer.valueOf(_y));
+      String _plus_9 = (_plus_8 + ", ");
+      int _width = it.getWidth();
+      String _plus_10 = (_plus_9 + Integer.valueOf(_width));
+      String _plus_11 = (_plus_10 + ", ");
+      int _height = it.getHeight();
+      String _plus_12 = (_plus_11 + Integer.valueOf(_height));
+      String _plus_13 = (_plus_12 + ");  // x, y, width, height\n\t\t\t\tpanel.add(slider");
+      String _name_2 = it.getName();
+      String _plus_14 = (_plus_13 + _name_2);
+      return (_plus_14 + ");");
     };
-    String _join_1 = IteratorExtensions.join(IteratorExtensions.<SineOscillator, String>map(Iterators.<SineOscillator>filter(resource.getAllContents(), SineOscillator.class), _function_1), "\n\t\t\t\t");
+    String _join_1 = IteratorExtensions.join(IteratorExtensions.<Slider, String>map(Iterators.<Slider>filter(resource.getAllContents(), Slider.class), _function_1), "\n\t\t\t\t");
     String _plus_2 = (_plus_1 + _join_1);
-    String _plus_3 = (_plus_2 + "\r\n\r\n\t\t\t\r\n\r\n\t\t}");
-    fsa.generateFile("Main.java", _plus_3);
+    String _plus_3 = (_plus_2 + "\n\n\n\t\t\t\t//Example input for knobs\n\t\t        Synthesizer synth = JSyn.createSynthesizer();\n\n\t\t        // Add a tone generator. (band limited sawtooth)\n\t\t        SawtoothOscillatorBL osc;\n\t\t        synth.add(osc = new SawtoothOscillatorBL());\n\t\t        // Add a lag to smooth out amplitude changes and avoid pops.\n\t\t        LinearRamp lag;\n\t\t        synth.add(lag = new LinearRamp());\n\t\t        // Add an output mixer.\n\t\t        LineOut lineOut;\n\t\t        synth.add(lineOut = new LineOut());\n\n\t\t        // Connect the oscillator to both left and right output.\n\t\t        osc.output.connect(0, lineOut.input, 0);\n\t\t        osc.output.connect(0, lineOut.input, 1);\n\t\t\n\t\t        // Set the minimum, current and maximum values for the port.\n\t\t        lag.output.connect(osc.amplitude);\n\t\t        lag.input.setup(0.0, 0.5, 1.0);\n\t\t        lag.time.set(0.2);\n\n        \t\tExponentialRangeModel amplitudeModel = PortModelFactory.createExponentialModel(lag.input);\n\n\t\t        //Create RotaryKnob\n\t\t\t\t");
+    final Function1<RotaryKnob, String> _function_2 = (RotaryKnob it) -> {
+      String _name = it.getName();
+      String _plus_4 = ("RotaryTextController knob" + _name);
+      String _plus_5 = (_plus_4 + " = new RotaryTextController(amplitudeModel, 10);\n\t\t\t\tknob");
+      String _name_1 = it.getName();
+      String _plus_6 = (_plus_5 + _name_1);
+      String _plus_7 = (_plus_6 + ".setBounds(");
+      int _x = it.getX();
+      String _plus_8 = (_plus_7 + Integer.valueOf(_x));
+      String _plus_9 = (_plus_8 + ", ");
+      int _y = it.getY();
+      String _plus_10 = (_plus_9 + Integer.valueOf(_y));
+      String _plus_11 = (_plus_10 + ", ");
+      int _width = it.getWidth();
+      String _plus_12 = (_plus_11 + Integer.valueOf(_width));
+      String _plus_13 = (_plus_12 + ", ");
+      int _height = it.getHeight();
+      String _plus_14 = (_plus_13 + Integer.valueOf(_height));
+      String _plus_15 = (_plus_14 + ");  // x, y, width, height\n\t\t\t\tpanel.add(knob");
+      String _name_2 = it.getName();
+      String _plus_16 = (_plus_15 + _name_2);
+      return (_plus_16 + ");");
+    };
+    String _join_2 = IteratorExtensions.join(IteratorExtensions.<RotaryKnob, String>map(Iterators.<RotaryKnob>filter(resource.getAllContents(), RotaryKnob.class), _function_2), "\n\t\t\t\t");
+    String _plus_4 = (_plus_3 + _join_2);
+    return (_plus_4 + "\n\t\t\t}");
   }
 }

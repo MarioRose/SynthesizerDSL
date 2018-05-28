@@ -42,22 +42,22 @@ public interface SynthesizerFactory extends EFactory
   ControlElement createControlElement();
 
   /**
-   * Returns a new object of class '<em>Sound Element</em>'.
+   * Returns a new object of class '<em>Rotary Knob</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Sound Element</em>'.
+   * @return a new object of class '<em>Rotary Knob</em>'.
    * @generated
    */
-  SoundElement createSoundElement();
+  RotaryKnob createRotaryKnob();
 
   /**
-   * Returns a new object of class '<em>Connection Element</em>'.
+   * Returns a new object of class '<em>Slider</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Connection Element</em>'.
+   * @return a new object of class '<em>Slider</em>'.
    * @generated
    */
-  ConnectionElement createConnectionElement();
+  Slider createSlider();
 
   /**
    * Returns a new object of class '<em>Button</em>'.
@@ -67,24 +67,6 @@ public interface SynthesizerFactory extends EFactory
    * @generated
    */
   Button createButton();
-
-  /**
-   * Returns a new object of class '<em>Saw Tooth Oscillator</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Saw Tooth Oscillator</em>'.
-   * @generated
-   */
-  SawToothOscillator createSawToothOscillator();
-
-  /**
-   * Returns a new object of class '<em>Sine Oscillator</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Sine Oscillator</em>'.
-   * @generated
-   */
-  SineOscillator createSineOscillator();
 
   /**
    * Returns the package supported by this factory.

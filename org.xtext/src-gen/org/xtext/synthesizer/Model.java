@@ -17,8 +17,6 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link org.xtext.synthesizer.Model#getControls <em>Controls</em>}</li>
- *   <li>{@link org.xtext.synthesizer.Model#getSounds <em>Sounds</em>}</li>
- *   <li>{@link org.xtext.synthesizer.Model#getConnections <em>Connections</em>}</li>
  * </ul>
  *
  * @see org.xtext.synthesizer.SynthesizerPackage#getModel()
@@ -42,37 +40,5 @@ public interface Model extends EObject
    * @generated
    */
   EList<ControlElement> getControls();
-
-  /**
-   * Returns the value of the '<em><b>Sounds</b></em>' containment reference list.
-   * The list contents are of type {@link org.xtext.synthesizer.SoundElement}.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Sounds</em>' containment reference list isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Sounds</em>' containment reference list.
-   * @see org.xtext.synthesizer.SynthesizerPackage#getModel_Sounds()
-   * @model containment="true"
-   * @generated
-   */
-  EList<SoundElement> getSounds();
-
-  /**
-   * Returns the value of the '<em><b>Connections</b></em>' containment reference list.
-   * The list contents are of type {@link org.xtext.synthesizer.ConnectionElement}.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Connections</em>' containment reference list isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Connections</em>' containment reference list.
-   * @see org.xtext.synthesizer.SynthesizerPackage#getModel_Connections()
-   * @model containment="true"
-   * @generated
-   */
-  EList<ConnectionElement> getConnections();
 
 } // Model

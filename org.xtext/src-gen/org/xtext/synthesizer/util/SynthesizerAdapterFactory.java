@@ -86,29 +86,19 @@ public class SynthesizerAdapterFactory extends AdapterFactoryImpl
         return createControlElementAdapter();
       }
       @Override
-      public Adapter caseSoundElement(SoundElement object)
+      public Adapter caseRotaryKnob(RotaryKnob object)
       {
-        return createSoundElementAdapter();
+        return createRotaryKnobAdapter();
       }
       @Override
-      public Adapter caseConnectionElement(ConnectionElement object)
+      public Adapter caseSlider(Slider object)
       {
-        return createConnectionElementAdapter();
+        return createSliderAdapter();
       }
       @Override
       public Adapter caseButton(Button object)
       {
         return createButtonAdapter();
-      }
-      @Override
-      public Adapter caseSawToothOscillator(SawToothOscillator object)
-      {
-        return createSawToothOscillatorAdapter();
-      }
-      @Override
-      public Adapter caseSineOscillator(SineOscillator object)
-      {
-        return createSineOscillatorAdapter();
       }
       @Override
       public Adapter defaultCase(EObject object)
@@ -163,31 +153,31 @@ public class SynthesizerAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.synthesizer.SoundElement <em>Sound Element</em>}'.
+   * Creates a new adapter for an object of class '{@link org.xtext.synthesizer.RotaryKnob <em>Rotary Knob</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.xtext.synthesizer.SoundElement
+   * @see org.xtext.synthesizer.RotaryKnob
    * @generated
    */
-  public Adapter createSoundElementAdapter()
+  public Adapter createRotaryKnobAdapter()
   {
     return null;
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.synthesizer.ConnectionElement <em>Connection Element</em>}'.
+   * Creates a new adapter for an object of class '{@link org.xtext.synthesizer.Slider <em>Slider</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.xtext.synthesizer.ConnectionElement
+   * @see org.xtext.synthesizer.Slider
    * @generated
    */
-  public Adapter createConnectionElementAdapter()
+  public Adapter createSliderAdapter()
   {
     return null;
   }
@@ -203,36 +193,6 @@ public class SynthesizerAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createButtonAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.xtext.synthesizer.SawToothOscillator <em>Saw Tooth Oscillator</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.synthesizer.SawToothOscillator
-   * @generated
-   */
-  public Adapter createSawToothOscillatorAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.xtext.synthesizer.SineOscillator <em>Sine Oscillator</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.synthesizer.SineOscillator
-   * @generated
-   */
-  public Adapter createSineOscillatorAdapter()
   {
     return null;
   }

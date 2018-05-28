@@ -16,10 +16,9 @@ import org.eclipse.xtext.serializer.sequencer.AbstractDelegatingSemanticSequence
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
 import org.xtext.services.SynthesizerGrammarAccess;
 import org.xtext.synthesizer.Button;
-import org.xtext.synthesizer.ConnectionElement;
 import org.xtext.synthesizer.Model;
-import org.xtext.synthesizer.SawToothOscillator;
-import org.xtext.synthesizer.SineOscillator;
+import org.xtext.synthesizer.RotaryKnob;
+import org.xtext.synthesizer.Slider;
 import org.xtext.synthesizer.SynthesizerPackage;
 
 @SuppressWarnings("all")
@@ -39,17 +38,14 @@ public class SynthesizerSemanticSequencer extends AbstractDelegatingSemanticSequ
 			case SynthesizerPackage.BUTTON:
 				sequence_Button(context, (Button) semanticObject); 
 				return; 
-			case SynthesizerPackage.CONNECTION_ELEMENT:
-				sequence_ConnectionElement(context, (ConnectionElement) semanticObject); 
-				return; 
 			case SynthesizerPackage.MODEL:
 				sequence_Model(context, (Model) semanticObject); 
 				return; 
-			case SynthesizerPackage.SAW_TOOTH_OSCILLATOR:
-				sequence_SawToothOscillator(context, (SawToothOscillator) semanticObject); 
+			case SynthesizerPackage.ROTARY_KNOB:
+				sequence_RotaryKnob(context, (RotaryKnob) semanticObject); 
 				return; 
-			case SynthesizerPackage.SINE_OSCILLATOR:
-				sequence_SineOscillator(context, (SineOscillator) semanticObject); 
+			case SynthesizerPackage.SLIDER:
+				sequence_Slider(context, (Slider) semanticObject); 
 				return; 
 			}
 		if (errorAcceptor != null)
@@ -73,16 +69,16 @@ public class SynthesizerSemanticSequencer extends AbstractDelegatingSemanticSequ
 	 */
 	protected void sequence_Button(ISerializationContext context, Button semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, SynthesizerPackage.Literals.BUTTON__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SynthesizerPackage.Literals.BUTTON__NAME));
-			if (transientValues.isValueTransient(semanticObject, SynthesizerPackage.Literals.BUTTON__X) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SynthesizerPackage.Literals.BUTTON__X));
-			if (transientValues.isValueTransient(semanticObject, SynthesizerPackage.Literals.BUTTON__Y) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SynthesizerPackage.Literals.BUTTON__Y));
-			if (transientValues.isValueTransient(semanticObject, SynthesizerPackage.Literals.BUTTON__WIDTH) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SynthesizerPackage.Literals.BUTTON__WIDTH));
-			if (transientValues.isValueTransient(semanticObject, SynthesizerPackage.Literals.BUTTON__HEIGHT) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SynthesizerPackage.Literals.BUTTON__HEIGHT));
+			if (transientValues.isValueTransient(semanticObject, SynthesizerPackage.Literals.CONTROL_ELEMENT__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SynthesizerPackage.Literals.CONTROL_ELEMENT__NAME));
+			if (transientValues.isValueTransient(semanticObject, SynthesizerPackage.Literals.CONTROL_ELEMENT__X) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SynthesizerPackage.Literals.CONTROL_ELEMENT__X));
+			if (transientValues.isValueTransient(semanticObject, SynthesizerPackage.Literals.CONTROL_ELEMENT__Y) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SynthesizerPackage.Literals.CONTROL_ELEMENT__Y));
+			if (transientValues.isValueTransient(semanticObject, SynthesizerPackage.Literals.CONTROL_ELEMENT__WIDTH) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SynthesizerPackage.Literals.CONTROL_ELEMENT__WIDTH));
+			if (transientValues.isValueTransient(semanticObject, SynthesizerPackage.Literals.CONTROL_ELEMENT__HEIGHT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SynthesizerPackage.Literals.CONTROL_ELEMENT__HEIGHT));
 			if (transientValues.isValueTransient(semanticObject, SynthesizerPackage.Literals.BUTTON__FREQUENCY) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SynthesizerPackage.Literals.BUTTON__FREQUENCY));
 		}
@@ -99,31 +95,10 @@ public class SynthesizerSemanticSequencer extends AbstractDelegatingSemanticSequ
 	
 	/**
 	 * Contexts:
-	 *     ConnectionElement returns ConnectionElement
-	 *
-	 * Constraint:
-	 *     (ce=ControlElement se=SoundElement)
-	 */
-	protected void sequence_ConnectionElement(ISerializationContext context, ConnectionElement semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, SynthesizerPackage.Literals.CONNECTION_ELEMENT__CE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SynthesizerPackage.Literals.CONNECTION_ELEMENT__CE));
-			if (transientValues.isValueTransient(semanticObject, SynthesizerPackage.Literals.CONNECTION_ELEMENT__SE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SynthesizerPackage.Literals.CONNECTION_ELEMENT__SE));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getConnectionElementAccess().getCeControlElementParserRuleCall_1_0(), semanticObject.getCe());
-		feeder.accept(grammarAccess.getConnectionElementAccess().getSeSoundElementParserRuleCall_2_0(), semanticObject.getSe());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * Contexts:
 	 *     Model returns Model
 	 *
 	 * Constraint:
-	 *     (controls+=ControlElement* sounds+=SoundElement* connections+=ConnectionElement*)
+	 *     controls+=ControlElement+
 	 */
 	protected void sequence_Model(ISerializationContext context, Model semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -132,53 +107,62 @@ public class SynthesizerSemanticSequencer extends AbstractDelegatingSemanticSequ
 	
 	/**
 	 * Contexts:
-	 *     SoundElement returns SawToothOscillator
-	 *     SawToothOscillator returns SawToothOscillator
+	 *     ControlElement returns RotaryKnob
+	 *     RotaryKnob returns RotaryKnob
 	 *
 	 * Constraint:
-	 *     (name=ID min=INT max=INT default=INT)
+	 *     (name=ID x=INT y=INT width=INT height=INT)
 	 */
-	protected void sequence_SawToothOscillator(ISerializationContext context, SawToothOscillator semanticObject) {
+	protected void sequence_RotaryKnob(ISerializationContext context, RotaryKnob semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, SynthesizerPackage.Literals.SOUND_ELEMENT__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SynthesizerPackage.Literals.SOUND_ELEMENT__NAME));
-			if (transientValues.isValueTransient(semanticObject, SynthesizerPackage.Literals.SAW_TOOTH_OSCILLATOR__MIN) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SynthesizerPackage.Literals.SAW_TOOTH_OSCILLATOR__MIN));
-			if (transientValues.isValueTransient(semanticObject, SynthesizerPackage.Literals.SAW_TOOTH_OSCILLATOR__MAX) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SynthesizerPackage.Literals.SAW_TOOTH_OSCILLATOR__MAX));
-			if (transientValues.isValueTransient(semanticObject, SynthesizerPackage.Literals.SAW_TOOTH_OSCILLATOR__DEFAULT) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SynthesizerPackage.Literals.SAW_TOOTH_OSCILLATOR__DEFAULT));
+			if (transientValues.isValueTransient(semanticObject, SynthesizerPackage.Literals.CONTROL_ELEMENT__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SynthesizerPackage.Literals.CONTROL_ELEMENT__NAME));
+			if (transientValues.isValueTransient(semanticObject, SynthesizerPackage.Literals.CONTROL_ELEMENT__X) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SynthesizerPackage.Literals.CONTROL_ELEMENT__X));
+			if (transientValues.isValueTransient(semanticObject, SynthesizerPackage.Literals.CONTROL_ELEMENT__Y) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SynthesizerPackage.Literals.CONTROL_ELEMENT__Y));
+			if (transientValues.isValueTransient(semanticObject, SynthesizerPackage.Literals.CONTROL_ELEMENT__WIDTH) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SynthesizerPackage.Literals.CONTROL_ELEMENT__WIDTH));
+			if (transientValues.isValueTransient(semanticObject, SynthesizerPackage.Literals.CONTROL_ELEMENT__HEIGHT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SynthesizerPackage.Literals.CONTROL_ELEMENT__HEIGHT));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getSawToothOscillatorAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getSawToothOscillatorAccess().getMinINTTerminalRuleCall_4_0(), semanticObject.getMin());
-		feeder.accept(grammarAccess.getSawToothOscillatorAccess().getMaxINTTerminalRuleCall_6_0(), semanticObject.getMax());
-		feeder.accept(grammarAccess.getSawToothOscillatorAccess().getDefaultINTTerminalRuleCall_8_0(), semanticObject.getDefault());
+		feeder.accept(grammarAccess.getRotaryKnobAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getRotaryKnobAccess().getXINTTerminalRuleCall_4_0(), semanticObject.getX());
+		feeder.accept(grammarAccess.getRotaryKnobAccess().getYINTTerminalRuleCall_6_0(), semanticObject.getY());
+		feeder.accept(grammarAccess.getRotaryKnobAccess().getWidthINTTerminalRuleCall_8_0(), semanticObject.getWidth());
+		feeder.accept(grammarAccess.getRotaryKnobAccess().getHeightINTTerminalRuleCall_10_0(), semanticObject.getHeight());
 		feeder.finish();
 	}
 	
 	
 	/**
 	 * Contexts:
-	 *     SoundElement returns SineOscillator
-	 *     SineOscillator returns SineOscillator
+	 *     ControlElement returns Slider
+	 *     Slider returns Slider
 	 *
 	 * Constraint:
-	 *     (name=ID frequency=INT amplitude=INT)
+	 *     (name=ID x=INT y=INT width=INT height=INT)
 	 */
-	protected void sequence_SineOscillator(ISerializationContext context, SineOscillator semanticObject) {
+	protected void sequence_Slider(ISerializationContext context, Slider semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, SynthesizerPackage.Literals.SOUND_ELEMENT__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SynthesizerPackage.Literals.SOUND_ELEMENT__NAME));
-			if (transientValues.isValueTransient(semanticObject, SynthesizerPackage.Literals.SINE_OSCILLATOR__FREQUENCY) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SynthesizerPackage.Literals.SINE_OSCILLATOR__FREQUENCY));
-			if (transientValues.isValueTransient(semanticObject, SynthesizerPackage.Literals.SINE_OSCILLATOR__AMPLITUDE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SynthesizerPackage.Literals.SINE_OSCILLATOR__AMPLITUDE));
+			if (transientValues.isValueTransient(semanticObject, SynthesizerPackage.Literals.CONTROL_ELEMENT__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SynthesizerPackage.Literals.CONTROL_ELEMENT__NAME));
+			if (transientValues.isValueTransient(semanticObject, SynthesizerPackage.Literals.CONTROL_ELEMENT__X) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SynthesizerPackage.Literals.CONTROL_ELEMENT__X));
+			if (transientValues.isValueTransient(semanticObject, SynthesizerPackage.Literals.CONTROL_ELEMENT__Y) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SynthesizerPackage.Literals.CONTROL_ELEMENT__Y));
+			if (transientValues.isValueTransient(semanticObject, SynthesizerPackage.Literals.CONTROL_ELEMENT__WIDTH) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SynthesizerPackage.Literals.CONTROL_ELEMENT__WIDTH));
+			if (transientValues.isValueTransient(semanticObject, SynthesizerPackage.Literals.CONTROL_ELEMENT__HEIGHT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SynthesizerPackage.Literals.CONTROL_ELEMENT__HEIGHT));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getSineOscillatorAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getSineOscillatorAccess().getFrequencyINTTerminalRuleCall_4_0(), semanticObject.getFrequency());
-		feeder.accept(grammarAccess.getSineOscillatorAccess().getAmplitudeINTTerminalRuleCall_6_0(), semanticObject.getAmplitude());
+		feeder.accept(grammarAccess.getSliderAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getSliderAccess().getXINTTerminalRuleCall_4_0(), semanticObject.getX());
+		feeder.accept(grammarAccess.getSliderAccess().getYINTTerminalRuleCall_6_0(), semanticObject.getY());
+		feeder.accept(grammarAccess.getSliderAccess().getWidthINTTerminalRuleCall_8_0(), semanticObject.getWidth());
+		feeder.accept(grammarAccess.getSliderAccess().getHeightINTTerminalRuleCall_10_0(), semanticObject.getHeight());
 		feeder.finish();
 	}
 	
