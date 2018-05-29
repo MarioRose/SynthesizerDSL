@@ -27,8 +27,8 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Synthesizer.ecore#//SoundElement/name"/>
     </genClasses>
     <genClasses ecoreClass="Synthesizer.ecore#//ConnectionElement">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Synthesizer.ecore#//ConnectionElement/ce"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Synthesizer.ecore#//ConnectionElement/se"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Synthesizer.ecore#//ConnectionElement/ce"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Synthesizer.ecore#//ConnectionElement/se"/>
     </genClasses>
     <genClasses ecoreClass="Synthesizer.ecore#//SawToothOscillator">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Synthesizer.ecore#//SawToothOscillator/min"/>

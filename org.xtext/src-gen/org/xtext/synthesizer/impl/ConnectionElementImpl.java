@@ -4,7 +4,6 @@
 package org.xtext.synthesizer.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
@@ -34,7 +33,7 @@ import org.xtext.synthesizer.SynthesizerPackage;
 public class ConnectionElementImpl extends MinimalEObjectImpl.Container implements ConnectionElement
 {
   /**
-   * The cached value of the '{@link #getCe() <em>Ce</em>}' containment reference.
+   * The cached value of the '{@link #getCe() <em>Ce</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getCe()
@@ -44,7 +43,7 @@ public class ConnectionElementImpl extends MinimalEObjectImpl.Container implemen
   protected ControlElement ce;
 
   /**
-   * The cached value of the '{@link #getSe() <em>Se</em>}' containment reference.
+   * The cached value of the '{@link #getSe() <em>Se</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getSe()
@@ -81,6 +80,16 @@ public class ConnectionElementImpl extends MinimalEObjectImpl.Container implemen
    */
   public ControlElement getCe()
   {
+    if (ce != null && ce.eIsProxy())
+    {
+      InternalEObject oldCe = (InternalEObject)ce;
+      ce = (ControlElement)eResolveProxy(oldCe);
+      if (ce != oldCe)
+      {
+        if (eNotificationRequired())
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, SynthesizerPackage.CONNECTION_ELEMENT__CE, oldCe, ce));
+      }
+    }
     return ce;
   }
 
@@ -89,16 +98,9 @@ public class ConnectionElementImpl extends MinimalEObjectImpl.Container implemen
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetCe(ControlElement newCe, NotificationChain msgs)
+  public ControlElement basicGetCe()
   {
-    ControlElement oldCe = ce;
-    ce = newCe;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SynthesizerPackage.CONNECTION_ELEMENT__CE, oldCe, newCe);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
+    return ce;
   }
 
   /**
@@ -108,18 +110,10 @@ public class ConnectionElementImpl extends MinimalEObjectImpl.Container implemen
    */
   public void setCe(ControlElement newCe)
   {
-    if (newCe != ce)
-    {
-      NotificationChain msgs = null;
-      if (ce != null)
-        msgs = ((InternalEObject)ce).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SynthesizerPackage.CONNECTION_ELEMENT__CE, null, msgs);
-      if (newCe != null)
-        msgs = ((InternalEObject)newCe).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SynthesizerPackage.CONNECTION_ELEMENT__CE, null, msgs);
-      msgs = basicSetCe(newCe, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SynthesizerPackage.CONNECTION_ELEMENT__CE, newCe, newCe));
+    ControlElement oldCe = ce;
+    ce = newCe;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SynthesizerPackage.CONNECTION_ELEMENT__CE, oldCe, ce));
   }
 
   /**
@@ -129,6 +123,16 @@ public class ConnectionElementImpl extends MinimalEObjectImpl.Container implemen
    */
   public SoundElement getSe()
   {
+    if (se != null && se.eIsProxy())
+    {
+      InternalEObject oldSe = (InternalEObject)se;
+      se = (SoundElement)eResolveProxy(oldSe);
+      if (se != oldSe)
+      {
+        if (eNotificationRequired())
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, SynthesizerPackage.CONNECTION_ELEMENT__SE, oldSe, se));
+      }
+    }
     return se;
   }
 
@@ -137,16 +141,9 @@ public class ConnectionElementImpl extends MinimalEObjectImpl.Container implemen
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetSe(SoundElement newSe, NotificationChain msgs)
+  public SoundElement basicGetSe()
   {
-    SoundElement oldSe = se;
-    se = newSe;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, SynthesizerPackage.CONNECTION_ELEMENT__SE, oldSe, newSe);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
+    return se;
   }
 
   /**
@@ -156,36 +153,10 @@ public class ConnectionElementImpl extends MinimalEObjectImpl.Container implemen
    */
   public void setSe(SoundElement newSe)
   {
-    if (newSe != se)
-    {
-      NotificationChain msgs = null;
-      if (se != null)
-        msgs = ((InternalEObject)se).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - SynthesizerPackage.CONNECTION_ELEMENT__SE, null, msgs);
-      if (newSe != null)
-        msgs = ((InternalEObject)newSe).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - SynthesizerPackage.CONNECTION_ELEMENT__SE, null, msgs);
-      msgs = basicSetSe(newSe, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SynthesizerPackage.CONNECTION_ELEMENT__SE, newSe, newSe));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
-  {
-    switch (featureID)
-    {
-      case SynthesizerPackage.CONNECTION_ELEMENT__CE:
-        return basicSetCe(null, msgs);
-      case SynthesizerPackage.CONNECTION_ELEMENT__SE:
-        return basicSetSe(null, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
+    SoundElement oldSe = se;
+    se = newSe;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SynthesizerPackage.CONNECTION_ELEMENT__SE, oldSe, se));
   }
 
   /**
@@ -199,9 +170,11 @@ public class ConnectionElementImpl extends MinimalEObjectImpl.Container implemen
     switch (featureID)
     {
       case SynthesizerPackage.CONNECTION_ELEMENT__CE:
-        return getCe();
+        if (resolve) return getCe();
+        return basicGetCe();
       case SynthesizerPackage.CONNECTION_ELEMENT__SE:
-        return getSe();
+        if (resolve) return getSe();
+        return basicGetSe();
     }
     return super.eGet(featureID, resolve, coreType);
   }

@@ -110,7 +110,7 @@ public class SynthesizerSemanticSequencer extends AbstractDelegatingSemanticSequ
 	 *     ConnectionElement returns ConnectionElement
 	 *
 	 * Constraint:
-	 *     (ce=ControlElement se=SoundElement)
+	 *     (ce=[ControlElement|ID] se=[SoundElement|ID])
 	 */
 	protected void sequence_ConnectionElement(ISerializationContext context, ConnectionElement semanticObject) {
 		if (errorAcceptor != null) {
@@ -120,8 +120,8 @@ public class SynthesizerSemanticSequencer extends AbstractDelegatingSemanticSequ
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SynthesizerPackage.Literals.CONNECTION_ELEMENT__SE));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getConnectionElementAccess().getCeControlElementParserRuleCall_1_0(), semanticObject.getCe());
-		feeder.accept(grammarAccess.getConnectionElementAccess().getSeSoundElementParserRuleCall_2_0(), semanticObject.getSe());
+		feeder.accept(grammarAccess.getConnectionElementAccess().getCeControlElementIDTerminalRuleCall_1_0_1(), semanticObject.eGet(SynthesizerPackage.Literals.CONNECTION_ELEMENT__CE, false));
+		feeder.accept(grammarAccess.getConnectionElementAccess().getSeSoundElementIDTerminalRuleCall_2_0_1(), semanticObject.eGet(SynthesizerPackage.Literals.CONNECTION_ELEMENT__SE, false));
 		feeder.finish();
 	}
 	

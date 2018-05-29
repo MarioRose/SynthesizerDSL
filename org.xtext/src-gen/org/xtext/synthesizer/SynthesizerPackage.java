@@ -407,7 +407,7 @@ public interface SynthesizerPackage extends EPackage
   int CONNECTION_ELEMENT = 6;
 
   /**
-   * The feature id for the '<em><b>Ce</b></em>' containment reference.
+   * The feature id for the '<em><b>Ce</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -416,7 +416,7 @@ public interface SynthesizerPackage extends EPackage
   int CONNECTION_ELEMENT__CE = 0;
 
   /**
-   * The feature id for the '<em><b>Se</b></em>' containment reference.
+   * The feature id for the '<em><b>Se</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -716,10 +716,10 @@ public interface SynthesizerPackage extends EPackage
   EClass getConnectionElement();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.synthesizer.ConnectionElement#getCe <em>Ce</em>}'.
+   * Returns the meta object for the reference '{@link org.xtext.synthesizer.ConnectionElement#getCe <em>Ce</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Ce</em>'.
+   * @return the meta object for the reference '<em>Ce</em>'.
    * @see org.xtext.synthesizer.ConnectionElement#getCe()
    * @see #getConnectionElement()
    * @generated
@@ -727,10 +727,10 @@ public interface SynthesizerPackage extends EPackage
   EReference getConnectionElement_Ce();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.synthesizer.ConnectionElement#getSe <em>Se</em>}'.
+   * Returns the meta object for the reference '{@link org.xtext.synthesizer.ConnectionElement#getSe <em>Se</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Se</em>'.
+   * @return the meta object for the reference '<em>Se</em>'.
    * @see org.xtext.synthesizer.ConnectionElement#getSe()
    * @see #getConnectionElement()
    * @generated
@@ -986,7 +986,7 @@ public interface SynthesizerPackage extends EPackage
     EClass CONNECTION_ELEMENT = eINSTANCE.getConnectionElement();
 
     /**
-     * The meta object literal for the '<em><b>Ce</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Ce</b></em>' reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
@@ -994,7 +994,7 @@ public interface SynthesizerPackage extends EPackage
     EReference CONNECTION_ELEMENT__CE = eINSTANCE.getConnectionElement_Ce();
 
     /**
-     * The meta object literal for the '<em><b>Se</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Se</b></em>' reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated

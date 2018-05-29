@@ -713,38 +713,26 @@ ruleConnectionElement returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getConnectionElementAccess().getCeControlElementParserRuleCall_1_0());
-				}
-				lv_ce_1_0=ruleControlElement
-				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getConnectionElementRule());
+						$current = createModelElement(grammarAccess.getConnectionElementRule());
 					}
-					set(
-						$current,
-						"ce",
-						lv_ce_1_0,
-						"org.xtext.Synthesizer.ControlElement");
-					afterParserOrEnumRuleCall();
+				}
+				otherlv_1=RULE_ID
+				{
+					newLeafNode(otherlv_1, grammarAccess.getConnectionElementAccess().getCeControlElementCrossReference_1_0());
 				}
 			)
 		)
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getConnectionElementAccess().getSeSoundElementParserRuleCall_2_0());
-				}
-				lv_se_2_0=ruleSoundElement
-				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getConnectionElementRule());
+						$current = createModelElement(grammarAccess.getConnectionElementRule());
 					}
-					set(
-						$current,
-						"se",
-						lv_se_2_0,
-						"org.xtext.Synthesizer.SoundElement");
-					afterParserOrEnumRuleCall();
+				}
+				otherlv_2=RULE_ID
+				{
+					newLeafNode(otherlv_2, grammarAccess.getConnectionElementAccess().getSeSoundElementCrossReference_2_0());
 				}
 			)
 		)

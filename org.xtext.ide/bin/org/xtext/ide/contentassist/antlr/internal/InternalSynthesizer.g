@@ -2584,9 +2584,13 @@ rule__ConnectionElement__CeAssignment_1
 	}
 :
 	(
-		{ before(grammarAccess.getConnectionElementAccess().getCeControlElementParserRuleCall_1_0()); }
-		ruleControlElement
-		{ after(grammarAccess.getConnectionElementAccess().getCeControlElementParserRuleCall_1_0()); }
+		{ before(grammarAccess.getConnectionElementAccess().getCeControlElementCrossReference_1_0()); }
+		(
+			{ before(grammarAccess.getConnectionElementAccess().getCeControlElementIDTerminalRuleCall_1_0_1()); }
+			RULE_ID
+			{ after(grammarAccess.getConnectionElementAccess().getCeControlElementIDTerminalRuleCall_1_0_1()); }
+		)
+		{ after(grammarAccess.getConnectionElementAccess().getCeControlElementCrossReference_1_0()); }
 	)
 ;
 finally {
@@ -2599,9 +2603,13 @@ rule__ConnectionElement__SeAssignment_2
 	}
 :
 	(
-		{ before(grammarAccess.getConnectionElementAccess().getSeSoundElementParserRuleCall_2_0()); }
-		ruleSoundElement
-		{ after(grammarAccess.getConnectionElementAccess().getSeSoundElementParserRuleCall_2_0()); }
+		{ before(grammarAccess.getConnectionElementAccess().getSeSoundElementCrossReference_2_0()); }
+		(
+			{ before(grammarAccess.getConnectionElementAccess().getSeSoundElementIDTerminalRuleCall_2_0_1()); }
+			RULE_ID
+			{ after(grammarAccess.getConnectionElementAccess().getSeSoundElementIDTerminalRuleCall_2_0_1()); }
+		)
+		{ after(grammarAccess.getConnectionElementAccess().getSeSoundElementCrossReference_2_0()); }
 	)
 ;
 finally {

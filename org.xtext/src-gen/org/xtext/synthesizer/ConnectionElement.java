@@ -25,52 +25,52 @@ import org.eclipse.emf.ecore.EObject;
 public interface ConnectionElement extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Ce</b></em>' containment reference.
+   * Returns the value of the '<em><b>Ce</b></em>' reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Ce</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Ce</em>' reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Ce</em>' containment reference.
+   * @return the value of the '<em>Ce</em>' reference.
    * @see #setCe(ControlElement)
    * @see org.xtext.synthesizer.SynthesizerPackage#getConnectionElement_Ce()
-   * @model containment="true"
+   * @model
    * @generated
    */
   ControlElement getCe();
 
   /**
-   * Sets the value of the '{@link org.xtext.synthesizer.ConnectionElement#getCe <em>Ce</em>}' containment reference.
+   * Sets the value of the '{@link org.xtext.synthesizer.ConnectionElement#getCe <em>Ce</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Ce</em>' containment reference.
+   * @param value the new value of the '<em>Ce</em>' reference.
    * @see #getCe()
    * @generated
    */
   void setCe(ControlElement value);
 
   /**
-   * Returns the value of the '<em><b>Se</b></em>' containment reference.
+   * Returns the value of the '<em><b>Se</b></em>' reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Se</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Se</em>' reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Se</em>' containment reference.
+   * @return the value of the '<em>Se</em>' reference.
    * @see #setSe(SoundElement)
    * @see org.xtext.synthesizer.SynthesizerPackage#getConnectionElement_Se()
-   * @model containment="true"
+   * @model
    * @generated
    */
   SoundElement getSe();
 
   /**
-   * Sets the value of the '{@link org.xtext.synthesizer.ConnectionElement#getSe <em>Se</em>}' containment reference.
+   * Sets the value of the '{@link org.xtext.synthesizer.ConnectionElement#getSe <em>Se</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Se</em>' containment reference.
+   * @param value the new value of the '<em>Se</em>' reference.
    * @see #getSe()
    * @generated
    */

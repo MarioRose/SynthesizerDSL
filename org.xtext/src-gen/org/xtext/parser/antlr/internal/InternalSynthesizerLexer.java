@@ -517,10 +517,10 @@ public class InternalSynthesizerLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalSynthesizer.g:962:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // InternalSynthesizer.g:962:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // InternalSynthesizer.g:950:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // InternalSynthesizer.g:950:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // InternalSynthesizer.g:962:11: ( '^' )?
+            // InternalSynthesizer.g:950:11: ( '^' )?
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -529,7 +529,7 @@ public class InternalSynthesizerLexer extends Lexer {
             }
             switch (alt1) {
                 case 1 :
-                    // InternalSynthesizer.g:962:11: '^'
+                    // InternalSynthesizer.g:950:11: '^'
                     {
                     match('^'); 
 
@@ -547,7 +547,7 @@ public class InternalSynthesizerLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // InternalSynthesizer.g:962:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // InternalSynthesizer.g:950:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop2:
             do {
                 int alt2=2;
@@ -596,10 +596,10 @@ public class InternalSynthesizerLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalSynthesizer.g:964:10: ( ( '0' .. '9' )+ )
-            // InternalSynthesizer.g:964:12: ( '0' .. '9' )+
+            // InternalSynthesizer.g:952:10: ( ( '0' .. '9' )+ )
+            // InternalSynthesizer.g:952:12: ( '0' .. '9' )+
             {
-            // InternalSynthesizer.g:964:12: ( '0' .. '9' )+
+            // InternalSynthesizer.g:952:12: ( '0' .. '9' )+
             int cnt3=0;
             loop3:
             do {
@@ -613,7 +613,7 @@ public class InternalSynthesizerLexer extends Lexer {
 
                 switch (alt3) {
             	case 1 :
-            	    // InternalSynthesizer.g:964:13: '0' .. '9'
+            	    // InternalSynthesizer.g:952:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -645,10 +645,10 @@ public class InternalSynthesizerLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalSynthesizer.g:966:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // InternalSynthesizer.g:966:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // InternalSynthesizer.g:954:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // InternalSynthesizer.g:954:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // InternalSynthesizer.g:966:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // InternalSynthesizer.g:954:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt6=2;
             int LA6_0 = input.LA(1);
 
@@ -666,10 +666,10 @@ public class InternalSynthesizerLexer extends Lexer {
             }
             switch (alt6) {
                 case 1 :
-                    // InternalSynthesizer.g:966:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // InternalSynthesizer.g:954:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // InternalSynthesizer.g:966:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // InternalSynthesizer.g:954:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop4:
                     do {
                         int alt4=3;
@@ -685,7 +685,7 @@ public class InternalSynthesizerLexer extends Lexer {
 
                         switch (alt4) {
                     	case 1 :
-                    	    // InternalSynthesizer.g:966:21: '\\\\' .
+                    	    // InternalSynthesizer.g:954:21: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -693,7 +693,7 @@ public class InternalSynthesizerLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // InternalSynthesizer.g:966:28: ~ ( ( '\\\\' | '\"' ) )
+                    	    // InternalSynthesizer.g:954:28: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -718,10 +718,10 @@ public class InternalSynthesizerLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // InternalSynthesizer.g:966:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // InternalSynthesizer.g:954:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // InternalSynthesizer.g:966:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // InternalSynthesizer.g:954:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop5:
                     do {
                         int alt5=3;
@@ -737,7 +737,7 @@ public class InternalSynthesizerLexer extends Lexer {
 
                         switch (alt5) {
                     	case 1 :
-                    	    // InternalSynthesizer.g:966:54: '\\\\' .
+                    	    // InternalSynthesizer.g:954:54: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -745,7 +745,7 @@ public class InternalSynthesizerLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // InternalSynthesizer.g:966:61: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // InternalSynthesizer.g:954:61: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -788,12 +788,12 @@ public class InternalSynthesizerLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalSynthesizer.g:968:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // InternalSynthesizer.g:968:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // InternalSynthesizer.g:956:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // InternalSynthesizer.g:956:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // InternalSynthesizer.g:968:24: ( options {greedy=false; } : . )*
+            // InternalSynthesizer.g:956:24: ( options {greedy=false; } : . )*
             loop7:
             do {
                 int alt7=2;
@@ -818,7 +818,7 @@ public class InternalSynthesizerLexer extends Lexer {
 
                 switch (alt7) {
             	case 1 :
-            	    // InternalSynthesizer.g:968:52: .
+            	    // InternalSynthesizer.g:956:52: .
             	    {
             	    matchAny(); 
 
@@ -848,12 +848,12 @@ public class InternalSynthesizerLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalSynthesizer.g:970:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // InternalSynthesizer.g:970:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // InternalSynthesizer.g:958:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // InternalSynthesizer.g:958:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // InternalSynthesizer.g:970:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // InternalSynthesizer.g:958:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop8:
             do {
                 int alt8=2;
@@ -866,7 +866,7 @@ public class InternalSynthesizerLexer extends Lexer {
 
                 switch (alt8) {
             	case 1 :
-            	    // InternalSynthesizer.g:970:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // InternalSynthesizer.g:958:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -886,7 +886,7 @@ public class InternalSynthesizerLexer extends Lexer {
                 }
             } while (true);
 
-            // InternalSynthesizer.g:970:40: ( ( '\\r' )? '\\n' )?
+            // InternalSynthesizer.g:958:40: ( ( '\\r' )? '\\n' )?
             int alt10=2;
             int LA10_0 = input.LA(1);
 
@@ -895,9 +895,9 @@ public class InternalSynthesizerLexer extends Lexer {
             }
             switch (alt10) {
                 case 1 :
-                    // InternalSynthesizer.g:970:41: ( '\\r' )? '\\n'
+                    // InternalSynthesizer.g:958:41: ( '\\r' )? '\\n'
                     {
-                    // InternalSynthesizer.g:970:41: ( '\\r' )?
+                    // InternalSynthesizer.g:958:41: ( '\\r' )?
                     int alt9=2;
                     int LA9_0 = input.LA(1);
 
@@ -906,7 +906,7 @@ public class InternalSynthesizerLexer extends Lexer {
                     }
                     switch (alt9) {
                         case 1 :
-                            // InternalSynthesizer.g:970:41: '\\r'
+                            // InternalSynthesizer.g:958:41: '\\r'
                             {
                             match('\r'); 
 
@@ -938,10 +938,10 @@ public class InternalSynthesizerLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalSynthesizer.g:972:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // InternalSynthesizer.g:972:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalSynthesizer.g:960:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // InternalSynthesizer.g:960:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // InternalSynthesizer.g:972:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalSynthesizer.g:960:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt11=0;
             loop11:
             do {
@@ -995,8 +995,8 @@ public class InternalSynthesizerLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalSynthesizer.g:974:16: ( . )
-            // InternalSynthesizer.g:974:18: .
+            // InternalSynthesizer.g:962:16: ( . )
+            // InternalSynthesizer.g:962:18: .
             {
             matchAny(); 
 

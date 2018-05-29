@@ -8,6 +8,7 @@ import com.google.inject.Singleton;
 import java.util.List;
 import org.eclipse.xtext.Alternatives;
 import org.eclipse.xtext.Assignment;
+import org.eclipse.xtext.CrossReference;
 import org.eclipse.xtext.Grammar;
 import org.eclipse.xtext.GrammarUtil;
 import org.eclipse.xtext.Group;
@@ -403,31 +404,39 @@ public class SynthesizerGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cLinearKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cCeAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cCeControlElementParserRuleCall_1_0 = (RuleCall)cCeAssignment_1.eContents().get(0);
+		private final CrossReference cCeControlElementCrossReference_1_0 = (CrossReference)cCeAssignment_1.eContents().get(0);
+		private final RuleCall cCeControlElementIDTerminalRuleCall_1_0_1 = (RuleCall)cCeControlElementCrossReference_1_0.eContents().get(1);
 		private final Assignment cSeAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cSeSoundElementParserRuleCall_2_0 = (RuleCall)cSeAssignment_2.eContents().get(0);
+		private final CrossReference cSeSoundElementCrossReference_2_0 = (CrossReference)cSeAssignment_2.eContents().get(0);
+		private final RuleCall cSeSoundElementIDTerminalRuleCall_2_0_1 = (RuleCall)cSeSoundElementCrossReference_2_0.eContents().get(1);
 		
 		//ConnectionElement:
-		//	'linear' ce=ControlElement se=SoundElement;
+		//	'linear' ce=[ControlElement] se=[SoundElement];
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'linear' ce=ControlElement se=SoundElement
+		//'linear' ce=[ControlElement] se=[SoundElement]
 		public Group getGroup() { return cGroup; }
 		
 		//'linear'
 		public Keyword getLinearKeyword_0() { return cLinearKeyword_0; }
 		
-		//ce=ControlElement
+		//ce=[ControlElement]
 		public Assignment getCeAssignment_1() { return cCeAssignment_1; }
 		
-		//ControlElement
-		public RuleCall getCeControlElementParserRuleCall_1_0() { return cCeControlElementParserRuleCall_1_0; }
+		//[ControlElement]
+		public CrossReference getCeControlElementCrossReference_1_0() { return cCeControlElementCrossReference_1_0; }
 		
-		//se=SoundElement
+		//ID
+		public RuleCall getCeControlElementIDTerminalRuleCall_1_0_1() { return cCeControlElementIDTerminalRuleCall_1_0_1; }
+		
+		//se=[SoundElement]
 		public Assignment getSeAssignment_2() { return cSeAssignment_2; }
 		
-		//SoundElement
-		public RuleCall getSeSoundElementParserRuleCall_2_0() { return cSeSoundElementParserRuleCall_2_0; }
+		//[SoundElement]
+		public CrossReference getSeSoundElementCrossReference_2_0() { return cSeSoundElementCrossReference_2_0; }
+		
+		//ID
+		public RuleCall getSeSoundElementIDTerminalRuleCall_2_0_1() { return cSeSoundElementIDTerminalRuleCall_2_0_1; }
 	}
 	public class SawToothOscillatorElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Synthesizer.SawToothOscillator");
@@ -678,7 +687,7 @@ public class SynthesizerGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//ConnectionElement:
-	//	'linear' ce=ControlElement se=SoundElement;
+	//	'linear' ce=[ControlElement] se=[SoundElement];
 	public ConnectionElementElements getConnectionElementAccess() {
 		return pConnectionElement;
 	}

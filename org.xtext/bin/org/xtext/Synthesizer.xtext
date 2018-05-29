@@ -51,7 +51,7 @@ SoundElement:
 ;
 
 ConnectionElement:
-	'linear' ce = ControlElement se = SoundElement
+	'linear' ce = [ControlElement] se = [SoundElement]
 ;
 
 SawToothOscillator:

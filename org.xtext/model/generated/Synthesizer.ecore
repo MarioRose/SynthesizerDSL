@@ -25,10 +25,8 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ConnectionElement">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="ce" eType="#//ControlElement"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="se" eType="#//SoundElement"
-        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ce" eType="#//ControlElement"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="se" eType="#//SoundElement"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SawToothOscillator" eSuperTypes="#//SoundElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="min" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
