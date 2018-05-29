@@ -63,13 +63,36 @@ class SynthesizerGenerator extends AbstractGenerator {
 
 
 		public class SynthesizerDSL extends JApplet{
-			static boolean soundRunning;
 		    static Synthesizer synth;
+            static LineOut lineOut;
+
+			'+ resource.allContents
+				.filter(SineOscillator)
+				.map["private static UnitOscillator osc" + name + ";	       
+				"].join('\n\t\t\t\t')
+				
+			+ '
 
 			' + generateUI(resource) + '
 
 		    @Override
 		    public void start() {
+	        	// Create a context for the synthesizer.
+	            synth = JSyn.createSynthesizer();
+	            // Start synthesizer using default stereo output at 44100 Hz.
+	            synth.start();
+	            // Add a stereo audio output unit.
+	            synth.add(lineOut = new LineOut());
+	            // We only need to start the LineOut. It will pull data from the
+	            // oscillator.
+	            lineOut.start();
+
+				'+ resource.allContents
+				.filter(SineOscillator)
+				.map["createSound" + name + "();	       
+				"].join('\n\t\t\t\t')
+				
+				+ '
 		    	createAndShowGUI();
 			}
 			
@@ -78,38 +101,25 @@ class SynthesizerGenerator extends AbstractGenerator {
 			'+ resource.allContents
 			.filter(SineOscillator)
 			.map["private static void createSound" + name + "() {\n\t\t\t\t" + 
-        		'if (!soundRunning) {
-					UnitOscillator osc;
-		            LineOut lineOut;
-		        	
-		        	// Create a context for the synthesizer.
-		            synth = JSyn.createSynthesizer();
-		
-		            // Start synthesizer using default stereo output at 44100 Hz.
-		            synth.start();
-		
-		            // Add a tone generator.
-		            synth.add(osc = new SineOscillator());
-		            // Add a stereo audio output unit.
-		            synth.add(lineOut = new LineOut());
-		
-		            // Connect the oscillator to both channels of the output.
-		            osc.output.connect(0, lineOut.input, 0);
-		            osc.output.connect(0, lineOut.input, 1);
-		
+        		'	osc' + name + ' = new SineOscillator();
+					// Add a tone generator.
+		            synth.add(osc' + name + ' );
+				
 		            // Set the frequency and amplitude for the sine wave.
-		            osc.frequency.set(' + frequency + ');
-		            osc.amplitude.set(' + amplitude + ');
-		
-		            // We only need to start the LineOut. It will pull data from the
-		            // oscillator.
-		            lineOut.start();
-	            }
-	            else
-	            	synth.stop();
-	            
-	            soundRunning = !soundRunning;
-			}
+		            osc' + name + '.frequency.set(' + frequency + ');
+		            osc' + name + '.amplitude.set(' + amplitude + ');
+				}
+			
+				private static void playSound' + name + '(){
+					if(!osc' + name + '.output.isConnected()) {
+			            osc' + name + '.output.connect(0, lineOut.input, 0);
+			            osc' + name + '.output.connect(0, lineOut.input, 1);
+					}
+					else {
+			            osc' + name + '.output.disconnect(0, lineOut.input, 0);
+			            osc' + name + '.output.disconnect(0, lineOut.input, 1);
+					}
+				}
 	        '].join('\n\t\t\t\t')
 
 		    + '
@@ -144,7 +154,7 @@ class SynthesizerGenerator extends AbstractGenerator {
 				b" + name + '.addActionListener(new ActionListener() {
 			        @Override
 			        public void actionPerformed(ActionEvent e) {
-			            createSound' + sound.name + '();
+			            playSound' + sound.name + '();
 			        }
 		    	});
 
