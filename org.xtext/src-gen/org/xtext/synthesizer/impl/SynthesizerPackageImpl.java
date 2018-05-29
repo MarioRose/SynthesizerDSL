@@ -63,14 +63,14 @@ public class SynthesizerPackageImpl extends EPackageImpl implements SynthesizerP
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass buttonEClass = null;
+  private EClass soundElementEClass = null;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass soundElementEClass = null;
+  private EClass buttonEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -281,26 +281,6 @@ public class SynthesizerPackageImpl extends EPackageImpl implements SynthesizerP
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getButton()
-  {
-    return buttonEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getButton_Frequency()
-  {
-    return (EAttribute)buttonEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EClass getSoundElement()
   {
     return soundElementEClass;
@@ -314,6 +294,26 @@ public class SynthesizerPackageImpl extends EPackageImpl implements SynthesizerP
   public EAttribute getSoundElement_Name()
   {
     return (EAttribute)soundElementEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getButton()
+  {
+    return buttonEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getButton_Sound()
+  {
+    return (EReference)buttonEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -462,11 +462,11 @@ public class SynthesizerPackageImpl extends EPackageImpl implements SynthesizerP
 
     sliderEClass = createEClass(SLIDER);
 
-    buttonEClass = createEClass(BUTTON);
-    createEAttribute(buttonEClass, BUTTON__FREQUENCY);
-
     soundElementEClass = createEClass(SOUND_ELEMENT);
     createEAttribute(soundElementEClass, SOUND_ELEMENT__NAME);
+
+    buttonEClass = createEClass(BUTTON);
+    createEReference(buttonEClass, BUTTON__SOUND);
 
     connectionElementEClass = createEClass(CONNECTION_ELEMENT);
     createEReference(connectionElementEClass, CONNECTION_ELEMENT__CE);
@@ -534,11 +534,11 @@ public class SynthesizerPackageImpl extends EPackageImpl implements SynthesizerP
 
     initEClass(sliderEClass, Slider.class, "Slider", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-    initEClass(buttonEClass, Button.class, "Button", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getButton_Frequency(), ecorePackage.getEInt(), "frequency", null, 0, 1, Button.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
     initEClass(soundElementEClass, SoundElement.class, "SoundElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getSoundElement_Name(), ecorePackage.getEString(), "name", null, 0, 1, SoundElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(buttonEClass, Button.class, "Button", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getButton_Sound(), this.getSoundElement(), null, "sound", null, 0, 1, Button.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(connectionElementEClass, ConnectionElement.class, "ConnectionElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getConnectionElement_Ce(), this.getControlElement(), null, "ce", null, 0, 1, ConnectionElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

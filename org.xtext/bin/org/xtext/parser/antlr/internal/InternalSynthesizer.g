@@ -495,6 +495,42 @@ ruleSlider returns [EObject current=null]
 	)
 ;
 
+// Entry rule entryRuleSoundElement
+entryRuleSoundElement returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getSoundElementRule()); }
+	iv_ruleSoundElement=ruleSoundElement
+	{ $current=$iv_ruleSoundElement.current; }
+	EOF;
+
+// Rule SoundElement
+ruleSoundElement returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		{
+			newCompositeNode(grammarAccess.getSoundElementAccess().getSawToothOscillatorParserRuleCall_0());
+		}
+		this_SawToothOscillator_0=ruleSawToothOscillator
+		{
+			$current = $this_SawToothOscillator_0.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getSoundElementAccess().getSineOscillatorParserRuleCall_1());
+		}
+		this_SineOscillator_1=ruleSineOscillator
+		{
+			$current = $this_SineOscillator_1.current;
+			afterParserOrEnumRuleCall();
+		}
+	)
+;
+
 // Entry rule entryRuleButton
 entryRuleButton returns [EObject current=null]:
 	{ newCompositeNode(grammarAccess.getButtonRule()); }
@@ -625,67 +661,26 @@ ruleButton returns [EObject current=null]
 				}
 			)
 		)
-		otherlv_11='frequency'
+		otherlv_11='sound'
 		{
-			newLeafNode(otherlv_11, grammarAccess.getButtonAccess().getFrequencyKeyword_11());
+			newLeafNode(otherlv_11, grammarAccess.getButtonAccess().getSoundKeyword_11());
 		}
 		(
 			(
-				lv_frequency_12_0=RULE_INT
-				{
-					newLeafNode(lv_frequency_12_0, grammarAccess.getButtonAccess().getFrequencyINTTerminalRuleCall_12_0());
-				}
 				{
 					if ($current==null) {
 						$current = createModelElement(grammarAccess.getButtonRule());
 					}
-					setWithLastConsumed(
-						$current,
-						"frequency",
-						lv_frequency_12_0,
-						"org.eclipse.xtext.common.Terminals.INT");
+				}
+				otherlv_12=RULE_ID
+				{
+					newLeafNode(otherlv_12, grammarAccess.getButtonAccess().getSoundSoundElementCrossReference_12_0());
 				}
 			)
 		)
 		otherlv_13=')'
 		{
 			newLeafNode(otherlv_13, grammarAccess.getButtonAccess().getRightParenthesisKeyword_13());
-		}
-	)
-;
-
-// Entry rule entryRuleSoundElement
-entryRuleSoundElement returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getSoundElementRule()); }
-	iv_ruleSoundElement=ruleSoundElement
-	{ $current=$iv_ruleSoundElement.current; }
-	EOF;
-
-// Rule SoundElement
-ruleSoundElement returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		{
-			newCompositeNode(grammarAccess.getSoundElementAccess().getSawToothOscillatorParserRuleCall_0());
-		}
-		this_SawToothOscillator_0=ruleSawToothOscillator
-		{
-			$current = $this_SawToothOscillator_0.current;
-			afterParserOrEnumRuleCall();
-		}
-		    |
-		{
-			newCompositeNode(grammarAccess.getSoundElementAccess().getSineOscillatorParserRuleCall_1());
-		}
-		this_SineOscillator_1=ruleSineOscillator
-		{
-			$current = $this_SineOscillator_1.current;
-			afterParserOrEnumRuleCall();
 		}
 	)
 ;

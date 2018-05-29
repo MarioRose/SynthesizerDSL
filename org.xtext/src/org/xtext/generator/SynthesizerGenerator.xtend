@@ -11,6 +11,7 @@ import org.xtext.synthesizer.Slider
 import org.xtext.synthesizer.Button
 import org.xtext.synthesizer.RotaryKnob
 import org.xtext.synthesizer.SineOscillator
+import org.xtext.synthesizer.SoundElement
 
 /**
  * Generates code from your model files on save.
@@ -27,7 +28,6 @@ class SynthesizerGenerator extends AbstractGenerator {
 //				.join(', '))
 //	}
 	
-	int yPos = 5;
 	
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
 		
@@ -63,7 +63,8 @@ class SynthesizerGenerator extends AbstractGenerator {
 
 
 		public class SynthesizerDSL extends JApplet{
-			static int yPos = 5;
+			static boolean soundRunning;
+		    static Synthesizer synth;
 
 			' + generateUI(resource) + '
 
@@ -77,47 +78,37 @@ class SynthesizerGenerator extends AbstractGenerator {
 			'+ resource.allContents
 			.filter(SineOscillator)
 			.map["private static void createSound" + name + "() {\n\t\t\t\t" + 
-        		'Synthesizer synth;
-	            UnitOscillator osc;
-	            LineOut lineOut;
-	        	
-	        	// Create a context for the synthesizer.
-	            synth = JSyn.createSynthesizer();
-	
-	            // Start synthesizer using default stereo output at 44100 Hz.
-	            synth.start();
-	
-	            // Add a tone generator.
-	            synth.add(osc = new SineOscillator());
-	            // Add a stereo audio output unit.
-	            synth.add(lineOut = new LineOut());
-	
-	            // Connect the oscillator to both channels of the output.
-	            osc.output.connect(0, lineOut.input, 0);
-	            osc.output.connect(0, lineOut.input, 1);
-	
-	            // Set the frequency and amplitude for the sine wave.
-	            osc.frequency.set(' + frequency + ');
-	            osc.amplitude.set(' + amplitude + ');
-	
-	            // We only need to start the LineOut. It will pull data from the
-	            // oscillator.
-	            lineOut.start();
-	
-	            System.out.println("You should now be hearing a sine wave. ---------");
-	
-	            // Sleep while the sound is generated in the background.
-	            try {
-	                double time = synth.getCurrentTime();
-	                System.out.println("time = " + time);
-	                // Sleep for a few seconds.
-	                synth.sleepUntil(time + 1.0);
-	            } catch (InterruptedException ex) {
-	                ex.printStackTrace();
+        		'if (!soundRunning) {
+					UnitOscillator osc;
+		            LineOut lineOut;
+		        	
+		        	// Create a context for the synthesizer.
+		            synth = JSyn.createSynthesizer();
+		
+		            // Start synthesizer using default stereo output at 44100 Hz.
+		            synth.start();
+		
+		            // Add a tone generator.
+		            synth.add(osc = new SineOscillator());
+		            // Add a stereo audio output unit.
+		            synth.add(lineOut = new LineOut());
+		
+		            // Connect the oscillator to both channels of the output.
+		            osc.output.connect(0, lineOut.input, 0);
+		            osc.output.connect(0, lineOut.input, 1);
+		
+		            // Set the frequency and amplitude for the sine wave.
+		            osc.frequency.set(' + frequency + ');
+		            osc.amplitude.set(' + amplitude + ');
+		
+		            // We only need to start the LineOut. It will pull data from the
+		            // oscillator.
+		            lineOut.start();
 	            }
-	
-	            // Stop everything.
-	            synth.stop();
+	            else
+	            	synth.stop();
+	            
+	            soundRunning = !soundRunning;
 			}
 	        '].join('\n\t\t\t\t')
 
@@ -151,60 +142,14 @@ class SynthesizerGenerator extends AbstractGenerator {
 				.filter(Button)
 				.map["JButton b" + name + " = new JButton(\"b" + name + "\");\n
 				b" + name + '.addActionListener(new ActionListener() {
-		        @Override
-		        public void actionPerformed(ActionEvent e) {
-		            //your actions
-		        	System.out.println("TEST");
-		        	
-		        	Synthesizer synth;
-		            UnitOscillator osc;
-		            LineOut lineOut;
-		        	
-		        	// Create a context for the synthesizer.
-		            synth = JSyn.createSynthesizer();
-		
-		            // Start synthesizer using default stereo output at 44100 Hz.
-		            synth.start();
-		
-		            // Add a tone generator.
-		            synth.add(osc = new SineOscillator());
-		            // Add a stereo audio output unit.
-		            synth.add(lineOut = new LineOut());
-		
-		            // Connect the oscillator to both channels of the output.
-		            osc.output.connect(0, lineOut.input, 0);
-		            osc.output.connect(0, lineOut.input, 1);
-		
-		            // Set the frequency and amplitude for the sine wave.
-					int frequ = ' + frequency + ';
-		            osc.frequency.set(frequ);
-		            osc.amplitude.set(0.6);
-		
-		            // We only need to start the LineOut. It will pull data from the
-		            // oscillator.
-		            lineOut.start();
-		
-		            System.out.println("You should now be hearing a sine wave. ---------");
-		
-		            // Sleep while the sound is generated in the background.
-		            try {
-		                double time = synth.getCurrentTime();
-		                System.out.println("time = " + time);
-		                // Sleep for a few seconds.
-		                synth.sleepUntil(time + 1.0);
-		            } catch (InterruptedException ex) {
-		                ex.printStackTrace();
-		            }
-		
-		            System.out.println("Stop playing. -------------------");
-		            // Stop everything.
-		            synth.stop();
-		        }
+			        @Override
+			        public void actionPerformed(ActionEvent e) {
+			            createSound' + sound.name + '();
+			        }
 		    	});
 
 				b' + name + '.setBounds(' + x + ', ' + y + ', ' + width + ', ' + height + ');  // x, y, width, height
     			b' + name + '.setPreferredSize(new Dimension(' + width +', ' + height +'));				
-				yPos += 25;
         		panel.add(b' + name + ');
 
 		        '].join('\n\t\t\t\t')

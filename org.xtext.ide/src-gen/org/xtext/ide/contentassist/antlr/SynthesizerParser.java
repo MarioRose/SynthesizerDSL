@@ -60,7 +60,7 @@ public class SynthesizerParser extends AbstractContentAssistParser {
 					put(grammarAccess.getButtonAccess().getYAssignment_6(), "rule__Button__YAssignment_6");
 					put(grammarAccess.getButtonAccess().getWidthAssignment_8(), "rule__Button__WidthAssignment_8");
 					put(grammarAccess.getButtonAccess().getHeightAssignment_10(), "rule__Button__HeightAssignment_10");
-					put(grammarAccess.getButtonAccess().getFrequencyAssignment_12(), "rule__Button__FrequencyAssignment_12");
+					put(grammarAccess.getButtonAccess().getSoundAssignment_12(), "rule__Button__SoundAssignment_12");
 					put(grammarAccess.getConnectionElementAccess().getCeAssignment_1(), "rule__ConnectionElement__CeAssignment_1");
 					put(grammarAccess.getConnectionElementAccess().getSeAssignment_2(), "rule__ConnectionElement__SeAssignment_2");
 					put(grammarAccess.getSawToothOscillatorAccess().getNameAssignment_1(), "rule__SawToothOscillator__NameAssignment_1");

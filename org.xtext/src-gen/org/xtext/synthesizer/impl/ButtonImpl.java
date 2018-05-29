@@ -6,10 +6,12 @@ package org.xtext.synthesizer.impl;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.xtext.synthesizer.Button;
+import org.xtext.synthesizer.SoundElement;
 import org.xtext.synthesizer.SynthesizerPackage;
 
 /**
@@ -20,7 +22,7 @@ import org.xtext.synthesizer.SynthesizerPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.synthesizer.impl.ButtonImpl#getFrequency <em>Frequency</em>}</li>
+ *   <li>{@link org.xtext.synthesizer.impl.ButtonImpl#getSound <em>Sound</em>}</li>
  * </ul>
  *
  * @generated
@@ -28,24 +30,14 @@ import org.xtext.synthesizer.SynthesizerPackage;
 public class ButtonImpl extends ControlElementImpl implements Button
 {
   /**
-   * The default value of the '{@link #getFrequency() <em>Frequency</em>}' attribute.
+   * The cached value of the '{@link #getSound() <em>Sound</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getFrequency()
+   * @see #getSound()
    * @generated
    * @ordered
    */
-  protected static final int FREQUENCY_EDEFAULT = 0;
-
-  /**
-   * The cached value of the '{@link #getFrequency() <em>Frequency</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getFrequency()
-   * @generated
-   * @ordered
-   */
-  protected int frequency = FREQUENCY_EDEFAULT;
+  protected SoundElement sound;
 
   /**
    * <!-- begin-user-doc -->
@@ -73,9 +65,19 @@ public class ButtonImpl extends ControlElementImpl implements Button
    * <!-- end-user-doc -->
    * @generated
    */
-  public int getFrequency()
+  public SoundElement getSound()
   {
-    return frequency;
+    if (sound != null && sound.eIsProxy())
+    {
+      InternalEObject oldSound = (InternalEObject)sound;
+      sound = (SoundElement)eResolveProxy(oldSound);
+      if (sound != oldSound)
+      {
+        if (eNotificationRequired())
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, SynthesizerPackage.BUTTON__SOUND, oldSound, sound));
+      }
+    }
+    return sound;
   }
 
   /**
@@ -83,12 +85,22 @@ public class ButtonImpl extends ControlElementImpl implements Button
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setFrequency(int newFrequency)
+  public SoundElement basicGetSound()
   {
-    int oldFrequency = frequency;
-    frequency = newFrequency;
+    return sound;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setSound(SoundElement newSound)
+  {
+    SoundElement oldSound = sound;
+    sound = newSound;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SynthesizerPackage.BUTTON__FREQUENCY, oldFrequency, frequency));
+      eNotify(new ENotificationImpl(this, Notification.SET, SynthesizerPackage.BUTTON__SOUND, oldSound, sound));
   }
 
   /**
@@ -101,8 +113,9 @@ public class ButtonImpl extends ControlElementImpl implements Button
   {
     switch (featureID)
     {
-      case SynthesizerPackage.BUTTON__FREQUENCY:
-        return getFrequency();
+      case SynthesizerPackage.BUTTON__SOUND:
+        if (resolve) return getSound();
+        return basicGetSound();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -117,8 +130,8 @@ public class ButtonImpl extends ControlElementImpl implements Button
   {
     switch (featureID)
     {
-      case SynthesizerPackage.BUTTON__FREQUENCY:
-        setFrequency((Integer)newValue);
+      case SynthesizerPackage.BUTTON__SOUND:
+        setSound((SoundElement)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -134,8 +147,8 @@ public class ButtonImpl extends ControlElementImpl implements Button
   {
     switch (featureID)
     {
-      case SynthesizerPackage.BUTTON__FREQUENCY:
-        setFrequency(FREQUENCY_EDEFAULT);
+      case SynthesizerPackage.BUTTON__SOUND:
+        setSound((SoundElement)null);
         return;
     }
     super.eUnset(featureID);
@@ -151,27 +164,10 @@ public class ButtonImpl extends ControlElementImpl implements Button
   {
     switch (featureID)
     {
-      case SynthesizerPackage.BUTTON__FREQUENCY:
-        return frequency != FREQUENCY_EDEFAULT;
+      case SynthesizerPackage.BUTTON__SOUND:
+        return sound != null;
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (frequency: ");
-    result.append(frequency);
-    result.append(')');
-    return result.toString();
   }
 
 } //ButtonImpl

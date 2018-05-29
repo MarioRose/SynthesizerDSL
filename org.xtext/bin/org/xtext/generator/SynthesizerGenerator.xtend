@@ -7,9 +7,11 @@ import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.AbstractGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
-import org.xtext.synthesizer.ControlElement
+import org.xtext.synthesizer.Slider
 import org.xtext.synthesizer.Button
+import org.xtext.synthesizer.RotaryKnob
 import org.xtext.synthesizer.SineOscillator
+import org.xtext.synthesizer.SoundElement
 
 /**
  * Generates code from your model files on save.
@@ -30,115 +32,54 @@ class SynthesizerGenerator extends AbstractGenerator {
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
 		
 	// Generate Main Java Class
-	
-	
-	fsa.generateFile('Main.java', '
+	fsa.generateFile('SynthesizerDSL.java', '
 		import java.io.BufferedReader;
 		import java.io.IOException;
 		import java.io.InputStreamReader;
 		import java.util.Scanner; 
 		import java.awt.event.ActionEvent;
 		import java.awt.event.ActionListener;
+		import java.awt.BorderLayout;
+		import java.awt.GridLayout;
+		import java.awt.Dimension;
 
 		import javax.swing.*;  
+		import javax.swing.JApplet;
+		import com.jsyn.swing.JAppletFrame;
+		import com.jsyn.swing.DoubleBoundedRangeSlider;
+		import com.jsyn.swing.PortControllerFactory;
+
+		import com.jsyn.swing.ExponentialRangeModel;
+		import com.jsyn.swing.PortModelFactory;
+		import com.jsyn.swing.RotaryTextController;
 
 		import com.jsyn.JSyn;
 		import com.jsyn.Synthesizer;
 		import com.jsyn.unitgen.LineOut;
 		import com.jsyn.unitgen.SineOscillator;
 		import com.jsyn.unitgen.UnitOscillator;
+		import com.jsyn.unitgen.LinearRamp;
+		import com.jsyn.unitgen.SawtoothOscillatorBL;
 
 
-		public class Main {
+		public class SynthesizerDSL extends JApplet{
+			static boolean soundRunning;
+		    static Synthesizer synth;
 
-			public static void main(String[] args) {
-				System.out.println("Synthesizer started!");
-				javax.swing.SwingUtilities.invokeLater(new Runnable() {
-					public void run() {
-						createAndShowGUI();
-				    }
-				});
+			' + generateUI(resource) + '
+
+		    @Override
+		    public void start() {
+		    	createAndShowGUI();
 			}
-
 			
-			private static void createAndShowGUI() {
-		        //Create and set up the window.
-		        JFrame frame = new JFrame("HelloWorldSwing");
-		        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-				frame.setSize(800,600);
-		        
-		        //Create Buttons
-				'+ resource.allContents
-				.filter(Button)
-				.map["JButton b" + name + " = new JButton(\"b" + name + "\");\n\t\t\t\tb"
-				+ name + '.addActionListener(new ActionListener() {
-		        @Override
-		        public void actionPerformed(ActionEvent e) {
-		        	
-		        	Synthesizer synth;
-		            UnitOscillator osc;
-		            LineOut lineOut;
-		        	
-		        	// Create a context for the synthesizer.
-		            synth = JSyn.createSynthesizer();
-		
-		            // Start synthesizer using default stereo output at 44100 Hz.
-		            synth.start();
-		
-		            // Add a tone generator.
-		            synth.add(osc = new SineOscillator());
-		            // Add a stereo audio output unit.
-		            synth.add(lineOut = new LineOut());
-		
-		            // Connect the oscillator to both channels of the output.
-		            osc.output.connect(0, lineOut.input, 0);
-		            osc.output.connect(0, lineOut.input, 1);
-		
-		            // Set the frequency and amplitude for the sine wave.
-		            osc.frequency.set(' + frequency + ');
-		            osc.amplitude.set(0.6);
-		
-		            // We only need to start the LineOut. It will pull data from the
-		            // oscillator.
-		            lineOut.start();
-		
-		            System.out.println("You should now be hearing a sine wave. ---------");
-		
-		            // Sleep while the sound is generated in the background.
-		            try {
-		                double time = synth.getCurrentTime();
-		                System.out.println("time = " + time);
-		                // Sleep for a few seconds.
-		                synth.sleepUntil(time + 1.0);
-		            } catch (InterruptedException ex) {
-		                ex.printStackTrace();
-		            }
-		
-		            System.out.println("Stop playing. -------------------");
-		            // Stop everything.
-		            synth.stop();
-		        }
-		    	});
-
-				b' + name + '.setBounds(' + x + ', ' + y + ', ' + width + ', ' + height + ');  // x, y, width, height
-        		frame.add(b' + name + ');
-
-		        '].join('\n\t\t\t\t')
-		        + '
-
-
-		        //Display the window.
-		        frame.setLayout(null);  
-		        frame.setVisible(true);
-		    }
-
 
 			//Create Sound (SineOscillators)
 			'+ resource.allContents
 			.filter(SineOscillator)
 			.map["private static void createSound" + name + "() {\n\t\t\t\t" + 
-	        		'Synthesizer synth;
-		            UnitOscillator osc;
+        		'if (!soundRunning) {
+					UnitOscillator osc;
 		            LineOut lineOut;
 		        	
 		        	// Create a context for the synthesizer.
@@ -163,30 +104,108 @@ class SynthesizerGenerator extends AbstractGenerator {
 		            // We only need to start the LineOut. It will pull data from the
 		            // oscillator.
 		            lineOut.start();
-		
-		            System.out.println("You should now be hearing a sine wave. ---------");
-		
-		            // Sleep while the sound is generated in the background.
-		            try {
-		                double time = synth.getCurrentTime();
-		                System.out.println("time = " + time);
-		                // Sleep for a few seconds.
-		                synth.sleepUntil(time + 1.0);
-		            } catch (InterruptedException ex) {
-		                ex.printStackTrace();
-		            }
-		
-		            // Stop everything.
-		            synth.stop();
-				}
+	            }
+	            else
+	            	synth.stop();
+	            
+	            soundRunning = !soundRunning;
+			}
 	        '].join('\n\t\t\t\t')
-	        + '
 
-			
+		    + '
 
-		}' )
-		
+			public static void main(String[] args) {
+				System.out.println("Synthesizer started!");
+		        SynthesizerDSL applet = new SynthesizerDSL();
+		        JAppletFrame frame = new JAppletFrame("Synthesizer", applet);
+		        frame.setSize(640, 500);
+		        frame.setVisible(true);
+		        frame.test();
+		        frame.validate();
+			}
+		}' 
+		)
 	}
 		
+	def String generateUI(Resource resource){	
+			return 'private void createAndShowGUI() {
+		        //Create and set up the window.
+        		add(BorderLayout.NORTH, new JLabel("Show Oscillators in an AudioScope"));
+		        
+				//Create Panels
+				JPanel panel = new JPanel();
+        		panel.setLayout(null);
+        		add(BorderLayout.CENTER, panel);
+
+		        //Create Buttons
+				'+ resource.allContents
+				.filter(Button)
+				.map["JButton b" + name + " = new JButton(\"b" + name + "\");\n
+				b" + name + '.addActionListener(new ActionListener() {
+			        @Override
+			        public void actionPerformed(ActionEvent e) {
+			            createSound' + sound.name + '();
+			        }
+		    	});
+
+				b' + name + '.setBounds(' + x + ', ' + y + ', ' + width + ', ' + height + ');  // x, y, width, height
+    			b' + name + '.setPreferredSize(new Dimension(' + width +', ' + height +'));				
+        		panel.add(b' + name + ');
+
+		        '].join('\n\t\t\t\t')
+		        + '
+
+				//Example ramp for slider
+		       	LinearRamp freqRamp = new LinearRamp();
+		        freqRamp.input.setup(50.0, 300.0, 20000.0);
+		        freqRamp.input.setName("Frequency");
+				freqRamp.time.set(0.1);
+
+		        //Create Slider
+				'+ resource.allContents
+				.filter(Slider)
+				.map["DoubleBoundedRangeSlider slider" + name + ' = PortControllerFactory.createExponentialPortSlider(freqRamp.input);
+				slider' + name + '.setBounds(' + x + ', ' + y + ', ' + width + ', ' + height + ');  // x, y, width, height
+				panel.add(slider' + name +");"
+						        ].join('\n\t\t\t\t')
+						   
+				+ '
+
+
+				//Example input for knobs
+		        Synthesizer synth = JSyn.createSynthesizer();
+
+		        // Add a tone generator. (band limited sawtooth)
+		        SawtoothOscillatorBL osc;
+		        synth.add(osc = new SawtoothOscillatorBL());
+		        // Add a lag to smooth out amplitude changes and avoid pops.
+		        LinearRamp lag;
+		        synth.add(lag = new LinearRamp());
+		        // Add an output mixer.
+		        LineOut lineOut;
+		        synth.add(lineOut = new LineOut());
+
+		        // Connect the oscillator to both left and right output.
+		        osc.output.connect(0, lineOut.input, 0);
+		        osc.output.connect(0, lineOut.input, 1);
+		
+		        // Set the minimum, current and maximum values for the port.
+		        lag.output.connect(osc.amplitude);
+		        lag.input.setup(0.0, 0.5, 1.0);
+		        lag.time.set(0.2);
+
+        		ExponentialRangeModel amplitudeModel = PortModelFactory.createExponentialModel(lag.input);
+
+		        //Create RotaryKnob
+				'+ resource.allContents
+				.filter(RotaryKnob)
+				.map["RotaryTextController knob" + name + ' = new RotaryTextController(amplitudeModel, 10);
+				knob' + name + '.setBounds(' + x + ', ' + y + ', ' + width + ', ' + height + ');  // x, y, width, height
+				panel.add(knob' + name +");"
+						        ].join('\n\t\t\t\t')
+						   
+				+ '
+			}'
+		}
 		
 }

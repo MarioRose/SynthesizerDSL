@@ -296,6 +296,34 @@ public interface SynthesizerPackage extends EPackage
   int SLIDER_FEATURE_COUNT = CONTROL_ELEMENT_FEATURE_COUNT + 0;
 
   /**
+   * The meta object id for the '{@link org.xtext.synthesizer.impl.SoundElementImpl <em>Sound Element</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.synthesizer.impl.SoundElementImpl
+   * @see org.xtext.synthesizer.impl.SynthesizerPackageImpl#getSoundElement()
+   * @generated
+   */
+  int SOUND_ELEMENT = 4;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SOUND_ELEMENT__NAME = 0;
+
+  /**
+   * The number of structural features of the '<em>Sound Element</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SOUND_ELEMENT_FEATURE_COUNT = 1;
+
+  /**
    * The meta object id for the '{@link org.xtext.synthesizer.impl.ButtonImpl <em>Button</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -303,7 +331,7 @@ public interface SynthesizerPackage extends EPackage
    * @see org.xtext.synthesizer.impl.SynthesizerPackageImpl#getButton()
    * @generated
    */
-  int BUTTON = 4;
+  int BUTTON = 5;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -351,13 +379,13 @@ public interface SynthesizerPackage extends EPackage
   int BUTTON__HEIGHT = CONTROL_ELEMENT__HEIGHT;
 
   /**
-   * The feature id for the '<em><b>Frequency</b></em>' attribute.
+   * The feature id for the '<em><b>Sound</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int BUTTON__FREQUENCY = CONTROL_ELEMENT_FEATURE_COUNT + 0;
+  int BUTTON__SOUND = CONTROL_ELEMENT_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Button</em>' class.
@@ -367,34 +395,6 @@ public interface SynthesizerPackage extends EPackage
    * @ordered
    */
   int BUTTON_FEATURE_COUNT = CONTROL_ELEMENT_FEATURE_COUNT + 1;
-
-  /**
-   * The meta object id for the '{@link org.xtext.synthesizer.impl.SoundElementImpl <em>Sound Element</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.xtext.synthesizer.impl.SoundElementImpl
-   * @see org.xtext.synthesizer.impl.SynthesizerPackageImpl#getSoundElement()
-   * @generated
-   */
-  int SOUND_ELEMENT = 5;
-
-  /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SOUND_ELEMENT__NAME = 0;
-
-  /**
-   * The number of structural features of the '<em>Sound Element</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SOUND_ELEMENT_FEATURE_COUNT = 1;
 
   /**
    * The meta object id for the '{@link org.xtext.synthesizer.impl.ConnectionElementImpl <em>Connection Element</em>}' class.
@@ -664,27 +664,6 @@ public interface SynthesizerPackage extends EPackage
   EClass getSlider();
 
   /**
-   * Returns the meta object for class '{@link org.xtext.synthesizer.Button <em>Button</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Button</em>'.
-   * @see org.xtext.synthesizer.Button
-   * @generated
-   */
-  EClass getButton();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.xtext.synthesizer.Button#getFrequency <em>Frequency</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Frequency</em>'.
-   * @see org.xtext.synthesizer.Button#getFrequency()
-   * @see #getButton()
-   * @generated
-   */
-  EAttribute getButton_Frequency();
-
-  /**
    * Returns the meta object for class '{@link org.xtext.synthesizer.SoundElement <em>Sound Element</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -704,6 +683,27 @@ public interface SynthesizerPackage extends EPackage
    * @generated
    */
   EAttribute getSoundElement_Name();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.synthesizer.Button <em>Button</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Button</em>'.
+   * @see org.xtext.synthesizer.Button
+   * @generated
+   */
+  EClass getButton();
+
+  /**
+   * Returns the meta object for the reference '{@link org.xtext.synthesizer.Button#getSound <em>Sound</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Sound</em>'.
+   * @see org.xtext.synthesizer.Button#getSound()
+   * @see #getButton()
+   * @generated
+   */
+  EReference getButton_Sound();
 
   /**
    * Returns the meta object for class '{@link org.xtext.synthesizer.ConnectionElement <em>Connection Element</em>}'.
@@ -940,24 +940,6 @@ public interface SynthesizerPackage extends EPackage
     EClass SLIDER = eINSTANCE.getSlider();
 
     /**
-     * The meta object literal for the '{@link org.xtext.synthesizer.impl.ButtonImpl <em>Button</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.xtext.synthesizer.impl.ButtonImpl
-     * @see org.xtext.synthesizer.impl.SynthesizerPackageImpl#getButton()
-     * @generated
-     */
-    EClass BUTTON = eINSTANCE.getButton();
-
-    /**
-     * The meta object literal for the '<em><b>Frequency</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute BUTTON__FREQUENCY = eINSTANCE.getButton_Frequency();
-
-    /**
      * The meta object literal for the '{@link org.xtext.synthesizer.impl.SoundElementImpl <em>Sound Element</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -974,6 +956,24 @@ public interface SynthesizerPackage extends EPackage
      * @generated
      */
     EAttribute SOUND_ELEMENT__NAME = eINSTANCE.getSoundElement_Name();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.synthesizer.impl.ButtonImpl <em>Button</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.synthesizer.impl.ButtonImpl
+     * @see org.xtext.synthesizer.impl.SynthesizerPackageImpl#getButton()
+     * @generated
+     */
+    EClass BUTTON = eINSTANCE.getButton();
+
+    /**
+     * The meta object literal for the '<em><b>Sound</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference BUTTON__SOUND = eINSTANCE.getButton_Sound();
 
     /**
      * The meta object literal for the '{@link org.xtext.synthesizer.impl.ConnectionElementImpl <em>Connection Element</em>}' class.

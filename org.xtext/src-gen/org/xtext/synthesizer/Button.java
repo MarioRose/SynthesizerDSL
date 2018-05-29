@@ -13,7 +13,7 @@ package org.xtext.synthesizer;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.synthesizer.Button#getFrequency <em>Frequency</em>}</li>
+ *   <li>{@link org.xtext.synthesizer.Button#getSound <em>Sound</em>}</li>
  * </ul>
  *
  * @see org.xtext.synthesizer.SynthesizerPackage#getButton()
@@ -23,29 +23,29 @@ package org.xtext.synthesizer;
 public interface Button extends ControlElement
 {
   /**
-   * Returns the value of the '<em><b>Frequency</b></em>' attribute.
+   * Returns the value of the '<em><b>Sound</b></em>' reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Frequency</em>' attribute isn't clear,
+   * If the meaning of the '<em>Sound</em>' reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Frequency</em>' attribute.
-   * @see #setFrequency(int)
-   * @see org.xtext.synthesizer.SynthesizerPackage#getButton_Frequency()
+   * @return the value of the '<em>Sound</em>' reference.
+   * @see #setSound(SoundElement)
+   * @see org.xtext.synthesizer.SynthesizerPackage#getButton_Sound()
    * @model
    * @generated
    */
-  int getFrequency();
+  SoundElement getSound();
 
   /**
-   * Sets the value of the '{@link org.xtext.synthesizer.Button#getFrequency <em>Frequency</em>}' attribute.
+   * Sets the value of the '{@link org.xtext.synthesizer.Button#getSound <em>Sound</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Frequency</em>' attribute.
-   * @see #getFrequency()
+   * @param value the new value of the '<em>Sound</em>' reference.
+   * @see #getSound()
    * @generated
    */
-  void setFrequency(int value);
+  void setSound(SoundElement value);
 
 } // Button

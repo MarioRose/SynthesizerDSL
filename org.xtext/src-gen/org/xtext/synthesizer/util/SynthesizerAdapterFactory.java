@@ -96,14 +96,14 @@ public class SynthesizerAdapterFactory extends AdapterFactoryImpl
         return createSliderAdapter();
       }
       @Override
-      public Adapter caseButton(Button object)
-      {
-        return createButtonAdapter();
-      }
-      @Override
       public Adapter caseSoundElement(SoundElement object)
       {
         return createSoundElementAdapter();
+      }
+      @Override
+      public Adapter caseButton(Button object)
+      {
+        return createButtonAdapter();
       }
       @Override
       public Adapter caseConnectionElement(ConnectionElement object)
@@ -203,21 +203,6 @@ public class SynthesizerAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.synthesizer.Button <em>Button</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.synthesizer.Button
-   * @generated
-   */
-  public Adapter createButtonAdapter()
-  {
-    return null;
-  }
-
-  /**
    * Creates a new adapter for an object of class '{@link org.xtext.synthesizer.SoundElement <em>Sound Element</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -228,6 +213,21 @@ public class SynthesizerAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createSoundElementAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.synthesizer.Button <em>Button</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.synthesizer.Button
+   * @generated
+   */
+  public Adapter createButtonAdapter()
   {
     return null;
   }

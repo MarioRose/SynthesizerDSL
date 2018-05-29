@@ -149,31 +149,6 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-// Entry rule entryRuleButton
-entryRuleButton
-:
-{ before(grammarAccess.getButtonRule()); }
-	 ruleButton
-{ after(grammarAccess.getButtonRule()); } 
-	 EOF 
-;
-
-// Rule Button
-ruleButton 
-	@init {
-		int stackSize = keepStackSize();
-	}
-	:
-	(
-		{ before(grammarAccess.getButtonAccess().getGroup()); }
-		(rule__Button__Group__0)
-		{ after(grammarAccess.getButtonAccess().getGroup()); }
-	)
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
 // Entry rule entryRuleSoundElement
 entryRuleSoundElement
 :
@@ -193,6 +168,31 @@ ruleSoundElement
 		{ before(grammarAccess.getSoundElementAccess().getAlternatives()); }
 		(rule__SoundElement__Alternatives)
 		{ after(grammarAccess.getSoundElementAccess().getAlternatives()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+// Entry rule entryRuleButton
+entryRuleButton
+:
+{ before(grammarAccess.getButtonRule()); }
+	 ruleButton
+{ after(grammarAccess.getButtonRule()); } 
+	 EOF 
+;
+
+// Rule Button
+ruleButton 
+	@init {
+		int stackSize = keepStackSize();
+	}
+	:
+	(
+		{ before(grammarAccess.getButtonAccess().getGroup()); }
+		(rule__Button__Group__0)
+		{ after(grammarAccess.getButtonAccess().getGroup()); }
 	)
 ;
 finally {
@@ -1663,9 +1663,9 @@ rule__Button__Group__11__Impl
 	}
 :
 (
-	{ before(grammarAccess.getButtonAccess().getFrequencyKeyword_11()); }
-	'frequency'
-	{ after(grammarAccess.getButtonAccess().getFrequencyKeyword_11()); }
+	{ before(grammarAccess.getButtonAccess().getSoundKeyword_11()); }
+	'sound'
+	{ after(grammarAccess.getButtonAccess().getSoundKeyword_11()); }
 )
 ;
 finally {
@@ -1690,9 +1690,9 @@ rule__Button__Group__12__Impl
 	}
 :
 (
-	{ before(grammarAccess.getButtonAccess().getFrequencyAssignment_12()); }
-	(rule__Button__FrequencyAssignment_12)
-	{ after(grammarAccess.getButtonAccess().getFrequencyAssignment_12()); }
+	{ before(grammarAccess.getButtonAccess().getSoundAssignment_12()); }
+	(rule__Button__SoundAssignment_12)
+	{ after(grammarAccess.getButtonAccess().getSoundAssignment_12()); }
 )
 ;
 finally {
@@ -2563,15 +2563,19 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Button__FrequencyAssignment_12
+rule__Button__SoundAssignment_12
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getButtonAccess().getFrequencyINTTerminalRuleCall_12_0()); }
-		RULE_INT
-		{ after(grammarAccess.getButtonAccess().getFrequencyINTTerminalRuleCall_12_0()); }
+		{ before(grammarAccess.getButtonAccess().getSoundSoundElementCrossReference_12_0()); }
+		(
+			{ before(grammarAccess.getButtonAccess().getSoundSoundElementIDTerminalRuleCall_12_0_1()); }
+			RULE_ID
+			{ after(grammarAccess.getButtonAccess().getSoundSoundElementIDTerminalRuleCall_12_0_1()); }
+		)
+		{ after(grammarAccess.getButtonAccess().getSoundSoundElementCrossReference_12_0()); }
 	)
 ;
 finally {

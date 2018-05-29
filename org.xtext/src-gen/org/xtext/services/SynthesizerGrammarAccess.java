@@ -45,14 +45,17 @@ public class SynthesizerGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightCurlyBracketKeyword_5_3 = (Keyword)cGroup_5.eContents().get(3);
 		
 		//Model:
-		//	'Controls' '{' controls+=ControlElement* '}' ('Sound' '{' sounds+=SoundElement* '}')? ('Connections' '{'
-		//	// should we really use this?????
-		// connections+=ConnectionElement* '}')?;
+		//	'Controls' '{'
+		//	controls+=ControlElement*
+		//	'}' ('Sound' '{'
+		//	sounds+=SoundElement*
+		//	'}')? ('Connections' '{' // should we really use this?????
+		//	connections+=ConnectionElement*
+		//	'}')?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'Controls' '{' controls+=ControlElement* '}' ('Sound' '{' sounds+=SoundElement* '}')? ('Connections' '{'
-		//// should we really use this?????
-		// connections+=ConnectionElement* '}')?
+		//'Controls' '{' controls+=ControlElement* '}' ('Sound' '{' sounds+=SoundElement* '}')? ('Connections' '{' // should we really use this?????
+		//connections+=ConnectionElement* '}')?
 		public Group getGroup() { return cGroup; }
 		
 		//'Controls'
@@ -89,7 +92,7 @@ public class SynthesizerGrammarAccess extends AbstractGrammarElementFinder {
 		public Keyword getRightCurlyBracketKeyword_4_3() { return cRightCurlyBracketKeyword_4_3; }
 		
 		//('Connections' '{' // should we really use this?????
-		// connections+=ConnectionElement* '}')?
+		//connections+=ConnectionElement* '}')?
 		public Group getGroup_5() { return cGroup_5; }
 		
 		//'Connections'
@@ -99,7 +102,7 @@ public class SynthesizerGrammarAccess extends AbstractGrammarElementFinder {
 		public Keyword getLeftCurlyBracketKeyword_5_1() { return cLeftCurlyBracketKeyword_5_1; }
 		
 		//// should we really use this?????
-		// connections+=ConnectionElement*
+		//connections+=ConnectionElement*
 		public Assignment getConnectionsAssignment_5_2() { return cConnectionsAssignment_5_2; }
 		
 		//ConnectionElement
@@ -153,7 +156,12 @@ public class SynthesizerGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightParenthesisKeyword_11 = (Keyword)cGroup.eContents().get(11);
 		
 		//RotaryKnob:
-		//	'rotaryKnob' name=ID '(' 'x' x=INT 'y' y=INT 'width' width=INT 'height' height=INT ')';
+		//	'rotaryKnob' name=ID '('
+		//	'x' x=INT
+		//	'y' y=INT
+		//	'width' width=INT
+		//	'height' height=INT
+		//	')';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'rotaryKnob' name=ID '(' 'x' x=INT 'y' y=INT 'width' width=INT 'height' height=INT ')'
@@ -232,7 +240,12 @@ public class SynthesizerGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightParenthesisKeyword_11 = (Keyword)cGroup.eContents().get(11);
 		
 		//Slider:
-		//	'slider' name=ID '(' 'x' x=INT 'y' y=INT 'width' width=INT 'height' height=INT ')';
+		//	'slider' name=ID '('
+		//	'x' x=INT
+		//	'y' y=INT
+		//	'width' width=INT
+		//	'height' height=INT
+		//	')';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'slider' name=ID '(' 'x' x=INT 'y' y=INT 'width' width=INT 'height' height=INT ')'
@@ -289,6 +302,25 @@ public class SynthesizerGrammarAccess extends AbstractGrammarElementFinder {
 		//')'
 		public Keyword getRightParenthesisKeyword_11() { return cRightParenthesisKeyword_11; }
 	}
+	public class SoundElementElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Synthesizer.SoundElement");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cSawToothOscillatorParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cSineOscillatorParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		
+		//SoundElement:
+		//	SawToothOscillator | SineOscillator;
+		@Override public ParserRule getRule() { return rule; }
+		
+		//SawToothOscillator | SineOscillator
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//SawToothOscillator
+		public RuleCall getSawToothOscillatorParserRuleCall_0() { return cSawToothOscillatorParserRuleCall_0; }
+		
+		//SineOscillator
+		public RuleCall getSineOscillatorParserRuleCall_1() { return cSineOscillatorParserRuleCall_1; }
+	}
 	public class ButtonElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Synthesizer.Button");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -308,16 +340,23 @@ public class SynthesizerGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cHeightKeyword_9 = (Keyword)cGroup.eContents().get(9);
 		private final Assignment cHeightAssignment_10 = (Assignment)cGroup.eContents().get(10);
 		private final RuleCall cHeightINTTerminalRuleCall_10_0 = (RuleCall)cHeightAssignment_10.eContents().get(0);
-		private final Keyword cFrequencyKeyword_11 = (Keyword)cGroup.eContents().get(11);
-		private final Assignment cFrequencyAssignment_12 = (Assignment)cGroup.eContents().get(12);
-		private final RuleCall cFrequencyINTTerminalRuleCall_12_0 = (RuleCall)cFrequencyAssignment_12.eContents().get(0);
+		private final Keyword cSoundKeyword_11 = (Keyword)cGroup.eContents().get(11);
+		private final Assignment cSoundAssignment_12 = (Assignment)cGroup.eContents().get(12);
+		private final CrossReference cSoundSoundElementCrossReference_12_0 = (CrossReference)cSoundAssignment_12.eContents().get(0);
+		private final RuleCall cSoundSoundElementIDTerminalRuleCall_12_0_1 = (RuleCall)cSoundSoundElementCrossReference_12_0.eContents().get(1);
 		private final Keyword cRightParenthesisKeyword_13 = (Keyword)cGroup.eContents().get(13);
 		
 		//Button:
-		//	'button' name=ID '(' 'x' x=INT 'y' y=INT 'width' width=INT 'height' height=INT 'frequency' frequency=INT ')';
+		//	'button' name=ID '('
+		//	'x' x=INT
+		//	'y' y=INT
+		//	'width' width=INT
+		//	'height' height=INT
+		//	'sound' sound=[SoundElement]
+		//	')';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'button' name=ID '(' 'x' x=INT 'y' y=INT 'width' width=INT 'height' height=INT 'frequency' frequency=INT ')'
+		//'button' name=ID '(' 'x' x=INT 'y' y=INT 'width' width=INT 'height' height=INT 'sound' sound=[SoundElement] ')'
 		public Group getGroup() { return cGroup; }
 		
 		//'button'
@@ -368,36 +407,20 @@ public class SynthesizerGrammarAccess extends AbstractGrammarElementFinder {
 		//INT
 		public RuleCall getHeightINTTerminalRuleCall_10_0() { return cHeightINTTerminalRuleCall_10_0; }
 		
-		//'frequency'
-		public Keyword getFrequencyKeyword_11() { return cFrequencyKeyword_11; }
+		//'sound'
+		public Keyword getSoundKeyword_11() { return cSoundKeyword_11; }
 		
-		//frequency=INT
-		public Assignment getFrequencyAssignment_12() { return cFrequencyAssignment_12; }
+		//sound=[SoundElement]
+		public Assignment getSoundAssignment_12() { return cSoundAssignment_12; }
 		
-		//INT
-		public RuleCall getFrequencyINTTerminalRuleCall_12_0() { return cFrequencyINTTerminalRuleCall_12_0; }
+		//[SoundElement]
+		public CrossReference getSoundSoundElementCrossReference_12_0() { return cSoundSoundElementCrossReference_12_0; }
+		
+		//ID
+		public RuleCall getSoundSoundElementIDTerminalRuleCall_12_0_1() { return cSoundSoundElementIDTerminalRuleCall_12_0_1; }
 		
 		//')'
 		public Keyword getRightParenthesisKeyword_13() { return cRightParenthesisKeyword_13; }
-	}
-	public class SoundElementElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Synthesizer.SoundElement");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final RuleCall cSawToothOscillatorParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final RuleCall cSineOscillatorParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-		
-		//SoundElement:
-		//	SawToothOscillator | SineOscillator;
-		@Override public ParserRule getRule() { return rule; }
-		
-		//SawToothOscillator | SineOscillator
-		public Alternatives getAlternatives() { return cAlternatives; }
-		
-		//SawToothOscillator
-		public RuleCall getSawToothOscillatorParserRuleCall_0() { return cSawToothOscillatorParserRuleCall_0; }
-		
-		//SineOscillator
-		public RuleCall getSineOscillatorParserRuleCall_1() { return cSineOscillatorParserRuleCall_1; }
 	}
 	public class ConnectionElementElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Synthesizer.ConnectionElement");
@@ -457,7 +480,11 @@ public class SynthesizerGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightParenthesisKeyword_9 = (Keyword)cGroup.eContents().get(9);
 		
 		//SawToothOscillator:
-		//	'sawToothOscillator' name=ID '(' 'min' min=INT 'max' max=INT 'default' default=INT ')';
+		//	'sawToothOscillator' name=ID '('
+		//	'min' min=INT
+		//	'max' max=INT
+		//	'default' default=INT
+		//	')';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'sawToothOscillator' name=ID '(' 'min' min=INT 'max' max=INT 'default' default=INT ')'
@@ -521,14 +548,14 @@ public class SynthesizerGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRightParenthesisKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		
 		//SineOscillator:
-		//	'sineOscillator' name=ID '(' 'frequency' frequency=INT 'amplitude' amplitude=INT
-		//	//should be float or INT.INT (e.g. 0.6)
-		// ')';
+		//	'sineOscillator' name=ID '('
+		//	'frequency' frequency=INT
+		//	'amplitude' amplitude=INT //should be float or INT.INT (e.g. 0.6)
+		//	')';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'sineOscillator' name=ID '(' 'frequency' frequency=INT 'amplitude' amplitude=INT
-		////should be float or INT.INT (e.g. 0.6)
-		// ')'
+		//'sineOscillator' name=ID '(' 'frequency' frequency=INT 'amplitude' amplitude=INT //should be float or INT.INT (e.g. 0.6)
+		//')'
 		public Group getGroup() { return cGroup; }
 		
 		//'sineOscillator'
@@ -562,7 +589,7 @@ public class SynthesizerGrammarAccess extends AbstractGrammarElementFinder {
 		public RuleCall getAmplitudeINTTerminalRuleCall_6_0() { return cAmplitudeINTTerminalRuleCall_6_0; }
 		
 		////should be float or INT.INT (e.g. 0.6)
-		// ')'
+		//')'
 		public Keyword getRightParenthesisKeyword_7() { return cRightParenthesisKeyword_7; }
 	}
 	
@@ -571,8 +598,8 @@ public class SynthesizerGrammarAccess extends AbstractGrammarElementFinder {
 	private final ControlElementElements pControlElement;
 	private final RotaryKnobElements pRotaryKnob;
 	private final SliderElements pSlider;
-	private final ButtonElements pButton;
 	private final SoundElementElements pSoundElement;
+	private final ButtonElements pButton;
 	private final ConnectionElementElements pConnectionElement;
 	private final SawToothOscillatorElements pSawToothOscillator;
 	private final SineOscillatorElements pSineOscillator;
@@ -590,8 +617,8 @@ public class SynthesizerGrammarAccess extends AbstractGrammarElementFinder {
 		this.pControlElement = new ControlElementElements();
 		this.pRotaryKnob = new RotaryKnobElements();
 		this.pSlider = new SliderElements();
-		this.pButton = new ButtonElements();
 		this.pSoundElement = new SoundElementElements();
+		this.pButton = new ButtonElements();
 		this.pConnectionElement = new ConnectionElementElements();
 		this.pSawToothOscillator = new SawToothOscillatorElements();
 		this.pSineOscillator = new SineOscillatorElements();
@@ -625,9 +652,13 @@ public class SynthesizerGrammarAccess extends AbstractGrammarElementFinder {
 
 	
 	//Model:
-	//	'Controls' '{' controls+=ControlElement* '}' ('Sound' '{' sounds+=SoundElement* '}')? ('Connections' '{'
-	//	// should we really use this?????
-	// connections+=ConnectionElement* '}')?;
+	//	'Controls' '{'
+	//	controls+=ControlElement*
+	//	'}' ('Sound' '{'
+	//	sounds+=SoundElement*
+	//	'}')? ('Connections' '{' // should we really use this?????
+	//	connections+=ConnectionElement*
+	//	'}')?;
 	public ModelElements getModelAccess() {
 		return pModel;
 	}
@@ -647,7 +678,12 @@ public class SynthesizerGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//RotaryKnob:
-	//	'rotaryKnob' name=ID '(' 'x' x=INT 'y' y=INT 'width' width=INT 'height' height=INT ')';
+	//	'rotaryKnob' name=ID '('
+	//	'x' x=INT
+	//	'y' y=INT
+	//	'width' width=INT
+	//	'height' height=INT
+	//	')';
 	public RotaryKnobElements getRotaryKnobAccess() {
 		return pRotaryKnob;
 	}
@@ -657,23 +693,18 @@ public class SynthesizerGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Slider:
-	//	'slider' name=ID '(' 'x' x=INT 'y' y=INT 'width' width=INT 'height' height=INT ')';
+	//	'slider' name=ID '('
+	//	'x' x=INT
+	//	'y' y=INT
+	//	'width' width=INT
+	//	'height' height=INT
+	//	')';
 	public SliderElements getSliderAccess() {
 		return pSlider;
 	}
 	
 	public ParserRule getSliderRule() {
 		return getSliderAccess().getRule();
-	}
-	
-	//Button:
-	//	'button' name=ID '(' 'x' x=INT 'y' y=INT 'width' width=INT 'height' height=INT 'frequency' frequency=INT ')';
-	public ButtonElements getButtonAccess() {
-		return pButton;
-	}
-	
-	public ParserRule getButtonRule() {
-		return getButtonAccess().getRule();
 	}
 	
 	//SoundElement:
@@ -684,6 +715,22 @@ public class SynthesizerGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getSoundElementRule() {
 		return getSoundElementAccess().getRule();
+	}
+	
+	//Button:
+	//	'button' name=ID '('
+	//	'x' x=INT
+	//	'y' y=INT
+	//	'width' width=INT
+	//	'height' height=INT
+	//	'sound' sound=[SoundElement]
+	//	')';
+	public ButtonElements getButtonAccess() {
+		return pButton;
+	}
+	
+	public ParserRule getButtonRule() {
+		return getButtonAccess().getRule();
 	}
 	
 	//ConnectionElement:
@@ -697,7 +744,11 @@ public class SynthesizerGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//SawToothOscillator:
-	//	'sawToothOscillator' name=ID '(' 'min' min=INT 'max' max=INT 'default' default=INT ')';
+	//	'sawToothOscillator' name=ID '('
+	//	'min' min=INT
+	//	'max' max=INT
+	//	'default' default=INT
+	//	')';
 	public SawToothOscillatorElements getSawToothOscillatorAccess() {
 		return pSawToothOscillator;
 	}
@@ -707,9 +758,10 @@ public class SynthesizerGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//SineOscillator:
-	//	'sineOscillator' name=ID '(' 'frequency' frequency=INT 'amplitude' amplitude=INT
-	//	//should be float or INT.INT (e.g. 0.6)
-	// ')';
+	//	'sineOscillator' name=ID '('
+	//	'frequency' frequency=INT
+	//	'amplitude' amplitude=INT //should be float or INT.INT (e.g. 0.6)
+	//	')';
 	public SineOscillatorElements getSineOscillatorAccess() {
 		return pSineOscillator;
 	}

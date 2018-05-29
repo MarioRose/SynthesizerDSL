@@ -76,7 +76,7 @@ public class SynthesizerSemanticSequencer extends AbstractDelegatingSemanticSequ
 	 *         y=INT 
 	 *         width=INT 
 	 *         height=INT 
-	 *         frequency=INT
+	 *         sound=[SoundElement|ID]
 	 *     )
 	 */
 	protected void sequence_Button(ISerializationContext context, Button semanticObject) {
@@ -91,8 +91,8 @@ public class SynthesizerSemanticSequencer extends AbstractDelegatingSemanticSequ
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SynthesizerPackage.Literals.CONTROL_ELEMENT__WIDTH));
 			if (transientValues.isValueTransient(semanticObject, SynthesizerPackage.Literals.CONTROL_ELEMENT__HEIGHT) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SynthesizerPackage.Literals.CONTROL_ELEMENT__HEIGHT));
-			if (transientValues.isValueTransient(semanticObject, SynthesizerPackage.Literals.BUTTON__FREQUENCY) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SynthesizerPackage.Literals.BUTTON__FREQUENCY));
+			if (transientValues.isValueTransient(semanticObject, SynthesizerPackage.Literals.BUTTON__SOUND) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SynthesizerPackage.Literals.BUTTON__SOUND));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getButtonAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
@@ -100,7 +100,7 @@ public class SynthesizerSemanticSequencer extends AbstractDelegatingSemanticSequ
 		feeder.accept(grammarAccess.getButtonAccess().getYINTTerminalRuleCall_6_0(), semanticObject.getY());
 		feeder.accept(grammarAccess.getButtonAccess().getWidthINTTerminalRuleCall_8_0(), semanticObject.getWidth());
 		feeder.accept(grammarAccess.getButtonAccess().getHeightINTTerminalRuleCall_10_0(), semanticObject.getHeight());
-		feeder.accept(grammarAccess.getButtonAccess().getFrequencyINTTerminalRuleCall_12_0(), semanticObject.getFrequency());
+		feeder.accept(grammarAccess.getButtonAccess().getSoundSoundElementIDTerminalRuleCall_12_0_1(), semanticObject.eGet(SynthesizerPackage.Literals.BUTTON__SOUND, false));
 		feeder.finish();
 	}
 	

@@ -36,18 +36,18 @@ Slider:
 	')'
 ;
 
+SoundElement:
+	SawToothOscillator | SineOscillator
+;
+
 Button:
 	'button' name = ID '('
 		'x' x = INT
 		'y' y = INT
 		'width' width = INT
 		'height' height = INT
-		'frequency' frequency = INT
+		'sound' sound = [SoundElement]
 	')'
-;
-
-SoundElement:
-	SawToothOscillator | SineOscillator
 ;
 
 ConnectionElement:

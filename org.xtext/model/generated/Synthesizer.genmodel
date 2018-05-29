@@ -20,11 +20,11 @@
     </genClasses>
     <genClasses ecoreClass="Synthesizer.ecore#//RotaryKnob"/>
     <genClasses ecoreClass="Synthesizer.ecore#//Slider"/>
-    <genClasses ecoreClass="Synthesizer.ecore#//Button">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Synthesizer.ecore#//Button/frequency"/>
-    </genClasses>
     <genClasses ecoreClass="Synthesizer.ecore#//SoundElement">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Synthesizer.ecore#//SoundElement/name"/>
+    </genClasses>
+    <genClasses ecoreClass="Synthesizer.ecore#//Button">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Synthesizer.ecore#//Button/sound"/>
     </genClasses>
     <genClasses ecoreClass="Synthesizer.ecore#//ConnectionElement">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Synthesizer.ecore#//ConnectionElement/ce"/>

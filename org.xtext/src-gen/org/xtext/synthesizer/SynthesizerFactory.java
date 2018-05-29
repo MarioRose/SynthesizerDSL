@@ -60,15 +60,6 @@ public interface SynthesizerFactory extends EFactory
   Slider createSlider();
 
   /**
-   * Returns a new object of class '<em>Button</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Button</em>'.
-   * @generated
-   */
-  Button createButton();
-
-  /**
    * Returns a new object of class '<em>Sound Element</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -76,6 +67,15 @@ public interface SynthesizerFactory extends EFactory
    * @generated
    */
   SoundElement createSoundElement();
+
+  /**
+   * Returns a new object of class '<em>Button</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Button</em>'.
+   * @generated
+   */
+  Button createButton();
 
   /**
    * Returns a new object of class '<em>Connection Element</em>'.
