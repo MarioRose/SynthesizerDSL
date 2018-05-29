@@ -11,10 +11,14 @@ import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import org.xtext.synthesizer.Button;
+import org.xtext.synthesizer.ConnectionElement;
 import org.xtext.synthesizer.ControlElement;
 import org.xtext.synthesizer.Model;
 import org.xtext.synthesizer.RotaryKnob;
+import org.xtext.synthesizer.SawToothOscillator;
+import org.xtext.synthesizer.SineOscillator;
 import org.xtext.synthesizer.Slider;
+import org.xtext.synthesizer.SoundElement;
 import org.xtext.synthesizer.SynthesizerFactory;
 import org.xtext.synthesizer.SynthesizerPackage;
 
@@ -60,6 +64,34 @@ public class SynthesizerPackageImpl extends EPackageImpl implements SynthesizerP
    * @generated
    */
   private EClass buttonEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass soundElementEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass connectionElementEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass sawToothOscillatorEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass sineOscillatorEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -142,6 +174,26 @@ public class SynthesizerPackageImpl extends EPackageImpl implements SynthesizerP
   public EReference getModel_Controls()
   {
     return (EReference)modelEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getModel_Sounds()
+  {
+    return (EReference)modelEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getModel_Connections()
+  {
+    return (EReference)modelEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -249,6 +301,126 @@ public class SynthesizerPackageImpl extends EPackageImpl implements SynthesizerP
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getSoundElement()
+  {
+    return soundElementEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getSoundElement_Name()
+  {
+    return (EAttribute)soundElementEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getConnectionElement()
+  {
+    return connectionElementEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getConnectionElement_Ce()
+  {
+    return (EReference)connectionElementEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getConnectionElement_Se()
+  {
+    return (EReference)connectionElementEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getSawToothOscillator()
+  {
+    return sawToothOscillatorEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getSawToothOscillator_Min()
+  {
+    return (EAttribute)sawToothOscillatorEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getSawToothOscillator_Max()
+  {
+    return (EAttribute)sawToothOscillatorEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getSawToothOscillator_Default()
+  {
+    return (EAttribute)sawToothOscillatorEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getSineOscillator()
+  {
+    return sineOscillatorEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getSineOscillator_Frequency()
+  {
+    return (EAttribute)sineOscillatorEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getSineOscillator_Amplitude()
+  {
+    return (EAttribute)sineOscillatorEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public SynthesizerFactory getSynthesizerFactory()
   {
     return (SynthesizerFactory)getEFactoryInstance();
@@ -276,6 +448,8 @@ public class SynthesizerPackageImpl extends EPackageImpl implements SynthesizerP
     // Create classes and their features
     modelEClass = createEClass(MODEL);
     createEReference(modelEClass, MODEL__CONTROLS);
+    createEReference(modelEClass, MODEL__SOUNDS);
+    createEReference(modelEClass, MODEL__CONNECTIONS);
 
     controlElementEClass = createEClass(CONTROL_ELEMENT);
     createEAttribute(controlElementEClass, CONTROL_ELEMENT__NAME);
@@ -290,6 +464,22 @@ public class SynthesizerPackageImpl extends EPackageImpl implements SynthesizerP
 
     buttonEClass = createEClass(BUTTON);
     createEAttribute(buttonEClass, BUTTON__FREQUENCY);
+
+    soundElementEClass = createEClass(SOUND_ELEMENT);
+    createEAttribute(soundElementEClass, SOUND_ELEMENT__NAME);
+
+    connectionElementEClass = createEClass(CONNECTION_ELEMENT);
+    createEReference(connectionElementEClass, CONNECTION_ELEMENT__CE);
+    createEReference(connectionElementEClass, CONNECTION_ELEMENT__SE);
+
+    sawToothOscillatorEClass = createEClass(SAW_TOOTH_OSCILLATOR);
+    createEAttribute(sawToothOscillatorEClass, SAW_TOOTH_OSCILLATOR__MIN);
+    createEAttribute(sawToothOscillatorEClass, SAW_TOOTH_OSCILLATOR__MAX);
+    createEAttribute(sawToothOscillatorEClass, SAW_TOOTH_OSCILLATOR__DEFAULT);
+
+    sineOscillatorEClass = createEClass(SINE_OSCILLATOR);
+    createEAttribute(sineOscillatorEClass, SINE_OSCILLATOR__FREQUENCY);
+    createEAttribute(sineOscillatorEClass, SINE_OSCILLATOR__AMPLITUDE);
   }
 
   /**
@@ -324,10 +514,14 @@ public class SynthesizerPackageImpl extends EPackageImpl implements SynthesizerP
     rotaryKnobEClass.getESuperTypes().add(this.getControlElement());
     sliderEClass.getESuperTypes().add(this.getControlElement());
     buttonEClass.getESuperTypes().add(this.getControlElement());
+    sawToothOscillatorEClass.getESuperTypes().add(this.getSoundElement());
+    sineOscillatorEClass.getESuperTypes().add(this.getSoundElement());
 
     // Initialize classes and features; add operations and parameters
     initEClass(modelEClass, Model.class, "Model", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getModel_Controls(), this.getControlElement(), null, "controls", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getModel_Sounds(), this.getSoundElement(), null, "sounds", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getModel_Connections(), this.getConnectionElement(), null, "connections", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(controlElementEClass, ControlElement.class, "ControlElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getControlElement_Name(), ecorePackage.getEString(), "name", null, 0, 1, ControlElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -342,6 +536,22 @@ public class SynthesizerPackageImpl extends EPackageImpl implements SynthesizerP
 
     initEClass(buttonEClass, Button.class, "Button", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getButton_Frequency(), ecorePackage.getEInt(), "frequency", null, 0, 1, Button.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(soundElementEClass, SoundElement.class, "SoundElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getSoundElement_Name(), ecorePackage.getEString(), "name", null, 0, 1, SoundElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(connectionElementEClass, ConnectionElement.class, "ConnectionElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getConnectionElement_Ce(), this.getControlElement(), null, "ce", null, 0, 1, ConnectionElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getConnectionElement_Se(), this.getSoundElement(), null, "se", null, 0, 1, ConnectionElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(sawToothOscillatorEClass, SawToothOscillator.class, "SawToothOscillator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getSawToothOscillator_Min(), ecorePackage.getEInt(), "min", null, 0, 1, SawToothOscillator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getSawToothOscillator_Max(), ecorePackage.getEInt(), "max", null, 0, 1, SawToothOscillator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getSawToothOscillator_Default(), ecorePackage.getEInt(), "default", null, 0, 1, SawToothOscillator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(sineOscillatorEClass, SineOscillator.class, "SineOscillator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getSineOscillator_Frequency(), ecorePackage.getEInt(), "frequency", null, 0, 1, SineOscillator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getSineOscillator_Amplitude(), ecorePackage.getEInt(), "amplitude", null, 0, 1, SineOscillator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

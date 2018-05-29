@@ -10,6 +10,7 @@ import org.eclipse.xtext.generator.IGeneratorContext
 import org.xtext.synthesizer.Slider
 import org.xtext.synthesizer.Button
 import org.xtext.synthesizer.RotaryKnob
+import org.xtext.synthesizer.SineOscillator
 
 /**
  * Generates code from your model files on save.
@@ -69,7 +70,58 @@ class SynthesizerGenerator extends AbstractGenerator {
 		    @Override
 		    public void start() {
 		    	createAndShowGUI();
-		    }
+			}
+			
+
+			//Create Sound (SineOscillators)
+			'+ resource.allContents
+			.filter(SineOscillator)
+			.map["private static void createSound" + name + "() {\n\t\t\t\t" + 
+        		'Synthesizer synth;
+	            UnitOscillator osc;
+	            LineOut lineOut;
+	        	
+	        	// Create a context for the synthesizer.
+	            synth = JSyn.createSynthesizer();
+	
+	            // Start synthesizer using default stereo output at 44100 Hz.
+	            synth.start();
+	
+	            // Add a tone generator.
+	            synth.add(osc = new SineOscillator());
+	            // Add a stereo audio output unit.
+	            synth.add(lineOut = new LineOut());
+	
+	            // Connect the oscillator to both channels of the output.
+	            osc.output.connect(0, lineOut.input, 0);
+	            osc.output.connect(0, lineOut.input, 1);
+	
+	            // Set the frequency and amplitude for the sine wave.
+	            osc.frequency.set(' + frequency + ');
+	            osc.amplitude.set(' + amplitude + ');
+	
+	            // We only need to start the LineOut. It will pull data from the
+	            // oscillator.
+	            lineOut.start();
+	
+	            System.out.println("You should now be hearing a sine wave. ---------");
+	
+	            // Sleep while the sound is generated in the background.
+	            try {
+	                double time = synth.getCurrentTime();
+	                System.out.println("time = " + time);
+	                // Sleep for a few seconds.
+	                synth.sleepUntil(time + 1.0);
+	            } catch (InterruptedException ex) {
+	                ex.printStackTrace();
+	            }
+	
+	            // Stop everything.
+	            synth.stop();
+			}
+	        '].join('\n\t\t\t\t')
+
+		    + '
 
 			public static void main(String[] args) {
 				System.out.println("Synthesizer started!");

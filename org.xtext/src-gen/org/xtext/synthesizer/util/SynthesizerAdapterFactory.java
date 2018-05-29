@@ -101,6 +101,26 @@ public class SynthesizerAdapterFactory extends AdapterFactoryImpl
         return createButtonAdapter();
       }
       @Override
+      public Adapter caseSoundElement(SoundElement object)
+      {
+        return createSoundElementAdapter();
+      }
+      @Override
+      public Adapter caseConnectionElement(ConnectionElement object)
+      {
+        return createConnectionElementAdapter();
+      }
+      @Override
+      public Adapter caseSawToothOscillator(SawToothOscillator object)
+      {
+        return createSawToothOscillatorAdapter();
+      }
+      @Override
+      public Adapter caseSineOscillator(SineOscillator object)
+      {
+        return createSineOscillatorAdapter();
+      }
+      @Override
       public Adapter defaultCase(EObject object)
       {
         return createEObjectAdapter();
@@ -193,6 +213,66 @@ public class SynthesizerAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createButtonAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.synthesizer.SoundElement <em>Sound Element</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.synthesizer.SoundElement
+   * @generated
+   */
+  public Adapter createSoundElementAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.synthesizer.ConnectionElement <em>Connection Element</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.synthesizer.ConnectionElement
+   * @generated
+   */
+  public Adapter createConnectionElementAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.synthesizer.SawToothOscillator <em>Saw Tooth Oscillator</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.synthesizer.SawToothOscillator
+   * @generated
+   */
+  public Adapter createSawToothOscillatorAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.synthesizer.SineOscillator <em>Sine Oscillator</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.synthesizer.SineOscillator
+   * @generated
+   */
+  public Adapter createSineOscillatorAdapter()
   {
     return null;
   }

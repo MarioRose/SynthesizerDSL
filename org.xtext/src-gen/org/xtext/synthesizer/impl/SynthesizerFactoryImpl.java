@@ -70,6 +70,10 @@ public class SynthesizerFactoryImpl extends EFactoryImpl implements SynthesizerF
       case SynthesizerPackage.ROTARY_KNOB: return createRotaryKnob();
       case SynthesizerPackage.SLIDER: return createSlider();
       case SynthesizerPackage.BUTTON: return createButton();
+      case SynthesizerPackage.SOUND_ELEMENT: return createSoundElement();
+      case SynthesizerPackage.CONNECTION_ELEMENT: return createConnectionElement();
+      case SynthesizerPackage.SAW_TOOTH_OSCILLATOR: return createSawToothOscillator();
+      case SynthesizerPackage.SINE_OSCILLATOR: return createSineOscillator();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -128,6 +132,50 @@ public class SynthesizerFactoryImpl extends EFactoryImpl implements SynthesizerF
   {
     ButtonImpl button = new ButtonImpl();
     return button;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public SoundElement createSoundElement()
+  {
+    SoundElementImpl soundElement = new SoundElementImpl();
+    return soundElement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ConnectionElement createConnectionElement()
+  {
+    ConnectionElementImpl connectionElement = new ConnectionElementImpl();
+    return connectionElement;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public SawToothOscillator createSawToothOscillator()
+  {
+    SawToothOscillatorImpl sawToothOscillator = new SawToothOscillatorImpl();
+    return sawToothOscillator;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public SineOscillator createSineOscillator()
+  {
+    SineOscillatorImpl sineOscillator = new SineOscillatorImpl();
+    return sineOscillator;
   }
 
   /**

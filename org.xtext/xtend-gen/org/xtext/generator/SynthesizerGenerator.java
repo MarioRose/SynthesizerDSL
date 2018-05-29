@@ -12,6 +12,7 @@ import org.eclipse.xtext.xbase.lib.Functions.Function1;
 import org.eclipse.xtext.xbase.lib.IteratorExtensions;
 import org.xtext.synthesizer.Button;
 import org.xtext.synthesizer.RotaryKnob;
+import org.xtext.synthesizer.SineOscillator;
 import org.xtext.synthesizer.Slider;
 
 /**
@@ -27,8 +28,24 @@ public class SynthesizerGenerator extends AbstractGenerator {
   public void doGenerate(final Resource resource, final IFileSystemAccess2 fsa, final IGeneratorContext context) {
     String _generateUI = this.generateUI(resource);
     String _plus = ("\n\t\timport java.io.BufferedReader;\n\t\timport java.io.IOException;\n\t\timport java.io.InputStreamReader;\n\t\timport java.util.Scanner; \n\t\timport java.awt.event.ActionEvent;\n\t\timport java.awt.event.ActionListener;\n\t\timport java.awt.BorderLayout;\n\t\timport java.awt.GridLayout;\n\t\timport java.awt.Dimension;\n\n\t\timport javax.swing.*;  \n\t\timport javax.swing.JApplet;\n\t\timport com.jsyn.swing.JAppletFrame;\n\t\timport com.jsyn.swing.DoubleBoundedRangeSlider;\n\t\timport com.jsyn.swing.PortControllerFactory;\n\n\t\timport com.jsyn.swing.ExponentialRangeModel;\n\t\timport com.jsyn.swing.PortModelFactory;\n\t\timport com.jsyn.swing.RotaryTextController;\n\n\t\timport com.jsyn.JSyn;\n\t\timport com.jsyn.Synthesizer;\n\t\timport com.jsyn.unitgen.LineOut;\n\t\timport com.jsyn.unitgen.SineOscillator;\n\t\timport com.jsyn.unitgen.UnitOscillator;\n\t\timport com.jsyn.unitgen.LinearRamp;\n\t\timport com.jsyn.unitgen.SawtoothOscillatorBL;\n\n\n\t\tpublic class SynthesizerDSL extends JApplet{\n\t\t\tstatic int yPos = 5;\n\n\t\t\t" + _generateUI);
-    String _plus_1 = (_plus + "\n\n\t\t    @Override\n\t\t    public void start() {\n\t\t    \tcreateAndShowGUI();\n\t\t    }\n\n\t\t\tpublic static void main(String[] args) {\n\t\t\t\tSystem.out.println(\"Synthesizer started!\");\n\t\t        SynthesizerDSL applet = new SynthesizerDSL();\n\t\t        JAppletFrame frame = new JAppletFrame(\"Synthesizer\", applet);\n\t\t        frame.setSize(640, 500);\n\t\t        frame.setVisible(true);\n\t\t        frame.test();\n\t\t        frame.validate();\n\t\t\t}\n\t\t}");
-    fsa.generateFile("SynthesizerDSL.java", _plus_1);
+    String _plus_1 = (_plus + "\n\n\t\t    @Override\n\t\t    public void start() {\n\t\t    \tcreateAndShowGUI();\n\t\t\t}\n\t\t\t\n\n\t\t\t//Create Sound (SineOscillators)\n\t\t\t");
+    final Function1<SineOscillator, String> _function = (SineOscillator it) -> {
+      String _name = it.getName();
+      String _plus_2 = ("private static void createSound" + _name);
+      String _plus_3 = (_plus_2 + "() {\n\t\t\t\t");
+      String _plus_4 = (_plus_3 + 
+        "Synthesizer synth;\n\t            UnitOscillator osc;\n\t            LineOut lineOut;\n\t        \t\n\t        \t// Create a context for the synthesizer.\n\t            synth = JSyn.createSynthesizer();\n\t\n\t            // Start synthesizer using default stereo output at 44100 Hz.\n\t            synth.start();\n\t\n\t            // Add a tone generator.\n\t            synth.add(osc = new SineOscillator());\n\t            // Add a stereo audio output unit.\n\t            synth.add(lineOut = new LineOut());\n\t\n\t            // Connect the oscillator to both channels of the output.\n\t            osc.output.connect(0, lineOut.input, 0);\n\t            osc.output.connect(0, lineOut.input, 1);\n\t\n\t            // Set the frequency and amplitude for the sine wave.\n\t            osc.frequency.set(");
+      int _frequency = it.getFrequency();
+      String _plus_5 = (_plus_4 + Integer.valueOf(_frequency));
+      String _plus_6 = (_plus_5 + ");\n\t            osc.amplitude.set(");
+      int _amplitude = it.getAmplitude();
+      String _plus_7 = (_plus_6 + Integer.valueOf(_amplitude));
+      return (_plus_7 + ");\n\t\n\t            // We only need to start the LineOut. It will pull data from the\n\t            // oscillator.\n\t            lineOut.start();\n\t\n\t            System.out.println(\"You should now be hearing a sine wave. ---------\");\n\t\n\t            // Sleep while the sound is generated in the background.\n\t            try {\n\t                double time = synth.getCurrentTime();\n\t                System.out.println(\"time = \" + time);\n\t                // Sleep for a few seconds.\n\t                synth.sleepUntil(time + 1.0);\n\t            } catch (InterruptedException ex) {\n\t                ex.printStackTrace();\n\t            }\n\t\n\t            // Stop everything.\n\t            synth.stop();\n\t\t\t}\n\t        ");
+    };
+    String _join = IteratorExtensions.join(IteratorExtensions.<SineOscillator, String>map(Iterators.<SineOscillator>filter(resource.getAllContents(), SineOscillator.class), _function), "\n\t\t\t\t");
+    String _plus_2 = (_plus_1 + _join);
+    String _plus_3 = (_plus_2 + "\n\n\t\t\tpublic static void main(String[] args) {\n\t\t\t\tSystem.out.println(\"Synthesizer started!\");\n\t\t        SynthesizerDSL applet = new SynthesizerDSL();\n\t\t        JAppletFrame frame = new JAppletFrame(\"Synthesizer\", applet);\n\t\t        frame.setSize(640, 500);\n\t\t        frame.setVisible(true);\n\t\t        frame.test();\n\t\t        frame.validate();\n\t\t\t}\n\t\t}");
+    fsa.generateFile("SynthesizerDSL.java", _plus_3);
   }
   
   public String generateUI(final Resource resource) {

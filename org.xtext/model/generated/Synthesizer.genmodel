@@ -8,6 +8,8 @@
       fileExtensions="syn" ecorePackage="Synthesizer.ecore#/">
     <genClasses ecoreClass="Synthesizer.ecore#//Model">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Synthesizer.ecore#//Model/controls"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Synthesizer.ecore#//Model/sounds"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Synthesizer.ecore#//Model/connections"/>
     </genClasses>
     <genClasses ecoreClass="Synthesizer.ecore#//ControlElement">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Synthesizer.ecore#//ControlElement/name"/>
@@ -20,6 +22,22 @@
     <genClasses ecoreClass="Synthesizer.ecore#//Slider"/>
     <genClasses ecoreClass="Synthesizer.ecore#//Button">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Synthesizer.ecore#//Button/frequency"/>
+    </genClasses>
+    <genClasses ecoreClass="Synthesizer.ecore#//SoundElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Synthesizer.ecore#//SoundElement/name"/>
+    </genClasses>
+    <genClasses ecoreClass="Synthesizer.ecore#//ConnectionElement">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Synthesizer.ecore#//ConnectionElement/ce"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Synthesizer.ecore#//ConnectionElement/se"/>
+    </genClasses>
+    <genClasses ecoreClass="Synthesizer.ecore#//SawToothOscillator">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Synthesizer.ecore#//SawToothOscillator/min"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Synthesizer.ecore#//SawToothOscillator/max"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Synthesizer.ecore#//SawToothOscillator/default"/>
+    </genClasses>
+    <genClasses ecoreClass="Synthesizer.ecore#//SineOscillator">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Synthesizer.ecore#//SineOscillator/frequency"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Synthesizer.ecore#//SineOscillator/amplitude"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

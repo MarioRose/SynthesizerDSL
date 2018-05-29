@@ -10,6 +10,9 @@ import org.eclipse.xtext.IGrammarAccess;
 import org.eclipse.xtext.RuleCall;
 import org.eclipse.xtext.nodemodel.INode;
 import org.eclipse.xtext.serializer.analysis.GrammarAlias.AbstractElementAlias;
+import org.eclipse.xtext.serializer.analysis.GrammarAlias.GroupAlias;
+import org.eclipse.xtext.serializer.analysis.GrammarAlias.TokenAlias;
+import org.eclipse.xtext.serializer.analysis.ISyntacticSequencerPDAProvider.ISynNavigable;
 import org.eclipse.xtext.serializer.analysis.ISyntacticSequencerPDAProvider.ISynTransition;
 import org.eclipse.xtext.serializer.sequencer.AbstractSyntacticSequencer;
 import org.xtext.services.SynthesizerGrammarAccess;
@@ -18,10 +21,14 @@ import org.xtext.services.SynthesizerGrammarAccess;
 public class SynthesizerSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected SynthesizerGrammarAccess grammarAccess;
+	protected AbstractElementAlias match_Model___ConnectionsKeyword_5_0_LeftCurlyBracketKeyword_5_1_RightCurlyBracketKeyword_5_3__q;
+	protected AbstractElementAlias match_Model___SoundKeyword_4_0_LeftCurlyBracketKeyword_4_1_RightCurlyBracketKeyword_4_3__q;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (SynthesizerGrammarAccess) access;
+		match_Model___ConnectionsKeyword_5_0_LeftCurlyBracketKeyword_5_1_RightCurlyBracketKeyword_5_3__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getModelAccess().getConnectionsKeyword_5_0()), new TokenAlias(false, false, grammarAccess.getModelAccess().getLeftCurlyBracketKeyword_5_1()), new TokenAlias(false, false, grammarAccess.getModelAccess().getRightCurlyBracketKeyword_5_3()));
+		match_Model___SoundKeyword_4_0_LeftCurlyBracketKeyword_4_1_RightCurlyBracketKeyword_4_3__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getModelAccess().getSoundKeyword_4_0()), new TokenAlias(false, false, grammarAccess.getModelAccess().getLeftCurlyBracketKeyword_4_1()), new TokenAlias(false, false, grammarAccess.getModelAccess().getRightCurlyBracketKeyword_4_3()));
 	}
 	
 	@Override
@@ -36,8 +43,39 @@ public class SynthesizerSyntacticSequencer extends AbstractSyntacticSequencer {
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			acceptNodes(getLastNavigableState(), syntaxNodes);
+			if (match_Model___ConnectionsKeyword_5_0_LeftCurlyBracketKeyword_5_1_RightCurlyBracketKeyword_5_3__q.equals(syntax))
+				emit_Model___ConnectionsKeyword_5_0_LeftCurlyBracketKeyword_5_1_RightCurlyBracketKeyword_5_3__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if (match_Model___SoundKeyword_4_0_LeftCurlyBracketKeyword_4_1_RightCurlyBracketKeyword_4_3__q.equals(syntax))
+				emit_Model___SoundKeyword_4_0_LeftCurlyBracketKeyword_4_1_RightCurlyBracketKeyword_4_3__q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
 	}
 
+	/**
+	 * Ambiguous syntax:
+	 *     ('Connections' '{' '}')?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) 'Controls' '{' '}' ('Sound' '{' '}')? (ambiguity) (rule start)
+	 *     controls+=ControlElement '}' ('Sound' '{' '}')? (ambiguity) (rule end)
+	 *     sounds+=SoundElement '}' (ambiguity) (rule end)
+	 */
+	protected void emit_Model___ConnectionsKeyword_5_0_LeftCurlyBracketKeyword_5_1_RightCurlyBracketKeyword_5_3__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
+	/**
+	 * Ambiguous syntax:
+	 *     ('Sound' '{' '}')?
+	 *
+	 * This ambiguous syntax occurs at:
+	 *     (rule start) 'Controls' '{' '}' (ambiguity) 'Connections' '{' connections+=ConnectionElement
+	 *     (rule start) 'Controls' '{' '}' (ambiguity) ('Connections' '{' '}')? (rule start)
+	 *     controls+=ControlElement '}' (ambiguity) 'Connections' '{' connections+=ConnectionElement
+	 *     controls+=ControlElement '}' (ambiguity) ('Connections' '{' '}')? (rule end)
+	 */
+	protected void emit_Model___SoundKeyword_4_0_LeftCurlyBracketKeyword_4_1_RightCurlyBracketKeyword_4_3__q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
 }

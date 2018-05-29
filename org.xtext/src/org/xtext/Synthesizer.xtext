@@ -3,9 +3,15 @@ grammar org.xtext.Synthesizer with org.eclipse.xtext.common.Terminals
 generate synthesizer "http://www.xtext.org/Synthesizer"
 
 Model:
-	'Controls{'
+	'Controls' '{'
 	controls+=ControlElement*
 	'}'
+	('Sound' '{'
+	sounds+=SoundElement*
+	'}')?
+	('Connections' '{' // should we really use this?????
+	connections+=ConnectionElement*
+	'}')?
 ;
 	
 ControlElement:
@@ -37,5 +43,28 @@ Button:
 		'width' width = INT
 		'height' height = INT
 		'frequency' frequency = INT
+	')'
+;
+
+SoundElement:
+	SawToothOscillator | SineOscillator
+;
+
+ConnectionElement:
+	'linear' ce = ControlElement se = SoundElement
+;
+
+SawToothOscillator:
+	'sawToothOscillator' name = ID '('
+		'min' min = INT
+		'max' max = INT
+		'default' default = INT
+	')'
+;
+
+SineOscillator:
+	'sineOscillator' name = ID '('
+		'frequency' frequency = INT
+		'amplitude' amplitude = INT //should be float or INT.INT (e.g. 0.6)
 	')'
 ;
