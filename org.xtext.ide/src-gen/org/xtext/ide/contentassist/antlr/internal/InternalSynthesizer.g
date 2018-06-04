@@ -1906,9 +1906,9 @@ rule__SawToothOscillator__Group__3__Impl
 	}
 :
 (
-	{ before(grammarAccess.getSawToothOscillatorAccess().getMinKeyword_3()); }
-	'min'
-	{ after(grammarAccess.getSawToothOscillatorAccess().getMinKeyword_3()); }
+	{ before(grammarAccess.getSawToothOscillatorAccess().getFrequencyKeyword_3()); }
+	'frequency'
+	{ after(grammarAccess.getSawToothOscillatorAccess().getFrequencyKeyword_3()); }
 )
 ;
 finally {
@@ -1933,9 +1933,9 @@ rule__SawToothOscillator__Group__4__Impl
 	}
 :
 (
-	{ before(grammarAccess.getSawToothOscillatorAccess().getMinAssignment_4()); }
-	(rule__SawToothOscillator__MinAssignment_4)
-	{ after(grammarAccess.getSawToothOscillatorAccess().getMinAssignment_4()); }
+	{ before(grammarAccess.getSawToothOscillatorAccess().getFrequencyAssignment_4()); }
+	(rule__SawToothOscillator__FrequencyAssignment_4)
+	{ after(grammarAccess.getSawToothOscillatorAccess().getFrequencyAssignment_4()); }
 )
 ;
 finally {
@@ -1960,9 +1960,9 @@ rule__SawToothOscillator__Group__5__Impl
 	}
 :
 (
-	{ before(grammarAccess.getSawToothOscillatorAccess().getMaxKeyword_5()); }
-	'max'
-	{ after(grammarAccess.getSawToothOscillatorAccess().getMaxKeyword_5()); }
+	{ before(grammarAccess.getSawToothOscillatorAccess().getAmplitudeKeyword_5()); }
+	'amplitude'
+	{ after(grammarAccess.getSawToothOscillatorAccess().getAmplitudeKeyword_5()); }
 )
 ;
 finally {
@@ -1987,9 +1987,9 @@ rule__SawToothOscillator__Group__6__Impl
 	}
 :
 (
-	{ before(grammarAccess.getSawToothOscillatorAccess().getMaxAssignment_6()); }
-	(rule__SawToothOscillator__MaxAssignment_6)
-	{ after(grammarAccess.getSawToothOscillatorAccess().getMaxAssignment_6()); }
+	{ before(grammarAccess.getSawToothOscillatorAccess().getAmplitudeAssignment_6()); }
+	(rule__SawToothOscillator__AmplitudeAssignment_6)
+	{ after(grammarAccess.getSawToothOscillatorAccess().getAmplitudeAssignment_6()); }
 )
 ;
 finally {
@@ -2002,7 +2002,6 @@ rule__SawToothOscillator__Group__7
 	}
 :
 	rule__SawToothOscillator__Group__7__Impl
-	rule__SawToothOscillator__Group__8
 ;
 finally {
 	restoreStackSize(stackSize);
@@ -2014,62 +2013,9 @@ rule__SawToothOscillator__Group__7__Impl
 	}
 :
 (
-	{ before(grammarAccess.getSawToothOscillatorAccess().getDefaultKeyword_7()); }
-	'default'
-	{ after(grammarAccess.getSawToothOscillatorAccess().getDefaultKeyword_7()); }
-)
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__SawToothOscillator__Group__8
-	@init {
-		int stackSize = keepStackSize();
-	}
-:
-	rule__SawToothOscillator__Group__8__Impl
-	rule__SawToothOscillator__Group__9
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__SawToothOscillator__Group__8__Impl
-	@init {
-		int stackSize = keepStackSize();
-	}
-:
-(
-	{ before(grammarAccess.getSawToothOscillatorAccess().getDefaultAssignment_8()); }
-	(rule__SawToothOscillator__DefaultAssignment_8)
-	{ after(grammarAccess.getSawToothOscillatorAccess().getDefaultAssignment_8()); }
-)
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__SawToothOscillator__Group__9
-	@init {
-		int stackSize = keepStackSize();
-	}
-:
-	rule__SawToothOscillator__Group__9__Impl
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__SawToothOscillator__Group__9__Impl
-	@init {
-		int stackSize = keepStackSize();
-	}
-:
-(
-	{ before(grammarAccess.getSawToothOscillatorAccess().getRightParenthesisKeyword_9()); }
+	{ before(grammarAccess.getSawToothOscillatorAccess().getRightParenthesisKeyword_7()); }
 	')'
-	{ after(grammarAccess.getSawToothOscillatorAccess().getRightParenthesisKeyword_9()); }
+	{ after(grammarAccess.getSawToothOscillatorAccess().getRightParenthesisKeyword_7()); }
 )
 ;
 finally {
@@ -2635,45 +2581,30 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__SawToothOscillator__MinAssignment_4
+rule__SawToothOscillator__FrequencyAssignment_4
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getSawToothOscillatorAccess().getMinINTTerminalRuleCall_4_0()); }
+		{ before(grammarAccess.getSawToothOscillatorAccess().getFrequencyINTTerminalRuleCall_4_0()); }
 		RULE_INT
-		{ after(grammarAccess.getSawToothOscillatorAccess().getMinINTTerminalRuleCall_4_0()); }
+		{ after(grammarAccess.getSawToothOscillatorAccess().getFrequencyINTTerminalRuleCall_4_0()); }
 	)
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__SawToothOscillator__MaxAssignment_6
+rule__SawToothOscillator__AmplitudeAssignment_6
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getSawToothOscillatorAccess().getMaxINTTerminalRuleCall_6_0()); }
+		{ before(grammarAccess.getSawToothOscillatorAccess().getAmplitudeINTTerminalRuleCall_6_0()); }
 		RULE_INT
-		{ after(grammarAccess.getSawToothOscillatorAccess().getMaxINTTerminalRuleCall_6_0()); }
-	)
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__SawToothOscillator__DefaultAssignment_8
-	@init {
-		int stackSize = keepStackSize();
-	}
-:
-	(
-		{ before(grammarAccess.getSawToothOscillatorAccess().getDefaultINTTerminalRuleCall_8_0()); }
-		RULE_INT
-		{ after(grammarAccess.getSawToothOscillatorAccess().getDefaultINTTerminalRuleCall_8_0()); }
+		{ after(grammarAccess.getSawToothOscillatorAccess().getAmplitudeINTTerminalRuleCall_6_0()); }
 	)
 ;
 finally {

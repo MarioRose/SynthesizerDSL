@@ -56,9 +56,8 @@ ConnectionElement:
 
 SawToothOscillator:
 	'sawToothOscillator' name = ID '('
-		'min' min = INT
-		'max' max = INT
-		'default' default = INT
+		'frequency' frequency = INT
+		'amplitude' amplitude = INT //should be float or INT.INT (e.g. 0.6)
 	')'
 ;
 

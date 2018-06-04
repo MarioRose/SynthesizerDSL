@@ -64,9 +64,8 @@ public class SynthesizerParser extends AbstractContentAssistParser {
 					put(grammarAccess.getConnectionElementAccess().getCeAssignment_1(), "rule__ConnectionElement__CeAssignment_1");
 					put(grammarAccess.getConnectionElementAccess().getSeAssignment_2(), "rule__ConnectionElement__SeAssignment_2");
 					put(grammarAccess.getSawToothOscillatorAccess().getNameAssignment_1(), "rule__SawToothOscillator__NameAssignment_1");
-					put(grammarAccess.getSawToothOscillatorAccess().getMinAssignment_4(), "rule__SawToothOscillator__MinAssignment_4");
-					put(grammarAccess.getSawToothOscillatorAccess().getMaxAssignment_6(), "rule__SawToothOscillator__MaxAssignment_6");
-					put(grammarAccess.getSawToothOscillatorAccess().getDefaultAssignment_8(), "rule__SawToothOscillator__DefaultAssignment_8");
+					put(grammarAccess.getSawToothOscillatorAccess().getFrequencyAssignment_4(), "rule__SawToothOscillator__FrequencyAssignment_4");
+					put(grammarAccess.getSawToothOscillatorAccess().getAmplitudeAssignment_6(), "rule__SawToothOscillator__AmplitudeAssignment_6");
 					put(grammarAccess.getSineOscillatorAccess().getNameAssignment_1(), "rule__SineOscillator__NameAssignment_1");
 					put(grammarAccess.getSineOscillatorAccess().getFrequencyAssignment_4(), "rule__SineOscillator__FrequencyAssignment_4");
 					put(grammarAccess.getSineOscillatorAccess().getAmplitudeAssignment_6(), "rule__SineOscillator__AmplitudeAssignment_6");

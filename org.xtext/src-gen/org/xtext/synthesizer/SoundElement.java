@@ -15,6 +15,8 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link org.xtext.synthesizer.SoundElement#getName <em>Name</em>}</li>
+ *   <li>{@link org.xtext.synthesizer.SoundElement#getFrequency <em>Frequency</em>}</li>
+ *   <li>{@link org.xtext.synthesizer.SoundElement#getAmplitude <em>Amplitude</em>}</li>
  * </ul>
  *
  * @see org.xtext.synthesizer.SynthesizerPackage#getSoundElement()
@@ -48,5 +50,57 @@ public interface SoundElement extends EObject
    * @generated
    */
   void setName(String value);
+
+  /**
+   * Returns the value of the '<em><b>Frequency</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Frequency</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Frequency</em>' attribute.
+   * @see #setFrequency(int)
+   * @see org.xtext.synthesizer.SynthesizerPackage#getSoundElement_Frequency()
+   * @model
+   * @generated
+   */
+  int getFrequency();
+
+  /**
+   * Sets the value of the '{@link org.xtext.synthesizer.SoundElement#getFrequency <em>Frequency</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Frequency</em>' attribute.
+   * @see #getFrequency()
+   * @generated
+   */
+  void setFrequency(int value);
+
+  /**
+   * Returns the value of the '<em><b>Amplitude</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Amplitude</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Amplitude</em>' attribute.
+   * @see #setAmplitude(int)
+   * @see org.xtext.synthesizer.SynthesizerPackage#getSoundElement_Amplitude()
+   * @model
+   * @generated
+   */
+  int getAmplitude();
+
+  /**
+   * Sets the value of the '{@link org.xtext.synthesizer.SoundElement#getAmplitude <em>Amplitude</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Amplitude</em>' attribute.
+   * @see #getAmplitude()
+   * @generated
+   */
+  void setAmplitude(int value);
 
 } // SoundElement

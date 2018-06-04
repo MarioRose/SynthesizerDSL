@@ -20,6 +20,8 @@
   <eClassifiers xsi:type="ecore:EClass" name="Slider" eSuperTypes="#//ControlElement"/>
   <eClassifiers xsi:type="ecore:EClass" name="SoundElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="frequency" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="amplitude" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Button" eSuperTypes="#//ControlElement">
     <eStructuralFeatures xsi:type="ecore:EReference" name="sound" eType="#//SoundElement"/>
@@ -28,13 +30,6 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="ce" eType="#//ControlElement"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="se" eType="#//SoundElement"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SawToothOscillator" eSuperTypes="#//SoundElement">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="min" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="max" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="default" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="SineOscillator" eSuperTypes="#//SoundElement">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="frequency" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="amplitude" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SawToothOscillator" eSuperTypes="#//SoundElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SineOscillator" eSuperTypes="#//SoundElement"/>
 </ecore:EPackage>

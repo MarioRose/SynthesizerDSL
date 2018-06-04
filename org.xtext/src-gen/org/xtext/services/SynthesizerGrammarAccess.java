@@ -449,22 +449,23 @@ public class SynthesizerGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		private final Keyword cLeftParenthesisKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Keyword cMinKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Assignment cMinAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cMinINTTerminalRuleCall_4_0 = (RuleCall)cMinAssignment_4.eContents().get(0);
-		private final Keyword cMaxKeyword_5 = (Keyword)cGroup.eContents().get(5);
-		private final Assignment cMaxAssignment_6 = (Assignment)cGroup.eContents().get(6);
-		private final RuleCall cMaxINTTerminalRuleCall_6_0 = (RuleCall)cMaxAssignment_6.eContents().get(0);
-		private final Keyword cDefaultKeyword_7 = (Keyword)cGroup.eContents().get(7);
-		private final Assignment cDefaultAssignment_8 = (Assignment)cGroup.eContents().get(8);
-		private final RuleCall cDefaultINTTerminalRuleCall_8_0 = (RuleCall)cDefaultAssignment_8.eContents().get(0);
-		private final Keyword cRightParenthesisKeyword_9 = (Keyword)cGroup.eContents().get(9);
+		private final Keyword cFrequencyKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cFrequencyAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cFrequencyINTTerminalRuleCall_4_0 = (RuleCall)cFrequencyAssignment_4.eContents().get(0);
+		private final Keyword cAmplitudeKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Assignment cAmplitudeAssignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final RuleCall cAmplitudeINTTerminalRuleCall_6_0 = (RuleCall)cAmplitudeAssignment_6.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		
 		//SawToothOscillator:
-		//	'sawToothOscillator' name=ID '(' 'min' min=INT 'max' max=INT 'default' default=INT ')';
+		//	'sawToothOscillator' name=ID '(' 'frequency' frequency=INT 'amplitude' amplitude=INT
+		//	//should be float or INT.INT (e.g. 0.6)
+		// ')';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'sawToothOscillator' name=ID '(' 'min' min=INT 'max' max=INT 'default' default=INT ')'
+		//'sawToothOscillator' name=ID '(' 'frequency' frequency=INT 'amplitude' amplitude=INT
+		////should be float or INT.INT (e.g. 0.6)
+		// ')'
 		public Group getGroup() { return cGroup; }
 		
 		//'sawToothOscillator'
@@ -479,35 +480,27 @@ public class SynthesizerGrammarAccess extends AbstractGrammarElementFinder {
 		//'('
 		public Keyword getLeftParenthesisKeyword_2() { return cLeftParenthesisKeyword_2; }
 		
-		//'min'
-		public Keyword getMinKeyword_3() { return cMinKeyword_3; }
+		//'frequency'
+		public Keyword getFrequencyKeyword_3() { return cFrequencyKeyword_3; }
 		
-		//min=INT
-		public Assignment getMinAssignment_4() { return cMinAssignment_4; }
-		
-		//INT
-		public RuleCall getMinINTTerminalRuleCall_4_0() { return cMinINTTerminalRuleCall_4_0; }
-		
-		//'max'
-		public Keyword getMaxKeyword_5() { return cMaxKeyword_5; }
-		
-		//max=INT
-		public Assignment getMaxAssignment_6() { return cMaxAssignment_6; }
+		//frequency=INT
+		public Assignment getFrequencyAssignment_4() { return cFrequencyAssignment_4; }
 		
 		//INT
-		public RuleCall getMaxINTTerminalRuleCall_6_0() { return cMaxINTTerminalRuleCall_6_0; }
+		public RuleCall getFrequencyINTTerminalRuleCall_4_0() { return cFrequencyINTTerminalRuleCall_4_0; }
 		
-		//'default'
-		public Keyword getDefaultKeyword_7() { return cDefaultKeyword_7; }
+		//'amplitude'
+		public Keyword getAmplitudeKeyword_5() { return cAmplitudeKeyword_5; }
 		
-		//default=INT
-		public Assignment getDefaultAssignment_8() { return cDefaultAssignment_8; }
+		//amplitude=INT
+		public Assignment getAmplitudeAssignment_6() { return cAmplitudeAssignment_6; }
 		
 		//INT
-		public RuleCall getDefaultINTTerminalRuleCall_8_0() { return cDefaultINTTerminalRuleCall_8_0; }
+		public RuleCall getAmplitudeINTTerminalRuleCall_6_0() { return cAmplitudeINTTerminalRuleCall_6_0; }
 		
-		//')'
-		public Keyword getRightParenthesisKeyword_9() { return cRightParenthesisKeyword_9; }
+		////should be float or INT.INT (e.g. 0.6)
+		// ')'
+		public Keyword getRightParenthesisKeyword_7() { return cRightParenthesisKeyword_7; }
 	}
 	public class SineOscillatorElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Synthesizer.SineOscillator");
@@ -701,7 +694,9 @@ public class SynthesizerGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//SawToothOscillator:
-	//	'sawToothOscillator' name=ID '(' 'min' min=INT 'max' max=INT 'default' default=INT ')';
+	//	'sawToothOscillator' name=ID '(' 'frequency' frequency=INT 'amplitude' amplitude=INT
+	//	//should be float or INT.INT (e.g. 0.6)
+	// ')';
 	public SawToothOscillatorElements getSawToothOscillatorAccess() {
 		return pSawToothOscillator;
 	}

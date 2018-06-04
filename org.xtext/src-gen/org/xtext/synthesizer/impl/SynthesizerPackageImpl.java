@@ -301,6 +301,26 @@ public class SynthesizerPackageImpl extends EPackageImpl implements SynthesizerP
    * <!-- end-user-doc -->
    * @generated
    */
+  public EAttribute getSoundElement_Frequency()
+  {
+    return (EAttribute)soundElementEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getSoundElement_Amplitude()
+  {
+    return (EAttribute)soundElementEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getButton()
   {
     return buttonEClass;
@@ -361,59 +381,9 @@ public class SynthesizerPackageImpl extends EPackageImpl implements SynthesizerP
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getSawToothOscillator_Min()
-  {
-    return (EAttribute)sawToothOscillatorEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getSawToothOscillator_Max()
-  {
-    return (EAttribute)sawToothOscillatorEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getSawToothOscillator_Default()
-  {
-    return (EAttribute)sawToothOscillatorEClass.getEStructuralFeatures().get(2);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EClass getSineOscillator()
   {
     return sineOscillatorEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getSineOscillator_Frequency()
-  {
-    return (EAttribute)sineOscillatorEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getSineOscillator_Amplitude()
-  {
-    return (EAttribute)sineOscillatorEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -464,6 +434,8 @@ public class SynthesizerPackageImpl extends EPackageImpl implements SynthesizerP
 
     soundElementEClass = createEClass(SOUND_ELEMENT);
     createEAttribute(soundElementEClass, SOUND_ELEMENT__NAME);
+    createEAttribute(soundElementEClass, SOUND_ELEMENT__FREQUENCY);
+    createEAttribute(soundElementEClass, SOUND_ELEMENT__AMPLITUDE);
 
     buttonEClass = createEClass(BUTTON);
     createEReference(buttonEClass, BUTTON__SOUND);
@@ -473,13 +445,8 @@ public class SynthesizerPackageImpl extends EPackageImpl implements SynthesizerP
     createEReference(connectionElementEClass, CONNECTION_ELEMENT__SE);
 
     sawToothOscillatorEClass = createEClass(SAW_TOOTH_OSCILLATOR);
-    createEAttribute(sawToothOscillatorEClass, SAW_TOOTH_OSCILLATOR__MIN);
-    createEAttribute(sawToothOscillatorEClass, SAW_TOOTH_OSCILLATOR__MAX);
-    createEAttribute(sawToothOscillatorEClass, SAW_TOOTH_OSCILLATOR__DEFAULT);
 
     sineOscillatorEClass = createEClass(SINE_OSCILLATOR);
-    createEAttribute(sineOscillatorEClass, SINE_OSCILLATOR__FREQUENCY);
-    createEAttribute(sineOscillatorEClass, SINE_OSCILLATOR__AMPLITUDE);
   }
 
   /**
@@ -536,6 +503,8 @@ public class SynthesizerPackageImpl extends EPackageImpl implements SynthesizerP
 
     initEClass(soundElementEClass, SoundElement.class, "SoundElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getSoundElement_Name(), ecorePackage.getEString(), "name", null, 0, 1, SoundElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getSoundElement_Frequency(), ecorePackage.getEInt(), "frequency", null, 0, 1, SoundElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getSoundElement_Amplitude(), ecorePackage.getEInt(), "amplitude", null, 0, 1, SoundElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(buttonEClass, Button.class, "Button", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getButton_Sound(), this.getSoundElement(), null, "sound", null, 0, 1, Button.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -545,13 +514,8 @@ public class SynthesizerPackageImpl extends EPackageImpl implements SynthesizerP
     initEReference(getConnectionElement_Se(), this.getSoundElement(), null, "se", null, 0, 1, ConnectionElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(sawToothOscillatorEClass, SawToothOscillator.class, "SawToothOscillator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getSawToothOscillator_Min(), ecorePackage.getEInt(), "min", null, 0, 1, SawToothOscillator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getSawToothOscillator_Max(), ecorePackage.getEInt(), "max", null, 0, 1, SawToothOscillator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getSawToothOscillator_Default(), ecorePackage.getEInt(), "default", null, 0, 1, SawToothOscillator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(sineOscillatorEClass, SineOscillator.class, "SineOscillator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getSineOscillator_Frequency(), ecorePackage.getEInt(), "frequency", null, 0, 1, SineOscillator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getSineOscillator_Amplitude(), ecorePackage.getEInt(), "amplitude", null, 0, 1, SineOscillator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

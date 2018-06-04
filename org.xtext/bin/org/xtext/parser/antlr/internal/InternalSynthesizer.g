@@ -776,15 +776,15 @@ ruleSawToothOscillator returns [EObject current=null]
 		{
 			newLeafNode(otherlv_2, grammarAccess.getSawToothOscillatorAccess().getLeftParenthesisKeyword_2());
 		}
-		otherlv_3='min'
+		otherlv_3='frequency'
 		{
-			newLeafNode(otherlv_3, grammarAccess.getSawToothOscillatorAccess().getMinKeyword_3());
+			newLeafNode(otherlv_3, grammarAccess.getSawToothOscillatorAccess().getFrequencyKeyword_3());
 		}
 		(
 			(
-				lv_min_4_0=RULE_INT
+				lv_frequency_4_0=RULE_INT
 				{
-					newLeafNode(lv_min_4_0, grammarAccess.getSawToothOscillatorAccess().getMinINTTerminalRuleCall_4_0());
+					newLeafNode(lv_frequency_4_0, grammarAccess.getSawToothOscillatorAccess().getFrequencyINTTerminalRuleCall_4_0());
 				}
 				{
 					if ($current==null) {
@@ -792,21 +792,21 @@ ruleSawToothOscillator returns [EObject current=null]
 					}
 					setWithLastConsumed(
 						$current,
-						"min",
-						lv_min_4_0,
+						"frequency",
+						lv_frequency_4_0,
 						"org.eclipse.xtext.common.Terminals.INT");
 				}
 			)
 		)
-		otherlv_5='max'
+		otherlv_5='amplitude'
 		{
-			newLeafNode(otherlv_5, grammarAccess.getSawToothOscillatorAccess().getMaxKeyword_5());
+			newLeafNode(otherlv_5, grammarAccess.getSawToothOscillatorAccess().getAmplitudeKeyword_5());
 		}
 		(
 			(
-				lv_max_6_0=RULE_INT
+				lv_amplitude_6_0=RULE_INT
 				{
-					newLeafNode(lv_max_6_0, grammarAccess.getSawToothOscillatorAccess().getMaxINTTerminalRuleCall_6_0());
+					newLeafNode(lv_amplitude_6_0, grammarAccess.getSawToothOscillatorAccess().getAmplitudeINTTerminalRuleCall_6_0());
 				}
 				{
 					if ($current==null) {
@@ -814,37 +814,15 @@ ruleSawToothOscillator returns [EObject current=null]
 					}
 					setWithLastConsumed(
 						$current,
-						"max",
-						lv_max_6_0,
+						"amplitude",
+						lv_amplitude_6_0,
 						"org.eclipse.xtext.common.Terminals.INT");
 				}
 			)
 		)
-		otherlv_7='default'
+		otherlv_7=')'
 		{
-			newLeafNode(otherlv_7, grammarAccess.getSawToothOscillatorAccess().getDefaultKeyword_7());
-		}
-		(
-			(
-				lv_default_8_0=RULE_INT
-				{
-					newLeafNode(lv_default_8_0, grammarAccess.getSawToothOscillatorAccess().getDefaultINTTerminalRuleCall_8_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getSawToothOscillatorRule());
-					}
-					setWithLastConsumed(
-						$current,
-						"default",
-						lv_default_8_0,
-						"org.eclipse.xtext.common.Terminals.INT");
-				}
-			)
-		)
-		otherlv_9=')'
-		{
-			newLeafNode(otherlv_9, grammarAccess.getSawToothOscillatorAccess().getRightParenthesisKeyword_9());
+			newLeafNode(otherlv_7, grammarAccess.getSawToothOscillatorAccess().getRightParenthesisKeyword_7());
 		}
 	)
 ;

@@ -175,24 +175,21 @@ public class SynthesizerSemanticSequencer extends AbstractDelegatingSemanticSequ
 	 *     SawToothOscillator returns SawToothOscillator
 	 *
 	 * Constraint:
-	 *     (name=ID min=INT max=INT default=INT)
+	 *     (name=ID frequency=INT amplitude=INT)
 	 */
 	protected void sequence_SawToothOscillator(ISerializationContext context, SawToothOscillator semanticObject) {
 		if (errorAcceptor != null) {
 			if (transientValues.isValueTransient(semanticObject, SynthesizerPackage.Literals.SOUND_ELEMENT__NAME) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SynthesizerPackage.Literals.SOUND_ELEMENT__NAME));
-			if (transientValues.isValueTransient(semanticObject, SynthesizerPackage.Literals.SAW_TOOTH_OSCILLATOR__MIN) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SynthesizerPackage.Literals.SAW_TOOTH_OSCILLATOR__MIN));
-			if (transientValues.isValueTransient(semanticObject, SynthesizerPackage.Literals.SAW_TOOTH_OSCILLATOR__MAX) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SynthesizerPackage.Literals.SAW_TOOTH_OSCILLATOR__MAX));
-			if (transientValues.isValueTransient(semanticObject, SynthesizerPackage.Literals.SAW_TOOTH_OSCILLATOR__DEFAULT) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SynthesizerPackage.Literals.SAW_TOOTH_OSCILLATOR__DEFAULT));
+			if (transientValues.isValueTransient(semanticObject, SynthesizerPackage.Literals.SOUND_ELEMENT__FREQUENCY) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SynthesizerPackage.Literals.SOUND_ELEMENT__FREQUENCY));
+			if (transientValues.isValueTransient(semanticObject, SynthesizerPackage.Literals.SOUND_ELEMENT__AMPLITUDE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SynthesizerPackage.Literals.SOUND_ELEMENT__AMPLITUDE));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getSawToothOscillatorAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getSawToothOscillatorAccess().getMinINTTerminalRuleCall_4_0(), semanticObject.getMin());
-		feeder.accept(grammarAccess.getSawToothOscillatorAccess().getMaxINTTerminalRuleCall_6_0(), semanticObject.getMax());
-		feeder.accept(grammarAccess.getSawToothOscillatorAccess().getDefaultINTTerminalRuleCall_8_0(), semanticObject.getDefault());
+		feeder.accept(grammarAccess.getSawToothOscillatorAccess().getFrequencyINTTerminalRuleCall_4_0(), semanticObject.getFrequency());
+		feeder.accept(grammarAccess.getSawToothOscillatorAccess().getAmplitudeINTTerminalRuleCall_6_0(), semanticObject.getAmplitude());
 		feeder.finish();
 	}
 	
@@ -209,10 +206,10 @@ public class SynthesizerSemanticSequencer extends AbstractDelegatingSemanticSequ
 		if (errorAcceptor != null) {
 			if (transientValues.isValueTransient(semanticObject, SynthesizerPackage.Literals.SOUND_ELEMENT__NAME) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SynthesizerPackage.Literals.SOUND_ELEMENT__NAME));
-			if (transientValues.isValueTransient(semanticObject, SynthesizerPackage.Literals.SINE_OSCILLATOR__FREQUENCY) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SynthesizerPackage.Literals.SINE_OSCILLATOR__FREQUENCY));
-			if (transientValues.isValueTransient(semanticObject, SynthesizerPackage.Literals.SINE_OSCILLATOR__AMPLITUDE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SynthesizerPackage.Literals.SINE_OSCILLATOR__AMPLITUDE));
+			if (transientValues.isValueTransient(semanticObject, SynthesizerPackage.Literals.SOUND_ELEMENT__FREQUENCY) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SynthesizerPackage.Literals.SOUND_ELEMENT__FREQUENCY));
+			if (transientValues.isValueTransient(semanticObject, SynthesizerPackage.Literals.SOUND_ELEMENT__AMPLITUDE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SynthesizerPackage.Literals.SOUND_ELEMENT__AMPLITUDE));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getSineOscillatorAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());

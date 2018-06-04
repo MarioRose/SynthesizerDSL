@@ -22,6 +22,8 @@ import org.xtext.synthesizer.SynthesizerPackage;
  * </p>
  * <ul>
  *   <li>{@link org.xtext.synthesizer.impl.SoundElementImpl#getName <em>Name</em>}</li>
+ *   <li>{@link org.xtext.synthesizer.impl.SoundElementImpl#getFrequency <em>Frequency</em>}</li>
+ *   <li>{@link org.xtext.synthesizer.impl.SoundElementImpl#getAmplitude <em>Amplitude</em>}</li>
  * </ul>
  *
  * @generated
@@ -47,6 +49,46 @@ public class SoundElementImpl extends MinimalEObjectImpl.Container implements So
    * @ordered
    */
   protected String name = NAME_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getFrequency() <em>Frequency</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getFrequency()
+   * @generated
+   * @ordered
+   */
+  protected static final int FREQUENCY_EDEFAULT = 0;
+
+  /**
+   * The cached value of the '{@link #getFrequency() <em>Frequency</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getFrequency()
+   * @generated
+   * @ordered
+   */
+  protected int frequency = FREQUENCY_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getAmplitude() <em>Amplitude</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getAmplitude()
+   * @generated
+   * @ordered
+   */
+  protected static final int AMPLITUDE_EDEFAULT = 0;
+
+  /**
+   * The cached value of the '{@link #getAmplitude() <em>Amplitude</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getAmplitude()
+   * @generated
+   * @ordered
+   */
+  protected int amplitude = AMPLITUDE_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -97,6 +139,52 @@ public class SoundElementImpl extends MinimalEObjectImpl.Container implements So
    * <!-- end-user-doc -->
    * @generated
    */
+  public int getFrequency()
+  {
+    return frequency;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setFrequency(int newFrequency)
+  {
+    int oldFrequency = frequency;
+    frequency = newFrequency;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SynthesizerPackage.SOUND_ELEMENT__FREQUENCY, oldFrequency, frequency));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public int getAmplitude()
+  {
+    return amplitude;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setAmplitude(int newAmplitude)
+  {
+    int oldAmplitude = amplitude;
+    amplitude = newAmplitude;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SynthesizerPackage.SOUND_ELEMENT__AMPLITUDE, oldAmplitude, amplitude));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
@@ -104,6 +192,10 @@ public class SoundElementImpl extends MinimalEObjectImpl.Container implements So
     {
       case SynthesizerPackage.SOUND_ELEMENT__NAME:
         return getName();
+      case SynthesizerPackage.SOUND_ELEMENT__FREQUENCY:
+        return getFrequency();
+      case SynthesizerPackage.SOUND_ELEMENT__AMPLITUDE:
+        return getAmplitude();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -120,6 +212,12 @@ public class SoundElementImpl extends MinimalEObjectImpl.Container implements So
     {
       case SynthesizerPackage.SOUND_ELEMENT__NAME:
         setName((String)newValue);
+        return;
+      case SynthesizerPackage.SOUND_ELEMENT__FREQUENCY:
+        setFrequency((Integer)newValue);
+        return;
+      case SynthesizerPackage.SOUND_ELEMENT__AMPLITUDE:
+        setAmplitude((Integer)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -138,6 +236,12 @@ public class SoundElementImpl extends MinimalEObjectImpl.Container implements So
       case SynthesizerPackage.SOUND_ELEMENT__NAME:
         setName(NAME_EDEFAULT);
         return;
+      case SynthesizerPackage.SOUND_ELEMENT__FREQUENCY:
+        setFrequency(FREQUENCY_EDEFAULT);
+        return;
+      case SynthesizerPackage.SOUND_ELEMENT__AMPLITUDE:
+        setAmplitude(AMPLITUDE_EDEFAULT);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -154,6 +258,10 @@ public class SoundElementImpl extends MinimalEObjectImpl.Container implements So
     {
       case SynthesizerPackage.SOUND_ELEMENT__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case SynthesizerPackage.SOUND_ELEMENT__FREQUENCY:
+        return frequency != FREQUENCY_EDEFAULT;
+      case SynthesizerPackage.SOUND_ELEMENT__AMPLITUDE:
+        return amplitude != AMPLITUDE_EDEFAULT;
     }
     return super.eIsSet(featureID);
   }
@@ -171,6 +279,10 @@ public class SoundElementImpl extends MinimalEObjectImpl.Container implements So
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (name: ");
     result.append(name);
+    result.append(", frequency: ");
+    result.append(frequency);
+    result.append(", amplitude: ");
+    result.append(amplitude);
     result.append(')');
     return result.toString();
   }

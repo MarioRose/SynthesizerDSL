@@ -11,6 +11,7 @@ import org.xtext.synthesizer.Slider
 import org.xtext.synthesizer.Button
 import org.xtext.synthesizer.RotaryKnob
 import org.xtext.synthesizer.SineOscillator
+import org.xtext.synthesizer.SawToothOscillator
 import org.xtext.synthesizer.SoundElement
 
 /**
@@ -60,6 +61,7 @@ class SynthesizerGenerator extends AbstractGenerator {
 		import com.jsyn.unitgen.UnitOscillator;
 		import com.jsyn.unitgen.LinearRamp;
 		import com.jsyn.unitgen.SawtoothOscillatorBL;
+		import com.jsyn.unitgen.SawtoothOscillator;
 
 
 		public class SynthesizerDSL extends JApplet{
@@ -68,6 +70,13 @@ class SynthesizerGenerator extends AbstractGenerator {
 
 			'+ resource.allContents
 				.filter(SineOscillator)
+				.map["private static UnitOscillator osc" + name + ";	       
+				"].join('\n\t\t\t\t')
+				
+			+ '
+
+			'+ resource.allContents
+				.filter(SawToothOscillator)
 				.map["private static UnitOscillator osc" + name + ";	       
 				"].join('\n\t\t\t\t')
 				
@@ -93,15 +102,51 @@ class SynthesizerGenerator extends AbstractGenerator {
 				"].join('\n\t\t\t\t')
 				
 				+ '
+
+				'+ resource.allContents
+				.filter(SawToothOscillator)
+				.map["createSound" + name + "();	       
+				"].join('\n\t\t\t\t')
+				
+				+ '
+
 		    	createAndShowGUI();
 			}
 			
 
-			//Create Sound (SineOscillators)
+			//---- Create Sounds ----
+			//SineOscillators
 			'+ resource.allContents
 			.filter(SineOscillator)
 			.map["private static void createSound" + name + "() {\n\t\t\t\t" + 
         		'	osc' + name + ' = new SineOscillator();
+					// Add a tone generator.
+		            synth.add(osc' + name + ' );
+				
+		            // Set the frequency and amplitude for the sine wave.
+		            osc' + name + '.frequency.set(' + frequency + ');
+		            osc' + name + '.amplitude.set(' + amplitude + ');
+				}
+			
+				private static void playSound' + name + '(){
+					if(!osc' + name + '.output.isConnected()) {
+			            osc' + name + '.output.connect(0, lineOut.input, 0);
+			            osc' + name + '.output.connect(0, lineOut.input, 1);
+					}
+					else {
+			            osc' + name + '.output.disconnect(0, lineOut.input, 0);
+			            osc' + name + '.output.disconnect(0, lineOut.input, 1);
+					}
+				}
+	        '].join('\n\t\t\t\t')
+
+		    + '
+
+			//SawtoothOscillator
+			'+ resource.allContents
+			.filter(SawToothOscillator)
+			.map["private static void createSound" + name + "() {\n\t\t\t\t" + 
+        		'	osc' + name + ' = new SawtoothOscillator();
 					// Add a tone generator.
 		            synth.add(osc' + name + ' );
 				

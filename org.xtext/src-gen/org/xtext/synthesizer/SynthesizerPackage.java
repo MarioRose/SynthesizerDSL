@@ -315,13 +315,31 @@ public interface SynthesizerPackage extends EPackage
   int SOUND_ELEMENT__NAME = 0;
 
   /**
+   * The feature id for the '<em><b>Frequency</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SOUND_ELEMENT__FREQUENCY = 1;
+
+  /**
+   * The feature id for the '<em><b>Amplitude</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SOUND_ELEMENT__AMPLITUDE = 2;
+
+  /**
    * The number of structural features of the '<em>Sound Element</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SOUND_ELEMENT_FEATURE_COUNT = 1;
+  int SOUND_ELEMENT_FEATURE_COUNT = 3;
 
   /**
    * The meta object id for the '{@link org.xtext.synthesizer.impl.ButtonImpl <em>Button</em>}' class.
@@ -453,31 +471,22 @@ public interface SynthesizerPackage extends EPackage
   int SAW_TOOTH_OSCILLATOR__NAME = SOUND_ELEMENT__NAME;
 
   /**
-   * The feature id for the '<em><b>Min</b></em>' attribute.
+   * The feature id for the '<em><b>Frequency</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SAW_TOOTH_OSCILLATOR__MIN = SOUND_ELEMENT_FEATURE_COUNT + 0;
+  int SAW_TOOTH_OSCILLATOR__FREQUENCY = SOUND_ELEMENT__FREQUENCY;
 
   /**
-   * The feature id for the '<em><b>Max</b></em>' attribute.
+   * The feature id for the '<em><b>Amplitude</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SAW_TOOTH_OSCILLATOR__MAX = SOUND_ELEMENT_FEATURE_COUNT + 1;
-
-  /**
-   * The feature id for the '<em><b>Default</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SAW_TOOTH_OSCILLATOR__DEFAULT = SOUND_ELEMENT_FEATURE_COUNT + 2;
+  int SAW_TOOTH_OSCILLATOR__AMPLITUDE = SOUND_ELEMENT__AMPLITUDE;
 
   /**
    * The number of structural features of the '<em>Saw Tooth Oscillator</em>' class.
@@ -486,7 +495,7 @@ public interface SynthesizerPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SAW_TOOTH_OSCILLATOR_FEATURE_COUNT = SOUND_ELEMENT_FEATURE_COUNT + 3;
+  int SAW_TOOTH_OSCILLATOR_FEATURE_COUNT = SOUND_ELEMENT_FEATURE_COUNT + 0;
 
   /**
    * The meta object id for the '{@link org.xtext.synthesizer.impl.SineOscillatorImpl <em>Sine Oscillator</em>}' class.
@@ -514,7 +523,7 @@ public interface SynthesizerPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SINE_OSCILLATOR__FREQUENCY = SOUND_ELEMENT_FEATURE_COUNT + 0;
+  int SINE_OSCILLATOR__FREQUENCY = SOUND_ELEMENT__FREQUENCY;
 
   /**
    * The feature id for the '<em><b>Amplitude</b></em>' attribute.
@@ -523,7 +532,7 @@ public interface SynthesizerPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SINE_OSCILLATOR__AMPLITUDE = SOUND_ELEMENT_FEATURE_COUNT + 1;
+  int SINE_OSCILLATOR__AMPLITUDE = SOUND_ELEMENT__AMPLITUDE;
 
   /**
    * The number of structural features of the '<em>Sine Oscillator</em>' class.
@@ -532,7 +541,7 @@ public interface SynthesizerPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SINE_OSCILLATOR_FEATURE_COUNT = SOUND_ELEMENT_FEATURE_COUNT + 2;
+  int SINE_OSCILLATOR_FEATURE_COUNT = SOUND_ELEMENT_FEATURE_COUNT + 0;
 
 
   /**
@@ -685,6 +694,28 @@ public interface SynthesizerPackage extends EPackage
   EAttribute getSoundElement_Name();
 
   /**
+   * Returns the meta object for the attribute '{@link org.xtext.synthesizer.SoundElement#getFrequency <em>Frequency</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Frequency</em>'.
+   * @see org.xtext.synthesizer.SoundElement#getFrequency()
+   * @see #getSoundElement()
+   * @generated
+   */
+  EAttribute getSoundElement_Frequency();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.synthesizer.SoundElement#getAmplitude <em>Amplitude</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Amplitude</em>'.
+   * @see org.xtext.synthesizer.SoundElement#getAmplitude()
+   * @see #getSoundElement()
+   * @generated
+   */
+  EAttribute getSoundElement_Amplitude();
+
+  /**
    * Returns the meta object for class '{@link org.xtext.synthesizer.Button <em>Button</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -748,39 +779,6 @@ public interface SynthesizerPackage extends EPackage
   EClass getSawToothOscillator();
 
   /**
-   * Returns the meta object for the attribute '{@link org.xtext.synthesizer.SawToothOscillator#getMin <em>Min</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Min</em>'.
-   * @see org.xtext.synthesizer.SawToothOscillator#getMin()
-   * @see #getSawToothOscillator()
-   * @generated
-   */
-  EAttribute getSawToothOscillator_Min();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.xtext.synthesizer.SawToothOscillator#getMax <em>Max</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Max</em>'.
-   * @see org.xtext.synthesizer.SawToothOscillator#getMax()
-   * @see #getSawToothOscillator()
-   * @generated
-   */
-  EAttribute getSawToothOscillator_Max();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.xtext.synthesizer.SawToothOscillator#getDefault <em>Default</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Default</em>'.
-   * @see org.xtext.synthesizer.SawToothOscillator#getDefault()
-   * @see #getSawToothOscillator()
-   * @generated
-   */
-  EAttribute getSawToothOscillator_Default();
-
-  /**
    * Returns the meta object for class '{@link org.xtext.synthesizer.SineOscillator <em>Sine Oscillator</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -789,28 +787,6 @@ public interface SynthesizerPackage extends EPackage
    * @generated
    */
   EClass getSineOscillator();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.xtext.synthesizer.SineOscillator#getFrequency <em>Frequency</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Frequency</em>'.
-   * @see org.xtext.synthesizer.SineOscillator#getFrequency()
-   * @see #getSineOscillator()
-   * @generated
-   */
-  EAttribute getSineOscillator_Frequency();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.xtext.synthesizer.SineOscillator#getAmplitude <em>Amplitude</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Amplitude</em>'.
-   * @see org.xtext.synthesizer.SineOscillator#getAmplitude()
-   * @see #getSineOscillator()
-   * @generated
-   */
-  EAttribute getSineOscillator_Amplitude();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -958,6 +934,22 @@ public interface SynthesizerPackage extends EPackage
     EAttribute SOUND_ELEMENT__NAME = eINSTANCE.getSoundElement_Name();
 
     /**
+     * The meta object literal for the '<em><b>Frequency</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SOUND_ELEMENT__FREQUENCY = eINSTANCE.getSoundElement_Frequency();
+
+    /**
+     * The meta object literal for the '<em><b>Amplitude</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SOUND_ELEMENT__AMPLITUDE = eINSTANCE.getSoundElement_Amplitude();
+
+    /**
      * The meta object literal for the '{@link org.xtext.synthesizer.impl.ButtonImpl <em>Button</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1012,30 +1004,6 @@ public interface SynthesizerPackage extends EPackage
     EClass SAW_TOOTH_OSCILLATOR = eINSTANCE.getSawToothOscillator();
 
     /**
-     * The meta object literal for the '<em><b>Min</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute SAW_TOOTH_OSCILLATOR__MIN = eINSTANCE.getSawToothOscillator_Min();
-
-    /**
-     * The meta object literal for the '<em><b>Max</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute SAW_TOOTH_OSCILLATOR__MAX = eINSTANCE.getSawToothOscillator_Max();
-
-    /**
-     * The meta object literal for the '<em><b>Default</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute SAW_TOOTH_OSCILLATOR__DEFAULT = eINSTANCE.getSawToothOscillator_Default();
-
-    /**
      * The meta object literal for the '{@link org.xtext.synthesizer.impl.SineOscillatorImpl <em>Sine Oscillator</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1044,22 +1012,6 @@ public interface SynthesizerPackage extends EPackage
      * @generated
      */
     EClass SINE_OSCILLATOR = eINSTANCE.getSineOscillator();
-
-    /**
-     * The meta object literal for the '<em><b>Frequency</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute SINE_OSCILLATOR__FREQUENCY = eINSTANCE.getSineOscillator_Frequency();
-
-    /**
-     * The meta object literal for the '<em><b>Amplitude</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute SINE_OSCILLATOR__AMPLITUDE = eINSTANCE.getSineOscillator_Amplitude();
 
   }
 
