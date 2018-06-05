@@ -111,5 +111,5 @@ ImpulseOscillator:
 ;
 
 DOUBLE:
-	predecimal = INT ('.' decimal ?= INT)?
+	predecimal = INT ('.' decimal = INT)?
 ;
