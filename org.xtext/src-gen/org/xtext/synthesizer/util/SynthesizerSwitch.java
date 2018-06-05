@@ -141,6 +141,30 @@ public class SynthesizerSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case SynthesizerPackage.TRIANGLE_OSCILLATOR:
+      {
+        TriangleOscillator triangleOscillator = (TriangleOscillator)theEObject;
+        T result = caseTriangleOscillator(triangleOscillator);
+        if (result == null) result = caseSoundElement(triangleOscillator);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SynthesizerPackage.SQUARE_OSCILLATOR:
+      {
+        SquareOscillator squareOscillator = (SquareOscillator)theEObject;
+        T result = caseSquareOscillator(squareOscillator);
+        if (result == null) result = caseSoundElement(squareOscillator);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case SynthesizerPackage.PULSE_OSCILLATOR:
+      {
+        PulseOscillator pulseOscillator = (PulseOscillator)theEObject;
+        T result = casePulseOscillator(pulseOscillator);
+        if (result == null) result = caseSoundElement(pulseOscillator);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       default: return defaultCase(theEObject);
     }
   }
@@ -285,6 +309,54 @@ public class SynthesizerSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseSineOscillator(SineOscillator object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Triangle Oscillator</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Triangle Oscillator</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseTriangleOscillator(TriangleOscillator object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Square Oscillator</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Square Oscillator</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSquareOscillator(SquareOscillator object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Pulse Oscillator</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Pulse Oscillator</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casePulseOscillator(PulseOscillator object)
   {
     return null;
   }

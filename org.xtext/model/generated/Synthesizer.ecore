@@ -35,4 +35,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SawToothOscillator" eSuperTypes="#//SoundElement"/>
   <eClassifiers xsi:type="ecore:EClass" name="SineOscillator" eSuperTypes="#//SoundElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="TriangleOscillator" eSuperTypes="#//SoundElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SquareOscillator" eSuperTypes="#//SoundElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="PulseOscillator" eSuperTypes="#//SoundElement"/>
 </ecore:EPackage>

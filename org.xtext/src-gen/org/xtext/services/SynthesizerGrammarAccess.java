@@ -323,36 +323,35 @@ public class SynthesizerGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Synthesizer.Effect");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final Keyword cFrequencyKeyword_0 = (Keyword)cAlternatives.eContents().get(0);
-		private final Keyword cVarianceKeyword_1 = (Keyword)cAlternatives.eContents().get(1);
-		private final Keyword cAmplitudeKeyword_2 = (Keyword)cAlternatives.eContents().get(2);
+		private final Keyword cAmplitudeKeyword_1 = (Keyword)cAlternatives.eContents().get(1);
 		
 		//Effect:
-		//	'frequency' | 'variance' | 'amplitude';
+		//	'frequency' | 'amplitude';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'frequency' | 'variance' | 'amplitude'
+		//'frequency' | 'amplitude'
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//'frequency'
 		public Keyword getFrequencyKeyword_0() { return cFrequencyKeyword_0; }
 		
-		//'variance'
-		public Keyword getVarianceKeyword_1() { return cVarianceKeyword_1; }
-		
 		//'amplitude'
-		public Keyword getAmplitudeKeyword_2() { return cAmplitudeKeyword_2; }
+		public Keyword getAmplitudeKeyword_1() { return cAmplitudeKeyword_1; }
 	}
 	public class SoundElementElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Synthesizer.SoundElement");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cSawToothOscillatorParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cSineOscillatorParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cTriangleOscillatorParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		private final RuleCall cSquareOscillatorParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
+		private final RuleCall cPulseOscillatorParserRuleCall_4 = (RuleCall)cAlternatives.eContents().get(4);
 		
 		//SoundElement:
-		//	SawToothOscillator | SineOscillator;
+		//	SawToothOscillator | SineOscillator | TriangleOscillator | SquareOscillator | PulseOscillator;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//SawToothOscillator | SineOscillator
+		//SawToothOscillator | SineOscillator | TriangleOscillator | SquareOscillator | PulseOscillator
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//SawToothOscillator
@@ -360,6 +359,15 @@ public class SynthesizerGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//SineOscillator
 		public RuleCall getSineOscillatorParserRuleCall_1() { return cSineOscillatorParserRuleCall_1; }
+		
+		//TriangleOscillator
+		public RuleCall getTriangleOscillatorParserRuleCall_2() { return cTriangleOscillatorParserRuleCall_2; }
+		
+		//SquareOscillator
+		public RuleCall getSquareOscillatorParserRuleCall_3() { return cSquareOscillatorParserRuleCall_3; }
+		
+		//PulseOscillator
+		public RuleCall getPulseOscillatorParserRuleCall_4() { return cPulseOscillatorParserRuleCall_4; }
 	}
 	public class ButtonElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Synthesizer.Button");
@@ -615,6 +623,186 @@ public class SynthesizerGrammarAccess extends AbstractGrammarElementFinder {
 		// ')'
 		public Keyword getRightParenthesisKeyword_7() { return cRightParenthesisKeyword_7; }
 	}
+	public class TriangleOscillatorElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Synthesizer.TriangleOscillator");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cTriangleOscillatorKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Keyword cLeftParenthesisKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Keyword cFrequencyKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cFrequencyAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cFrequencyINTTerminalRuleCall_4_0 = (RuleCall)cFrequencyAssignment_4.eContents().get(0);
+		private final Keyword cAmplitudeKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Assignment cAmplitudeAssignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final RuleCall cAmplitudeINTTerminalRuleCall_6_0 = (RuleCall)cAmplitudeAssignment_6.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_7 = (Keyword)cGroup.eContents().get(7);
+		
+		//TriangleOscillator:
+		//	'triangleOscillator' name=ID '(' 'frequency' frequency=INT 'amplitude' amplitude=INT
+		//	//should be float or INT.INT (e.g. 0.6)
+		// ')';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'triangleOscillator' name=ID '(' 'frequency' frequency=INT 'amplitude' amplitude=INT
+		////should be float or INT.INT (e.g. 0.6)
+		// ')'
+		public Group getGroup() { return cGroup; }
+		
+		//'triangleOscillator'
+		public Keyword getTriangleOscillatorKeyword_0() { return cTriangleOscillatorKeyword_0; }
+		
+		//name=ID
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+		
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
+		
+		//'('
+		public Keyword getLeftParenthesisKeyword_2() { return cLeftParenthesisKeyword_2; }
+		
+		//'frequency'
+		public Keyword getFrequencyKeyword_3() { return cFrequencyKeyword_3; }
+		
+		//frequency=INT
+		public Assignment getFrequencyAssignment_4() { return cFrequencyAssignment_4; }
+		
+		//INT
+		public RuleCall getFrequencyINTTerminalRuleCall_4_0() { return cFrequencyINTTerminalRuleCall_4_0; }
+		
+		//'amplitude'
+		public Keyword getAmplitudeKeyword_5() { return cAmplitudeKeyword_5; }
+		
+		//amplitude=INT
+		public Assignment getAmplitudeAssignment_6() { return cAmplitudeAssignment_6; }
+		
+		//INT
+		public RuleCall getAmplitudeINTTerminalRuleCall_6_0() { return cAmplitudeINTTerminalRuleCall_6_0; }
+		
+		////should be float or INT.INT (e.g. 0.6)
+		// ')'
+		public Keyword getRightParenthesisKeyword_7() { return cRightParenthesisKeyword_7; }
+	}
+	public class SquareOscillatorElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Synthesizer.SquareOscillator");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cSquareOscillatorKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Keyword cLeftParenthesisKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Keyword cFrequencyKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cFrequencyAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cFrequencyINTTerminalRuleCall_4_0 = (RuleCall)cFrequencyAssignment_4.eContents().get(0);
+		private final Keyword cAmplitudeKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Assignment cAmplitudeAssignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final RuleCall cAmplitudeINTTerminalRuleCall_6_0 = (RuleCall)cAmplitudeAssignment_6.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_7 = (Keyword)cGroup.eContents().get(7);
+		
+		//SquareOscillator:
+		//	'squareOscillator' name=ID '(' 'frequency' frequency=INT 'amplitude' amplitude=INT
+		//	//should be float or INT.INT (e.g. 0.6)
+		// ')';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'squareOscillator' name=ID '(' 'frequency' frequency=INT 'amplitude' amplitude=INT
+		////should be float or INT.INT (e.g. 0.6)
+		// ')'
+		public Group getGroup() { return cGroup; }
+		
+		//'squareOscillator'
+		public Keyword getSquareOscillatorKeyword_0() { return cSquareOscillatorKeyword_0; }
+		
+		//name=ID
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+		
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
+		
+		//'('
+		public Keyword getLeftParenthesisKeyword_2() { return cLeftParenthesisKeyword_2; }
+		
+		//'frequency'
+		public Keyword getFrequencyKeyword_3() { return cFrequencyKeyword_3; }
+		
+		//frequency=INT
+		public Assignment getFrequencyAssignment_4() { return cFrequencyAssignment_4; }
+		
+		//INT
+		public RuleCall getFrequencyINTTerminalRuleCall_4_0() { return cFrequencyINTTerminalRuleCall_4_0; }
+		
+		//'amplitude'
+		public Keyword getAmplitudeKeyword_5() { return cAmplitudeKeyword_5; }
+		
+		//amplitude=INT
+		public Assignment getAmplitudeAssignment_6() { return cAmplitudeAssignment_6; }
+		
+		//INT
+		public RuleCall getAmplitudeINTTerminalRuleCall_6_0() { return cAmplitudeINTTerminalRuleCall_6_0; }
+		
+		////should be float or INT.INT (e.g. 0.6)
+		// ')'
+		public Keyword getRightParenthesisKeyword_7() { return cRightParenthesisKeyword_7; }
+	}
+	public class PulseOscillatorElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Synthesizer.PulseOscillator");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cPulseOscillatorKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Keyword cLeftParenthesisKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Keyword cFrequencyKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cFrequencyAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cFrequencyINTTerminalRuleCall_4_0 = (RuleCall)cFrequencyAssignment_4.eContents().get(0);
+		private final Keyword cAmplitudeKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Assignment cAmplitudeAssignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final RuleCall cAmplitudeINTTerminalRuleCall_6_0 = (RuleCall)cAmplitudeAssignment_6.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_7 = (Keyword)cGroup.eContents().get(7);
+		
+		//PulseOscillator:
+		//	'pulseOscillator' name=ID '(' 'frequency' frequency=INT 'amplitude' amplitude=INT
+		//	//should be float or INT.INT (e.g. 0.6)
+		// ')';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'pulseOscillator' name=ID '(' 'frequency' frequency=INT 'amplitude' amplitude=INT
+		////should be float or INT.INT (e.g. 0.6)
+		// ')'
+		public Group getGroup() { return cGroup; }
+		
+		//'pulseOscillator'
+		public Keyword getPulseOscillatorKeyword_0() { return cPulseOscillatorKeyword_0; }
+		
+		//name=ID
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+		
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
+		
+		//'('
+		public Keyword getLeftParenthesisKeyword_2() { return cLeftParenthesisKeyword_2; }
+		
+		//'frequency'
+		public Keyword getFrequencyKeyword_3() { return cFrequencyKeyword_3; }
+		
+		//frequency=INT
+		public Assignment getFrequencyAssignment_4() { return cFrequencyAssignment_4; }
+		
+		//INT
+		public RuleCall getFrequencyINTTerminalRuleCall_4_0() { return cFrequencyINTTerminalRuleCall_4_0; }
+		
+		//'amplitude'
+		public Keyword getAmplitudeKeyword_5() { return cAmplitudeKeyword_5; }
+		
+		//amplitude=INT
+		public Assignment getAmplitudeAssignment_6() { return cAmplitudeAssignment_6; }
+		
+		//INT
+		public RuleCall getAmplitudeINTTerminalRuleCall_6_0() { return cAmplitudeINTTerminalRuleCall_6_0; }
+		
+		////should be float or INT.INT (e.g. 0.6)
+		// ')'
+		public Keyword getRightParenthesisKeyword_7() { return cRightParenthesisKeyword_7; }
+	}
 	
 	
 	private final ModelElements pModel;
@@ -627,6 +815,9 @@ public class SynthesizerGrammarAccess extends AbstractGrammarElementFinder {
 	private final ConnectionElementElements pConnectionElement;
 	private final SawToothOscillatorElements pSawToothOscillator;
 	private final SineOscillatorElements pSineOscillator;
+	private final TriangleOscillatorElements pTriangleOscillator;
+	private final SquareOscillatorElements pSquareOscillator;
+	private final PulseOscillatorElements pPulseOscillator;
 	
 	private final Grammar grammar;
 	
@@ -647,6 +838,9 @@ public class SynthesizerGrammarAccess extends AbstractGrammarElementFinder {
 		this.pConnectionElement = new ConnectionElementElements();
 		this.pSawToothOscillator = new SawToothOscillatorElements();
 		this.pSineOscillator = new SineOscillatorElements();
+		this.pTriangleOscillator = new TriangleOscillatorElements();
+		this.pSquareOscillator = new SquareOscillatorElements();
+		this.pPulseOscillator = new PulseOscillatorElements();
 	}
 	
 	protected Grammar internalFindGrammar(GrammarProvider grammarProvider) {
@@ -720,7 +914,7 @@ public class SynthesizerGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Effect:
-	//	'frequency' | 'variance' | 'amplitude';
+	//	'frequency' | 'amplitude';
 	public EffectElements getEffectAccess() {
 		return pEffect;
 	}
@@ -730,7 +924,7 @@ public class SynthesizerGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//SoundElement:
-	//	SawToothOscillator | SineOscillator;
+	//	SawToothOscillator | SineOscillator | TriangleOscillator | SquareOscillator | PulseOscillator;
 	public SoundElementElements getSoundElementAccess() {
 		return pSoundElement;
 	}
@@ -781,6 +975,42 @@ public class SynthesizerGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getSineOscillatorRule() {
 		return getSineOscillatorAccess().getRule();
+	}
+	
+	//TriangleOscillator:
+	//	'triangleOscillator' name=ID '(' 'frequency' frequency=INT 'amplitude' amplitude=INT
+	//	//should be float or INT.INT (e.g. 0.6)
+	// ')';
+	public TriangleOscillatorElements getTriangleOscillatorAccess() {
+		return pTriangleOscillator;
+	}
+	
+	public ParserRule getTriangleOscillatorRule() {
+		return getTriangleOscillatorAccess().getRule();
+	}
+	
+	//SquareOscillator:
+	//	'squareOscillator' name=ID '(' 'frequency' frequency=INT 'amplitude' amplitude=INT
+	//	//should be float or INT.INT (e.g. 0.6)
+	// ')';
+	public SquareOscillatorElements getSquareOscillatorAccess() {
+		return pSquareOscillator;
+	}
+	
+	public ParserRule getSquareOscillatorRule() {
+		return getSquareOscillatorAccess().getRule();
+	}
+	
+	//PulseOscillator:
+	//	'pulseOscillator' name=ID '(' 'frequency' frequency=INT 'amplitude' amplitude=INT
+	//	//should be float or INT.INT (e.g. 0.6)
+	// ')';
+	public PulseOscillatorElements getPulseOscillatorAccess() {
+		return pPulseOscillator;
+	}
+	
+	public ParserRule getPulseOscillatorRule() {
+		return getPulseOscillatorAccess().getRule();
 	}
 	
 	//terminal ID:

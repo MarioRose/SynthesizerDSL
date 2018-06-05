@@ -557,16 +557,10 @@ ruleEffect returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
 			newLeafNode(kw, grammarAccess.getEffectAccess().getFrequencyKeyword_0());
 		}
 		    |
-		kw='variance'
-		{
-			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getEffectAccess().getVarianceKeyword_1());
-		}
-		    |
 		kw='amplitude'
 		{
 			$current.merge(kw);
-			newLeafNode(kw, grammarAccess.getEffectAccess().getAmplitudeKeyword_2());
+			newLeafNode(kw, grammarAccess.getEffectAccess().getAmplitudeKeyword_1());
 		}
 	)
 ;
@@ -602,6 +596,33 @@ ruleSoundElement returns [EObject current=null]
 		this_SineOscillator_1=ruleSineOscillator
 		{
 			$current = $this_SineOscillator_1.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getSoundElementAccess().getTriangleOscillatorParserRuleCall_2());
+		}
+		this_TriangleOscillator_2=ruleTriangleOscillator
+		{
+			$current = $this_TriangleOscillator_2.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getSoundElementAccess().getSquareOscillatorParserRuleCall_3());
+		}
+		this_SquareOscillator_3=ruleSquareOscillator
+		{
+			$current = $this_SquareOscillator_3.current;
+			afterParserOrEnumRuleCall();
+		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getSoundElementAccess().getPulseOscillatorParserRuleCall_4());
+		}
+		this_PulseOscillator_4=rulePulseOscillator
+		{
+			$current = $this_PulseOscillator_4.current;
 			afterParserOrEnumRuleCall();
 		}
 	)
@@ -992,6 +1013,285 @@ ruleSineOscillator returns [EObject current=null]
 		otherlv_7=')'
 		{
 			newLeafNode(otherlv_7, grammarAccess.getSineOscillatorAccess().getRightParenthesisKeyword_7());
+		}
+	)
+;
+
+// Entry rule entryRuleTriangleOscillator
+entryRuleTriangleOscillator returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getTriangleOscillatorRule()); }
+	iv_ruleTriangleOscillator=ruleTriangleOscillator
+	{ $current=$iv_ruleTriangleOscillator.current; }
+	EOF;
+
+// Rule TriangleOscillator
+ruleTriangleOscillator returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='triangleOscillator'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getTriangleOscillatorAccess().getTriangleOscillatorKeyword_0());
+		}
+		(
+			(
+				lv_name_1_0=RULE_ID
+				{
+					newLeafNode(lv_name_1_0, grammarAccess.getTriangleOscillatorAccess().getNameIDTerminalRuleCall_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getTriangleOscillatorRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"name",
+						lv_name_1_0,
+						"org.eclipse.xtext.common.Terminals.ID");
+				}
+			)
+		)
+		otherlv_2='('
+		{
+			newLeafNode(otherlv_2, grammarAccess.getTriangleOscillatorAccess().getLeftParenthesisKeyword_2());
+		}
+		otherlv_3='frequency'
+		{
+			newLeafNode(otherlv_3, grammarAccess.getTriangleOscillatorAccess().getFrequencyKeyword_3());
+		}
+		(
+			(
+				lv_frequency_4_0=RULE_INT
+				{
+					newLeafNode(lv_frequency_4_0, grammarAccess.getTriangleOscillatorAccess().getFrequencyINTTerminalRuleCall_4_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getTriangleOscillatorRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"frequency",
+						lv_frequency_4_0,
+						"org.eclipse.xtext.common.Terminals.INT");
+				}
+			)
+		)
+		otherlv_5='amplitude'
+		{
+			newLeafNode(otherlv_5, grammarAccess.getTriangleOscillatorAccess().getAmplitudeKeyword_5());
+		}
+		(
+			(
+				lv_amplitude_6_0=RULE_INT
+				{
+					newLeafNode(lv_amplitude_6_0, grammarAccess.getTriangleOscillatorAccess().getAmplitudeINTTerminalRuleCall_6_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getTriangleOscillatorRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"amplitude",
+						lv_amplitude_6_0,
+						"org.eclipse.xtext.common.Terminals.INT");
+				}
+			)
+		)
+		otherlv_7=')'
+		{
+			newLeafNode(otherlv_7, grammarAccess.getTriangleOscillatorAccess().getRightParenthesisKeyword_7());
+		}
+	)
+;
+
+// Entry rule entryRuleSquareOscillator
+entryRuleSquareOscillator returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getSquareOscillatorRule()); }
+	iv_ruleSquareOscillator=ruleSquareOscillator
+	{ $current=$iv_ruleSquareOscillator.current; }
+	EOF;
+
+// Rule SquareOscillator
+ruleSquareOscillator returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='squareOscillator'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getSquareOscillatorAccess().getSquareOscillatorKeyword_0());
+		}
+		(
+			(
+				lv_name_1_0=RULE_ID
+				{
+					newLeafNode(lv_name_1_0, grammarAccess.getSquareOscillatorAccess().getNameIDTerminalRuleCall_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getSquareOscillatorRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"name",
+						lv_name_1_0,
+						"org.eclipse.xtext.common.Terminals.ID");
+				}
+			)
+		)
+		otherlv_2='('
+		{
+			newLeafNode(otherlv_2, grammarAccess.getSquareOscillatorAccess().getLeftParenthesisKeyword_2());
+		}
+		otherlv_3='frequency'
+		{
+			newLeafNode(otherlv_3, grammarAccess.getSquareOscillatorAccess().getFrequencyKeyword_3());
+		}
+		(
+			(
+				lv_frequency_4_0=RULE_INT
+				{
+					newLeafNode(lv_frequency_4_0, grammarAccess.getSquareOscillatorAccess().getFrequencyINTTerminalRuleCall_4_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getSquareOscillatorRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"frequency",
+						lv_frequency_4_0,
+						"org.eclipse.xtext.common.Terminals.INT");
+				}
+			)
+		)
+		otherlv_5='amplitude'
+		{
+			newLeafNode(otherlv_5, grammarAccess.getSquareOscillatorAccess().getAmplitudeKeyword_5());
+		}
+		(
+			(
+				lv_amplitude_6_0=RULE_INT
+				{
+					newLeafNode(lv_amplitude_6_0, grammarAccess.getSquareOscillatorAccess().getAmplitudeINTTerminalRuleCall_6_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getSquareOscillatorRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"amplitude",
+						lv_amplitude_6_0,
+						"org.eclipse.xtext.common.Terminals.INT");
+				}
+			)
+		)
+		otherlv_7=')'
+		{
+			newLeafNode(otherlv_7, grammarAccess.getSquareOscillatorAccess().getRightParenthesisKeyword_7());
+		}
+	)
+;
+
+// Entry rule entryRulePulseOscillator
+entryRulePulseOscillator returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getPulseOscillatorRule()); }
+	iv_rulePulseOscillator=rulePulseOscillator
+	{ $current=$iv_rulePulseOscillator.current; }
+	EOF;
+
+// Rule PulseOscillator
+rulePulseOscillator returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='pulseOscillator'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getPulseOscillatorAccess().getPulseOscillatorKeyword_0());
+		}
+		(
+			(
+				lv_name_1_0=RULE_ID
+				{
+					newLeafNode(lv_name_1_0, grammarAccess.getPulseOscillatorAccess().getNameIDTerminalRuleCall_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getPulseOscillatorRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"name",
+						lv_name_1_0,
+						"org.eclipse.xtext.common.Terminals.ID");
+				}
+			)
+		)
+		otherlv_2='('
+		{
+			newLeafNode(otherlv_2, grammarAccess.getPulseOscillatorAccess().getLeftParenthesisKeyword_2());
+		}
+		otherlv_3='frequency'
+		{
+			newLeafNode(otherlv_3, grammarAccess.getPulseOscillatorAccess().getFrequencyKeyword_3());
+		}
+		(
+			(
+				lv_frequency_4_0=RULE_INT
+				{
+					newLeafNode(lv_frequency_4_0, grammarAccess.getPulseOscillatorAccess().getFrequencyINTTerminalRuleCall_4_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getPulseOscillatorRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"frequency",
+						lv_frequency_4_0,
+						"org.eclipse.xtext.common.Terminals.INT");
+				}
+			)
+		)
+		otherlv_5='amplitude'
+		{
+			newLeafNode(otherlv_5, grammarAccess.getPulseOscillatorAccess().getAmplitudeKeyword_5());
+		}
+		(
+			(
+				lv_amplitude_6_0=RULE_INT
+				{
+					newLeafNode(lv_amplitude_6_0, grammarAccess.getPulseOscillatorAccess().getAmplitudeINTTerminalRuleCall_6_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getPulseOscillatorRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"amplitude",
+						lv_amplitude_6_0,
+						"org.eclipse.xtext.common.Terminals.INT");
+				}
+			)
+		)
+		otherlv_7=')'
+		{
+			newLeafNode(otherlv_7, grammarAccess.getPulseOscillatorAccess().getRightParenthesisKeyword_7());
 		}
 	)
 ;

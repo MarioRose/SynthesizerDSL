@@ -37,5 +37,8 @@
     </genClasses>
     <genClasses ecoreClass="Synthesizer.ecore#//SawToothOscillator"/>
     <genClasses ecoreClass="Synthesizer.ecore#//SineOscillator"/>
+    <genClasses ecoreClass="Synthesizer.ecore#//TriangleOscillator"/>
+    <genClasses ecoreClass="Synthesizer.ecore#//SquareOscillator"/>
+    <genClasses ecoreClass="Synthesizer.ecore#//PulseOscillator"/>
   </genPackages>
 </genmodel:GenModel>

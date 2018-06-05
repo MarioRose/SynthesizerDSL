@@ -14,13 +14,16 @@ import org.xtext.synthesizer.Button;
 import org.xtext.synthesizer.ConnectionElement;
 import org.xtext.synthesizer.ControlElement;
 import org.xtext.synthesizer.Model;
+import org.xtext.synthesizer.PulseOscillator;
 import org.xtext.synthesizer.RotaryKnob;
 import org.xtext.synthesizer.SawToothOscillator;
 import org.xtext.synthesizer.SineOscillator;
 import org.xtext.synthesizer.Slider;
 import org.xtext.synthesizer.SoundElement;
+import org.xtext.synthesizer.SquareOscillator;
 import org.xtext.synthesizer.SynthesizerFactory;
 import org.xtext.synthesizer.SynthesizerPackage;
+import org.xtext.synthesizer.TriangleOscillator;
 
 /**
  * <!-- begin-user-doc -->
@@ -92,6 +95,27 @@ public class SynthesizerPackageImpl extends EPackageImpl implements SynthesizerP
    * @generated
    */
   private EClass sineOscillatorEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass triangleOscillatorEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass squareOscillatorEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass pulseOscillatorEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -411,6 +435,36 @@ public class SynthesizerPackageImpl extends EPackageImpl implements SynthesizerP
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getTriangleOscillator()
+  {
+    return triangleOscillatorEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getSquareOscillator()
+  {
+    return squareOscillatorEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getPulseOscillator()
+  {
+    return pulseOscillatorEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public SynthesizerFactory getSynthesizerFactory()
   {
     return (SynthesizerFactory)getEFactoryInstance();
@@ -469,6 +523,12 @@ public class SynthesizerPackageImpl extends EPackageImpl implements SynthesizerP
     sawToothOscillatorEClass = createEClass(SAW_TOOTH_OSCILLATOR);
 
     sineOscillatorEClass = createEClass(SINE_OSCILLATOR);
+
+    triangleOscillatorEClass = createEClass(TRIANGLE_OSCILLATOR);
+
+    squareOscillatorEClass = createEClass(SQUARE_OSCILLATOR);
+
+    pulseOscillatorEClass = createEClass(PULSE_OSCILLATOR);
   }
 
   /**
@@ -505,6 +565,9 @@ public class SynthesizerPackageImpl extends EPackageImpl implements SynthesizerP
     buttonEClass.getESuperTypes().add(this.getControlElement());
     sawToothOscillatorEClass.getESuperTypes().add(this.getSoundElement());
     sineOscillatorEClass.getESuperTypes().add(this.getSoundElement());
+    triangleOscillatorEClass.getESuperTypes().add(this.getSoundElement());
+    squareOscillatorEClass.getESuperTypes().add(this.getSoundElement());
+    pulseOscillatorEClass.getESuperTypes().add(this.getSoundElement());
 
     // Initialize classes and features; add operations and parameters
     initEClass(modelEClass, Model.class, "Model", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -540,6 +603,12 @@ public class SynthesizerPackageImpl extends EPackageImpl implements SynthesizerP
     initEClass(sawToothOscillatorEClass, SawToothOscillator.class, "SawToothOscillator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(sineOscillatorEClass, SineOscillator.class, "SineOscillator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(triangleOscillatorEClass, TriangleOscillator.class, "TriangleOscillator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(squareOscillatorEClass, SquareOscillator.class, "SquareOscillator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(pulseOscillatorEClass, PulseOscillator.class, "PulseOscillator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     // Create resource
     createResource(eNS_URI);

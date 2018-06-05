@@ -561,6 +561,144 @@ public interface SynthesizerPackage extends EPackage
    */
   int SINE_OSCILLATOR_FEATURE_COUNT = SOUND_ELEMENT_FEATURE_COUNT + 0;
 
+  /**
+   * The meta object id for the '{@link org.xtext.synthesizer.impl.TriangleOscillatorImpl <em>Triangle Oscillator</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.synthesizer.impl.TriangleOscillatorImpl
+   * @see org.xtext.synthesizer.impl.SynthesizerPackageImpl#getTriangleOscillator()
+   * @generated
+   */
+  int TRIANGLE_OSCILLATOR = 9;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TRIANGLE_OSCILLATOR__NAME = SOUND_ELEMENT__NAME;
+
+  /**
+   * The feature id for the '<em><b>Frequency</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TRIANGLE_OSCILLATOR__FREQUENCY = SOUND_ELEMENT__FREQUENCY;
+
+  /**
+   * The feature id for the '<em><b>Amplitude</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TRIANGLE_OSCILLATOR__AMPLITUDE = SOUND_ELEMENT__AMPLITUDE;
+
+  /**
+   * The number of structural features of the '<em>Triangle Oscillator</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TRIANGLE_OSCILLATOR_FEATURE_COUNT = SOUND_ELEMENT_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link org.xtext.synthesizer.impl.SquareOscillatorImpl <em>Square Oscillator</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.synthesizer.impl.SquareOscillatorImpl
+   * @see org.xtext.synthesizer.impl.SynthesizerPackageImpl#getSquareOscillator()
+   * @generated
+   */
+  int SQUARE_OSCILLATOR = 10;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SQUARE_OSCILLATOR__NAME = SOUND_ELEMENT__NAME;
+
+  /**
+   * The feature id for the '<em><b>Frequency</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SQUARE_OSCILLATOR__FREQUENCY = SOUND_ELEMENT__FREQUENCY;
+
+  /**
+   * The feature id for the '<em><b>Amplitude</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SQUARE_OSCILLATOR__AMPLITUDE = SOUND_ELEMENT__AMPLITUDE;
+
+  /**
+   * The number of structural features of the '<em>Square Oscillator</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SQUARE_OSCILLATOR_FEATURE_COUNT = SOUND_ELEMENT_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link org.xtext.synthesizer.impl.PulseOscillatorImpl <em>Pulse Oscillator</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.synthesizer.impl.PulseOscillatorImpl
+   * @see org.xtext.synthesizer.impl.SynthesizerPackageImpl#getPulseOscillator()
+   * @generated
+   */
+  int PULSE_OSCILLATOR = 11;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PULSE_OSCILLATOR__NAME = SOUND_ELEMENT__NAME;
+
+  /**
+   * The feature id for the '<em><b>Frequency</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PULSE_OSCILLATOR__FREQUENCY = SOUND_ELEMENT__FREQUENCY;
+
+  /**
+   * The feature id for the '<em><b>Amplitude</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PULSE_OSCILLATOR__AMPLITUDE = SOUND_ELEMENT__AMPLITUDE;
+
+  /**
+   * The number of structural features of the '<em>Pulse Oscillator</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PULSE_OSCILLATOR_FEATURE_COUNT = SOUND_ELEMENT_FEATURE_COUNT + 0;
+
 
   /**
    * Returns the meta object for class '{@link org.xtext.synthesizer.Model <em>Model</em>}'.
@@ -829,6 +967,36 @@ public interface SynthesizerPackage extends EPackage
   EClass getSineOscillator();
 
   /**
+   * Returns the meta object for class '{@link org.xtext.synthesizer.TriangleOscillator <em>Triangle Oscillator</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Triangle Oscillator</em>'.
+   * @see org.xtext.synthesizer.TriangleOscillator
+   * @generated
+   */
+  EClass getTriangleOscillator();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.synthesizer.SquareOscillator <em>Square Oscillator</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Square Oscillator</em>'.
+   * @see org.xtext.synthesizer.SquareOscillator
+   * @generated
+   */
+  EClass getSquareOscillator();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.synthesizer.PulseOscillator <em>Pulse Oscillator</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Pulse Oscillator</em>'.
+   * @see org.xtext.synthesizer.PulseOscillator
+   * @generated
+   */
+  EClass getPulseOscillator();
+
+  /**
    * Returns the factory that creates the instances of the model.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1068,6 +1236,36 @@ public interface SynthesizerPackage extends EPackage
      * @generated
      */
     EClass SINE_OSCILLATOR = eINSTANCE.getSineOscillator();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.synthesizer.impl.TriangleOscillatorImpl <em>Triangle Oscillator</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.synthesizer.impl.TriangleOscillatorImpl
+     * @see org.xtext.synthesizer.impl.SynthesizerPackageImpl#getTriangleOscillator()
+     * @generated
+     */
+    EClass TRIANGLE_OSCILLATOR = eINSTANCE.getTriangleOscillator();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.synthesizer.impl.SquareOscillatorImpl <em>Square Oscillator</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.synthesizer.impl.SquareOscillatorImpl
+     * @see org.xtext.synthesizer.impl.SynthesizerPackageImpl#getSquareOscillator()
+     * @generated
+     */
+    EClass SQUARE_OSCILLATOR = eINSTANCE.getSquareOscillator();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.synthesizer.impl.PulseOscillatorImpl <em>Pulse Oscillator</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.synthesizer.impl.PulseOscillatorImpl
+     * @see org.xtext.synthesizer.impl.SynthesizerPackageImpl#getPulseOscillator()
+     * @generated
+     */
+    EClass PULSE_OSCILLATOR = eINSTANCE.getPulseOscillator();
 
   }
 

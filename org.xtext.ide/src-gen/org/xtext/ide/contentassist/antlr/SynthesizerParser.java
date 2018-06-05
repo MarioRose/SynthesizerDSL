@@ -43,6 +43,9 @@ public class SynthesizerParser extends AbstractContentAssistParser {
 					put(grammarAccess.getConnectionElementAccess().getGroup(), "rule__ConnectionElement__Group__0");
 					put(grammarAccess.getSawToothOscillatorAccess().getGroup(), "rule__SawToothOscillator__Group__0");
 					put(grammarAccess.getSineOscillatorAccess().getGroup(), "rule__SineOscillator__Group__0");
+					put(grammarAccess.getTriangleOscillatorAccess().getGroup(), "rule__TriangleOscillator__Group__0");
+					put(grammarAccess.getSquareOscillatorAccess().getGroup(), "rule__SquareOscillator__Group__0");
+					put(grammarAccess.getPulseOscillatorAccess().getGroup(), "rule__PulseOscillator__Group__0");
 					put(grammarAccess.getModelAccess().getControlsAssignment_2(), "rule__Model__ControlsAssignment_2");
 					put(grammarAccess.getModelAccess().getSoundsAssignment_4_2(), "rule__Model__SoundsAssignment_4_2");
 					put(grammarAccess.getModelAccess().getConnectionsAssignment_5_2(), "rule__Model__ConnectionsAssignment_5_2");
@@ -72,6 +75,15 @@ public class SynthesizerParser extends AbstractContentAssistParser {
 					put(grammarAccess.getSineOscillatorAccess().getNameAssignment_1(), "rule__SineOscillator__NameAssignment_1");
 					put(grammarAccess.getSineOscillatorAccess().getFrequencyAssignment_4(), "rule__SineOscillator__FrequencyAssignment_4");
 					put(grammarAccess.getSineOscillatorAccess().getAmplitudeAssignment_6(), "rule__SineOscillator__AmplitudeAssignment_6");
+					put(grammarAccess.getTriangleOscillatorAccess().getNameAssignment_1(), "rule__TriangleOscillator__NameAssignment_1");
+					put(grammarAccess.getTriangleOscillatorAccess().getFrequencyAssignment_4(), "rule__TriangleOscillator__FrequencyAssignment_4");
+					put(grammarAccess.getTriangleOscillatorAccess().getAmplitudeAssignment_6(), "rule__TriangleOscillator__AmplitudeAssignment_6");
+					put(grammarAccess.getSquareOscillatorAccess().getNameAssignment_1(), "rule__SquareOscillator__NameAssignment_1");
+					put(grammarAccess.getSquareOscillatorAccess().getFrequencyAssignment_4(), "rule__SquareOscillator__FrequencyAssignment_4");
+					put(grammarAccess.getSquareOscillatorAccess().getAmplitudeAssignment_6(), "rule__SquareOscillator__AmplitudeAssignment_6");
+					put(grammarAccess.getPulseOscillatorAccess().getNameAssignment_1(), "rule__PulseOscillator__NameAssignment_1");
+					put(grammarAccess.getPulseOscillatorAccess().getFrequencyAssignment_4(), "rule__PulseOscillator__FrequencyAssignment_4");
+					put(grammarAccess.getPulseOscillatorAccess().getAmplitudeAssignment_6(), "rule__PulseOscillator__AmplitudeAssignment_6");
 				}
 			};
 		}

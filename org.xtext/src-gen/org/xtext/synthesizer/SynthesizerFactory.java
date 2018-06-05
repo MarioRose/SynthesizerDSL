@@ -105,6 +105,33 @@ public interface SynthesizerFactory extends EFactory
   SineOscillator createSineOscillator();
 
   /**
+   * Returns a new object of class '<em>Triangle Oscillator</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Triangle Oscillator</em>'.
+   * @generated
+   */
+  TriangleOscillator createTriangleOscillator();
+
+  /**
+   * Returns a new object of class '<em>Square Oscillator</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Square Oscillator</em>'.
+   * @generated
+   */
+  SquareOscillator createSquareOscillator();
+
+  /**
+   * Returns a new object of class '<em>Pulse Oscillator</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Pulse Oscillator</em>'.
+   * @generated
+   */
+  PulseOscillator createPulseOscillator();
+
+  /**
    * Returns the package supported by this factory.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

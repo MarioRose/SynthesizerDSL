@@ -121,6 +121,21 @@ public class SynthesizerAdapterFactory extends AdapterFactoryImpl
         return createSineOscillatorAdapter();
       }
       @Override
+      public Adapter caseTriangleOscillator(TriangleOscillator object)
+      {
+        return createTriangleOscillatorAdapter();
+      }
+      @Override
+      public Adapter caseSquareOscillator(SquareOscillator object)
+      {
+        return createSquareOscillatorAdapter();
+      }
+      @Override
+      public Adapter casePulseOscillator(PulseOscillator object)
+      {
+        return createPulseOscillatorAdapter();
+      }
+      @Override
       public Adapter defaultCase(EObject object)
       {
         return createEObjectAdapter();
@@ -273,6 +288,51 @@ public class SynthesizerAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createSineOscillatorAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.synthesizer.TriangleOscillator <em>Triangle Oscillator</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.synthesizer.TriangleOscillator
+   * @generated
+   */
+  public Adapter createTriangleOscillatorAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.synthesizer.SquareOscillator <em>Square Oscillator</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.synthesizer.SquareOscillator
+   * @generated
+   */
+  public Adapter createSquareOscillatorAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.synthesizer.PulseOscillator <em>Pulse Oscillator</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.synthesizer.PulseOscillator
+   * @generated
+   */
+  public Adapter createPulseOscillatorAdapter()
   {
     return null;
   }

@@ -43,7 +43,7 @@ Effect:
 ;
 
 SoundElement:
-	SawToothOscillator | SineOscillator
+	SawToothOscillator | SineOscillator |TriangleOscillator | SquareOscillator | PulseOscillator
 ;
 
 Button:
@@ -69,6 +69,27 @@ SawToothOscillator:
 
 SineOscillator:
 	'sineOscillator' name = ID '('
+		'frequency' frequency = INT
+		'amplitude' amplitude = INT //should be float or INT.INT (e.g. 0.6)
+	')'
+;
+
+TriangleOscillator:
+	'triangleOscillator' name = ID '('
+		'frequency' frequency = INT
+		'amplitude' amplitude = INT //should be float or INT.INT (e.g. 0.6)
+	')'
+;
+
+SquareOscillator:
+	'squareOscillator' name = ID '('
+		'frequency' frequency = INT
+		'amplitude' amplitude = INT //should be float or INT.INT (e.g. 0.6)
+	')'
+;
+
+PulseOscillator:
+	'pulseOscillator' name = ID '('
 		'frequency' frequency = INT
 		'amplitude' amplitude = INT //should be float or INT.INT (e.g. 0.6)
 	')'

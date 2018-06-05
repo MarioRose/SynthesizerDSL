@@ -74,6 +74,9 @@ public class SynthesizerFactoryImpl extends EFactoryImpl implements SynthesizerF
       case SynthesizerPackage.CONNECTION_ELEMENT: return createConnectionElement();
       case SynthesizerPackage.SAW_TOOTH_OSCILLATOR: return createSawToothOscillator();
       case SynthesizerPackage.SINE_OSCILLATOR: return createSineOscillator();
+      case SynthesizerPackage.TRIANGLE_OSCILLATOR: return createTriangleOscillator();
+      case SynthesizerPackage.SQUARE_OSCILLATOR: return createSquareOscillator();
+      case SynthesizerPackage.PULSE_OSCILLATOR: return createPulseOscillator();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -176,6 +179,39 @@ public class SynthesizerFactoryImpl extends EFactoryImpl implements SynthesizerF
   {
     SineOscillatorImpl sineOscillator = new SineOscillatorImpl();
     return sineOscillator;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public TriangleOscillator createTriangleOscillator()
+  {
+    TriangleOscillatorImpl triangleOscillator = new TriangleOscillatorImpl();
+    return triangleOscillator;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public SquareOscillator createSquareOscillator()
+  {
+    SquareOscillatorImpl squareOscillator = new SquareOscillatorImpl();
+    return squareOscillator;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public PulseOscillator createPulseOscillator()
+  {
+    PulseOscillatorImpl pulseOscillator = new PulseOscillatorImpl();
+    return pulseOscillator;
   }
 
   /**
