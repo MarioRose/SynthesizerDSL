@@ -384,7 +384,7 @@ public class SynthesizerGenerator extends AbstractGenerator {
     };
     String _join = IteratorExtensions.join(IteratorExtensions.<Button, String>map(Iterators.<Button>filter(resource.getAllContents(), Button.class), _function), "\n\t\t\t\t");
     String _plus = ("private void createAndShowGUI() {\n\t\t        //Create and set up the window.\n        \t\tadd(BorderLayout.NORTH, new JLabel(\"Show Oscillators in an AudioScope\"));\n\t\t        \n\t\t\t\t//Create Panels\n\t\t\t\tJPanel panel = new JPanel();\n        \t\tpanel.setLayout(null);\n        \t\tadd(BorderLayout.CENTER, panel);\n\n\t\t        //Create Buttons\n\t\t\t\t" + _join);
-    String _plus_1 = (_plus + "\n\n\t\t\t\t//Example ramp for slider\n\t\t       \tLinearRamp freqRamp = new LinearRamp();\n\t\t        freqRamp.input.setup(50.0, 300.0, 20000.0);\n\t\t        freqRamp.input.setName(\"Frequency\");\n\t\t\t\tfreqRamp.time.set(0.1);\n\n\t\t        //Create Sliders\n\t\t\t\t");
+    String _plus_1 = (_plus + "\n\n\t\t        //Create Sliders\n\t\t\t\t");
     final Function1<Slider, String> _function_1 = (Slider it) -> {
       String _name = it.getName();
       String _plus_2 = ("DoubleBoundedRangeSlider slider" + _name);

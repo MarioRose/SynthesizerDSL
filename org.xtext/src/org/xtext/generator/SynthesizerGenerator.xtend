@@ -331,20 +331,12 @@ class SynthesizerGenerator extends AbstractGenerator {
 		        '].join('\n\t\t\t\t')
 		        + '
 
-				//Example ramp for slider
-		       	LinearRamp freqRamp = new LinearRamp();
-		        freqRamp.input.setup(50.0, 300.0, 20000.0);
-		        freqRamp.input.setName("Frequency");
-				freqRamp.time.set(0.1);
-
 		        //Create Sliders
 				'+ resource.allContents
 				.filter(Slider)
 				.map["DoubleBoundedRangeSlider slider" + name + ' = PortControllerFactory.createExponentialPortSlider(osc'+ sound.name + '.' + type + ');
 				slider' + name + '.setBounds(' + x + ', ' + y + ', ' + width + ', ' + height + ');  // x, y, width, height
-				panel.add(slider' + name +");"
-						        ].join('\n\t\t\t\t')
-						   
+				panel.add(slider' + name +");"].join('\n\t\t\t\t')  
 				+ '
 
 		        //Create RotaryKnobs
@@ -353,8 +345,7 @@ class SynthesizerGenerator extends AbstractGenerator {
 				.map["ExponentialRangeModel model" + name +" = PortModelFactory.createExponentialModel(osc"+ sound.name + "." + type + ");
 				RotaryTextController knob" + name + ' = new RotaryTextController(model' + name +', 1);
 				knob' + name + '.setBounds(' + x + ', ' + y + ', ' + width + ', ' + height + ');  // x, y, width, height
-				panel.add(knob' + name +");"
-						        ].join('\n\t\t\t\t')
+				panel.add(knob' + name +");"].join('\n\t\t\t\t')
 						   
 				+ '
 			}'
