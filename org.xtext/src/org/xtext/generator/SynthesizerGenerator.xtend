@@ -219,7 +219,7 @@ class SynthesizerGenerator extends AbstractGenerator {
 		        //Create Slider
 				'+ resource.allContents
 				.filter(Slider)
-				.map["DoubleBoundedRangeSlider slider" + name + ' = PortControllerFactory.createExponentialPortSlider(freqRamp.input);
+				.map["DoubleBoundedRangeSlider slider" + name + ' = PortControllerFactory.createExponentialPortSlider(osc'+ sound.name + '.' + type + ');
 				slider' + name + '.setBounds(' + x + ', ' + y + ', ' + width + ', ' + height + ');  // x, y, width, height
 				panel.add(slider' + name +");"
 						        ].join('\n\t\t\t\t')

@@ -229,13 +229,22 @@ public class SynthesizerGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cHeightKeyword_9 = (Keyword)cGroup.eContents().get(9);
 		private final Assignment cHeightAssignment_10 = (Assignment)cGroup.eContents().get(10);
 		private final RuleCall cHeightINTTerminalRuleCall_10_0 = (RuleCall)cHeightAssignment_10.eContents().get(0);
-		private final Keyword cRightParenthesisKeyword_11 = (Keyword)cGroup.eContents().get(11);
+		private final Keyword cSoundKeyword_11 = (Keyword)cGroup.eContents().get(11);
+		private final Assignment cSoundAssignment_12 = (Assignment)cGroup.eContents().get(12);
+		private final CrossReference cSoundSoundElementCrossReference_12_0 = (CrossReference)cSoundAssignment_12.eContents().get(0);
+		private final RuleCall cSoundSoundElementIDTerminalRuleCall_12_0_1 = (RuleCall)cSoundSoundElementCrossReference_12_0.eContents().get(1);
+		private final Keyword cEffectKeyword_13 = (Keyword)cGroup.eContents().get(13);
+		private final Assignment cTypeAssignment_14 = (Assignment)cGroup.eContents().get(14);
+		private final RuleCall cTypeEffectParserRuleCall_14_0 = (RuleCall)cTypeAssignment_14.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_15 = (Keyword)cGroup.eContents().get(15);
 		
 		//Slider:
-		//	'slider' name=ID '(' 'x' x=INT 'y' y=INT 'width' width=INT 'height' height=INT ')';
+		//	'slider' name=ID '(' 'x' x=INT 'y' y=INT 'width' width=INT 'height' height=INT 'sound' sound=[SoundElement] 'effect'
+		//	type=Effect ')';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'slider' name=ID '(' 'x' x=INT 'y' y=INT 'width' width=INT 'height' height=INT ')'
+		//'slider' name=ID '(' 'x' x=INT 'y' y=INT 'width' width=INT 'height' height=INT 'sound' sound=[SoundElement] 'effect'
+		//type=Effect ')'
 		public Group getGroup() { return cGroup; }
 		
 		//'slider'
@@ -286,8 +295,52 @@ public class SynthesizerGrammarAccess extends AbstractGrammarElementFinder {
 		//INT
 		public RuleCall getHeightINTTerminalRuleCall_10_0() { return cHeightINTTerminalRuleCall_10_0; }
 		
+		//'sound'
+		public Keyword getSoundKeyword_11() { return cSoundKeyword_11; }
+		
+		//sound=[SoundElement]
+		public Assignment getSoundAssignment_12() { return cSoundAssignment_12; }
+		
+		//[SoundElement]
+		public CrossReference getSoundSoundElementCrossReference_12_0() { return cSoundSoundElementCrossReference_12_0; }
+		
+		//ID
+		public RuleCall getSoundSoundElementIDTerminalRuleCall_12_0_1() { return cSoundSoundElementIDTerminalRuleCall_12_0_1; }
+		
+		//'effect'
+		public Keyword getEffectKeyword_13() { return cEffectKeyword_13; }
+		
+		//type=Effect
+		public Assignment getTypeAssignment_14() { return cTypeAssignment_14; }
+		
+		//Effect
+		public RuleCall getTypeEffectParserRuleCall_14_0() { return cTypeEffectParserRuleCall_14_0; }
+		
 		//')'
-		public Keyword getRightParenthesisKeyword_11() { return cRightParenthesisKeyword_11; }
+		public Keyword getRightParenthesisKeyword_15() { return cRightParenthesisKeyword_15; }
+	}
+	public class EffectElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Synthesizer.Effect");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Keyword cFrequencyKeyword_0 = (Keyword)cAlternatives.eContents().get(0);
+		private final Keyword cVarianceKeyword_1 = (Keyword)cAlternatives.eContents().get(1);
+		private final Keyword cAmplitudeKeyword_2 = (Keyword)cAlternatives.eContents().get(2);
+		
+		//Effect:
+		//	'frequency' | 'variance' | 'amplitude';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'frequency' | 'variance' | 'amplitude'
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//'frequency'
+		public Keyword getFrequencyKeyword_0() { return cFrequencyKeyword_0; }
+		
+		//'variance'
+		public Keyword getVarianceKeyword_1() { return cVarianceKeyword_1; }
+		
+		//'amplitude'
+		public Keyword getAmplitudeKeyword_2() { return cAmplitudeKeyword_2; }
 	}
 	public class SoundElementElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.Synthesizer.SoundElement");
@@ -568,6 +621,7 @@ public class SynthesizerGrammarAccess extends AbstractGrammarElementFinder {
 	private final ControlElementElements pControlElement;
 	private final RotaryKnobElements pRotaryKnob;
 	private final SliderElements pSlider;
+	private final EffectElements pEffect;
 	private final SoundElementElements pSoundElement;
 	private final ButtonElements pButton;
 	private final ConnectionElementElements pConnectionElement;
@@ -587,6 +641,7 @@ public class SynthesizerGrammarAccess extends AbstractGrammarElementFinder {
 		this.pControlElement = new ControlElementElements();
 		this.pRotaryKnob = new RotaryKnobElements();
 		this.pSlider = new SliderElements();
+		this.pEffect = new EffectElements();
 		this.pSoundElement = new SoundElementElements();
 		this.pButton = new ButtonElements();
 		this.pConnectionElement = new ConnectionElementElements();
@@ -654,13 +709,24 @@ public class SynthesizerGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Slider:
-	//	'slider' name=ID '(' 'x' x=INT 'y' y=INT 'width' width=INT 'height' height=INT ')';
+	//	'slider' name=ID '(' 'x' x=INT 'y' y=INT 'width' width=INT 'height' height=INT 'sound' sound=[SoundElement] 'effect'
+	//	type=Effect ')';
 	public SliderElements getSliderAccess() {
 		return pSlider;
 	}
 	
 	public ParserRule getSliderRule() {
 		return getSliderAccess().getRule();
+	}
+	
+	//Effect:
+	//	'frequency' | 'variance' | 'amplitude';
+	public EffectElements getEffectAccess() {
+		return pEffect;
+	}
+	
+	public ParserRule getEffectRule() {
+		return getEffectAccess().getRule();
 	}
 	
 	//SoundElement:

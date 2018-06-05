@@ -21,7 +21,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalSynthesizerParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'Controls'", "'{'", "'}'", "'Sound'", "'Connections'", "'rotaryKnob'", "'('", "'x'", "'y'", "'width'", "'height'", "')'", "'slider'", "'button'", "'sound'", "'linear'", "'sawToothOscillator'", "'frequency'", "'amplitude'", "'sineOscillator'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'Controls'", "'{'", "'}'", "'Sound'", "'Connections'", "'rotaryKnob'", "'('", "'x'", "'y'", "'width'", "'height'", "')'", "'slider'", "'sound'", "'effect'", "'frequency'", "'variance'", "'amplitude'", "'button'", "'linear'", "'sawToothOscillator'", "'sineOscillator'"
     };
     public static final int RULE_STRING=6;
     public static final int RULE_SL_COMMENT=8;
@@ -36,6 +36,8 @@ public class InternalSynthesizerParser extends AbstractInternalAntlrParser {
     public static final int T__14=14;
     public static final int EOF=-1;
     public static final int T__30=30;
+    public static final int T__31=31;
+    public static final int T__32=32;
     public static final int RULE_ID=4;
     public static final int RULE_WS=9;
     public static final int RULE_ANY_OTHER=10;
@@ -172,7 +174,7 @@ public class InternalSynthesizerParser extends AbstractInternalAntlrParser {
                 int alt1=2;
                 int LA1_0 = input.LA(1);
 
-                if ( (LA1_0==16||(LA1_0>=23 && LA1_0<=24)) ) {
+                if ( (LA1_0==16||LA1_0==23||LA1_0==29) ) {
                     alt1=1;
                 }
 
@@ -244,7 +246,7 @@ public class InternalSynthesizerParser extends AbstractInternalAntlrParser {
                         int alt2=2;
                         int LA2_0 = input.LA(1);
 
-                        if ( (LA2_0==27||LA2_0==30) ) {
+                        if ( ((LA2_0>=31 && LA2_0<=32)) ) {
                             alt2=1;
                         }
 
@@ -322,7 +324,7 @@ public class InternalSynthesizerParser extends AbstractInternalAntlrParser {
                         int alt4=2;
                         int LA4_0 = input.LA(1);
 
-                        if ( (LA4_0==26) ) {
+                        if ( (LA4_0==30) ) {
                             alt4=1;
                         }
 
@@ -455,7 +457,7 @@ public class InternalSynthesizerParser extends AbstractInternalAntlrParser {
             // InternalSynthesizer.g:194:2: (this_Button_0= ruleButton | this_RotaryKnob_1= ruleRotaryKnob | this_Slider_2= ruleSlider )
             int alt6=3;
             switch ( input.LA(1) ) {
-            case 24:
+            case 29:
                 {
                 alt6=1;
                 }
@@ -835,7 +837,7 @@ public class InternalSynthesizerParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleSlider"
-    // InternalSynthesizer.g:369:1: ruleSlider returns [EObject current=null] : (otherlv_0= 'slider' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '(' otherlv_3= 'x' ( (lv_x_4_0= RULE_INT ) ) otherlv_5= 'y' ( (lv_y_6_0= RULE_INT ) ) otherlv_7= 'width' ( (lv_width_8_0= RULE_INT ) ) otherlv_9= 'height' ( (lv_height_10_0= RULE_INT ) ) otherlv_11= ')' ) ;
+    // InternalSynthesizer.g:369:1: ruleSlider returns [EObject current=null] : (otherlv_0= 'slider' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '(' otherlv_3= 'x' ( (lv_x_4_0= RULE_INT ) ) otherlv_5= 'y' ( (lv_y_6_0= RULE_INT ) ) otherlv_7= 'width' ( (lv_width_8_0= RULE_INT ) ) otherlv_9= 'height' ( (lv_height_10_0= RULE_INT ) ) otherlv_11= 'sound' ( (otherlv_12= RULE_ID ) ) otherlv_13= 'effect' ( (lv_type_14_0= ruleEffect ) ) otherlv_15= ')' ) ;
     public final EObject ruleSlider() throws RecognitionException {
         EObject current = null;
 
@@ -851,16 +853,21 @@ public class InternalSynthesizerParser extends AbstractInternalAntlrParser {
         Token otherlv_9=null;
         Token lv_height_10_0=null;
         Token otherlv_11=null;
+        Token otherlv_12=null;
+        Token otherlv_13=null;
+        Token otherlv_15=null;
+        AntlrDatatypeRuleToken lv_type_14_0 = null;
+
 
 
         	enterRule();
 
         try {
-            // InternalSynthesizer.g:375:2: ( (otherlv_0= 'slider' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '(' otherlv_3= 'x' ( (lv_x_4_0= RULE_INT ) ) otherlv_5= 'y' ( (lv_y_6_0= RULE_INT ) ) otherlv_7= 'width' ( (lv_width_8_0= RULE_INT ) ) otherlv_9= 'height' ( (lv_height_10_0= RULE_INT ) ) otherlv_11= ')' ) )
-            // InternalSynthesizer.g:376:2: (otherlv_0= 'slider' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '(' otherlv_3= 'x' ( (lv_x_4_0= RULE_INT ) ) otherlv_5= 'y' ( (lv_y_6_0= RULE_INT ) ) otherlv_7= 'width' ( (lv_width_8_0= RULE_INT ) ) otherlv_9= 'height' ( (lv_height_10_0= RULE_INT ) ) otherlv_11= ')' )
+            // InternalSynthesizer.g:375:2: ( (otherlv_0= 'slider' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '(' otherlv_3= 'x' ( (lv_x_4_0= RULE_INT ) ) otherlv_5= 'y' ( (lv_y_6_0= RULE_INT ) ) otherlv_7= 'width' ( (lv_width_8_0= RULE_INT ) ) otherlv_9= 'height' ( (lv_height_10_0= RULE_INT ) ) otherlv_11= 'sound' ( (otherlv_12= RULE_ID ) ) otherlv_13= 'effect' ( (lv_type_14_0= ruleEffect ) ) otherlv_15= ')' ) )
+            // InternalSynthesizer.g:376:2: (otherlv_0= 'slider' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '(' otherlv_3= 'x' ( (lv_x_4_0= RULE_INT ) ) otherlv_5= 'y' ( (lv_y_6_0= RULE_INT ) ) otherlv_7= 'width' ( (lv_width_8_0= RULE_INT ) ) otherlv_9= 'height' ( (lv_height_10_0= RULE_INT ) ) otherlv_11= 'sound' ( (otherlv_12= RULE_ID ) ) otherlv_13= 'effect' ( (lv_type_14_0= ruleEffect ) ) otherlv_15= ')' )
             {
-            // InternalSynthesizer.g:376:2: (otherlv_0= 'slider' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '(' otherlv_3= 'x' ( (lv_x_4_0= RULE_INT ) ) otherlv_5= 'y' ( (lv_y_6_0= RULE_INT ) ) otherlv_7= 'width' ( (lv_width_8_0= RULE_INT ) ) otherlv_9= 'height' ( (lv_height_10_0= RULE_INT ) ) otherlv_11= ')' )
-            // InternalSynthesizer.g:377:3: otherlv_0= 'slider' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '(' otherlv_3= 'x' ( (lv_x_4_0= RULE_INT ) ) otherlv_5= 'y' ( (lv_y_6_0= RULE_INT ) ) otherlv_7= 'width' ( (lv_width_8_0= RULE_INT ) ) otherlv_9= 'height' ( (lv_height_10_0= RULE_INT ) ) otherlv_11= ')'
+            // InternalSynthesizer.g:376:2: (otherlv_0= 'slider' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '(' otherlv_3= 'x' ( (lv_x_4_0= RULE_INT ) ) otherlv_5= 'y' ( (lv_y_6_0= RULE_INT ) ) otherlv_7= 'width' ( (lv_width_8_0= RULE_INT ) ) otherlv_9= 'height' ( (lv_height_10_0= RULE_INT ) ) otherlv_11= 'sound' ( (otherlv_12= RULE_ID ) ) otherlv_13= 'effect' ( (lv_type_14_0= ruleEffect ) ) otherlv_15= ')' )
+            // InternalSynthesizer.g:377:3: otherlv_0= 'slider' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '(' otherlv_3= 'x' ( (lv_x_4_0= RULE_INT ) ) otherlv_5= 'y' ( (lv_y_6_0= RULE_INT ) ) otherlv_7= 'width' ( (lv_width_8_0= RULE_INT ) ) otherlv_9= 'height' ( (lv_height_10_0= RULE_INT ) ) otherlv_11= 'sound' ( (otherlv_12= RULE_ID ) ) otherlv_13= 'effect' ( (lv_type_14_0= ruleEffect ) ) otherlv_15= ')'
             {
             otherlv_0=(Token)match(input,23,FOLLOW_9); 
 
@@ -996,7 +1003,7 @@ public class InternalSynthesizerParser extends AbstractInternalAntlrParser {
             // InternalSynthesizer.g:474:4: (lv_height_10_0= RULE_INT )
             // InternalSynthesizer.g:475:5: lv_height_10_0= RULE_INT
             {
-            lv_height_10_0=(Token)match(input,RULE_INT,FOLLOW_16); 
+            lv_height_10_0=(Token)match(input,RULE_INT,FOLLOW_17); 
 
             					newLeafNode(lv_height_10_0, grammarAccess.getSliderAccess().getHeightINTTerminalRuleCall_10_0());
             				
@@ -1016,9 +1023,69 @@ public class InternalSynthesizerParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_11=(Token)match(input,22,FOLLOW_2); 
+            otherlv_11=(Token)match(input,24,FOLLOW_9); 
 
-            			newLeafNode(otherlv_11, grammarAccess.getSliderAccess().getRightParenthesisKeyword_11());
+            			newLeafNode(otherlv_11, grammarAccess.getSliderAccess().getSoundKeyword_11());
+            		
+            // InternalSynthesizer.g:495:3: ( (otherlv_12= RULE_ID ) )
+            // InternalSynthesizer.g:496:4: (otherlv_12= RULE_ID )
+            {
+            // InternalSynthesizer.g:496:4: (otherlv_12= RULE_ID )
+            // InternalSynthesizer.g:497:5: otherlv_12= RULE_ID
+            {
+
+            					if (current==null) {
+            						current = createModelElement(grammarAccess.getSliderRule());
+            					}
+            				
+            otherlv_12=(Token)match(input,RULE_ID,FOLLOW_18); 
+
+            					newLeafNode(otherlv_12, grammarAccess.getSliderAccess().getSoundSoundElementCrossReference_12_0());
+            				
+
+            }
+
+
+            }
+
+            otherlv_13=(Token)match(input,25,FOLLOW_19); 
+
+            			newLeafNode(otherlv_13, grammarAccess.getSliderAccess().getEffectKeyword_13());
+            		
+            // InternalSynthesizer.g:512:3: ( (lv_type_14_0= ruleEffect ) )
+            // InternalSynthesizer.g:513:4: (lv_type_14_0= ruleEffect )
+            {
+            // InternalSynthesizer.g:513:4: (lv_type_14_0= ruleEffect )
+            // InternalSynthesizer.g:514:5: lv_type_14_0= ruleEffect
+            {
+
+            					newCompositeNode(grammarAccess.getSliderAccess().getTypeEffectParserRuleCall_14_0());
+            				
+            pushFollow(FOLLOW_16);
+            lv_type_14_0=ruleEffect();
+
+            state._fsp--;
+
+
+            					if (current==null) {
+            						current = createModelElementForParent(grammarAccess.getSliderRule());
+            					}
+            					set(
+            						current,
+            						"type",
+            						lv_type_14_0,
+            						"org.xtext.Synthesizer.Effect");
+            					afterParserOrEnumRuleCall();
+            				
+
+            }
+
+
+            }
+
+            otherlv_15=(Token)match(input,22,FOLLOW_2); 
+
+            			newLeafNode(otherlv_15, grammarAccess.getSliderAccess().getRightParenthesisKeyword_15());
             		
 
             }
@@ -1042,8 +1109,139 @@ public class InternalSynthesizerParser extends AbstractInternalAntlrParser {
     // $ANTLR end "ruleSlider"
 
 
+    // $ANTLR start "entryRuleEffect"
+    // InternalSynthesizer.g:539:1: entryRuleEffect returns [String current=null] : iv_ruleEffect= ruleEffect EOF ;
+    public final String entryRuleEffect() throws RecognitionException {
+        String current = null;
+
+        AntlrDatatypeRuleToken iv_ruleEffect = null;
+
+
+        try {
+            // InternalSynthesizer.g:539:46: (iv_ruleEffect= ruleEffect EOF )
+            // InternalSynthesizer.g:540:2: iv_ruleEffect= ruleEffect EOF
+            {
+             newCompositeNode(grammarAccess.getEffectRule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleEffect=ruleEffect();
+
+            state._fsp--;
+
+             current =iv_ruleEffect.getText(); 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleEffect"
+
+
+    // $ANTLR start "ruleEffect"
+    // InternalSynthesizer.g:546:1: ruleEffect returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'frequency' | kw= 'variance' | kw= 'amplitude' ) ;
+    public final AntlrDatatypeRuleToken ruleEffect() throws RecognitionException {
+        AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
+
+        Token kw=null;
+
+
+        	enterRule();
+
+        try {
+            // InternalSynthesizer.g:552:2: ( (kw= 'frequency' | kw= 'variance' | kw= 'amplitude' ) )
+            // InternalSynthesizer.g:553:2: (kw= 'frequency' | kw= 'variance' | kw= 'amplitude' )
+            {
+            // InternalSynthesizer.g:553:2: (kw= 'frequency' | kw= 'variance' | kw= 'amplitude' )
+            int alt7=3;
+            switch ( input.LA(1) ) {
+            case 26:
+                {
+                alt7=1;
+                }
+                break;
+            case 27:
+                {
+                alt7=2;
+                }
+                break;
+            case 28:
+                {
+                alt7=3;
+                }
+                break;
+            default:
+                NoViableAltException nvae =
+                    new NoViableAltException("", 7, 0, input);
+
+                throw nvae;
+            }
+
+            switch (alt7) {
+                case 1 :
+                    // InternalSynthesizer.g:554:3: kw= 'frequency'
+                    {
+                    kw=(Token)match(input,26,FOLLOW_2); 
+
+                    			current.merge(kw);
+                    			newLeafNode(kw, grammarAccess.getEffectAccess().getFrequencyKeyword_0());
+                    		
+
+                    }
+                    break;
+                case 2 :
+                    // InternalSynthesizer.g:560:3: kw= 'variance'
+                    {
+                    kw=(Token)match(input,27,FOLLOW_2); 
+
+                    			current.merge(kw);
+                    			newLeafNode(kw, grammarAccess.getEffectAccess().getVarianceKeyword_1());
+                    		
+
+                    }
+                    break;
+                case 3 :
+                    // InternalSynthesizer.g:566:3: kw= 'amplitude'
+                    {
+                    kw=(Token)match(input,28,FOLLOW_2); 
+
+                    			current.merge(kw);
+                    			newLeafNode(kw, grammarAccess.getEffectAccess().getAmplitudeKeyword_2());
+                    		
+
+                    }
+                    break;
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleEffect"
+
+
     // $ANTLR start "entryRuleSoundElement"
-    // InternalSynthesizer.g:499:1: entryRuleSoundElement returns [EObject current=null] : iv_ruleSoundElement= ruleSoundElement EOF ;
+    // InternalSynthesizer.g:575:1: entryRuleSoundElement returns [EObject current=null] : iv_ruleSoundElement= ruleSoundElement EOF ;
     public final EObject entryRuleSoundElement() throws RecognitionException {
         EObject current = null;
 
@@ -1051,8 +1249,8 @@ public class InternalSynthesizerParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalSynthesizer.g:499:53: (iv_ruleSoundElement= ruleSoundElement EOF )
-            // InternalSynthesizer.g:500:2: iv_ruleSoundElement= ruleSoundElement EOF
+            // InternalSynthesizer.g:575:53: (iv_ruleSoundElement= ruleSoundElement EOF )
+            // InternalSynthesizer.g:576:2: iv_ruleSoundElement= ruleSoundElement EOF
             {
              newCompositeNode(grammarAccess.getSoundElementRule()); 
             pushFollow(FOLLOW_1);
@@ -1079,7 +1277,7 @@ public class InternalSynthesizerParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleSoundElement"
-    // InternalSynthesizer.g:506:1: ruleSoundElement returns [EObject current=null] : (this_SawToothOscillator_0= ruleSawToothOscillator | this_SineOscillator_1= ruleSineOscillator ) ;
+    // InternalSynthesizer.g:582:1: ruleSoundElement returns [EObject current=null] : (this_SawToothOscillator_0= ruleSawToothOscillator | this_SineOscillator_1= ruleSineOscillator ) ;
     public final EObject ruleSoundElement() throws RecognitionException {
         EObject current = null;
 
@@ -1092,28 +1290,28 @@ public class InternalSynthesizerParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSynthesizer.g:512:2: ( (this_SawToothOscillator_0= ruleSawToothOscillator | this_SineOscillator_1= ruleSineOscillator ) )
-            // InternalSynthesizer.g:513:2: (this_SawToothOscillator_0= ruleSawToothOscillator | this_SineOscillator_1= ruleSineOscillator )
+            // InternalSynthesizer.g:588:2: ( (this_SawToothOscillator_0= ruleSawToothOscillator | this_SineOscillator_1= ruleSineOscillator ) )
+            // InternalSynthesizer.g:589:2: (this_SawToothOscillator_0= ruleSawToothOscillator | this_SineOscillator_1= ruleSineOscillator )
             {
-            // InternalSynthesizer.g:513:2: (this_SawToothOscillator_0= ruleSawToothOscillator | this_SineOscillator_1= ruleSineOscillator )
-            int alt7=2;
-            int LA7_0 = input.LA(1);
+            // InternalSynthesizer.g:589:2: (this_SawToothOscillator_0= ruleSawToothOscillator | this_SineOscillator_1= ruleSineOscillator )
+            int alt8=2;
+            int LA8_0 = input.LA(1);
 
-            if ( (LA7_0==27) ) {
-                alt7=1;
+            if ( (LA8_0==31) ) {
+                alt8=1;
             }
-            else if ( (LA7_0==30) ) {
-                alt7=2;
+            else if ( (LA8_0==32) ) {
+                alt8=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 7, 0, input);
+                    new NoViableAltException("", 8, 0, input);
 
                 throw nvae;
             }
-            switch (alt7) {
+            switch (alt8) {
                 case 1 :
-                    // InternalSynthesizer.g:514:3: this_SawToothOscillator_0= ruleSawToothOscillator
+                    // InternalSynthesizer.g:590:3: this_SawToothOscillator_0= ruleSawToothOscillator
                     {
 
                     			newCompositeNode(grammarAccess.getSoundElementAccess().getSawToothOscillatorParserRuleCall_0());
@@ -1131,7 +1329,7 @@ public class InternalSynthesizerParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalSynthesizer.g:523:3: this_SineOscillator_1= ruleSineOscillator
+                    // InternalSynthesizer.g:599:3: this_SineOscillator_1= ruleSineOscillator
                     {
 
                     			newCompositeNode(grammarAccess.getSoundElementAccess().getSineOscillatorParserRuleCall_1());
@@ -1171,7 +1369,7 @@ public class InternalSynthesizerParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleButton"
-    // InternalSynthesizer.g:535:1: entryRuleButton returns [EObject current=null] : iv_ruleButton= ruleButton EOF ;
+    // InternalSynthesizer.g:611:1: entryRuleButton returns [EObject current=null] : iv_ruleButton= ruleButton EOF ;
     public final EObject entryRuleButton() throws RecognitionException {
         EObject current = null;
 
@@ -1179,8 +1377,8 @@ public class InternalSynthesizerParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalSynthesizer.g:535:47: (iv_ruleButton= ruleButton EOF )
-            // InternalSynthesizer.g:536:2: iv_ruleButton= ruleButton EOF
+            // InternalSynthesizer.g:611:47: (iv_ruleButton= ruleButton EOF )
+            // InternalSynthesizer.g:612:2: iv_ruleButton= ruleButton EOF
             {
              newCompositeNode(grammarAccess.getButtonRule()); 
             pushFollow(FOLLOW_1);
@@ -1207,7 +1405,7 @@ public class InternalSynthesizerParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleButton"
-    // InternalSynthesizer.g:542:1: ruleButton returns [EObject current=null] : (otherlv_0= 'button' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '(' otherlv_3= 'x' ( (lv_x_4_0= RULE_INT ) ) otherlv_5= 'y' ( (lv_y_6_0= RULE_INT ) ) otherlv_7= 'width' ( (lv_width_8_0= RULE_INT ) ) otherlv_9= 'height' ( (lv_height_10_0= RULE_INT ) ) otherlv_11= 'sound' ( (otherlv_12= RULE_ID ) ) otherlv_13= ')' ) ;
+    // InternalSynthesizer.g:618:1: ruleButton returns [EObject current=null] : (otherlv_0= 'button' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '(' otherlv_3= 'x' ( (lv_x_4_0= RULE_INT ) ) otherlv_5= 'y' ( (lv_y_6_0= RULE_INT ) ) otherlv_7= 'width' ( (lv_width_8_0= RULE_INT ) ) otherlv_9= 'height' ( (lv_height_10_0= RULE_INT ) ) otherlv_11= 'sound' ( (otherlv_12= RULE_ID ) ) otherlv_13= ')' ) ;
     public final EObject ruleButton() throws RecognitionException {
         EObject current = null;
 
@@ -1230,21 +1428,21 @@ public class InternalSynthesizerParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSynthesizer.g:548:2: ( (otherlv_0= 'button' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '(' otherlv_3= 'x' ( (lv_x_4_0= RULE_INT ) ) otherlv_5= 'y' ( (lv_y_6_0= RULE_INT ) ) otherlv_7= 'width' ( (lv_width_8_0= RULE_INT ) ) otherlv_9= 'height' ( (lv_height_10_0= RULE_INT ) ) otherlv_11= 'sound' ( (otherlv_12= RULE_ID ) ) otherlv_13= ')' ) )
-            // InternalSynthesizer.g:549:2: (otherlv_0= 'button' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '(' otherlv_3= 'x' ( (lv_x_4_0= RULE_INT ) ) otherlv_5= 'y' ( (lv_y_6_0= RULE_INT ) ) otherlv_7= 'width' ( (lv_width_8_0= RULE_INT ) ) otherlv_9= 'height' ( (lv_height_10_0= RULE_INT ) ) otherlv_11= 'sound' ( (otherlv_12= RULE_ID ) ) otherlv_13= ')' )
+            // InternalSynthesizer.g:624:2: ( (otherlv_0= 'button' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '(' otherlv_3= 'x' ( (lv_x_4_0= RULE_INT ) ) otherlv_5= 'y' ( (lv_y_6_0= RULE_INT ) ) otherlv_7= 'width' ( (lv_width_8_0= RULE_INT ) ) otherlv_9= 'height' ( (lv_height_10_0= RULE_INT ) ) otherlv_11= 'sound' ( (otherlv_12= RULE_ID ) ) otherlv_13= ')' ) )
+            // InternalSynthesizer.g:625:2: (otherlv_0= 'button' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '(' otherlv_3= 'x' ( (lv_x_4_0= RULE_INT ) ) otherlv_5= 'y' ( (lv_y_6_0= RULE_INT ) ) otherlv_7= 'width' ( (lv_width_8_0= RULE_INT ) ) otherlv_9= 'height' ( (lv_height_10_0= RULE_INT ) ) otherlv_11= 'sound' ( (otherlv_12= RULE_ID ) ) otherlv_13= ')' )
             {
-            // InternalSynthesizer.g:549:2: (otherlv_0= 'button' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '(' otherlv_3= 'x' ( (lv_x_4_0= RULE_INT ) ) otherlv_5= 'y' ( (lv_y_6_0= RULE_INT ) ) otherlv_7= 'width' ( (lv_width_8_0= RULE_INT ) ) otherlv_9= 'height' ( (lv_height_10_0= RULE_INT ) ) otherlv_11= 'sound' ( (otherlv_12= RULE_ID ) ) otherlv_13= ')' )
-            // InternalSynthesizer.g:550:3: otherlv_0= 'button' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '(' otherlv_3= 'x' ( (lv_x_4_0= RULE_INT ) ) otherlv_5= 'y' ( (lv_y_6_0= RULE_INT ) ) otherlv_7= 'width' ( (lv_width_8_0= RULE_INT ) ) otherlv_9= 'height' ( (lv_height_10_0= RULE_INT ) ) otherlv_11= 'sound' ( (otherlv_12= RULE_ID ) ) otherlv_13= ')'
+            // InternalSynthesizer.g:625:2: (otherlv_0= 'button' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '(' otherlv_3= 'x' ( (lv_x_4_0= RULE_INT ) ) otherlv_5= 'y' ( (lv_y_6_0= RULE_INT ) ) otherlv_7= 'width' ( (lv_width_8_0= RULE_INT ) ) otherlv_9= 'height' ( (lv_height_10_0= RULE_INT ) ) otherlv_11= 'sound' ( (otherlv_12= RULE_ID ) ) otherlv_13= ')' )
+            // InternalSynthesizer.g:626:3: otherlv_0= 'button' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '(' otherlv_3= 'x' ( (lv_x_4_0= RULE_INT ) ) otherlv_5= 'y' ( (lv_y_6_0= RULE_INT ) ) otherlv_7= 'width' ( (lv_width_8_0= RULE_INT ) ) otherlv_9= 'height' ( (lv_height_10_0= RULE_INT ) ) otherlv_11= 'sound' ( (otherlv_12= RULE_ID ) ) otherlv_13= ')'
             {
-            otherlv_0=(Token)match(input,24,FOLLOW_9); 
+            otherlv_0=(Token)match(input,29,FOLLOW_9); 
 
             			newLeafNode(otherlv_0, grammarAccess.getButtonAccess().getButtonKeyword_0());
             		
-            // InternalSynthesizer.g:554:3: ( (lv_name_1_0= RULE_ID ) )
-            // InternalSynthesizer.g:555:4: (lv_name_1_0= RULE_ID )
+            // InternalSynthesizer.g:630:3: ( (lv_name_1_0= RULE_ID ) )
+            // InternalSynthesizer.g:631:4: (lv_name_1_0= RULE_ID )
             {
-            // InternalSynthesizer.g:555:4: (lv_name_1_0= RULE_ID )
-            // InternalSynthesizer.g:556:5: lv_name_1_0= RULE_ID
+            // InternalSynthesizer.g:631:4: (lv_name_1_0= RULE_ID )
+            // InternalSynthesizer.g:632:5: lv_name_1_0= RULE_ID
             {
             lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_10); 
 
@@ -1274,11 +1472,11 @@ public class InternalSynthesizerParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_3, grammarAccess.getButtonAccess().getXKeyword_3());
             		
-            // InternalSynthesizer.g:580:3: ( (lv_x_4_0= RULE_INT ) )
-            // InternalSynthesizer.g:581:4: (lv_x_4_0= RULE_INT )
+            // InternalSynthesizer.g:656:3: ( (lv_x_4_0= RULE_INT ) )
+            // InternalSynthesizer.g:657:4: (lv_x_4_0= RULE_INT )
             {
-            // InternalSynthesizer.g:581:4: (lv_x_4_0= RULE_INT )
-            // InternalSynthesizer.g:582:5: lv_x_4_0= RULE_INT
+            // InternalSynthesizer.g:657:4: (lv_x_4_0= RULE_INT )
+            // InternalSynthesizer.g:658:5: lv_x_4_0= RULE_INT
             {
             lv_x_4_0=(Token)match(input,RULE_INT,FOLLOW_13); 
 
@@ -1304,11 +1502,11 @@ public class InternalSynthesizerParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_5, grammarAccess.getButtonAccess().getYKeyword_5());
             		
-            // InternalSynthesizer.g:602:3: ( (lv_y_6_0= RULE_INT ) )
-            // InternalSynthesizer.g:603:4: (lv_y_6_0= RULE_INT )
+            // InternalSynthesizer.g:678:3: ( (lv_y_6_0= RULE_INT ) )
+            // InternalSynthesizer.g:679:4: (lv_y_6_0= RULE_INT )
             {
-            // InternalSynthesizer.g:603:4: (lv_y_6_0= RULE_INT )
-            // InternalSynthesizer.g:604:5: lv_y_6_0= RULE_INT
+            // InternalSynthesizer.g:679:4: (lv_y_6_0= RULE_INT )
+            // InternalSynthesizer.g:680:5: lv_y_6_0= RULE_INT
             {
             lv_y_6_0=(Token)match(input,RULE_INT,FOLLOW_14); 
 
@@ -1334,11 +1532,11 @@ public class InternalSynthesizerParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_7, grammarAccess.getButtonAccess().getWidthKeyword_7());
             		
-            // InternalSynthesizer.g:624:3: ( (lv_width_8_0= RULE_INT ) )
-            // InternalSynthesizer.g:625:4: (lv_width_8_0= RULE_INT )
+            // InternalSynthesizer.g:700:3: ( (lv_width_8_0= RULE_INT ) )
+            // InternalSynthesizer.g:701:4: (lv_width_8_0= RULE_INT )
             {
-            // InternalSynthesizer.g:625:4: (lv_width_8_0= RULE_INT )
-            // InternalSynthesizer.g:626:5: lv_width_8_0= RULE_INT
+            // InternalSynthesizer.g:701:4: (lv_width_8_0= RULE_INT )
+            // InternalSynthesizer.g:702:5: lv_width_8_0= RULE_INT
             {
             lv_width_8_0=(Token)match(input,RULE_INT,FOLLOW_15); 
 
@@ -1364,11 +1562,11 @@ public class InternalSynthesizerParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_9, grammarAccess.getButtonAccess().getHeightKeyword_9());
             		
-            // InternalSynthesizer.g:646:3: ( (lv_height_10_0= RULE_INT ) )
-            // InternalSynthesizer.g:647:4: (lv_height_10_0= RULE_INT )
+            // InternalSynthesizer.g:722:3: ( (lv_height_10_0= RULE_INT ) )
+            // InternalSynthesizer.g:723:4: (lv_height_10_0= RULE_INT )
             {
-            // InternalSynthesizer.g:647:4: (lv_height_10_0= RULE_INT )
-            // InternalSynthesizer.g:648:5: lv_height_10_0= RULE_INT
+            // InternalSynthesizer.g:723:4: (lv_height_10_0= RULE_INT )
+            // InternalSynthesizer.g:724:5: lv_height_10_0= RULE_INT
             {
             lv_height_10_0=(Token)match(input,RULE_INT,FOLLOW_17); 
 
@@ -1390,15 +1588,15 @@ public class InternalSynthesizerParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_11=(Token)match(input,25,FOLLOW_9); 
+            otherlv_11=(Token)match(input,24,FOLLOW_9); 
 
             			newLeafNode(otherlv_11, grammarAccess.getButtonAccess().getSoundKeyword_11());
             		
-            // InternalSynthesizer.g:668:3: ( (otherlv_12= RULE_ID ) )
-            // InternalSynthesizer.g:669:4: (otherlv_12= RULE_ID )
+            // InternalSynthesizer.g:744:3: ( (otherlv_12= RULE_ID ) )
+            // InternalSynthesizer.g:745:4: (otherlv_12= RULE_ID )
             {
-            // InternalSynthesizer.g:669:4: (otherlv_12= RULE_ID )
-            // InternalSynthesizer.g:670:5: otherlv_12= RULE_ID
+            // InternalSynthesizer.g:745:4: (otherlv_12= RULE_ID )
+            // InternalSynthesizer.g:746:5: otherlv_12= RULE_ID
             {
 
             					if (current==null) {
@@ -1442,7 +1640,7 @@ public class InternalSynthesizerParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleConnectionElement"
-    // InternalSynthesizer.g:689:1: entryRuleConnectionElement returns [EObject current=null] : iv_ruleConnectionElement= ruleConnectionElement EOF ;
+    // InternalSynthesizer.g:765:1: entryRuleConnectionElement returns [EObject current=null] : iv_ruleConnectionElement= ruleConnectionElement EOF ;
     public final EObject entryRuleConnectionElement() throws RecognitionException {
         EObject current = null;
 
@@ -1450,8 +1648,8 @@ public class InternalSynthesizerParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalSynthesizer.g:689:58: (iv_ruleConnectionElement= ruleConnectionElement EOF )
-            // InternalSynthesizer.g:690:2: iv_ruleConnectionElement= ruleConnectionElement EOF
+            // InternalSynthesizer.g:765:58: (iv_ruleConnectionElement= ruleConnectionElement EOF )
+            // InternalSynthesizer.g:766:2: iv_ruleConnectionElement= ruleConnectionElement EOF
             {
              newCompositeNode(grammarAccess.getConnectionElementRule()); 
             pushFollow(FOLLOW_1);
@@ -1478,7 +1676,7 @@ public class InternalSynthesizerParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleConnectionElement"
-    // InternalSynthesizer.g:696:1: ruleConnectionElement returns [EObject current=null] : (otherlv_0= 'linear' ( (otherlv_1= RULE_ID ) ) ( (otherlv_2= RULE_ID ) ) ) ;
+    // InternalSynthesizer.g:772:1: ruleConnectionElement returns [EObject current=null] : (otherlv_0= 'linear' ( (otherlv_1= RULE_ID ) ) ( (otherlv_2= RULE_ID ) ) ) ;
     public final EObject ruleConnectionElement() throws RecognitionException {
         EObject current = null;
 
@@ -1490,21 +1688,21 @@ public class InternalSynthesizerParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSynthesizer.g:702:2: ( (otherlv_0= 'linear' ( (otherlv_1= RULE_ID ) ) ( (otherlv_2= RULE_ID ) ) ) )
-            // InternalSynthesizer.g:703:2: (otherlv_0= 'linear' ( (otherlv_1= RULE_ID ) ) ( (otherlv_2= RULE_ID ) ) )
+            // InternalSynthesizer.g:778:2: ( (otherlv_0= 'linear' ( (otherlv_1= RULE_ID ) ) ( (otherlv_2= RULE_ID ) ) ) )
+            // InternalSynthesizer.g:779:2: (otherlv_0= 'linear' ( (otherlv_1= RULE_ID ) ) ( (otherlv_2= RULE_ID ) ) )
             {
-            // InternalSynthesizer.g:703:2: (otherlv_0= 'linear' ( (otherlv_1= RULE_ID ) ) ( (otherlv_2= RULE_ID ) ) )
-            // InternalSynthesizer.g:704:3: otherlv_0= 'linear' ( (otherlv_1= RULE_ID ) ) ( (otherlv_2= RULE_ID ) )
+            // InternalSynthesizer.g:779:2: (otherlv_0= 'linear' ( (otherlv_1= RULE_ID ) ) ( (otherlv_2= RULE_ID ) ) )
+            // InternalSynthesizer.g:780:3: otherlv_0= 'linear' ( (otherlv_1= RULE_ID ) ) ( (otherlv_2= RULE_ID ) )
             {
-            otherlv_0=(Token)match(input,26,FOLLOW_9); 
+            otherlv_0=(Token)match(input,30,FOLLOW_9); 
 
             			newLeafNode(otherlv_0, grammarAccess.getConnectionElementAccess().getLinearKeyword_0());
             		
-            // InternalSynthesizer.g:708:3: ( (otherlv_1= RULE_ID ) )
-            // InternalSynthesizer.g:709:4: (otherlv_1= RULE_ID )
+            // InternalSynthesizer.g:784:3: ( (otherlv_1= RULE_ID ) )
+            // InternalSynthesizer.g:785:4: (otherlv_1= RULE_ID )
             {
-            // InternalSynthesizer.g:709:4: (otherlv_1= RULE_ID )
-            // InternalSynthesizer.g:710:5: otherlv_1= RULE_ID
+            // InternalSynthesizer.g:785:4: (otherlv_1= RULE_ID )
+            // InternalSynthesizer.g:786:5: otherlv_1= RULE_ID
             {
 
             					if (current==null) {
@@ -1521,11 +1719,11 @@ public class InternalSynthesizerParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalSynthesizer.g:721:3: ( (otherlv_2= RULE_ID ) )
-            // InternalSynthesizer.g:722:4: (otherlv_2= RULE_ID )
+            // InternalSynthesizer.g:797:3: ( (otherlv_2= RULE_ID ) )
+            // InternalSynthesizer.g:798:4: (otherlv_2= RULE_ID )
             {
-            // InternalSynthesizer.g:722:4: (otherlv_2= RULE_ID )
-            // InternalSynthesizer.g:723:5: otherlv_2= RULE_ID
+            // InternalSynthesizer.g:798:4: (otherlv_2= RULE_ID )
+            // InternalSynthesizer.g:799:5: otherlv_2= RULE_ID
             {
 
             					if (current==null) {
@@ -1565,7 +1763,7 @@ public class InternalSynthesizerParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleSawToothOscillator"
-    // InternalSynthesizer.g:738:1: entryRuleSawToothOscillator returns [EObject current=null] : iv_ruleSawToothOscillator= ruleSawToothOscillator EOF ;
+    // InternalSynthesizer.g:814:1: entryRuleSawToothOscillator returns [EObject current=null] : iv_ruleSawToothOscillator= ruleSawToothOscillator EOF ;
     public final EObject entryRuleSawToothOscillator() throws RecognitionException {
         EObject current = null;
 
@@ -1573,8 +1771,8 @@ public class InternalSynthesizerParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalSynthesizer.g:738:59: (iv_ruleSawToothOscillator= ruleSawToothOscillator EOF )
-            // InternalSynthesizer.g:739:2: iv_ruleSawToothOscillator= ruleSawToothOscillator EOF
+            // InternalSynthesizer.g:814:59: (iv_ruleSawToothOscillator= ruleSawToothOscillator EOF )
+            // InternalSynthesizer.g:815:2: iv_ruleSawToothOscillator= ruleSawToothOscillator EOF
             {
              newCompositeNode(grammarAccess.getSawToothOscillatorRule()); 
             pushFollow(FOLLOW_1);
@@ -1601,7 +1799,7 @@ public class InternalSynthesizerParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleSawToothOscillator"
-    // InternalSynthesizer.g:745:1: ruleSawToothOscillator returns [EObject current=null] : (otherlv_0= 'sawToothOscillator' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '(' otherlv_3= 'frequency' ( (lv_frequency_4_0= RULE_INT ) ) otherlv_5= 'amplitude' ( (lv_amplitude_6_0= RULE_INT ) ) otherlv_7= ')' ) ;
+    // InternalSynthesizer.g:821:1: ruleSawToothOscillator returns [EObject current=null] : (otherlv_0= 'sawToothOscillator' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '(' otherlv_3= 'frequency' ( (lv_frequency_4_0= RULE_INT ) ) otherlv_5= 'amplitude' ( (lv_amplitude_6_0= RULE_INT ) ) otherlv_7= ')' ) ;
     public final EObject ruleSawToothOscillator() throws RecognitionException {
         EObject current = null;
 
@@ -1618,21 +1816,21 @@ public class InternalSynthesizerParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSynthesizer.g:751:2: ( (otherlv_0= 'sawToothOscillator' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '(' otherlv_3= 'frequency' ( (lv_frequency_4_0= RULE_INT ) ) otherlv_5= 'amplitude' ( (lv_amplitude_6_0= RULE_INT ) ) otherlv_7= ')' ) )
-            // InternalSynthesizer.g:752:2: (otherlv_0= 'sawToothOscillator' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '(' otherlv_3= 'frequency' ( (lv_frequency_4_0= RULE_INT ) ) otherlv_5= 'amplitude' ( (lv_amplitude_6_0= RULE_INT ) ) otherlv_7= ')' )
+            // InternalSynthesizer.g:827:2: ( (otherlv_0= 'sawToothOscillator' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '(' otherlv_3= 'frequency' ( (lv_frequency_4_0= RULE_INT ) ) otherlv_5= 'amplitude' ( (lv_amplitude_6_0= RULE_INT ) ) otherlv_7= ')' ) )
+            // InternalSynthesizer.g:828:2: (otherlv_0= 'sawToothOscillator' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '(' otherlv_3= 'frequency' ( (lv_frequency_4_0= RULE_INT ) ) otherlv_5= 'amplitude' ( (lv_amplitude_6_0= RULE_INT ) ) otherlv_7= ')' )
             {
-            // InternalSynthesizer.g:752:2: (otherlv_0= 'sawToothOscillator' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '(' otherlv_3= 'frequency' ( (lv_frequency_4_0= RULE_INT ) ) otherlv_5= 'amplitude' ( (lv_amplitude_6_0= RULE_INT ) ) otherlv_7= ')' )
-            // InternalSynthesizer.g:753:3: otherlv_0= 'sawToothOscillator' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '(' otherlv_3= 'frequency' ( (lv_frequency_4_0= RULE_INT ) ) otherlv_5= 'amplitude' ( (lv_amplitude_6_0= RULE_INT ) ) otherlv_7= ')'
+            // InternalSynthesizer.g:828:2: (otherlv_0= 'sawToothOscillator' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '(' otherlv_3= 'frequency' ( (lv_frequency_4_0= RULE_INT ) ) otherlv_5= 'amplitude' ( (lv_amplitude_6_0= RULE_INT ) ) otherlv_7= ')' )
+            // InternalSynthesizer.g:829:3: otherlv_0= 'sawToothOscillator' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '(' otherlv_3= 'frequency' ( (lv_frequency_4_0= RULE_INT ) ) otherlv_5= 'amplitude' ( (lv_amplitude_6_0= RULE_INT ) ) otherlv_7= ')'
             {
-            otherlv_0=(Token)match(input,27,FOLLOW_9); 
+            otherlv_0=(Token)match(input,31,FOLLOW_9); 
 
             			newLeafNode(otherlv_0, grammarAccess.getSawToothOscillatorAccess().getSawToothOscillatorKeyword_0());
             		
-            // InternalSynthesizer.g:757:3: ( (lv_name_1_0= RULE_ID ) )
-            // InternalSynthesizer.g:758:4: (lv_name_1_0= RULE_ID )
+            // InternalSynthesizer.g:833:3: ( (lv_name_1_0= RULE_ID ) )
+            // InternalSynthesizer.g:834:4: (lv_name_1_0= RULE_ID )
             {
-            // InternalSynthesizer.g:758:4: (lv_name_1_0= RULE_ID )
-            // InternalSynthesizer.g:759:5: lv_name_1_0= RULE_ID
+            // InternalSynthesizer.g:834:4: (lv_name_1_0= RULE_ID )
+            // InternalSynthesizer.g:835:5: lv_name_1_0= RULE_ID
             {
             lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_10); 
 
@@ -1654,21 +1852,21 @@ public class InternalSynthesizerParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,17,FOLLOW_18); 
+            otherlv_2=(Token)match(input,17,FOLLOW_20); 
 
             			newLeafNode(otherlv_2, grammarAccess.getSawToothOscillatorAccess().getLeftParenthesisKeyword_2());
             		
-            otherlv_3=(Token)match(input,28,FOLLOW_12); 
+            otherlv_3=(Token)match(input,26,FOLLOW_12); 
 
             			newLeafNode(otherlv_3, grammarAccess.getSawToothOscillatorAccess().getFrequencyKeyword_3());
             		
-            // InternalSynthesizer.g:783:3: ( (lv_frequency_4_0= RULE_INT ) )
-            // InternalSynthesizer.g:784:4: (lv_frequency_4_0= RULE_INT )
+            // InternalSynthesizer.g:859:3: ( (lv_frequency_4_0= RULE_INT ) )
+            // InternalSynthesizer.g:860:4: (lv_frequency_4_0= RULE_INT )
             {
-            // InternalSynthesizer.g:784:4: (lv_frequency_4_0= RULE_INT )
-            // InternalSynthesizer.g:785:5: lv_frequency_4_0= RULE_INT
+            // InternalSynthesizer.g:860:4: (lv_frequency_4_0= RULE_INT )
+            // InternalSynthesizer.g:861:5: lv_frequency_4_0= RULE_INT
             {
-            lv_frequency_4_0=(Token)match(input,RULE_INT,FOLLOW_19); 
+            lv_frequency_4_0=(Token)match(input,RULE_INT,FOLLOW_21); 
 
             					newLeafNode(lv_frequency_4_0, grammarAccess.getSawToothOscillatorAccess().getFrequencyINTTerminalRuleCall_4_0());
             				
@@ -1688,15 +1886,15 @@ public class InternalSynthesizerParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_5=(Token)match(input,29,FOLLOW_12); 
+            otherlv_5=(Token)match(input,28,FOLLOW_12); 
 
             			newLeafNode(otherlv_5, grammarAccess.getSawToothOscillatorAccess().getAmplitudeKeyword_5());
             		
-            // InternalSynthesizer.g:805:3: ( (lv_amplitude_6_0= RULE_INT ) )
-            // InternalSynthesizer.g:806:4: (lv_amplitude_6_0= RULE_INT )
+            // InternalSynthesizer.g:881:3: ( (lv_amplitude_6_0= RULE_INT ) )
+            // InternalSynthesizer.g:882:4: (lv_amplitude_6_0= RULE_INT )
             {
-            // InternalSynthesizer.g:806:4: (lv_amplitude_6_0= RULE_INT )
-            // InternalSynthesizer.g:807:5: lv_amplitude_6_0= RULE_INT
+            // InternalSynthesizer.g:882:4: (lv_amplitude_6_0= RULE_INT )
+            // InternalSynthesizer.g:883:5: lv_amplitude_6_0= RULE_INT
             {
             lv_amplitude_6_0=(Token)match(input,RULE_INT,FOLLOW_16); 
 
@@ -1745,7 +1943,7 @@ public class InternalSynthesizerParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleSineOscillator"
-    // InternalSynthesizer.g:831:1: entryRuleSineOscillator returns [EObject current=null] : iv_ruleSineOscillator= ruleSineOscillator EOF ;
+    // InternalSynthesizer.g:907:1: entryRuleSineOscillator returns [EObject current=null] : iv_ruleSineOscillator= ruleSineOscillator EOF ;
     public final EObject entryRuleSineOscillator() throws RecognitionException {
         EObject current = null;
 
@@ -1753,8 +1951,8 @@ public class InternalSynthesizerParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalSynthesizer.g:831:55: (iv_ruleSineOscillator= ruleSineOscillator EOF )
-            // InternalSynthesizer.g:832:2: iv_ruleSineOscillator= ruleSineOscillator EOF
+            // InternalSynthesizer.g:907:55: (iv_ruleSineOscillator= ruleSineOscillator EOF )
+            // InternalSynthesizer.g:908:2: iv_ruleSineOscillator= ruleSineOscillator EOF
             {
              newCompositeNode(grammarAccess.getSineOscillatorRule()); 
             pushFollow(FOLLOW_1);
@@ -1781,7 +1979,7 @@ public class InternalSynthesizerParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleSineOscillator"
-    // InternalSynthesizer.g:838:1: ruleSineOscillator returns [EObject current=null] : (otherlv_0= 'sineOscillator' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '(' otherlv_3= 'frequency' ( (lv_frequency_4_0= RULE_INT ) ) otherlv_5= 'amplitude' ( (lv_amplitude_6_0= RULE_INT ) ) otherlv_7= ')' ) ;
+    // InternalSynthesizer.g:914:1: ruleSineOscillator returns [EObject current=null] : (otherlv_0= 'sineOscillator' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '(' otherlv_3= 'frequency' ( (lv_frequency_4_0= RULE_INT ) ) otherlv_5= 'amplitude' ( (lv_amplitude_6_0= RULE_INT ) ) otherlv_7= ')' ) ;
     public final EObject ruleSineOscillator() throws RecognitionException {
         EObject current = null;
 
@@ -1798,21 +1996,21 @@ public class InternalSynthesizerParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalSynthesizer.g:844:2: ( (otherlv_0= 'sineOscillator' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '(' otherlv_3= 'frequency' ( (lv_frequency_4_0= RULE_INT ) ) otherlv_5= 'amplitude' ( (lv_amplitude_6_0= RULE_INT ) ) otherlv_7= ')' ) )
-            // InternalSynthesizer.g:845:2: (otherlv_0= 'sineOscillator' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '(' otherlv_3= 'frequency' ( (lv_frequency_4_0= RULE_INT ) ) otherlv_5= 'amplitude' ( (lv_amplitude_6_0= RULE_INT ) ) otherlv_7= ')' )
+            // InternalSynthesizer.g:920:2: ( (otherlv_0= 'sineOscillator' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '(' otherlv_3= 'frequency' ( (lv_frequency_4_0= RULE_INT ) ) otherlv_5= 'amplitude' ( (lv_amplitude_6_0= RULE_INT ) ) otherlv_7= ')' ) )
+            // InternalSynthesizer.g:921:2: (otherlv_0= 'sineOscillator' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '(' otherlv_3= 'frequency' ( (lv_frequency_4_0= RULE_INT ) ) otherlv_5= 'amplitude' ( (lv_amplitude_6_0= RULE_INT ) ) otherlv_7= ')' )
             {
-            // InternalSynthesizer.g:845:2: (otherlv_0= 'sineOscillator' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '(' otherlv_3= 'frequency' ( (lv_frequency_4_0= RULE_INT ) ) otherlv_5= 'amplitude' ( (lv_amplitude_6_0= RULE_INT ) ) otherlv_7= ')' )
-            // InternalSynthesizer.g:846:3: otherlv_0= 'sineOscillator' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '(' otherlv_3= 'frequency' ( (lv_frequency_4_0= RULE_INT ) ) otherlv_5= 'amplitude' ( (lv_amplitude_6_0= RULE_INT ) ) otherlv_7= ')'
+            // InternalSynthesizer.g:921:2: (otherlv_0= 'sineOscillator' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '(' otherlv_3= 'frequency' ( (lv_frequency_4_0= RULE_INT ) ) otherlv_5= 'amplitude' ( (lv_amplitude_6_0= RULE_INT ) ) otherlv_7= ')' )
+            // InternalSynthesizer.g:922:3: otherlv_0= 'sineOscillator' ( (lv_name_1_0= RULE_ID ) ) otherlv_2= '(' otherlv_3= 'frequency' ( (lv_frequency_4_0= RULE_INT ) ) otherlv_5= 'amplitude' ( (lv_amplitude_6_0= RULE_INT ) ) otherlv_7= ')'
             {
-            otherlv_0=(Token)match(input,30,FOLLOW_9); 
+            otherlv_0=(Token)match(input,32,FOLLOW_9); 
 
             			newLeafNode(otherlv_0, grammarAccess.getSineOscillatorAccess().getSineOscillatorKeyword_0());
             		
-            // InternalSynthesizer.g:850:3: ( (lv_name_1_0= RULE_ID ) )
-            // InternalSynthesizer.g:851:4: (lv_name_1_0= RULE_ID )
+            // InternalSynthesizer.g:926:3: ( (lv_name_1_0= RULE_ID ) )
+            // InternalSynthesizer.g:927:4: (lv_name_1_0= RULE_ID )
             {
-            // InternalSynthesizer.g:851:4: (lv_name_1_0= RULE_ID )
-            // InternalSynthesizer.g:852:5: lv_name_1_0= RULE_ID
+            // InternalSynthesizer.g:927:4: (lv_name_1_0= RULE_ID )
+            // InternalSynthesizer.g:928:5: lv_name_1_0= RULE_ID
             {
             lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_10); 
 
@@ -1834,21 +2032,21 @@ public class InternalSynthesizerParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,17,FOLLOW_18); 
+            otherlv_2=(Token)match(input,17,FOLLOW_20); 
 
             			newLeafNode(otherlv_2, grammarAccess.getSineOscillatorAccess().getLeftParenthesisKeyword_2());
             		
-            otherlv_3=(Token)match(input,28,FOLLOW_12); 
+            otherlv_3=(Token)match(input,26,FOLLOW_12); 
 
             			newLeafNode(otherlv_3, grammarAccess.getSineOscillatorAccess().getFrequencyKeyword_3());
             		
-            // InternalSynthesizer.g:876:3: ( (lv_frequency_4_0= RULE_INT ) )
-            // InternalSynthesizer.g:877:4: (lv_frequency_4_0= RULE_INT )
+            // InternalSynthesizer.g:952:3: ( (lv_frequency_4_0= RULE_INT ) )
+            // InternalSynthesizer.g:953:4: (lv_frequency_4_0= RULE_INT )
             {
-            // InternalSynthesizer.g:877:4: (lv_frequency_4_0= RULE_INT )
-            // InternalSynthesizer.g:878:5: lv_frequency_4_0= RULE_INT
+            // InternalSynthesizer.g:953:4: (lv_frequency_4_0= RULE_INT )
+            // InternalSynthesizer.g:954:5: lv_frequency_4_0= RULE_INT
             {
-            lv_frequency_4_0=(Token)match(input,RULE_INT,FOLLOW_19); 
+            lv_frequency_4_0=(Token)match(input,RULE_INT,FOLLOW_21); 
 
             					newLeafNode(lv_frequency_4_0, grammarAccess.getSineOscillatorAccess().getFrequencyINTTerminalRuleCall_4_0());
             				
@@ -1868,15 +2066,15 @@ public class InternalSynthesizerParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_5=(Token)match(input,29,FOLLOW_12); 
+            otherlv_5=(Token)match(input,28,FOLLOW_12); 
 
             			newLeafNode(otherlv_5, grammarAccess.getSineOscillatorAccess().getAmplitudeKeyword_5());
             		
-            // InternalSynthesizer.g:898:3: ( (lv_amplitude_6_0= RULE_INT ) )
-            // InternalSynthesizer.g:899:4: (lv_amplitude_6_0= RULE_INT )
+            // InternalSynthesizer.g:974:3: ( (lv_amplitude_6_0= RULE_INT ) )
+            // InternalSynthesizer.g:975:4: (lv_amplitude_6_0= RULE_INT )
             {
-            // InternalSynthesizer.g:899:4: (lv_amplitude_6_0= RULE_INT )
-            // InternalSynthesizer.g:900:5: lv_amplitude_6_0= RULE_INT
+            // InternalSynthesizer.g:975:4: (lv_amplitude_6_0= RULE_INT )
+            // InternalSynthesizer.g:976:5: lv_amplitude_6_0= RULE_INT
             {
             lv_amplitude_6_0=(Token)match(input,RULE_INT,FOLLOW_16); 
 
@@ -1931,11 +2129,11 @@ public class InternalSynthesizerParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_1 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_2 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000000001000L});
-    public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000001812000L});
+    public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000020812000L});
     public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x000000000000C002L});
-    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000048002000L});
+    public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000180002000L});
     public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000008002L});
-    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000004002000L});
+    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000040002000L});
     public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000000010L});
     public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000020000L});
     public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000040000L});
@@ -1944,8 +2142,10 @@ public class InternalSynthesizerParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000000100000L});
     public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000000200000L});
     public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000000400000L});
-    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000002000000L});
-    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000010000000L});
-    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000000020000000L});
+    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000001000000L});
+    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000002000000L});
+    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x000000001C000000L});
+    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000000004000000L});
+    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000000010000000L});
 
 }

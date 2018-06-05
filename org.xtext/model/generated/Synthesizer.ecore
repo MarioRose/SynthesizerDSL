@@ -17,7 +17,10 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="height" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RotaryKnob" eSuperTypes="#//ControlElement"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Slider" eSuperTypes="#//ControlElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Slider" eSuperTypes="#//ControlElement">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sound" eType="#//SoundElement"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="SoundElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="frequency" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>

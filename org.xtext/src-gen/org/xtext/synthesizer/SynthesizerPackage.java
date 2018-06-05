@@ -287,13 +287,31 @@ public interface SynthesizerPackage extends EPackage
   int SLIDER__HEIGHT = CONTROL_ELEMENT__HEIGHT;
 
   /**
+   * The feature id for the '<em><b>Sound</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SLIDER__SOUND = CONTROL_ELEMENT_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Type</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SLIDER__TYPE = CONTROL_ELEMENT_FEATURE_COUNT + 1;
+
+  /**
    * The number of structural features of the '<em>Slider</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SLIDER_FEATURE_COUNT = CONTROL_ELEMENT_FEATURE_COUNT + 0;
+  int SLIDER_FEATURE_COUNT = CONTROL_ELEMENT_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link org.xtext.synthesizer.impl.SoundElementImpl <em>Sound Element</em>}' class.
@@ -673,6 +691,28 @@ public interface SynthesizerPackage extends EPackage
   EClass getSlider();
 
   /**
+   * Returns the meta object for the reference '{@link org.xtext.synthesizer.Slider#getSound <em>Sound</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Sound</em>'.
+   * @see org.xtext.synthesizer.Slider#getSound()
+   * @see #getSlider()
+   * @generated
+   */
+  EReference getSlider_Sound();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.synthesizer.Slider#getType <em>Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Type</em>'.
+   * @see org.xtext.synthesizer.Slider#getType()
+   * @see #getSlider()
+   * @generated
+   */
+  EAttribute getSlider_Type();
+
+  /**
    * Returns the meta object for class '{@link org.xtext.synthesizer.SoundElement <em>Sound Element</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -914,6 +954,22 @@ public interface SynthesizerPackage extends EPackage
      * @generated
      */
     EClass SLIDER = eINSTANCE.getSlider();
+
+    /**
+     * The meta object literal for the '<em><b>Sound</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SLIDER__SOUND = eINSTANCE.getSlider_Sound();
+
+    /**
+     * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SLIDER__TYPE = eINSTANCE.getSlider_Type();
 
     /**
      * The meta object literal for the '{@link org.xtext.synthesizer.impl.SoundElementImpl <em>Sound Element</em>}' class.

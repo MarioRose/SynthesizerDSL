@@ -488,9 +488,85 @@ ruleSlider returns [EObject current=null]
 				}
 			)
 		)
-		otherlv_11=')'
+		otherlv_11='sound'
 		{
-			newLeafNode(otherlv_11, grammarAccess.getSliderAccess().getRightParenthesisKeyword_11());
+			newLeafNode(otherlv_11, grammarAccess.getSliderAccess().getSoundKeyword_11());
+		}
+		(
+			(
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getSliderRule());
+					}
+				}
+				otherlv_12=RULE_ID
+				{
+					newLeafNode(otherlv_12, grammarAccess.getSliderAccess().getSoundSoundElementCrossReference_12_0());
+				}
+			)
+		)
+		otherlv_13='effect'
+		{
+			newLeafNode(otherlv_13, grammarAccess.getSliderAccess().getEffectKeyword_13());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getSliderAccess().getTypeEffectParserRuleCall_14_0());
+				}
+				lv_type_14_0=ruleEffect
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getSliderRule());
+					}
+					set(
+						$current,
+						"type",
+						lv_type_14_0,
+						"org.xtext.Synthesizer.Effect");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_15=')'
+		{
+			newLeafNode(otherlv_15, grammarAccess.getSliderAccess().getRightParenthesisKeyword_15());
+		}
+	)
+;
+
+// Entry rule entryRuleEffect
+entryRuleEffect returns [String current=null]:
+	{ newCompositeNode(grammarAccess.getEffectRule()); }
+	iv_ruleEffect=ruleEffect
+	{ $current=$iv_ruleEffect.current.getText(); }
+	EOF;
+
+// Rule Effect
+ruleEffect returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		kw='frequency'
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getEffectAccess().getFrequencyKeyword_0());
+		}
+		    |
+		kw='variance'
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getEffectAccess().getVarianceKeyword_1());
+		}
+		    |
+		kw='amplitude'
+		{
+			$current.merge(kw);
+			newLeafNode(kw, grammarAccess.getEffectAccess().getAmplitudeKeyword_2());
 		}
 	)
 ;

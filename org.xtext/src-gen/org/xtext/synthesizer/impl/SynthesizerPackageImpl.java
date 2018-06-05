@@ -281,6 +281,26 @@ public class SynthesizerPackageImpl extends EPackageImpl implements SynthesizerP
    * <!-- end-user-doc -->
    * @generated
    */
+  public EReference getSlider_Sound()
+  {
+    return (EReference)sliderEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getSlider_Type()
+  {
+    return (EAttribute)sliderEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getSoundElement()
   {
     return soundElementEClass;
@@ -431,6 +451,8 @@ public class SynthesizerPackageImpl extends EPackageImpl implements SynthesizerP
     rotaryKnobEClass = createEClass(ROTARY_KNOB);
 
     sliderEClass = createEClass(SLIDER);
+    createEReference(sliderEClass, SLIDER__SOUND);
+    createEAttribute(sliderEClass, SLIDER__TYPE);
 
     soundElementEClass = createEClass(SOUND_ELEMENT);
     createEAttribute(soundElementEClass, SOUND_ELEMENT__NAME);
@@ -500,6 +522,8 @@ public class SynthesizerPackageImpl extends EPackageImpl implements SynthesizerP
     initEClass(rotaryKnobEClass, RotaryKnob.class, "RotaryKnob", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(sliderEClass, Slider.class, "Slider", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getSlider_Sound(), this.getSoundElement(), null, "sound", null, 0, 1, Slider.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getSlider_Type(), ecorePackage.getEString(), "type", null, 0, 1, Slider.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(soundElementEClass, SoundElement.class, "SoundElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getSoundElement_Name(), ecorePackage.getEString(), "name", null, 0, 1, SoundElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

@@ -225,7 +225,15 @@ public class SynthesizerSemanticSequencer extends AbstractDelegatingSemanticSequ
 	 *     Slider returns Slider
 	 *
 	 * Constraint:
-	 *     (name=ID x=INT y=INT width=INT height=INT)
+	 *     (
+	 *         name=ID 
+	 *         x=INT 
+	 *         y=INT 
+	 *         width=INT 
+	 *         height=INT 
+	 *         sound=[SoundElement|ID] 
+	 *         type=Effect
+	 *     )
 	 */
 	protected void sequence_Slider(ISerializationContext context, Slider semanticObject) {
 		if (errorAcceptor != null) {
@@ -239,6 +247,10 @@ public class SynthesizerSemanticSequencer extends AbstractDelegatingSemanticSequ
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SynthesizerPackage.Literals.CONTROL_ELEMENT__WIDTH));
 			if (transientValues.isValueTransient(semanticObject, SynthesizerPackage.Literals.CONTROL_ELEMENT__HEIGHT) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SynthesizerPackage.Literals.CONTROL_ELEMENT__HEIGHT));
+			if (transientValues.isValueTransient(semanticObject, SynthesizerPackage.Literals.SLIDER__SOUND) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SynthesizerPackage.Literals.SLIDER__SOUND));
+			if (transientValues.isValueTransient(semanticObject, SynthesizerPackage.Literals.SLIDER__TYPE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SynthesizerPackage.Literals.SLIDER__TYPE));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getSliderAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
@@ -246,6 +258,8 @@ public class SynthesizerSemanticSequencer extends AbstractDelegatingSemanticSequ
 		feeder.accept(grammarAccess.getSliderAccess().getYINTTerminalRuleCall_6_0(), semanticObject.getY());
 		feeder.accept(grammarAccess.getSliderAccess().getWidthINTTerminalRuleCall_8_0(), semanticObject.getWidth());
 		feeder.accept(grammarAccess.getSliderAccess().getHeightINTTerminalRuleCall_10_0(), semanticObject.getHeight());
+		feeder.accept(grammarAccess.getSliderAccess().getSoundSoundElementIDTerminalRuleCall_12_0_1(), semanticObject.eGet(SynthesizerPackage.Literals.SLIDER__SOUND, false));
+		feeder.accept(grammarAccess.getSliderAccess().getTypeEffectParserRuleCall_14_0(), semanticObject.getType());
 		feeder.finish();
 	}
 	

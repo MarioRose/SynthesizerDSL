@@ -33,7 +33,13 @@ Slider:
 		'y' y = INT
 		'width' width = INT
 		'height' height = INT
+		'sound' sound = [SoundElement]
+		'effect' type = Effect
 	')'
+;
+
+Effect:
+	'frequency' | 'amplitude'
 ;
 
 SoundElement:

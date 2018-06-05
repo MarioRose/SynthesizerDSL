@@ -32,6 +32,7 @@ public class SynthesizerParser extends AbstractContentAssistParser {
 				private static final long serialVersionUID = 1L;
 				{
 					put(grammarAccess.getControlElementAccess().getAlternatives(), "rule__ControlElement__Alternatives");
+					put(grammarAccess.getEffectAccess().getAlternatives(), "rule__Effect__Alternatives");
 					put(grammarAccess.getSoundElementAccess().getAlternatives(), "rule__SoundElement__Alternatives");
 					put(grammarAccess.getModelAccess().getGroup(), "rule__Model__Group__0");
 					put(grammarAccess.getModelAccess().getGroup_4(), "rule__Model__Group_4__0");
@@ -55,6 +56,8 @@ public class SynthesizerParser extends AbstractContentAssistParser {
 					put(grammarAccess.getSliderAccess().getYAssignment_6(), "rule__Slider__YAssignment_6");
 					put(grammarAccess.getSliderAccess().getWidthAssignment_8(), "rule__Slider__WidthAssignment_8");
 					put(grammarAccess.getSliderAccess().getHeightAssignment_10(), "rule__Slider__HeightAssignment_10");
+					put(grammarAccess.getSliderAccess().getSoundAssignment_12(), "rule__Slider__SoundAssignment_12");
+					put(grammarAccess.getSliderAccess().getTypeAssignment_14(), "rule__Slider__TypeAssignment_14");
 					put(grammarAccess.getButtonAccess().getNameAssignment_1(), "rule__Button__NameAssignment_1");
 					put(grammarAccess.getButtonAccess().getXAssignment_4(), "rule__Button__XAssignment_4");
 					put(grammarAccess.getButtonAccess().getYAssignment_6(), "rule__Button__YAssignment_6");
