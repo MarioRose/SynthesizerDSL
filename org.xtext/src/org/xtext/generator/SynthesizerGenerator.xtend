@@ -369,9 +369,22 @@ class SynthesizerGenerator extends AbstractGenerator {
 		        //Create Sliders
 				'+ resource.allContents
 				.filter(Slider)
-				.map["DoubleBoundedRangeSlider slider" + name + ' = PortControllerFactory.createExponentialPortSlider(osc'+ sound.name + '.' + type + ');
+				.map[
+				if(rampType !== null){
+				"LinearRamp " + name + "lag = new LinearRamp();
+				synth.add(" + name + "lag);
+				" + name + "lag.output.connect(osc"+ sound.name + "." + type + ");
+				DoubleBoundedRangeSlider slider" + name + ' = PortControllerFactory.createExponentialPortSlider(' + name + 'lag .input);
 				slider' + name + '.setBounds(' + x + ', ' + y + ', ' + width + ', ' + height + ');  // x, y, width, height
-				panel.add(slider' + name +");"].join('\n\t\t\t\t')  
+				panel.add(slider' + name +");"
+					
+				}
+				else{
+				"DoubleBoundedRangeSlider slider" + name + ' = PortControllerFactory.createExponentialPortSlider(osc'+ sound.name + '.' + type + ');
+				slider' + name + '.setBounds(' + x + ', ' + y + ', ' + width + ', ' + height + ');  // x, y, width, height
+				panel.add(slider' + name +");"
+				}
+				].join('\n\t\t\t\t')  
 				+ '
 
 		        //Create RotaryKnobs

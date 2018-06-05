@@ -38,11 +38,16 @@ Slider:
 		'height' height = INT
 		'sound' sound = [SoundElement]
 		'effect' type = Effect
+		(rampType = Ramp rampValue = DOUBLE)?
 	')'
 ;
 
 Effect:
 	'frequency' | 'amplitude'
+;
+
+Ramp:
+	'linear'
 ;
 
 SoundElement:
@@ -106,5 +111,5 @@ ImpulseOscillator:
 ;
 
 DOUBLE:
-	predecimal = INT '.' decimal = INT
+	predecimal = INT ('.' decimal ?= INT)?
 ;
