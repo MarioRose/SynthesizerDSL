@@ -17,10 +17,12 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Synthesizer.ecore#//ControlElement/y"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Synthesizer.ecore#//ControlElement/width"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Synthesizer.ecore#//ControlElement/height"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Synthesizer.ecore#//ControlElement/sound"/>
     </genClasses>
-    <genClasses ecoreClass="Synthesizer.ecore#//RotaryKnob"/>
+    <genClasses ecoreClass="Synthesizer.ecore#//RotaryKnob">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Synthesizer.ecore#//RotaryKnob/type"/>
+    </genClasses>
     <genClasses ecoreClass="Synthesizer.ecore#//Slider">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Synthesizer.ecore#//Slider/sound"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Synthesizer.ecore#//Slider/type"/>
     </genClasses>
     <genClasses ecoreClass="Synthesizer.ecore#//SoundElement">
@@ -28,9 +30,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Synthesizer.ecore#//SoundElement/frequency"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Synthesizer.ecore#//SoundElement/amplitude"/>
     </genClasses>
-    <genClasses ecoreClass="Synthesizer.ecore#//Button">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Synthesizer.ecore#//Button/sound"/>
-    </genClasses>
+    <genClasses ecoreClass="Synthesizer.ecore#//Button"/>
     <genClasses ecoreClass="Synthesizer.ecore#//ConnectionElement">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Synthesizer.ecore#//ConnectionElement/ce"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Synthesizer.ecore#//ConnectionElement/se"/>

@@ -9,12 +9,6 @@ package org.xtext.synthesizer;
  * A representation of the model object '<em><b>Button</b></em>'.
  * <!-- end-user-doc -->
  *
- * <p>
- * The following features are supported:
- * </p>
- * <ul>
- *   <li>{@link org.xtext.synthesizer.Button#getSound <em>Sound</em>}</li>
- * </ul>
  *
  * @see org.xtext.synthesizer.SynthesizerPackage#getButton()
  * @model
@@ -22,30 +16,4 @@ package org.xtext.synthesizer;
  */
 public interface Button extends ControlElement
 {
-  /**
-   * Returns the value of the '<em><b>Sound</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Sound</em>' reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Sound</em>' reference.
-   * @see #setSound(SoundElement)
-   * @see org.xtext.synthesizer.SynthesizerPackage#getButton_Sound()
-   * @model
-   * @generated
-   */
-  SoundElement getSound();
-
-  /**
-   * Sets the value of the '{@link org.xtext.synthesizer.Button#getSound <em>Sound</em>}' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Sound</em>' reference.
-   * @see #getSound()
-   * @generated
-   */
-  void setSound(SoundElement value);
-
 } // Button

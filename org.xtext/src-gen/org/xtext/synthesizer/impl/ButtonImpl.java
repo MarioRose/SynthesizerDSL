@@ -3,42 +3,20 @@
  */
 package org.xtext.synthesizer.impl;
 
-import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.xtext.synthesizer.Button;
-import org.xtext.synthesizer.SoundElement;
 import org.xtext.synthesizer.SynthesizerPackage;
 
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>Button</b></em>'.
  * <!-- end-user-doc -->
- * <p>
- * The following features are implemented:
- * </p>
- * <ul>
- *   <li>{@link org.xtext.synthesizer.impl.ButtonImpl#getSound <em>Sound</em>}</li>
- * </ul>
  *
  * @generated
  */
 public class ButtonImpl extends ControlElementImpl implements Button
 {
-  /**
-   * The cached value of the '{@link #getSound() <em>Sound</em>}' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getSound()
-   * @generated
-   * @ordered
-   */
-  protected SoundElement sound;
-
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -58,116 +36,6 @@ public class ButtonImpl extends ControlElementImpl implements Button
   protected EClass eStaticClass()
   {
     return SynthesizerPackage.Literals.BUTTON;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public SoundElement getSound()
-  {
-    if (sound != null && sound.eIsProxy())
-    {
-      InternalEObject oldSound = (InternalEObject)sound;
-      sound = (SoundElement)eResolveProxy(oldSound);
-      if (sound != oldSound)
-      {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, SynthesizerPackage.BUTTON__SOUND, oldSound, sound));
-      }
-    }
-    return sound;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public SoundElement basicGetSound()
-  {
-    return sound;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setSound(SoundElement newSound)
-  {
-    SoundElement oldSound = sound;
-    sound = newSound;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SynthesizerPackage.BUTTON__SOUND, oldSound, sound));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Object eGet(int featureID, boolean resolve, boolean coreType)
-  {
-    switch (featureID)
-    {
-      case SynthesizerPackage.BUTTON__SOUND:
-        if (resolve) return getSound();
-        return basicGetSound();
-    }
-    return super.eGet(featureID, resolve, coreType);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void eSet(int featureID, Object newValue)
-  {
-    switch (featureID)
-    {
-      case SynthesizerPackage.BUTTON__SOUND:
-        setSound((SoundElement)newValue);
-        return;
-    }
-    super.eSet(featureID, newValue);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void eUnset(int featureID)
-  {
-    switch (featureID)
-    {
-      case SynthesizerPackage.BUTTON__SOUND:
-        setSound((SoundElement)null);
-        return;
-    }
-    super.eUnset(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public boolean eIsSet(int featureID)
-  {
-    switch (featureID)
-    {
-      case SynthesizerPackage.BUTTON__SOUND:
-        return sound != null;
-    }
-    return super.eIsSet(featureID);
   }
 
 } //ButtonImpl

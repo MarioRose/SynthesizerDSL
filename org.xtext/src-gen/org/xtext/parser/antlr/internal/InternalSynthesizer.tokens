@@ -1,11 +1,11 @@
 '('=17
-')'=22
+')'=24
 'Connections'=15
 'Controls'=11
 'Sound'=14
 'amplitude'=27
 'button'=28
-'effect'=25
+'effect'=23
 'frequency'=26
 'height'=21
 'linear'=29
@@ -13,8 +13,8 @@
 'rotaryKnob'=16
 'sawToothOscillator'=30
 'sineOscillator'=31
-'slider'=23
-'sound'=24
+'slider'=25
+'sound'=22
 'squareOscillator'=33
 'triangleOscillator'=32
 'width'=20

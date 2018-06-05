@@ -9,6 +9,12 @@ package org.xtext.synthesizer;
  * A representation of the model object '<em><b>Rotary Knob</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <p>
+ * The following features are supported:
+ * </p>
+ * <ul>
+ *   <li>{@link org.xtext.synthesizer.RotaryKnob#getType <em>Type</em>}</li>
+ * </ul>
  *
  * @see org.xtext.synthesizer.SynthesizerPackage#getRotaryKnob()
  * @model
@@ -16,4 +22,30 @@ package org.xtext.synthesizer;
  */
 public interface RotaryKnob extends ControlElement
 {
+  /**
+   * Returns the value of the '<em><b>Type</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Type</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Type</em>' attribute.
+   * @see #setType(String)
+   * @see org.xtext.synthesizer.SynthesizerPackage#getRotaryKnob_Type()
+   * @model
+   * @generated
+   */
+  String getType();
+
+  /**
+   * Sets the value of the '{@link org.xtext.synthesizer.RotaryKnob#getType <em>Type</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Type</em>' attribute.
+   * @see #getType()
+   * @generated
+   */
+  void setType(String value);
+
 } // RotaryKnob

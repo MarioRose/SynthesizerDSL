@@ -6,12 +6,10 @@ package org.xtext.synthesizer.impl;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.xtext.synthesizer.Slider;
-import org.xtext.synthesizer.SoundElement;
 import org.xtext.synthesizer.SynthesizerPackage;
 
 /**
@@ -22,7 +20,6 @@ import org.xtext.synthesizer.SynthesizerPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.synthesizer.impl.SliderImpl#getSound <em>Sound</em>}</li>
  *   <li>{@link org.xtext.synthesizer.impl.SliderImpl#getType <em>Type</em>}</li>
  * </ul>
  *
@@ -30,16 +27,6 @@ import org.xtext.synthesizer.SynthesizerPackage;
  */
 public class SliderImpl extends ControlElementImpl implements Slider
 {
-  /**
-   * The cached value of the '{@link #getSound() <em>Sound</em>}' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getSound()
-   * @generated
-   * @ordered
-   */
-  protected SoundElement sound;
-
   /**
    * The default value of the '{@link #getType() <em>Type</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -86,49 +73,6 @@ public class SliderImpl extends ControlElementImpl implements Slider
    * <!-- end-user-doc -->
    * @generated
    */
-  public SoundElement getSound()
-  {
-    if (sound != null && sound.eIsProxy())
-    {
-      InternalEObject oldSound = (InternalEObject)sound;
-      sound = (SoundElement)eResolveProxy(oldSound);
-      if (sound != oldSound)
-      {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, SynthesizerPackage.SLIDER__SOUND, oldSound, sound));
-      }
-    }
-    return sound;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public SoundElement basicGetSound()
-  {
-    return sound;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setSound(SoundElement newSound)
-  {
-    SoundElement oldSound = sound;
-    sound = newSound;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, SynthesizerPackage.SLIDER__SOUND, oldSound, sound));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public String getType()
   {
     return type;
@@ -157,9 +101,6 @@ public class SliderImpl extends ControlElementImpl implements Slider
   {
     switch (featureID)
     {
-      case SynthesizerPackage.SLIDER__SOUND:
-        if (resolve) return getSound();
-        return basicGetSound();
       case SynthesizerPackage.SLIDER__TYPE:
         return getType();
     }
@@ -176,9 +117,6 @@ public class SliderImpl extends ControlElementImpl implements Slider
   {
     switch (featureID)
     {
-      case SynthesizerPackage.SLIDER__SOUND:
-        setSound((SoundElement)newValue);
-        return;
       case SynthesizerPackage.SLIDER__TYPE:
         setType((String)newValue);
         return;
@@ -196,9 +134,6 @@ public class SliderImpl extends ControlElementImpl implements Slider
   {
     switch (featureID)
     {
-      case SynthesizerPackage.SLIDER__SOUND:
-        setSound((SoundElement)null);
-        return;
       case SynthesizerPackage.SLIDER__TYPE:
         setType(TYPE_EDEFAULT);
         return;
@@ -216,8 +151,6 @@ public class SliderImpl extends ControlElementImpl implements Slider
   {
     switch (featureID)
     {
-      case SynthesizerPackage.SLIDER__SOUND:
-        return sound != null;
       case SynthesizerPackage.SLIDER__TYPE:
         return TYPE_EDEFAULT == null ? type != null : !TYPE_EDEFAULT.equals(type);
     }

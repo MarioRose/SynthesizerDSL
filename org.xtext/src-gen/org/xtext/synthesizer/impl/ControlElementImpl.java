@@ -6,11 +6,13 @@ package org.xtext.synthesizer.impl;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.xtext.synthesizer.ControlElement;
+import org.xtext.synthesizer.SoundElement;
 import org.xtext.synthesizer.SynthesizerPackage;
 
 /**
@@ -26,6 +28,7 @@ import org.xtext.synthesizer.SynthesizerPackage;
  *   <li>{@link org.xtext.synthesizer.impl.ControlElementImpl#getY <em>Y</em>}</li>
  *   <li>{@link org.xtext.synthesizer.impl.ControlElementImpl#getWidth <em>Width</em>}</li>
  *   <li>{@link org.xtext.synthesizer.impl.ControlElementImpl#getHeight <em>Height</em>}</li>
+ *   <li>{@link org.xtext.synthesizer.impl.ControlElementImpl#getSound <em>Sound</em>}</li>
  * </ul>
  *
  * @generated
@@ -131,6 +134,16 @@ public class ControlElementImpl extends MinimalEObjectImpl.Container implements 
    * @ordered
    */
   protected int height = HEIGHT_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getSound() <em>Sound</em>}' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getSound()
+   * @generated
+   * @ordered
+   */
+  protected SoundElement sound;
 
   /**
    * <!-- begin-user-doc -->
@@ -273,6 +286,49 @@ public class ControlElementImpl extends MinimalEObjectImpl.Container implements 
    * <!-- end-user-doc -->
    * @generated
    */
+  public SoundElement getSound()
+  {
+    if (sound != null && sound.eIsProxy())
+    {
+      InternalEObject oldSound = (InternalEObject)sound;
+      sound = (SoundElement)eResolveProxy(oldSound);
+      if (sound != oldSound)
+      {
+        if (eNotificationRequired())
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, SynthesizerPackage.CONTROL_ELEMENT__SOUND, oldSound, sound));
+      }
+    }
+    return sound;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public SoundElement basicGetSound()
+  {
+    return sound;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setSound(SoundElement newSound)
+  {
+    SoundElement oldSound = sound;
+    sound = newSound;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, SynthesizerPackage.CONTROL_ELEMENT__SOUND, oldSound, sound));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
@@ -288,6 +344,9 @@ public class ControlElementImpl extends MinimalEObjectImpl.Container implements 
         return getWidth();
       case SynthesizerPackage.CONTROL_ELEMENT__HEIGHT:
         return getHeight();
+      case SynthesizerPackage.CONTROL_ELEMENT__SOUND:
+        if (resolve) return getSound();
+        return basicGetSound();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -316,6 +375,9 @@ public class ControlElementImpl extends MinimalEObjectImpl.Container implements 
         return;
       case SynthesizerPackage.CONTROL_ELEMENT__HEIGHT:
         setHeight((Integer)newValue);
+        return;
+      case SynthesizerPackage.CONTROL_ELEMENT__SOUND:
+        setSound((SoundElement)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -346,6 +408,9 @@ public class ControlElementImpl extends MinimalEObjectImpl.Container implements 
       case SynthesizerPackage.CONTROL_ELEMENT__HEIGHT:
         setHeight(HEIGHT_EDEFAULT);
         return;
+      case SynthesizerPackage.CONTROL_ELEMENT__SOUND:
+        setSound((SoundElement)null);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -370,6 +435,8 @@ public class ControlElementImpl extends MinimalEObjectImpl.Container implements 
         return width != WIDTH_EDEFAULT;
       case SynthesizerPackage.CONTROL_ELEMENT__HEIGHT:
         return height != HEIGHT_EDEFAULT;
+      case SynthesizerPackage.CONTROL_ELEMENT__SOUND:
+        return sound != null;
     }
     return super.eIsSet(featureID);
   }

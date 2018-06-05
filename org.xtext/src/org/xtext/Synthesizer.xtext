@@ -24,6 +24,8 @@ RotaryKnob:
 		'y' y = INT
 		'width' width = INT
 		'height' height = INT
+		'sound' sound = [SoundElement]
+		'effect' type = Effect
 	')'
 ;
 
@@ -43,7 +45,7 @@ Effect:
 ;
 
 SoundElement:
-	SawToothOscillator | SineOscillator |TriangleOscillator | SquareOscillator | PulseOscillator
+	SawToothOscillator | SineOscillator | TriangleOscillator | SquareOscillator | PulseOscillator
 ;
 
 Button:
