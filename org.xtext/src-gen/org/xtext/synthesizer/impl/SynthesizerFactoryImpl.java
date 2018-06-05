@@ -77,6 +77,7 @@ public class SynthesizerFactoryImpl extends EFactoryImpl implements SynthesizerF
       case SynthesizerPackage.TRIANGLE_OSCILLATOR: return createTriangleOscillator();
       case SynthesizerPackage.SQUARE_OSCILLATOR: return createSquareOscillator();
       case SynthesizerPackage.PULSE_OSCILLATOR: return createPulseOscillator();
+      case SynthesizerPackage.IMPULSE_OSCILLATOR: return createImpulseOscillator();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -212,6 +213,17 @@ public class SynthesizerFactoryImpl extends EFactoryImpl implements SynthesizerF
   {
     PulseOscillatorImpl pulseOscillator = new PulseOscillatorImpl();
     return pulseOscillator;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ImpulseOscillator createImpulseOscillator()
+  {
+    ImpulseOscillatorImpl impulseOscillator = new ImpulseOscillatorImpl();
+    return impulseOscillator;
   }
 
   /**

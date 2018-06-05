@@ -625,6 +625,15 @@ ruleSoundElement returns [EObject current=null]
 			$current = $this_PulseOscillator_4.current;
 			afterParserOrEnumRuleCall();
 		}
+		    |
+		{
+			newCompositeNode(grammarAccess.getSoundElementAccess().getImpulseOscillatorParserRuleCall_5());
+		}
+		this_ImpulseOscillator_5=ruleImpulseOscillator
+		{
+			$current = $this_ImpulseOscillator_5.current;
+			afterParserOrEnumRuleCall();
+		}
 	)
 ;
 
@@ -1292,6 +1301,99 @@ rulePulseOscillator returns [EObject current=null]
 		otherlv_7=')'
 		{
 			newLeafNode(otherlv_7, grammarAccess.getPulseOscillatorAccess().getRightParenthesisKeyword_7());
+		}
+	)
+;
+
+// Entry rule entryRuleImpulseOscillator
+entryRuleImpulseOscillator returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getImpulseOscillatorRule()); }
+	iv_ruleImpulseOscillator=ruleImpulseOscillator
+	{ $current=$iv_ruleImpulseOscillator.current; }
+	EOF;
+
+// Rule ImpulseOscillator
+ruleImpulseOscillator returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		otherlv_0='impulseOscillator'
+		{
+			newLeafNode(otherlv_0, grammarAccess.getImpulseOscillatorAccess().getImpulseOscillatorKeyword_0());
+		}
+		(
+			(
+				lv_name_1_0=RULE_ID
+				{
+					newLeafNode(lv_name_1_0, grammarAccess.getImpulseOscillatorAccess().getNameIDTerminalRuleCall_1_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getImpulseOscillatorRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"name",
+						lv_name_1_0,
+						"org.eclipse.xtext.common.Terminals.ID");
+				}
+			)
+		)
+		otherlv_2='('
+		{
+			newLeafNode(otherlv_2, grammarAccess.getImpulseOscillatorAccess().getLeftParenthesisKeyword_2());
+		}
+		otherlv_3='frequency'
+		{
+			newLeafNode(otherlv_3, grammarAccess.getImpulseOscillatorAccess().getFrequencyKeyword_3());
+		}
+		(
+			(
+				lv_frequency_4_0=RULE_INT
+				{
+					newLeafNode(lv_frequency_4_0, grammarAccess.getImpulseOscillatorAccess().getFrequencyINTTerminalRuleCall_4_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getImpulseOscillatorRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"frequency",
+						lv_frequency_4_0,
+						"org.eclipse.xtext.common.Terminals.INT");
+				}
+			)
+		)
+		otherlv_5='amplitude'
+		{
+			newLeafNode(otherlv_5, grammarAccess.getImpulseOscillatorAccess().getAmplitudeKeyword_5());
+		}
+		(
+			(
+				lv_amplitude_6_0=RULE_INT
+				{
+					newLeafNode(lv_amplitude_6_0, grammarAccess.getImpulseOscillatorAccess().getAmplitudeINTTerminalRuleCall_6_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getImpulseOscillatorRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"amplitude",
+						lv_amplitude_6_0,
+						"org.eclipse.xtext.common.Terminals.INT");
+				}
+			)
+		)
+		otherlv_7=')'
+		{
+			newLeafNode(otherlv_7, grammarAccess.getImpulseOscillatorAccess().getRightParenthesisKeyword_7());
 		}
 	)
 ;

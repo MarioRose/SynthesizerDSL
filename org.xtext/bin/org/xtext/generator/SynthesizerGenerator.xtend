@@ -11,7 +11,11 @@ import org.xtext.synthesizer.Slider
 import org.xtext.synthesizer.Button
 import org.xtext.synthesizer.RotaryKnob
 import org.xtext.synthesizer.SineOscillator
-import org.xtext.synthesizer.SoundElement
+import org.xtext.synthesizer.SawToothOscillator
+import org.xtext.synthesizer.PulseOscillator
+import org.xtext.synthesizer.SquareOscillator
+import org.xtext.synthesizer.TriangleOscillator
+import org.xtext.synthesizer.ImpulseOscillator
 
 /**
  * Generates code from your model files on save.
@@ -60,56 +64,280 @@ class SynthesizerGenerator extends AbstractGenerator {
 		import com.jsyn.unitgen.UnitOscillator;
 		import com.jsyn.unitgen.LinearRamp;
 		import com.jsyn.unitgen.SawtoothOscillatorBL;
+		import com.jsyn.unitgen.SawtoothOscillator;
+		import com.jsyn.unitgen.TriangleOscillator;
+		import com.jsyn.unitgen.SquareOscillator;
+		import com.jsyn.unitgen.PulseOscillator;
+		import com.jsyn.unitgen.ImpulseOscillator;
 
 
 		public class SynthesizerDSL extends JApplet{
-			static boolean soundRunning;
 		    static Synthesizer synth;
+            static LineOut lineOut;
+
+			//SOUNDS
+			'+ resource.allContents
+				.filter(SineOscillator)
+				.map["private static UnitOscillator osc" + name + ";	       
+				"].join('\n\t\t\t\t')
+				
+			+ '
+
+			'+ resource.allContents
+				.filter(SawToothOscillator)
+				.map["private static UnitOscillator osc" + name + ";	       
+				"].join('\n\t\t\t\t')
+				
+			+ '
+
+			'+ resource.allContents
+				.filter(TriangleOscillator)
+				.map["private static UnitOscillator osc" + name + ";	       
+				"].join('\n\t\t\t\t')
+				
+			+ '
+
+			'+ resource.allContents
+				.filter(SquareOscillator)
+				.map["private static UnitOscillator osc" + name + ";	       
+				"].join('\n\t\t\t\t')
+				
+			+ '
+
+			'+ resource.allContents
+				.filter(PulseOscillator)
+				.map["private static UnitOscillator osc" + name + ";	       
+				"].join('\n\t\t\t\t')
+				
+			+ '
+
+			'+ resource.allContents
+				.filter(ImpulseOscillator)
+				.map["private static UnitOscillator osc" + name + ";	       
+				"].join('\n\t\t\t\t')
+				
+			+ '
+
 
 			' + generateUI(resource) + '
 
 		    @Override
 		    public void start() {
+	        	// Create a context for the synthesizer.
+	            synth = JSyn.createSynthesizer();
+	            // Start synthesizer using default stereo output at 44100 Hz.
+	            synth.start();
+	            // Add a stereo audio output unit.
+	            synth.add(lineOut = new LineOut());
+	            // We only need to start the LineOut. It will pull data from the
+	            // oscillator.
+	            lineOut.start();
+
+				'+ resource.allContents
+				.filter(SineOscillator)
+				.map["createSound" + name + "();	       
+				"].join('\n\t\t\t\t')
+				
+				+ '
+
+				'+ resource.allContents
+				.filter(SawToothOscillator)
+				.map["createSound" + name + "();	       
+				"].join('\n\t\t\t\t')
+				
+				+ '
+
+				'+ resource.allContents
+				.filter(TriangleOscillator)
+				.map["createSound" + name + "();	       
+				"].join('\n\t\t\t\t')
+				
+				+ '
+
+				'+ resource.allContents
+				.filter(SquareOscillator)
+				.map["createSound" + name + "();	       
+				"].join('\n\t\t\t\t')
+				
+				+ '
+
+				'+ resource.allContents
+				.filter(PulseOscillator)
+				.map["createSound" + name + "();	       
+				"].join('\n\t\t\t\t')
+				
+				+ '
+
+				'+ resource.allContents
+				.filter(ImpulseOscillator)
+				.map["createSound" + name + "();	       
+				"].join('\n\t\t\t\t')
+				
+				+ '
+
 		    	createAndShowGUI();
 			}
 			
 
-			//Create Sound (SineOscillators)
+			//---- Create Sounds ----
+			//SineOscillators
 			'+ resource.allContents
 			.filter(SineOscillator)
 			.map["private static void createSound" + name + "() {\n\t\t\t\t" + 
-        		'if (!soundRunning) {
-					UnitOscillator osc;
-		            LineOut lineOut;
-		        	
-		        	// Create a context for the synthesizer.
-		            synth = JSyn.createSynthesizer();
-		
-		            // Start synthesizer using default stereo output at 44100 Hz.
-		            synth.start();
-		
-		            // Add a tone generator.
-		            synth.add(osc = new SineOscillator());
-		            // Add a stereo audio output unit.
-		            synth.add(lineOut = new LineOut());
-		
-		            // Connect the oscillator to both channels of the output.
-		            osc.output.connect(0, lineOut.input, 0);
-		            osc.output.connect(0, lineOut.input, 1);
-		
+        		'	osc' + name + ' = new SineOscillator();
+					// Add a tone generator.
+		            synth.add(osc' + name + ' );
+				
 		            // Set the frequency and amplitude for the sine wave.
-		            osc.frequency.set(' + frequency + ');
-		            osc.amplitude.set(' + amplitude + ');
-		
-		            // We only need to start the LineOut. It will pull data from the
-		            // oscillator.
-		            lineOut.start();
-	            }
-	            else
-	            	synth.stop();
-	            
-	            soundRunning = !soundRunning;
-			}
+		            osc' + name + '.frequency.set(' + frequency + ');
+		            osc' + name + '.amplitude.set(' + amplitude + ');
+				}
+			
+				private static void playSound' + name + '(){
+					if(!osc' + name + '.output.isConnected()) {
+			            osc' + name + '.output.connect(0, lineOut.input, 0);
+			            osc' + name + '.output.connect(0, lineOut.input, 1);
+					}
+					else {
+			            osc' + name + '.output.disconnect(0, lineOut.input, 0);
+			            osc' + name + '.output.disconnect(0, lineOut.input, 1);
+					}
+				}
+	        '].join('\n\t\t\t\t')
+
+		    + '
+
+			//SawtoothOscillator
+			'+ resource.allContents
+			.filter(SawToothOscillator)
+			.map["private static void createSound" + name + "() {\n\t\t\t\t" + 
+        		'	osc' + name + ' = new SawtoothOscillator();
+					// Add a tone generator.
+		            synth.add(osc' + name + ' );
+				
+		            // Set the frequency and amplitude for the sine wave.
+		            osc' + name + '.frequency.set(' + frequency + ');
+		            osc' + name + '.amplitude.set(' + amplitude + ');
+				}
+			
+				private static void playSound' + name + '(){
+					if(!osc' + name + '.output.isConnected()) {
+			            osc' + name + '.output.connect(0, lineOut.input, 0);
+			            osc' + name + '.output.connect(0, lineOut.input, 1);
+					}
+					else {
+			            osc' + name + '.output.disconnect(0, lineOut.input, 0);
+			            osc' + name + '.output.disconnect(0, lineOut.input, 1);
+					}
+				}
+	        '].join('\n\t\t\t\t')
+
+		    + '
+
+			//TriangleOscillator
+			'+ resource.allContents
+			.filter(TriangleOscillator)
+			.map["private static void createSound" + name + "() {\n\t\t\t\t" + 
+        		'	osc' + name + ' = new TriangleOscillator();
+					// Add a tone generator.
+		            synth.add(osc' + name + ' );
+				
+		            // Set the frequency and amplitude for the sine wave.
+		            osc' + name + '.frequency.set(' + frequency + ');
+		            osc' + name + '.amplitude.set(' + amplitude + ');
+				}
+			
+				private static void playSound' + name + '(){
+					if(!osc' + name + '.output.isConnected()) {
+			            osc' + name + '.output.connect(0, lineOut.input, 0);
+			            osc' + name + '.output.connect(0, lineOut.input, 1);
+					}
+					else {
+			            osc' + name + '.output.disconnect(0, lineOut.input, 0);
+			            osc' + name + '.output.disconnect(0, lineOut.input, 1);
+					}
+				}
+	        '].join('\n\t\t\t\t')
+
+		    + '
+
+			//SquareOscillator
+			'+ resource.allContents
+			.filter(SquareOscillator)
+			.map["private static void createSound" + name + "() {\n\t\t\t\t" + 
+        		'	osc' + name + ' = new SquareOscillator();
+					// Add a tone generator.
+		            synth.add(osc' + name + ' );
+				
+		            // Set the frequency and amplitude for the sine wave.
+		            osc' + name + '.frequency.set(' + frequency + ');
+		            osc' + name + '.amplitude.set(' + amplitude + ');
+				}
+			
+				private static void playSound' + name + '(){
+					if(!osc' + name + '.output.isConnected()) {
+			            osc' + name + '.output.connect(0, lineOut.input, 0);
+			            osc' + name + '.output.connect(0, lineOut.input, 1);
+					}
+					else {
+			            osc' + name + '.output.disconnect(0, lineOut.input, 0);
+			            osc' + name + '.output.disconnect(0, lineOut.input, 1);
+					}
+				}
+	        '].join('\n\t\t\t\t')
+
+		    + '
+
+			//PulseOscillator
+			'+ resource.allContents
+			.filter(PulseOscillator)
+			.map["private static void createSound" + name + "() {\n\t\t\t\t" + 
+        		'	osc' + name + ' = new PulseOscillator();
+					// Add a tone generator.
+		            synth.add(osc' + name + ' );
+				
+		            // Set the frequency and amplitude for the sine wave.
+		            osc' + name + '.frequency.set(' + frequency + ');
+		            osc' + name + '.amplitude.set(' + amplitude + ');
+				}
+			
+				private static void playSound' + name + '(){
+					if(!osc' + name + '.output.isConnected()) {
+			            osc' + name + '.output.connect(0, lineOut.input, 0);
+			            osc' + name + '.output.connect(0, lineOut.input, 1);
+					}
+					else {
+			            osc' + name + '.output.disconnect(0, lineOut.input, 0);
+			            osc' + name + '.output.disconnect(0, lineOut.input, 1);
+					}
+				}
+	        '].join('\n\t\t\t\t')
+
+		    + '
+
+			//ImpulseOscillator
+			'+ resource.allContents
+			.filter(ImpulseOscillator)
+			.map["private static void createSound" + name + "() {\n\t\t\t\t" + 
+        		'	osc' + name + ' = new ImpulseOscillator();
+					// Add a tone generator.
+		            synth.add(osc' + name + ' );
+				
+		            // Set the frequency and amplitude for the sine wave.
+		            osc' + name + '.frequency.set(' + frequency + ');
+		            osc' + name + '.amplitude.set(' + amplitude + ');
+				}
+			
+				private static void playSound' + name + '(){
+					if(!osc' + name + '.output.isConnected()) {
+			            osc' + name + '.output.connect(0, lineOut.input, 0);
+			            osc' + name + '.output.connect(0, lineOut.input, 1);
+					}
+					else {
+			            osc' + name + '.output.disconnect(0, lineOut.input, 0);
+			            osc' + name + '.output.disconnect(0, lineOut.input, 1);
+					}
+				}
 	        '].join('\n\t\t\t\t')
 
 		    + '
@@ -144,7 +372,7 @@ class SynthesizerGenerator extends AbstractGenerator {
 				b" + name + '.addActionListener(new ActionListener() {
 			        @Override
 			        public void actionPerformed(ActionEvent e) {
-			            createSound' + sound.name + '();
+			            playSound' + sound.name + '();
 			        }
 		    	});
 
@@ -164,7 +392,7 @@ class SynthesizerGenerator extends AbstractGenerator {
 		        //Create Slider
 				'+ resource.allContents
 				.filter(Slider)
-				.map["DoubleBoundedRangeSlider slider" + name + ' = PortControllerFactory.createExponentialPortSlider(freqRamp.input);
+				.map["DoubleBoundedRangeSlider slider" + name + ' = PortControllerFactory.createExponentialPortSlider(osc'+ sound.name + '.' + type + ');
 				slider' + name + '.setBounds(' + x + ', ' + y + ', ' + width + ', ' + height + ');  // x, y, width, height
 				panel.add(slider' + name +");"
 						        ].join('\n\t\t\t\t')

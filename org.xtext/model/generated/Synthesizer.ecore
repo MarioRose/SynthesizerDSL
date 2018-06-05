@@ -38,4 +38,5 @@
   <eClassifiers xsi:type="ecore:EClass" name="TriangleOscillator" eSuperTypes="#//SoundElement"/>
   <eClassifiers xsi:type="ecore:EClass" name="SquareOscillator" eSuperTypes="#//SoundElement"/>
   <eClassifiers xsi:type="ecore:EClass" name="PulseOscillator" eSuperTypes="#//SoundElement"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ImpulseOscillator" eSuperTypes="#//SoundElement"/>
 </ecore:EPackage>

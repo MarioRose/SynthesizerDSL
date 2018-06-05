@@ -40,5 +40,6 @@
     <genClasses ecoreClass="Synthesizer.ecore#//TriangleOscillator"/>
     <genClasses ecoreClass="Synthesizer.ecore#//SquareOscillator"/>
     <genClasses ecoreClass="Synthesizer.ecore#//PulseOscillator"/>
+    <genClasses ecoreClass="Synthesizer.ecore#//ImpulseOscillator"/>
   </genPackages>
 </genmodel:GenModel>

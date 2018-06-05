@@ -8,6 +8,7 @@
 'effect'=25
 'frequency'=26
 'height'=21
+'impulseOscillator'=35
 'linear'=29
 'pulseOscillator'=34
 'rotaryKnob'=16
@@ -53,3 +54,4 @@ T__31=31
 T__32=32
 T__33=33
 T__34=34
+T__35=35

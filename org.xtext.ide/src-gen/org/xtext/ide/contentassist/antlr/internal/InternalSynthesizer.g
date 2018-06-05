@@ -374,6 +374,31 @@ finally {
 	restoreStackSize(stackSize);
 }
 
+// Entry rule entryRuleImpulseOscillator
+entryRuleImpulseOscillator
+:
+{ before(grammarAccess.getImpulseOscillatorRule()); }
+	 ruleImpulseOscillator
+{ after(grammarAccess.getImpulseOscillatorRule()); } 
+	 EOF 
+;
+
+// Rule ImpulseOscillator
+ruleImpulseOscillator 
+	@init {
+		int stackSize = keepStackSize();
+	}
+	:
+	(
+		{ before(grammarAccess.getImpulseOscillatorAccess().getGroup()); }
+		(rule__ImpulseOscillator__Group__0)
+		{ after(grammarAccess.getImpulseOscillatorAccess().getGroup()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
 rule__ControlElement__Alternatives
 	@init {
 		int stackSize = keepStackSize();
@@ -455,6 +480,12 @@ rule__SoundElement__Alternatives
 		{ before(grammarAccess.getSoundElementAccess().getPulseOscillatorParserRuleCall_4()); }
 		rulePulseOscillator
 		{ after(grammarAccess.getSoundElementAccess().getPulseOscillatorParserRuleCall_4()); }
+	)
+	|
+	(
+		{ before(grammarAccess.getSoundElementAccess().getImpulseOscillatorParserRuleCall_5()); }
+		ruleImpulseOscillator
+		{ after(grammarAccess.getSoundElementAccess().getImpulseOscillatorParserRuleCall_5()); }
 	)
 ;
 finally {
@@ -3134,6 +3165,222 @@ finally {
 }
 
 
+rule__ImpulseOscillator__Group__0
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__ImpulseOscillator__Group__0__Impl
+	rule__ImpulseOscillator__Group__1
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__ImpulseOscillator__Group__0__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getImpulseOscillatorAccess().getImpulseOscillatorKeyword_0()); }
+	'impulseOscillator'
+	{ after(grammarAccess.getImpulseOscillatorAccess().getImpulseOscillatorKeyword_0()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__ImpulseOscillator__Group__1
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__ImpulseOscillator__Group__1__Impl
+	rule__ImpulseOscillator__Group__2
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__ImpulseOscillator__Group__1__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getImpulseOscillatorAccess().getNameAssignment_1()); }
+	(rule__ImpulseOscillator__NameAssignment_1)
+	{ after(grammarAccess.getImpulseOscillatorAccess().getNameAssignment_1()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__ImpulseOscillator__Group__2
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__ImpulseOscillator__Group__2__Impl
+	rule__ImpulseOscillator__Group__3
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__ImpulseOscillator__Group__2__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getImpulseOscillatorAccess().getLeftParenthesisKeyword_2()); }
+	'('
+	{ after(grammarAccess.getImpulseOscillatorAccess().getLeftParenthesisKeyword_2()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__ImpulseOscillator__Group__3
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__ImpulseOscillator__Group__3__Impl
+	rule__ImpulseOscillator__Group__4
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__ImpulseOscillator__Group__3__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getImpulseOscillatorAccess().getFrequencyKeyword_3()); }
+	'frequency'
+	{ after(grammarAccess.getImpulseOscillatorAccess().getFrequencyKeyword_3()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__ImpulseOscillator__Group__4
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__ImpulseOscillator__Group__4__Impl
+	rule__ImpulseOscillator__Group__5
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__ImpulseOscillator__Group__4__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getImpulseOscillatorAccess().getFrequencyAssignment_4()); }
+	(rule__ImpulseOscillator__FrequencyAssignment_4)
+	{ after(grammarAccess.getImpulseOscillatorAccess().getFrequencyAssignment_4()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__ImpulseOscillator__Group__5
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__ImpulseOscillator__Group__5__Impl
+	rule__ImpulseOscillator__Group__6
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__ImpulseOscillator__Group__5__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getImpulseOscillatorAccess().getAmplitudeKeyword_5()); }
+	'amplitude'
+	{ after(grammarAccess.getImpulseOscillatorAccess().getAmplitudeKeyword_5()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__ImpulseOscillator__Group__6
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__ImpulseOscillator__Group__6__Impl
+	rule__ImpulseOscillator__Group__7
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__ImpulseOscillator__Group__6__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getImpulseOscillatorAccess().getAmplitudeAssignment_6()); }
+	(rule__ImpulseOscillator__AmplitudeAssignment_6)
+	{ after(grammarAccess.getImpulseOscillatorAccess().getAmplitudeAssignment_6()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__ImpulseOscillator__Group__7
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__ImpulseOscillator__Group__7__Impl
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__ImpulseOscillator__Group__7__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getImpulseOscillatorAccess().getRightParenthesisKeyword_7()); }
+	')'
+	{ after(grammarAccess.getImpulseOscillatorAccess().getRightParenthesisKeyword_7()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
 rule__Model__ControlsAssignment_2
 	@init {
 		int stackSize = keepStackSize();
@@ -3714,6 +3961,51 @@ rule__PulseOscillator__AmplitudeAssignment_6
 		{ before(grammarAccess.getPulseOscillatorAccess().getAmplitudeINTTerminalRuleCall_6_0()); }
 		RULE_INT
 		{ after(grammarAccess.getPulseOscillatorAccess().getAmplitudeINTTerminalRuleCall_6_0()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__ImpulseOscillator__NameAssignment_1
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	(
+		{ before(grammarAccess.getImpulseOscillatorAccess().getNameIDTerminalRuleCall_1_0()); }
+		RULE_ID
+		{ after(grammarAccess.getImpulseOscillatorAccess().getNameIDTerminalRuleCall_1_0()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__ImpulseOscillator__FrequencyAssignment_4
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	(
+		{ before(grammarAccess.getImpulseOscillatorAccess().getFrequencyINTTerminalRuleCall_4_0()); }
+		RULE_INT
+		{ after(grammarAccess.getImpulseOscillatorAccess().getFrequencyINTTerminalRuleCall_4_0()); }
+	)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__ImpulseOscillator__AmplitudeAssignment_6
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	(
+		{ before(grammarAccess.getImpulseOscillatorAccess().getAmplitudeINTTerminalRuleCall_6_0()); }
+		RULE_INT
+		{ after(grammarAccess.getImpulseOscillatorAccess().getAmplitudeINTTerminalRuleCall_6_0()); }
 	)
 ;
 finally {

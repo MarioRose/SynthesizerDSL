@@ -17,6 +17,7 @@ import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransi
 import org.xtext.services.SynthesizerGrammarAccess;
 import org.xtext.synthesizer.Button;
 import org.xtext.synthesizer.ConnectionElement;
+import org.xtext.synthesizer.ImpulseOscillator;
 import org.xtext.synthesizer.Model;
 import org.xtext.synthesizer.PulseOscillator;
 import org.xtext.synthesizer.RotaryKnob;
@@ -46,6 +47,9 @@ public class SynthesizerSemanticSequencer extends AbstractDelegatingSemanticSequ
 				return; 
 			case SynthesizerPackage.CONNECTION_ELEMENT:
 				sequence_ConnectionElement(context, (ConnectionElement) semanticObject); 
+				return; 
+			case SynthesizerPackage.IMPULSE_OSCILLATOR:
+				sequence_ImpulseOscillator(context, (ImpulseOscillator) semanticObject); 
 				return; 
 			case SynthesizerPackage.MODEL:
 				sequence_Model(context, (Model) semanticObject); 
@@ -134,6 +138,31 @@ public class SynthesizerSemanticSequencer extends AbstractDelegatingSemanticSequ
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getConnectionElementAccess().getCeControlElementIDTerminalRuleCall_1_0_1(), semanticObject.eGet(SynthesizerPackage.Literals.CONNECTION_ELEMENT__CE, false));
 		feeder.accept(grammarAccess.getConnectionElementAccess().getSeSoundElementIDTerminalRuleCall_2_0_1(), semanticObject.eGet(SynthesizerPackage.Literals.CONNECTION_ELEMENT__SE, false));
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     SoundElement returns ImpulseOscillator
+	 *     ImpulseOscillator returns ImpulseOscillator
+	 *
+	 * Constraint:
+	 *     (name=ID frequency=INT amplitude=INT)
+	 */
+	protected void sequence_ImpulseOscillator(ISerializationContext context, ImpulseOscillator semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, SynthesizerPackage.Literals.SOUND_ELEMENT__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SynthesizerPackage.Literals.SOUND_ELEMENT__NAME));
+			if (transientValues.isValueTransient(semanticObject, SynthesizerPackage.Literals.SOUND_ELEMENT__FREQUENCY) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SynthesizerPackage.Literals.SOUND_ELEMENT__FREQUENCY));
+			if (transientValues.isValueTransient(semanticObject, SynthesizerPackage.Literals.SOUND_ELEMENT__AMPLITUDE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, SynthesizerPackage.Literals.SOUND_ELEMENT__AMPLITUDE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getImpulseOscillatorAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getImpulseOscillatorAccess().getFrequencyINTTerminalRuleCall_4_0(), semanticObject.getFrequency());
+		feeder.accept(grammarAccess.getImpulseOscillatorAccess().getAmplitudeINTTerminalRuleCall_6_0(), semanticObject.getAmplitude());
 		feeder.finish();
 	}
 	

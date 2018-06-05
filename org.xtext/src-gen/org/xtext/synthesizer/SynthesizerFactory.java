@@ -132,6 +132,15 @@ public interface SynthesizerFactory extends EFactory
   PulseOscillator createPulseOscillator();
 
   /**
+   * Returns a new object of class '<em>Impulse Oscillator</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Impulse Oscillator</em>'.
+   * @generated
+   */
+  ImpulseOscillator createImpulseOscillator();
+
+  /**
    * Returns the package supported by this factory.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

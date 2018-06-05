@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.xtext.synthesizer.Button;
 import org.xtext.synthesizer.ConnectionElement;
 import org.xtext.synthesizer.ControlElement;
+import org.xtext.synthesizer.ImpulseOscillator;
 import org.xtext.synthesizer.Model;
 import org.xtext.synthesizer.PulseOscillator;
 import org.xtext.synthesizer.RotaryKnob;
@@ -116,6 +117,13 @@ public class SynthesizerPackageImpl extends EPackageImpl implements SynthesizerP
    * @generated
    */
   private EClass pulseOscillatorEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass impulseOscillatorEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -465,6 +473,16 @@ public class SynthesizerPackageImpl extends EPackageImpl implements SynthesizerP
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getImpulseOscillator()
+  {
+    return impulseOscillatorEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public SynthesizerFactory getSynthesizerFactory()
   {
     return (SynthesizerFactory)getEFactoryInstance();
@@ -529,6 +547,8 @@ public class SynthesizerPackageImpl extends EPackageImpl implements SynthesizerP
     squareOscillatorEClass = createEClass(SQUARE_OSCILLATOR);
 
     pulseOscillatorEClass = createEClass(PULSE_OSCILLATOR);
+
+    impulseOscillatorEClass = createEClass(IMPULSE_OSCILLATOR);
   }
 
   /**
@@ -568,6 +588,7 @@ public class SynthesizerPackageImpl extends EPackageImpl implements SynthesizerP
     triangleOscillatorEClass.getESuperTypes().add(this.getSoundElement());
     squareOscillatorEClass.getESuperTypes().add(this.getSoundElement());
     pulseOscillatorEClass.getESuperTypes().add(this.getSoundElement());
+    impulseOscillatorEClass.getESuperTypes().add(this.getSoundElement());
 
     // Initialize classes and features; add operations and parameters
     initEClass(modelEClass, Model.class, "Model", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -609,6 +630,8 @@ public class SynthesizerPackageImpl extends EPackageImpl implements SynthesizerP
     initEClass(squareOscillatorEClass, SquareOscillator.class, "SquareOscillator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(pulseOscillatorEClass, PulseOscillator.class, "PulseOscillator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(impulseOscillatorEClass, ImpulseOscillator.class, "ImpulseOscillator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     // Create resource
     createResource(eNS_URI);

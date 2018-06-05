@@ -165,6 +165,14 @@ public class SynthesizerSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case SynthesizerPackage.IMPULSE_OSCILLATOR:
+      {
+        ImpulseOscillator impulseOscillator = (ImpulseOscillator)theEObject;
+        T result = caseImpulseOscillator(impulseOscillator);
+        if (result == null) result = caseSoundElement(impulseOscillator);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       default: return defaultCase(theEObject);
     }
   }
@@ -357,6 +365,22 @@ public class SynthesizerSwitch<T> extends Switch<T>
    * @generated
    */
   public T casePulseOscillator(PulseOscillator object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Impulse Oscillator</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Impulse Oscillator</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseImpulseOscillator(ImpulseOscillator object)
   {
     return null;
   }

@@ -136,6 +136,11 @@ public class SynthesizerAdapterFactory extends AdapterFactoryImpl
         return createPulseOscillatorAdapter();
       }
       @Override
+      public Adapter caseImpulseOscillator(ImpulseOscillator object)
+      {
+        return createImpulseOscillatorAdapter();
+      }
+      @Override
       public Adapter defaultCase(EObject object)
       {
         return createEObjectAdapter();
@@ -333,6 +338,21 @@ public class SynthesizerAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createPulseOscillatorAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.synthesizer.ImpulseOscillator <em>Impulse Oscillator</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.synthesizer.ImpulseOscillator
+   * @generated
+   */
+  public Adapter createImpulseOscillatorAdapter()
   {
     return null;
   }

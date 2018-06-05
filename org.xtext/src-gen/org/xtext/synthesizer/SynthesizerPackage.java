@@ -699,6 +699,52 @@ public interface SynthesizerPackage extends EPackage
    */
   int PULSE_OSCILLATOR_FEATURE_COUNT = SOUND_ELEMENT_FEATURE_COUNT + 0;
 
+  /**
+   * The meta object id for the '{@link org.xtext.synthesizer.impl.ImpulseOscillatorImpl <em>Impulse Oscillator</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.synthesizer.impl.ImpulseOscillatorImpl
+   * @see org.xtext.synthesizer.impl.SynthesizerPackageImpl#getImpulseOscillator()
+   * @generated
+   */
+  int IMPULSE_OSCILLATOR = 12;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IMPULSE_OSCILLATOR__NAME = SOUND_ELEMENT__NAME;
+
+  /**
+   * The feature id for the '<em><b>Frequency</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IMPULSE_OSCILLATOR__FREQUENCY = SOUND_ELEMENT__FREQUENCY;
+
+  /**
+   * The feature id for the '<em><b>Amplitude</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IMPULSE_OSCILLATOR__AMPLITUDE = SOUND_ELEMENT__AMPLITUDE;
+
+  /**
+   * The number of structural features of the '<em>Impulse Oscillator</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int IMPULSE_OSCILLATOR_FEATURE_COUNT = SOUND_ELEMENT_FEATURE_COUNT + 0;
+
 
   /**
    * Returns the meta object for class '{@link org.xtext.synthesizer.Model <em>Model</em>}'.
@@ -997,6 +1043,16 @@ public interface SynthesizerPackage extends EPackage
   EClass getPulseOscillator();
 
   /**
+   * Returns the meta object for class '{@link org.xtext.synthesizer.ImpulseOscillator <em>Impulse Oscillator</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Impulse Oscillator</em>'.
+   * @see org.xtext.synthesizer.ImpulseOscillator
+   * @generated
+   */
+  EClass getImpulseOscillator();
+
+  /**
    * Returns the factory that creates the instances of the model.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1266,6 +1322,16 @@ public interface SynthesizerPackage extends EPackage
      * @generated
      */
     EClass PULSE_OSCILLATOR = eINSTANCE.getPulseOscillator();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.synthesizer.impl.ImpulseOscillatorImpl <em>Impulse Oscillator</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.synthesizer.impl.ImpulseOscillatorImpl
+     * @see org.xtext.synthesizer.impl.SynthesizerPackageImpl#getImpulseOscillator()
+     * @generated
+     */
+    EClass IMPULSE_OSCILLATOR = eINSTANCE.getImpulseOscillator();
 
   }
 
