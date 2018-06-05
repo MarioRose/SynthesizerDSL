@@ -172,8 +172,8 @@ class SynthesizerGenerator extends AbstractGenerator {
 		            synth.add(osc' + name + ' );
 				
 		            // Set the frequency and amplitude for the sine wave.
-		            osc' + name + '.frequency.set(' + frequency + ');
-		            osc' + name + '.amplitude.set(' + amplitude + ');
+		            osc' + name + '.frequency.set(' + frequency.predecimal + '.' + frequency.decimal + ');
+		            osc' + name + '.amplitude.set(' + amplitude.predecimal + '.' + amplitude.decimal + ');
 				}
 			
 				private static void playSound' + name + '(){
@@ -199,8 +199,8 @@ class SynthesizerGenerator extends AbstractGenerator {
 		            synth.add(osc' + name + ' );
 				
 		            // Set the frequency and amplitude for the sine wave.
-		            osc' + name + '.frequency.set(' + frequency + ');
-		            osc' + name + '.amplitude.set(' + amplitude + ');
+		            osc' + name + '.frequency.set(' + frequency.predecimal + '.' + frequency.decimal + ');
+		            osc' + name + '.amplitude.set(' + amplitude.predecimal + '.' + amplitude.decimal + ');
 				}
 			
 				private static void playSound' + name + '(){
@@ -226,8 +226,8 @@ class SynthesizerGenerator extends AbstractGenerator {
 		            synth.add(osc' + name + ' );
 				
 		            // Set the frequency and amplitude for the sine wave.
-		            osc' + name + '.frequency.set(' + frequency + ');
-		            osc' + name + '.amplitude.set(' + amplitude + ');
+		            osc' + name + '.frequency.set(' + frequency.predecimal + '.' + frequency.decimal + ');
+		            osc' + name + '.amplitude.set(' + amplitude.predecimal + '.' + amplitude.decimal + ');
 				}
 			
 				private static void playSound' + name + '(){
@@ -253,8 +253,8 @@ class SynthesizerGenerator extends AbstractGenerator {
 		            synth.add(osc' + name + ' );
 				
 		            // Set the frequency and amplitude for the sine wave.
-		            osc' + name + '.frequency.set(' + frequency + ');
-		            osc' + name + '.amplitude.set(' + amplitude + ');
+		            osc' + name + '.frequency.set(' + frequency.predecimal + '.' + frequency.decimal + ');
+		            osc' + name + '.amplitude.set(' + amplitude.predecimal + '.' + amplitude.decimal + ');
 				}
 			
 				private static void playSound' + name + '(){
@@ -280,8 +280,8 @@ class SynthesizerGenerator extends AbstractGenerator {
 		            synth.add(osc' + name + ' );
 				
 		            // Set the frequency and amplitude for the sine wave.
-		            osc' + name + '.frequency.set(' + frequency + ');
-		            osc' + name + '.amplitude.set(' + amplitude + ');
+		            osc' + name + '.frequency.set(' + frequency.predecimal + '.' + frequency.decimal + ');
+		            osc' + name + '.amplitude.set(' + amplitude.predecimal + '.' + amplitude.decimal + ');
 				}
 			
 				private static void playSound' + name + '(){
@@ -307,8 +307,8 @@ class SynthesizerGenerator extends AbstractGenerator {
 		            synth.add(osc' + name + ' );
 				
 		            // Set the frequency and amplitude for the sine wave.
-		            osc' + name + '.frequency.set(' + frequency + ');
-		            osc' + name + '.amplitude.set(' + amplitude + ');
+		            osc' + name + '.frequency.set(' + frequency.predecimal + '.' + frequency.decimal + ');
+		            osc' + name + '.amplitude.set(' + amplitude.predecimal + '.' + amplitude.decimal + ');
 				}
 			
 				private static void playSound' + name + '(){

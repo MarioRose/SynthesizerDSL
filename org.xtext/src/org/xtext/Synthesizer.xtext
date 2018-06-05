@@ -65,42 +65,46 @@ ConnectionElement:
 
 SawToothOscillator:
 	'sawToothOscillator' name = ID '('
-		'frequency' frequency = INT
-		'amplitude' amplitude = INT //should be float or INT.INT (e.g. 0.6)
+		'frequency' frequency = DOUBLE
+		'amplitude' amplitude = DOUBLE //should be float or INT.INT (e.g. 0.6)
 	')'
 ;
 
 SineOscillator:
 	'sineOscillator' name = ID '('
-		'frequency' frequency = INT
-		'amplitude' amplitude = INT //should be float or INT.INT (e.g. 0.6)
+		'frequency' frequency = DOUBLE
+		'amplitude' amplitude = DOUBLE //should be float or INT.INT (e.g. 0.6)
 	')'
 ;
 
 TriangleOscillator:
 	'triangleOscillator' name = ID '('
-		'frequency' frequency = INT
-		'amplitude' amplitude = INT //should be float or INT.INT (e.g. 0.6)
+		'frequency' frequency = DOUBLE
+		'amplitude' amplitude = DOUBLE //should be float or INT.INT (e.g. 0.6)
 	')'
 ;
 
 SquareOscillator:
 	'squareOscillator' name = ID '('
-		'frequency' frequency = INT
-		'amplitude' amplitude = INT //should be float or INT.INT (e.g. 0.6)
+		'frequency' frequency = DOUBLE
+		'amplitude' amplitude = DOUBLE //should be float or INT.INT (e.g. 0.6)
 	')'
 ;
 
 PulseOscillator:
 	'pulseOscillator' name = ID '('
-		'frequency' frequency = INT
-		'amplitude' amplitude = INT //should be float or INT.INT (e.g. 0.6)
+		'frequency' frequency = DOUBLE
+		'amplitude' amplitude = DOUBLE //should be float or INT.INT (e.g. 0.6)
 	')'
 ;
 
 ImpulseOscillator:
 	'impulseOscillator' name = ID '('
-		'frequency' frequency = INT
-		'amplitude' amplitude = INT //should be float or INT.INT (e.g. 0.6)
+		'frequency' frequency = DOUBLE
+		'amplitude' amplitude = DOUBLE //should be float or INT.INT (e.g. 0.6)
 	')'
+;
+
+DOUBLE:
+	predecimal = INT '.' decimal = INT
 ;
