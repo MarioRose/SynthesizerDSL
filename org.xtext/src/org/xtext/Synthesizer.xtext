@@ -3,9 +3,10 @@ grammar org.xtext.Synthesizer with org.eclipse.xtext.common.Terminals
 generate synthesizer "http://www.xtext.org/Synthesizer"
 
 Model:
-	'Controls' '{'
+	{Model}
+	('Controls' '{'
 	controls+=ControlElement*
-	'}'
+	'}')?
 	('Sound' '{'
 	sounds+=SoundElement*
 	'}')?
