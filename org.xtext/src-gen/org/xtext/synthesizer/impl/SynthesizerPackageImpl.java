@@ -293,9 +293,29 @@ public class SynthesizerPackageImpl extends EPackageImpl implements SynthesizerP
    * <!-- end-user-doc -->
    * @generated
    */
+  public EReference getControlElement_Sound()
+  {
+    return (EReference)controlElementEClass.getEStructuralFeatures().get(5);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getRotaryKnob()
   {
     return rotaryKnobEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getRotaryKnob_Type()
+  {
+    return (EAttribute)rotaryKnobEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -313,19 +333,9 @@ public class SynthesizerPackageImpl extends EPackageImpl implements SynthesizerP
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getSlider_Sound()
-  {
-    return (EReference)sliderEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EAttribute getSlider_Type()
   {
-    return (EAttribute)sliderEClass.getEStructuralFeatures().get(1);
+    return (EAttribute)sliderEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -376,16 +386,6 @@ public class SynthesizerPackageImpl extends EPackageImpl implements SynthesizerP
   public EClass getButton()
   {
     return buttonEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getButton_Sound()
-  {
-    return (EReference)buttonEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -519,11 +519,12 @@ public class SynthesizerPackageImpl extends EPackageImpl implements SynthesizerP
     createEAttribute(controlElementEClass, CONTROL_ELEMENT__Y);
     createEAttribute(controlElementEClass, CONTROL_ELEMENT__WIDTH);
     createEAttribute(controlElementEClass, CONTROL_ELEMENT__HEIGHT);
+    createEReference(controlElementEClass, CONTROL_ELEMENT__SOUND);
 
     rotaryKnobEClass = createEClass(ROTARY_KNOB);
+    createEAttribute(rotaryKnobEClass, ROTARY_KNOB__TYPE);
 
     sliderEClass = createEClass(SLIDER);
-    createEReference(sliderEClass, SLIDER__SOUND);
     createEAttribute(sliderEClass, SLIDER__TYPE);
 
     soundElementEClass = createEClass(SOUND_ELEMENT);
@@ -532,7 +533,6 @@ public class SynthesizerPackageImpl extends EPackageImpl implements SynthesizerP
     createEAttribute(soundElementEClass, SOUND_ELEMENT__AMPLITUDE);
 
     buttonEClass = createEClass(BUTTON);
-    createEReference(buttonEClass, BUTTON__SOUND);
 
     connectionElementEClass = createEClass(CONNECTION_ELEMENT);
     createEReference(connectionElementEClass, CONNECTION_ELEMENT__CE);
@@ -602,11 +602,12 @@ public class SynthesizerPackageImpl extends EPackageImpl implements SynthesizerP
     initEAttribute(getControlElement_Y(), ecorePackage.getEInt(), "y", null, 0, 1, ControlElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getControlElement_Width(), ecorePackage.getEInt(), "width", null, 0, 1, ControlElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getControlElement_Height(), ecorePackage.getEInt(), "height", null, 0, 1, ControlElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getControlElement_Sound(), this.getSoundElement(), null, "sound", null, 0, 1, ControlElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(rotaryKnobEClass, RotaryKnob.class, "RotaryKnob", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getRotaryKnob_Type(), ecorePackage.getEString(), "type", null, 0, 1, RotaryKnob.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(sliderEClass, Slider.class, "Slider", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getSlider_Sound(), this.getSoundElement(), null, "sound", null, 0, 1, Slider.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getSlider_Type(), ecorePackage.getEString(), "type", null, 0, 1, Slider.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(soundElementEClass, SoundElement.class, "SoundElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -615,7 +616,6 @@ public class SynthesizerPackageImpl extends EPackageImpl implements SynthesizerP
     initEAttribute(getSoundElement_Amplitude(), ecorePackage.getEInt(), "amplitude", null, 0, 1, SoundElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(buttonEClass, Button.class, "Button", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getButton_Sound(), this.getSoundElement(), null, "sound", null, 0, 1, Button.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(connectionElementEClass, ConnectionElement.class, "ConnectionElement", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getConnectionElement_Ce(), this.getControlElement(), null, "ce", null, 0, 1, ConnectionElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

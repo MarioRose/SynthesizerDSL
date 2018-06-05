@@ -159,13 +159,22 @@ public interface SynthesizerPackage extends EPackage
   int CONTROL_ELEMENT__HEIGHT = 4;
 
   /**
+   * The feature id for the '<em><b>Sound</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONTROL_ELEMENT__SOUND = 5;
+
+  /**
    * The number of structural features of the '<em>Control Element</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CONTROL_ELEMENT_FEATURE_COUNT = 5;
+  int CONTROL_ELEMENT_FEATURE_COUNT = 6;
 
   /**
    * The meta object id for the '{@link org.xtext.synthesizer.impl.RotaryKnobImpl <em>Rotary Knob</em>}' class.
@@ -223,13 +232,31 @@ public interface SynthesizerPackage extends EPackage
   int ROTARY_KNOB__HEIGHT = CONTROL_ELEMENT__HEIGHT;
 
   /**
+   * The feature id for the '<em><b>Sound</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ROTARY_KNOB__SOUND = CONTROL_ELEMENT__SOUND;
+
+  /**
+   * The feature id for the '<em><b>Type</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ROTARY_KNOB__TYPE = CONTROL_ELEMENT_FEATURE_COUNT + 0;
+
+  /**
    * The number of structural features of the '<em>Rotary Knob</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ROTARY_KNOB_FEATURE_COUNT = CONTROL_ELEMENT_FEATURE_COUNT + 0;
+  int ROTARY_KNOB_FEATURE_COUNT = CONTROL_ELEMENT_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link org.xtext.synthesizer.impl.SliderImpl <em>Slider</em>}' class.
@@ -293,7 +320,7 @@ public interface SynthesizerPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SLIDER__SOUND = CONTROL_ELEMENT_FEATURE_COUNT + 0;
+  int SLIDER__SOUND = CONTROL_ELEMENT__SOUND;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -302,7 +329,7 @@ public interface SynthesizerPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SLIDER__TYPE = CONTROL_ELEMENT_FEATURE_COUNT + 1;
+  int SLIDER__TYPE = CONTROL_ELEMENT_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Slider</em>' class.
@@ -311,7 +338,7 @@ public interface SynthesizerPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SLIDER_FEATURE_COUNT = CONTROL_ELEMENT_FEATURE_COUNT + 2;
+  int SLIDER_FEATURE_COUNT = CONTROL_ELEMENT_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link org.xtext.synthesizer.impl.SoundElementImpl <em>Sound Element</em>}' class.
@@ -421,7 +448,7 @@ public interface SynthesizerPackage extends EPackage
    * @generated
    * @ordered
    */
-  int BUTTON__SOUND = CONTROL_ELEMENT_FEATURE_COUNT + 0;
+  int BUTTON__SOUND = CONTROL_ELEMENT__SOUND;
 
   /**
    * The number of structural features of the '<em>Button</em>' class.
@@ -430,7 +457,7 @@ public interface SynthesizerPackage extends EPackage
    * @generated
    * @ordered
    */
-  int BUTTON_FEATURE_COUNT = CONTROL_ELEMENT_FEATURE_COUNT + 1;
+  int BUTTON_FEATURE_COUNT = CONTROL_ELEMENT_FEATURE_COUNT + 0;
 
   /**
    * The meta object id for the '{@link org.xtext.synthesizer.impl.ConnectionElementImpl <em>Connection Element</em>}' class.
@@ -855,6 +882,17 @@ public interface SynthesizerPackage extends EPackage
   EAttribute getControlElement_Height();
 
   /**
+   * Returns the meta object for the reference '{@link org.xtext.synthesizer.ControlElement#getSound <em>Sound</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Sound</em>'.
+   * @see org.xtext.synthesizer.ControlElement#getSound()
+   * @see #getControlElement()
+   * @generated
+   */
+  EReference getControlElement_Sound();
+
+  /**
    * Returns the meta object for class '{@link org.xtext.synthesizer.RotaryKnob <em>Rotary Knob</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -865,6 +903,17 @@ public interface SynthesizerPackage extends EPackage
   EClass getRotaryKnob();
 
   /**
+   * Returns the meta object for the attribute '{@link org.xtext.synthesizer.RotaryKnob#getType <em>Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Type</em>'.
+   * @see org.xtext.synthesizer.RotaryKnob#getType()
+   * @see #getRotaryKnob()
+   * @generated
+   */
+  EAttribute getRotaryKnob_Type();
+
+  /**
    * Returns the meta object for class '{@link org.xtext.synthesizer.Slider <em>Slider</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -873,17 +922,6 @@ public interface SynthesizerPackage extends EPackage
    * @generated
    */
   EClass getSlider();
-
-  /**
-   * Returns the meta object for the reference '{@link org.xtext.synthesizer.Slider#getSound <em>Sound</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Sound</em>'.
-   * @see org.xtext.synthesizer.Slider#getSound()
-   * @see #getSlider()
-   * @generated
-   */
-  EReference getSlider_Sound();
 
   /**
    * Returns the meta object for the attribute '{@link org.xtext.synthesizer.Slider#getType <em>Type</em>}'.
@@ -948,17 +986,6 @@ public interface SynthesizerPackage extends EPackage
    * @generated
    */
   EClass getButton();
-
-  /**
-   * Returns the meta object for the reference '{@link org.xtext.synthesizer.Button#getSound <em>Sound</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Sound</em>'.
-   * @see org.xtext.synthesizer.Button#getSound()
-   * @see #getButton()
-   * @generated
-   */
-  EReference getButton_Sound();
 
   /**
    * Returns the meta object for class '{@link org.xtext.synthesizer.ConnectionElement <em>Connection Element</em>}'.
@@ -1160,6 +1187,14 @@ public interface SynthesizerPackage extends EPackage
     EAttribute CONTROL_ELEMENT__HEIGHT = eINSTANCE.getControlElement_Height();
 
     /**
+     * The meta object literal for the '<em><b>Sound</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference CONTROL_ELEMENT__SOUND = eINSTANCE.getControlElement_Sound();
+
+    /**
      * The meta object literal for the '{@link org.xtext.synthesizer.impl.RotaryKnobImpl <em>Rotary Knob</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1170,6 +1205,14 @@ public interface SynthesizerPackage extends EPackage
     EClass ROTARY_KNOB = eINSTANCE.getRotaryKnob();
 
     /**
+     * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ROTARY_KNOB__TYPE = eINSTANCE.getRotaryKnob_Type();
+
+    /**
      * The meta object literal for the '{@link org.xtext.synthesizer.impl.SliderImpl <em>Slider</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1178,14 +1221,6 @@ public interface SynthesizerPackage extends EPackage
      * @generated
      */
     EClass SLIDER = eINSTANCE.getSlider();
-
-    /**
-     * The meta object literal for the '<em><b>Sound</b></em>' reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference SLIDER__SOUND = eINSTANCE.getSlider_Sound();
 
     /**
      * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
@@ -1238,14 +1273,6 @@ public interface SynthesizerPackage extends EPackage
      * @generated
      */
     EClass BUTTON = eINSTANCE.getButton();
-
-    /**
-     * The meta object literal for the '<em><b>Sound</b></em>' reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference BUTTON__SOUND = eINSTANCE.getButton_Sound();
 
     /**
      * The meta object literal for the '{@link org.xtext.synthesizer.impl.ConnectionElementImpl <em>Connection Element</em>}' class.

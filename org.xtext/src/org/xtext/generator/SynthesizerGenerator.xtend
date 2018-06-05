@@ -137,44 +137,27 @@ class SynthesizerGenerator extends AbstractGenerator {
 				.filter(SineOscillator)
 				.map["createSound" + name + "();	       
 				"].join('\n\t\t\t\t')
-				
-				+ '
-
-				'+ resource.allContents
+				+
+				resource.allContents
 				.filter(SawToothOscillator)
 				.map["createSound" + name + "();	       
 				"].join('\n\t\t\t\t')
-				
-				+ '
-
-				'+ resource.allContents
+				+ 
+				resource.allContents
 				.filter(TriangleOscillator)
 				.map["createSound" + name + "();	       
 				"].join('\n\t\t\t\t')
-				
-				+ '
-
-				'+ resource.allContents
+				+
+				resource.allContents
 				.filter(SquareOscillator)
 				.map["createSound" + name + "();	       
 				"].join('\n\t\t\t\t')
-				
-				+ '
-
-				'+ resource.allContents
+				+
+				resource.allContents
 				.filter(PulseOscillator)
 				.map["createSound" + name + "();	       
 				"].join('\n\t\t\t\t')
-				
 				+ '
-
-				'+ resource.allContents
-				.filter(ImpulseOscillator)
-				.map["createSound" + name + "();	       
-				"].join('\n\t\t\t\t')
-				
-				+ '
-
 		    	createAndShowGUI();
 			}
 			
@@ -383,54 +366,21 @@ class SynthesizerGenerator extends AbstractGenerator {
 		        '].join('\n\t\t\t\t')
 		        + '
 
-				//Example ramp for slider
-		       	LinearRamp freqRamp = new LinearRamp();
-		        freqRamp.input.setup(50.0, 300.0, 20000.0);
-		        freqRamp.input.setName("Frequency");
-				freqRamp.time.set(0.1);
-
-		        //Create Slider
+		        //Create Sliders
 				'+ resource.allContents
 				.filter(Slider)
 				.map["DoubleBoundedRangeSlider slider" + name + ' = PortControllerFactory.createExponentialPortSlider(osc'+ sound.name + '.' + type + ');
 				slider' + name + '.setBounds(' + x + ', ' + y + ', ' + width + ', ' + height + ');  // x, y, width, height
-				panel.add(slider' + name +");"
-						        ].join('\n\t\t\t\t')
-						   
+				panel.add(slider' + name +");"].join('\n\t\t\t\t')  
 				+ '
 
-
-				//Example input for knobs
-		        Synthesizer synth = JSyn.createSynthesizer();
-
-		        // Add a tone generator. (band limited sawtooth)
-		        SawtoothOscillatorBL osc;
-		        synth.add(osc = new SawtoothOscillatorBL());
-		        // Add a lag to smooth out amplitude changes and avoid pops.
-		        LinearRamp lag;
-		        synth.add(lag = new LinearRamp());
-		        // Add an output mixer.
-		        LineOut lineOut;
-		        synth.add(lineOut = new LineOut());
-
-		        // Connect the oscillator to both left and right output.
-		        osc.output.connect(0, lineOut.input, 0);
-		        osc.output.connect(0, lineOut.input, 1);
-		
-		        // Set the minimum, current and maximum values for the port.
-		        lag.output.connect(osc.amplitude);
-		        lag.input.setup(0.0, 0.5, 1.0);
-		        lag.time.set(0.2);
-
-        		ExponentialRangeModel amplitudeModel = PortModelFactory.createExponentialModel(lag.input);
-
-		        //Create RotaryKnob
+		        //Create RotaryKnobs
 				'+ resource.allContents
 				.filter(RotaryKnob)
-				.map["RotaryTextController knob" + name + ' = new RotaryTextController(amplitudeModel, 10);
+				.map["ExponentialRangeModel model" + name +" = PortModelFactory.createExponentialModel(osc"+ sound.name + "." + type + ");
+				RotaryTextController knob" + name + ' = new RotaryTextController(model' + name +', 1);
 				knob' + name + '.setBounds(' + x + ', ' + y + ', ' + width + ', ' + height + ');  // x, y, width, height
-				panel.add(knob' + name +");"
-						        ].join('\n\t\t\t\t')
+				panel.add(knob' + name +");"].join('\n\t\t\t\t')
 						   
 				+ '
 			}'

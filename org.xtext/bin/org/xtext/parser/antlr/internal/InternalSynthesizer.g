@@ -351,9 +351,49 @@ ruleRotaryKnob returns [EObject current=null]
 				}
 			)
 		)
-		otherlv_11=')'
+		otherlv_11='sound'
 		{
-			newLeafNode(otherlv_11, grammarAccess.getRotaryKnobAccess().getRightParenthesisKeyword_11());
+			newLeafNode(otherlv_11, grammarAccess.getRotaryKnobAccess().getSoundKeyword_11());
+		}
+		(
+			(
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getRotaryKnobRule());
+					}
+				}
+				otherlv_12=RULE_ID
+				{
+					newLeafNode(otherlv_12, grammarAccess.getRotaryKnobAccess().getSoundSoundElementCrossReference_12_0());
+				}
+			)
+		)
+		otherlv_13='effect'
+		{
+			newLeafNode(otherlv_13, grammarAccess.getRotaryKnobAccess().getEffectKeyword_13());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getRotaryKnobAccess().getTypeEffectParserRuleCall_14_0());
+				}
+				lv_type_14_0=ruleEffect
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getRotaryKnobRule());
+					}
+					set(
+						$current,
+						"type",
+						lv_type_14_0,
+						"org.xtext.Synthesizer.Effect");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_15=')'
+		{
+			newLeafNode(otherlv_15, grammarAccess.getRotaryKnobAccess().getRightParenthesisKeyword_15());
 		}
 	)
 ;

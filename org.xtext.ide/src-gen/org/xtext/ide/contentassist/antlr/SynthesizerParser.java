@@ -55,6 +55,8 @@ public class SynthesizerParser extends AbstractContentAssistParser {
 					put(grammarAccess.getRotaryKnobAccess().getYAssignment_6(), "rule__RotaryKnob__YAssignment_6");
 					put(grammarAccess.getRotaryKnobAccess().getWidthAssignment_8(), "rule__RotaryKnob__WidthAssignment_8");
 					put(grammarAccess.getRotaryKnobAccess().getHeightAssignment_10(), "rule__RotaryKnob__HeightAssignment_10");
+					put(grammarAccess.getRotaryKnobAccess().getSoundAssignment_12(), "rule__RotaryKnob__SoundAssignment_12");
+					put(grammarAccess.getRotaryKnobAccess().getTypeAssignment_14(), "rule__RotaryKnob__TypeAssignment_14");
 					put(grammarAccess.getSliderAccess().getNameAssignment_1(), "rule__Slider__NameAssignment_1");
 					put(grammarAccess.getSliderAccess().getXAssignment_4(), "rule__Slider__XAssignment_4");
 					put(grammarAccess.getSliderAccess().getYAssignment_6(), "rule__Slider__YAssignment_6");

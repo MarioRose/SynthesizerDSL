@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalSynthesizerParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'frequency'", "'amplitude'", "'Controls'", "'{'", "'}'", "'Sound'", "'Connections'", "'rotaryKnob'", "'('", "'x'", "'y'", "'width'", "'height'", "')'", "'slider'", "'sound'", "'effect'", "'button'", "'linear'", "'sawToothOscillator'", "'sineOscillator'", "'triangleOscillator'", "'squareOscillator'", "'pulseOscillator'", "'impulseOscillator'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'frequency'", "'amplitude'", "'Controls'", "'{'", "'}'", "'Sound'", "'Connections'", "'rotaryKnob'", "'('", "'x'", "'y'", "'width'", "'height'", "'sound'", "'effect'", "')'", "'slider'", "'button'", "'linear'", "'sawToothOscillator'", "'sineOscillator'", "'triangleOscillator'", "'squareOscillator'", "'pulseOscillator'"
     };
     public static final int RULE_STRING=6;
     public static final int RULE_SL_COMMENT=8;
@@ -1191,7 +1191,7 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
                 alt1=2;
                 }
                 break;
-            case 25:
+            case 27:
                 {
                 alt1=3;
                 }
@@ -1736,7 +1736,7 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
                 int alt4=2;
                 int LA4_0 = input.LA(1);
 
-                if ( (LA4_0==18||LA4_0==25||LA4_0==28) ) {
+                if ( (LA4_0==18||(LA4_0>=27 && LA4_0<=28)) ) {
                     alt4=1;
                 }
 
@@ -3565,17 +3565,22 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__RotaryKnob__Group__11"
-    // InternalSynthesizer.g:1170:1: rule__RotaryKnob__Group__11 : rule__RotaryKnob__Group__11__Impl ;
+    // InternalSynthesizer.g:1139:1: rule__RotaryKnob__Group__11 : rule__RotaryKnob__Group__11__Impl rule__RotaryKnob__Group__12 ;
     public final void rule__RotaryKnob__Group__11() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:1174:1: ( rule__RotaryKnob__Group__11__Impl )
-            // InternalSynthesizer.g:1175:2: rule__RotaryKnob__Group__11__Impl
+            // InternalSynthesizer.g:1143:1: ( rule__RotaryKnob__Group__11__Impl rule__RotaryKnob__Group__12 )
+            // InternalSynthesizer.g:1144:2: rule__RotaryKnob__Group__11__Impl rule__RotaryKnob__Group__12
             {
-            pushFollow(FOLLOW_2);
+            pushFollow(FOLLOW_11);
             rule__RotaryKnob__Group__11__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__RotaryKnob__Group__12();
 
             state._fsp--;
 
@@ -3598,21 +3603,21 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__RotaryKnob__Group__11__Impl"
-    // InternalSynthesizer.g:1181:1: rule__RotaryKnob__Group__11__Impl : ( ')' ) ;
+    // InternalSynthesizer.g:1151:1: rule__RotaryKnob__Group__11__Impl : ( 'sound' ) ;
     public final void rule__RotaryKnob__Group__11__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:1185:1: ( ( ')' ) )
-            // InternalSynthesizer.g:1186:1: ( ')' )
+            // InternalSynthesizer.g:1155:1: ( ( 'sound' ) )
+            // InternalSynthesizer.g:1156:1: ( 'sound' )
             {
-            // InternalSynthesizer.g:1186:1: ( ')' )
-            // InternalSynthesizer.g:1187:2: ')'
+            // InternalSynthesizer.g:1156:1: ( 'sound' )
+            // InternalSynthesizer.g:1157:2: 'sound'
             {
-             before(grammarAccess.getRotaryKnobAccess().getRightParenthesisKeyword_11()); 
+             before(grammarAccess.getRotaryKnobAccess().getSoundKeyword_11()); 
             match(input,24,FOLLOW_2); 
-             after(grammarAccess.getRotaryKnobAccess().getRightParenthesisKeyword_11()); 
+             after(grammarAccess.getRotaryKnobAccess().getSoundKeyword_11()); 
 
             }
 
@@ -3634,15 +3639,330 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
     // $ANTLR end "rule__RotaryKnob__Group__11__Impl"
 
 
+    // $ANTLR start "rule__RotaryKnob__Group__12"
+    // InternalSynthesizer.g:1166:1: rule__RotaryKnob__Group__12 : rule__RotaryKnob__Group__12__Impl rule__RotaryKnob__Group__13 ;
+    public final void rule__RotaryKnob__Group__12() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSynthesizer.g:1170:1: ( rule__RotaryKnob__Group__12__Impl rule__RotaryKnob__Group__13 )
+            // InternalSynthesizer.g:1171:2: rule__RotaryKnob__Group__12__Impl rule__RotaryKnob__Group__13
+            {
+            pushFollow(FOLLOW_19);
+            rule__RotaryKnob__Group__12__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__RotaryKnob__Group__13();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__RotaryKnob__Group__12"
+
+
+    // $ANTLR start "rule__RotaryKnob__Group__12__Impl"
+    // InternalSynthesizer.g:1178:1: rule__RotaryKnob__Group__12__Impl : ( ( rule__RotaryKnob__SoundAssignment_12 ) ) ;
+    public final void rule__RotaryKnob__Group__12__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSynthesizer.g:1182:1: ( ( ( rule__RotaryKnob__SoundAssignment_12 ) ) )
+            // InternalSynthesizer.g:1183:1: ( ( rule__RotaryKnob__SoundAssignment_12 ) )
+            {
+            // InternalSynthesizer.g:1183:1: ( ( rule__RotaryKnob__SoundAssignment_12 ) )
+            // InternalSynthesizer.g:1184:2: ( rule__RotaryKnob__SoundAssignment_12 )
+            {
+             before(grammarAccess.getRotaryKnobAccess().getSoundAssignment_12()); 
+            // InternalSynthesizer.g:1185:2: ( rule__RotaryKnob__SoundAssignment_12 )
+            // InternalSynthesizer.g:1185:3: rule__RotaryKnob__SoundAssignment_12
+            {
+            pushFollow(FOLLOW_2);
+            rule__RotaryKnob__SoundAssignment_12();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getRotaryKnobAccess().getSoundAssignment_12()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__RotaryKnob__Group__12__Impl"
+
+
+    // $ANTLR start "rule__RotaryKnob__Group__13"
+    // InternalSynthesizer.g:1193:1: rule__RotaryKnob__Group__13 : rule__RotaryKnob__Group__13__Impl rule__RotaryKnob__Group__14 ;
+    public final void rule__RotaryKnob__Group__13() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSynthesizer.g:1197:1: ( rule__RotaryKnob__Group__13__Impl rule__RotaryKnob__Group__14 )
+            // InternalSynthesizer.g:1198:2: rule__RotaryKnob__Group__13__Impl rule__RotaryKnob__Group__14
+            {
+            pushFollow(FOLLOW_20);
+            rule__RotaryKnob__Group__13__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__RotaryKnob__Group__14();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__RotaryKnob__Group__13"
+
+
+    // $ANTLR start "rule__RotaryKnob__Group__13__Impl"
+    // InternalSynthesizer.g:1205:1: rule__RotaryKnob__Group__13__Impl : ( 'effect' ) ;
+    public final void rule__RotaryKnob__Group__13__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSynthesizer.g:1209:1: ( ( 'effect' ) )
+            // InternalSynthesizer.g:1210:1: ( 'effect' )
+            {
+            // InternalSynthesizer.g:1210:1: ( 'effect' )
+            // InternalSynthesizer.g:1211:2: 'effect'
+            {
+             before(grammarAccess.getRotaryKnobAccess().getEffectKeyword_13()); 
+            match(input,25,FOLLOW_2); 
+             after(grammarAccess.getRotaryKnobAccess().getEffectKeyword_13()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__RotaryKnob__Group__13__Impl"
+
+
+    // $ANTLR start "rule__RotaryKnob__Group__14"
+    // InternalSynthesizer.g:1220:1: rule__RotaryKnob__Group__14 : rule__RotaryKnob__Group__14__Impl rule__RotaryKnob__Group__15 ;
+    public final void rule__RotaryKnob__Group__14() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSynthesizer.g:1224:1: ( rule__RotaryKnob__Group__14__Impl rule__RotaryKnob__Group__15 )
+            // InternalSynthesizer.g:1225:2: rule__RotaryKnob__Group__14__Impl rule__RotaryKnob__Group__15
+            {
+            pushFollow(FOLLOW_21);
+            rule__RotaryKnob__Group__14__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__RotaryKnob__Group__15();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__RotaryKnob__Group__14"
+
+
+    // $ANTLR start "rule__RotaryKnob__Group__14__Impl"
+    // InternalSynthesizer.g:1232:1: rule__RotaryKnob__Group__14__Impl : ( ( rule__RotaryKnob__TypeAssignment_14 ) ) ;
+    public final void rule__RotaryKnob__Group__14__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSynthesizer.g:1236:1: ( ( ( rule__RotaryKnob__TypeAssignment_14 ) ) )
+            // InternalSynthesizer.g:1237:1: ( ( rule__RotaryKnob__TypeAssignment_14 ) )
+            {
+            // InternalSynthesizer.g:1237:1: ( ( rule__RotaryKnob__TypeAssignment_14 ) )
+            // InternalSynthesizer.g:1238:2: ( rule__RotaryKnob__TypeAssignment_14 )
+            {
+             before(grammarAccess.getRotaryKnobAccess().getTypeAssignment_14()); 
+            // InternalSynthesizer.g:1239:2: ( rule__RotaryKnob__TypeAssignment_14 )
+            // InternalSynthesizer.g:1239:3: rule__RotaryKnob__TypeAssignment_14
+            {
+            pushFollow(FOLLOW_2);
+            rule__RotaryKnob__TypeAssignment_14();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getRotaryKnobAccess().getTypeAssignment_14()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__RotaryKnob__Group__14__Impl"
+
+
+    // $ANTLR start "rule__RotaryKnob__Group__15"
+    // InternalSynthesizer.g:1247:1: rule__RotaryKnob__Group__15 : rule__RotaryKnob__Group__15__Impl ;
+    public final void rule__RotaryKnob__Group__15() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSynthesizer.g:1251:1: ( rule__RotaryKnob__Group__15__Impl )
+            // InternalSynthesizer.g:1252:2: rule__RotaryKnob__Group__15__Impl
+            {
+            pushFollow(FOLLOW_2);
+            rule__RotaryKnob__Group__15__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__RotaryKnob__Group__15"
+
+
+    // $ANTLR start "rule__RotaryKnob__Group__15__Impl"
+    // InternalSynthesizer.g:1258:1: rule__RotaryKnob__Group__15__Impl : ( ')' ) ;
+    public final void rule__RotaryKnob__Group__15__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSynthesizer.g:1262:1: ( ( ')' ) )
+            // InternalSynthesizer.g:1263:1: ( ')' )
+            {
+            // InternalSynthesizer.g:1263:1: ( ')' )
+            // InternalSynthesizer.g:1264:2: ')'
+            {
+             before(grammarAccess.getRotaryKnobAccess().getRightParenthesisKeyword_15()); 
+            match(input,26,FOLLOW_2); 
+             after(grammarAccess.getRotaryKnobAccess().getRightParenthesisKeyword_15()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__RotaryKnob__Group__15__Impl"
+
+
     // $ANTLR start "rule__Slider__Group__0"
-    // InternalSynthesizer.g:1197:1: rule__Slider__Group__0 : rule__Slider__Group__0__Impl rule__Slider__Group__1 ;
+    // InternalSynthesizer.g:1274:1: rule__Slider__Group__0 : rule__Slider__Group__0__Impl rule__Slider__Group__1 ;
     public final void rule__Slider__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:1201:1: ( rule__Slider__Group__0__Impl rule__Slider__Group__1 )
-            // InternalSynthesizer.g:1202:2: rule__Slider__Group__0__Impl rule__Slider__Group__1
+            // InternalSynthesizer.g:1278:1: ( rule__Slider__Group__0__Impl rule__Slider__Group__1 )
+            // InternalSynthesizer.g:1279:2: rule__Slider__Group__0__Impl rule__Slider__Group__1
             {
             pushFollow(FOLLOW_11);
             rule__Slider__Group__0__Impl();
@@ -3673,20 +3993,20 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Slider__Group__0__Impl"
-    // InternalSynthesizer.g:1209:1: rule__Slider__Group__0__Impl : ( 'slider' ) ;
+    // InternalSynthesizer.g:1286:1: rule__Slider__Group__0__Impl : ( 'slider' ) ;
     public final void rule__Slider__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:1213:1: ( ( 'slider' ) )
-            // InternalSynthesizer.g:1214:1: ( 'slider' )
+            // InternalSynthesizer.g:1290:1: ( ( 'slider' ) )
+            // InternalSynthesizer.g:1291:1: ( 'slider' )
             {
-            // InternalSynthesizer.g:1214:1: ( 'slider' )
-            // InternalSynthesizer.g:1215:2: 'slider'
+            // InternalSynthesizer.g:1291:1: ( 'slider' )
+            // InternalSynthesizer.g:1292:2: 'slider'
             {
              before(grammarAccess.getSliderAccess().getSliderKeyword_0()); 
-            match(input,25,FOLLOW_2); 
+            match(input,27,FOLLOW_2); 
              after(grammarAccess.getSliderAccess().getSliderKeyword_0()); 
 
             }
@@ -3710,14 +4030,14 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Slider__Group__1"
-    // InternalSynthesizer.g:1224:1: rule__Slider__Group__1 : rule__Slider__Group__1__Impl rule__Slider__Group__2 ;
+    // InternalSynthesizer.g:1301:1: rule__Slider__Group__1 : rule__Slider__Group__1__Impl rule__Slider__Group__2 ;
     public final void rule__Slider__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:1228:1: ( rule__Slider__Group__1__Impl rule__Slider__Group__2 )
-            // InternalSynthesizer.g:1229:2: rule__Slider__Group__1__Impl rule__Slider__Group__2
+            // InternalSynthesizer.g:1305:1: ( rule__Slider__Group__1__Impl rule__Slider__Group__2 )
+            // InternalSynthesizer.g:1306:2: rule__Slider__Group__1__Impl rule__Slider__Group__2
             {
             pushFollow(FOLLOW_12);
             rule__Slider__Group__1__Impl();
@@ -3748,21 +4068,21 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Slider__Group__1__Impl"
-    // InternalSynthesizer.g:1236:1: rule__Slider__Group__1__Impl : ( ( rule__Slider__NameAssignment_1 ) ) ;
+    // InternalSynthesizer.g:1313:1: rule__Slider__Group__1__Impl : ( ( rule__Slider__NameAssignment_1 ) ) ;
     public final void rule__Slider__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:1240:1: ( ( ( rule__Slider__NameAssignment_1 ) ) )
-            // InternalSynthesizer.g:1241:1: ( ( rule__Slider__NameAssignment_1 ) )
+            // InternalSynthesizer.g:1317:1: ( ( ( rule__Slider__NameAssignment_1 ) ) )
+            // InternalSynthesizer.g:1318:1: ( ( rule__Slider__NameAssignment_1 ) )
             {
-            // InternalSynthesizer.g:1241:1: ( ( rule__Slider__NameAssignment_1 ) )
-            // InternalSynthesizer.g:1242:2: ( rule__Slider__NameAssignment_1 )
+            // InternalSynthesizer.g:1318:1: ( ( rule__Slider__NameAssignment_1 ) )
+            // InternalSynthesizer.g:1319:2: ( rule__Slider__NameAssignment_1 )
             {
              before(grammarAccess.getSliderAccess().getNameAssignment_1()); 
-            // InternalSynthesizer.g:1243:2: ( rule__Slider__NameAssignment_1 )
-            // InternalSynthesizer.g:1243:3: rule__Slider__NameAssignment_1
+            // InternalSynthesizer.g:1320:2: ( rule__Slider__NameAssignment_1 )
+            // InternalSynthesizer.g:1320:3: rule__Slider__NameAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__Slider__NameAssignment_1();
@@ -3795,14 +4115,14 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Slider__Group__2"
-    // InternalSynthesizer.g:1251:1: rule__Slider__Group__2 : rule__Slider__Group__2__Impl rule__Slider__Group__3 ;
+    // InternalSynthesizer.g:1328:1: rule__Slider__Group__2 : rule__Slider__Group__2__Impl rule__Slider__Group__3 ;
     public final void rule__Slider__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:1255:1: ( rule__Slider__Group__2__Impl rule__Slider__Group__3 )
-            // InternalSynthesizer.g:1256:2: rule__Slider__Group__2__Impl rule__Slider__Group__3
+            // InternalSynthesizer.g:1332:1: ( rule__Slider__Group__2__Impl rule__Slider__Group__3 )
+            // InternalSynthesizer.g:1333:2: rule__Slider__Group__2__Impl rule__Slider__Group__3
             {
             pushFollow(FOLLOW_13);
             rule__Slider__Group__2__Impl();
@@ -3833,17 +4153,17 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Slider__Group__2__Impl"
-    // InternalSynthesizer.g:1263:1: rule__Slider__Group__2__Impl : ( '(' ) ;
+    // InternalSynthesizer.g:1340:1: rule__Slider__Group__2__Impl : ( '(' ) ;
     public final void rule__Slider__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:1267:1: ( ( '(' ) )
-            // InternalSynthesizer.g:1268:1: ( '(' )
+            // InternalSynthesizer.g:1344:1: ( ( '(' ) )
+            // InternalSynthesizer.g:1345:1: ( '(' )
             {
-            // InternalSynthesizer.g:1268:1: ( '(' )
-            // InternalSynthesizer.g:1269:2: '('
+            // InternalSynthesizer.g:1345:1: ( '(' )
+            // InternalSynthesizer.g:1346:2: '('
             {
              before(grammarAccess.getSliderAccess().getLeftParenthesisKeyword_2()); 
             match(input,19,FOLLOW_2); 
@@ -3870,14 +4190,14 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Slider__Group__3"
-    // InternalSynthesizer.g:1278:1: rule__Slider__Group__3 : rule__Slider__Group__3__Impl rule__Slider__Group__4 ;
+    // InternalSynthesizer.g:1355:1: rule__Slider__Group__3 : rule__Slider__Group__3__Impl rule__Slider__Group__4 ;
     public final void rule__Slider__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:1282:1: ( rule__Slider__Group__3__Impl rule__Slider__Group__4 )
-            // InternalSynthesizer.g:1283:2: rule__Slider__Group__3__Impl rule__Slider__Group__4
+            // InternalSynthesizer.g:1359:1: ( rule__Slider__Group__3__Impl rule__Slider__Group__4 )
+            // InternalSynthesizer.g:1360:2: rule__Slider__Group__3__Impl rule__Slider__Group__4
             {
             pushFollow(FOLLOW_14);
             rule__Slider__Group__3__Impl();
@@ -3908,17 +4228,17 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Slider__Group__3__Impl"
-    // InternalSynthesizer.g:1290:1: rule__Slider__Group__3__Impl : ( 'x' ) ;
+    // InternalSynthesizer.g:1367:1: rule__Slider__Group__3__Impl : ( 'x' ) ;
     public final void rule__Slider__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:1294:1: ( ( 'x' ) )
-            // InternalSynthesizer.g:1295:1: ( 'x' )
+            // InternalSynthesizer.g:1371:1: ( ( 'x' ) )
+            // InternalSynthesizer.g:1372:1: ( 'x' )
             {
-            // InternalSynthesizer.g:1295:1: ( 'x' )
-            // InternalSynthesizer.g:1296:2: 'x'
+            // InternalSynthesizer.g:1372:1: ( 'x' )
+            // InternalSynthesizer.g:1373:2: 'x'
             {
              before(grammarAccess.getSliderAccess().getXKeyword_3()); 
             match(input,20,FOLLOW_2); 
@@ -3945,14 +4265,14 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Slider__Group__4"
-    // InternalSynthesizer.g:1305:1: rule__Slider__Group__4 : rule__Slider__Group__4__Impl rule__Slider__Group__5 ;
+    // InternalSynthesizer.g:1382:1: rule__Slider__Group__4 : rule__Slider__Group__4__Impl rule__Slider__Group__5 ;
     public final void rule__Slider__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:1309:1: ( rule__Slider__Group__4__Impl rule__Slider__Group__5 )
-            // InternalSynthesizer.g:1310:2: rule__Slider__Group__4__Impl rule__Slider__Group__5
+            // InternalSynthesizer.g:1386:1: ( rule__Slider__Group__4__Impl rule__Slider__Group__5 )
+            // InternalSynthesizer.g:1387:2: rule__Slider__Group__4__Impl rule__Slider__Group__5
             {
             pushFollow(FOLLOW_15);
             rule__Slider__Group__4__Impl();
@@ -3983,21 +4303,21 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Slider__Group__4__Impl"
-    // InternalSynthesizer.g:1317:1: rule__Slider__Group__4__Impl : ( ( rule__Slider__XAssignment_4 ) ) ;
+    // InternalSynthesizer.g:1394:1: rule__Slider__Group__4__Impl : ( ( rule__Slider__XAssignment_4 ) ) ;
     public final void rule__Slider__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:1321:1: ( ( ( rule__Slider__XAssignment_4 ) ) )
-            // InternalSynthesizer.g:1322:1: ( ( rule__Slider__XAssignment_4 ) )
+            // InternalSynthesizer.g:1398:1: ( ( ( rule__Slider__XAssignment_4 ) ) )
+            // InternalSynthesizer.g:1399:1: ( ( rule__Slider__XAssignment_4 ) )
             {
-            // InternalSynthesizer.g:1322:1: ( ( rule__Slider__XAssignment_4 ) )
-            // InternalSynthesizer.g:1323:2: ( rule__Slider__XAssignment_4 )
+            // InternalSynthesizer.g:1399:1: ( ( rule__Slider__XAssignment_4 ) )
+            // InternalSynthesizer.g:1400:2: ( rule__Slider__XAssignment_4 )
             {
              before(grammarAccess.getSliderAccess().getXAssignment_4()); 
-            // InternalSynthesizer.g:1324:2: ( rule__Slider__XAssignment_4 )
-            // InternalSynthesizer.g:1324:3: rule__Slider__XAssignment_4
+            // InternalSynthesizer.g:1401:2: ( rule__Slider__XAssignment_4 )
+            // InternalSynthesizer.g:1401:3: rule__Slider__XAssignment_4
             {
             pushFollow(FOLLOW_2);
             rule__Slider__XAssignment_4();
@@ -4030,14 +4350,14 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Slider__Group__5"
-    // InternalSynthesizer.g:1332:1: rule__Slider__Group__5 : rule__Slider__Group__5__Impl rule__Slider__Group__6 ;
+    // InternalSynthesizer.g:1409:1: rule__Slider__Group__5 : rule__Slider__Group__5__Impl rule__Slider__Group__6 ;
     public final void rule__Slider__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:1336:1: ( rule__Slider__Group__5__Impl rule__Slider__Group__6 )
-            // InternalSynthesizer.g:1337:2: rule__Slider__Group__5__Impl rule__Slider__Group__6
+            // InternalSynthesizer.g:1413:1: ( rule__Slider__Group__5__Impl rule__Slider__Group__6 )
+            // InternalSynthesizer.g:1414:2: rule__Slider__Group__5__Impl rule__Slider__Group__6
             {
             pushFollow(FOLLOW_14);
             rule__Slider__Group__5__Impl();
@@ -4068,17 +4388,17 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Slider__Group__5__Impl"
-    // InternalSynthesizer.g:1344:1: rule__Slider__Group__5__Impl : ( 'y' ) ;
+    // InternalSynthesizer.g:1421:1: rule__Slider__Group__5__Impl : ( 'y' ) ;
     public final void rule__Slider__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:1348:1: ( ( 'y' ) )
-            // InternalSynthesizer.g:1349:1: ( 'y' )
+            // InternalSynthesizer.g:1425:1: ( ( 'y' ) )
+            // InternalSynthesizer.g:1426:1: ( 'y' )
             {
-            // InternalSynthesizer.g:1349:1: ( 'y' )
-            // InternalSynthesizer.g:1350:2: 'y'
+            // InternalSynthesizer.g:1426:1: ( 'y' )
+            // InternalSynthesizer.g:1427:2: 'y'
             {
              before(grammarAccess.getSliderAccess().getYKeyword_5()); 
             match(input,21,FOLLOW_2); 
@@ -4105,14 +4425,14 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Slider__Group__6"
-    // InternalSynthesizer.g:1359:1: rule__Slider__Group__6 : rule__Slider__Group__6__Impl rule__Slider__Group__7 ;
+    // InternalSynthesizer.g:1436:1: rule__Slider__Group__6 : rule__Slider__Group__6__Impl rule__Slider__Group__7 ;
     public final void rule__Slider__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:1363:1: ( rule__Slider__Group__6__Impl rule__Slider__Group__7 )
-            // InternalSynthesizer.g:1364:2: rule__Slider__Group__6__Impl rule__Slider__Group__7
+            // InternalSynthesizer.g:1440:1: ( rule__Slider__Group__6__Impl rule__Slider__Group__7 )
+            // InternalSynthesizer.g:1441:2: rule__Slider__Group__6__Impl rule__Slider__Group__7
             {
             pushFollow(FOLLOW_16);
             rule__Slider__Group__6__Impl();
@@ -4143,21 +4463,21 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Slider__Group__6__Impl"
-    // InternalSynthesizer.g:1371:1: rule__Slider__Group__6__Impl : ( ( rule__Slider__YAssignment_6 ) ) ;
+    // InternalSynthesizer.g:1448:1: rule__Slider__Group__6__Impl : ( ( rule__Slider__YAssignment_6 ) ) ;
     public final void rule__Slider__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:1375:1: ( ( ( rule__Slider__YAssignment_6 ) ) )
-            // InternalSynthesizer.g:1376:1: ( ( rule__Slider__YAssignment_6 ) )
+            // InternalSynthesizer.g:1452:1: ( ( ( rule__Slider__YAssignment_6 ) ) )
+            // InternalSynthesizer.g:1453:1: ( ( rule__Slider__YAssignment_6 ) )
             {
-            // InternalSynthesizer.g:1376:1: ( ( rule__Slider__YAssignment_6 ) )
-            // InternalSynthesizer.g:1377:2: ( rule__Slider__YAssignment_6 )
+            // InternalSynthesizer.g:1453:1: ( ( rule__Slider__YAssignment_6 ) )
+            // InternalSynthesizer.g:1454:2: ( rule__Slider__YAssignment_6 )
             {
              before(grammarAccess.getSliderAccess().getYAssignment_6()); 
-            // InternalSynthesizer.g:1378:2: ( rule__Slider__YAssignment_6 )
-            // InternalSynthesizer.g:1378:3: rule__Slider__YAssignment_6
+            // InternalSynthesizer.g:1455:2: ( rule__Slider__YAssignment_6 )
+            // InternalSynthesizer.g:1455:3: rule__Slider__YAssignment_6
             {
             pushFollow(FOLLOW_2);
             rule__Slider__YAssignment_6();
@@ -4190,14 +4510,14 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Slider__Group__7"
-    // InternalSynthesizer.g:1386:1: rule__Slider__Group__7 : rule__Slider__Group__7__Impl rule__Slider__Group__8 ;
+    // InternalSynthesizer.g:1463:1: rule__Slider__Group__7 : rule__Slider__Group__7__Impl rule__Slider__Group__8 ;
     public final void rule__Slider__Group__7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:1390:1: ( rule__Slider__Group__7__Impl rule__Slider__Group__8 )
-            // InternalSynthesizer.g:1391:2: rule__Slider__Group__7__Impl rule__Slider__Group__8
+            // InternalSynthesizer.g:1467:1: ( rule__Slider__Group__7__Impl rule__Slider__Group__8 )
+            // InternalSynthesizer.g:1468:2: rule__Slider__Group__7__Impl rule__Slider__Group__8
             {
             pushFollow(FOLLOW_14);
             rule__Slider__Group__7__Impl();
@@ -4228,17 +4548,17 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Slider__Group__7__Impl"
-    // InternalSynthesizer.g:1398:1: rule__Slider__Group__7__Impl : ( 'width' ) ;
+    // InternalSynthesizer.g:1475:1: rule__Slider__Group__7__Impl : ( 'width' ) ;
     public final void rule__Slider__Group__7__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:1402:1: ( ( 'width' ) )
-            // InternalSynthesizer.g:1403:1: ( 'width' )
+            // InternalSynthesizer.g:1479:1: ( ( 'width' ) )
+            // InternalSynthesizer.g:1480:1: ( 'width' )
             {
-            // InternalSynthesizer.g:1403:1: ( 'width' )
-            // InternalSynthesizer.g:1404:2: 'width'
+            // InternalSynthesizer.g:1480:1: ( 'width' )
+            // InternalSynthesizer.g:1481:2: 'width'
             {
              before(grammarAccess.getSliderAccess().getWidthKeyword_7()); 
             match(input,22,FOLLOW_2); 
@@ -4265,14 +4585,14 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Slider__Group__8"
-    // InternalSynthesizer.g:1413:1: rule__Slider__Group__8 : rule__Slider__Group__8__Impl rule__Slider__Group__9 ;
+    // InternalSynthesizer.g:1490:1: rule__Slider__Group__8 : rule__Slider__Group__8__Impl rule__Slider__Group__9 ;
     public final void rule__Slider__Group__8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:1417:1: ( rule__Slider__Group__8__Impl rule__Slider__Group__9 )
-            // InternalSynthesizer.g:1418:2: rule__Slider__Group__8__Impl rule__Slider__Group__9
+            // InternalSynthesizer.g:1494:1: ( rule__Slider__Group__8__Impl rule__Slider__Group__9 )
+            // InternalSynthesizer.g:1495:2: rule__Slider__Group__8__Impl rule__Slider__Group__9
             {
             pushFollow(FOLLOW_17);
             rule__Slider__Group__8__Impl();
@@ -4303,21 +4623,21 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Slider__Group__8__Impl"
-    // InternalSynthesizer.g:1425:1: rule__Slider__Group__8__Impl : ( ( rule__Slider__WidthAssignment_8 ) ) ;
+    // InternalSynthesizer.g:1502:1: rule__Slider__Group__8__Impl : ( ( rule__Slider__WidthAssignment_8 ) ) ;
     public final void rule__Slider__Group__8__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:1429:1: ( ( ( rule__Slider__WidthAssignment_8 ) ) )
-            // InternalSynthesizer.g:1430:1: ( ( rule__Slider__WidthAssignment_8 ) )
+            // InternalSynthesizer.g:1506:1: ( ( ( rule__Slider__WidthAssignment_8 ) ) )
+            // InternalSynthesizer.g:1507:1: ( ( rule__Slider__WidthAssignment_8 ) )
             {
-            // InternalSynthesizer.g:1430:1: ( ( rule__Slider__WidthAssignment_8 ) )
-            // InternalSynthesizer.g:1431:2: ( rule__Slider__WidthAssignment_8 )
+            // InternalSynthesizer.g:1507:1: ( ( rule__Slider__WidthAssignment_8 ) )
+            // InternalSynthesizer.g:1508:2: ( rule__Slider__WidthAssignment_8 )
             {
              before(grammarAccess.getSliderAccess().getWidthAssignment_8()); 
-            // InternalSynthesizer.g:1432:2: ( rule__Slider__WidthAssignment_8 )
-            // InternalSynthesizer.g:1432:3: rule__Slider__WidthAssignment_8
+            // InternalSynthesizer.g:1509:2: ( rule__Slider__WidthAssignment_8 )
+            // InternalSynthesizer.g:1509:3: rule__Slider__WidthAssignment_8
             {
             pushFollow(FOLLOW_2);
             rule__Slider__WidthAssignment_8();
@@ -4350,14 +4670,14 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Slider__Group__9"
-    // InternalSynthesizer.g:1440:1: rule__Slider__Group__9 : rule__Slider__Group__9__Impl rule__Slider__Group__10 ;
+    // InternalSynthesizer.g:1517:1: rule__Slider__Group__9 : rule__Slider__Group__9__Impl rule__Slider__Group__10 ;
     public final void rule__Slider__Group__9() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:1444:1: ( rule__Slider__Group__9__Impl rule__Slider__Group__10 )
-            // InternalSynthesizer.g:1445:2: rule__Slider__Group__9__Impl rule__Slider__Group__10
+            // InternalSynthesizer.g:1521:1: ( rule__Slider__Group__9__Impl rule__Slider__Group__10 )
+            // InternalSynthesizer.g:1522:2: rule__Slider__Group__9__Impl rule__Slider__Group__10
             {
             pushFollow(FOLLOW_14);
             rule__Slider__Group__9__Impl();
@@ -4388,17 +4708,17 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Slider__Group__9__Impl"
-    // InternalSynthesizer.g:1452:1: rule__Slider__Group__9__Impl : ( 'height' ) ;
+    // InternalSynthesizer.g:1529:1: rule__Slider__Group__9__Impl : ( 'height' ) ;
     public final void rule__Slider__Group__9__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:1456:1: ( ( 'height' ) )
-            // InternalSynthesizer.g:1457:1: ( 'height' )
+            // InternalSynthesizer.g:1533:1: ( ( 'height' ) )
+            // InternalSynthesizer.g:1534:1: ( 'height' )
             {
-            // InternalSynthesizer.g:1457:1: ( 'height' )
-            // InternalSynthesizer.g:1458:2: 'height'
+            // InternalSynthesizer.g:1534:1: ( 'height' )
+            // InternalSynthesizer.g:1535:2: 'height'
             {
              before(grammarAccess.getSliderAccess().getHeightKeyword_9()); 
             match(input,23,FOLLOW_2); 
@@ -4425,16 +4745,16 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Slider__Group__10"
-    // InternalSynthesizer.g:1467:1: rule__Slider__Group__10 : rule__Slider__Group__10__Impl rule__Slider__Group__11 ;
+    // InternalSynthesizer.g:1544:1: rule__Slider__Group__10 : rule__Slider__Group__10__Impl rule__Slider__Group__11 ;
     public final void rule__Slider__Group__10() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:1471:1: ( rule__Slider__Group__10__Impl rule__Slider__Group__11 )
-            // InternalSynthesizer.g:1472:2: rule__Slider__Group__10__Impl rule__Slider__Group__11
+            // InternalSynthesizer.g:1548:1: ( rule__Slider__Group__10__Impl rule__Slider__Group__11 )
+            // InternalSynthesizer.g:1549:2: rule__Slider__Group__10__Impl rule__Slider__Group__11
             {
-            pushFollow(FOLLOW_19);
+            pushFollow(FOLLOW_18);
             rule__Slider__Group__10__Impl();
 
             state._fsp--;
@@ -4463,21 +4783,21 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Slider__Group__10__Impl"
-    // InternalSynthesizer.g:1479:1: rule__Slider__Group__10__Impl : ( ( rule__Slider__HeightAssignment_10 ) ) ;
+    // InternalSynthesizer.g:1556:1: rule__Slider__Group__10__Impl : ( ( rule__Slider__HeightAssignment_10 ) ) ;
     public final void rule__Slider__Group__10__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:1483:1: ( ( ( rule__Slider__HeightAssignment_10 ) ) )
-            // InternalSynthesizer.g:1484:1: ( ( rule__Slider__HeightAssignment_10 ) )
+            // InternalSynthesizer.g:1560:1: ( ( ( rule__Slider__HeightAssignment_10 ) ) )
+            // InternalSynthesizer.g:1561:1: ( ( rule__Slider__HeightAssignment_10 ) )
             {
-            // InternalSynthesizer.g:1484:1: ( ( rule__Slider__HeightAssignment_10 ) )
-            // InternalSynthesizer.g:1485:2: ( rule__Slider__HeightAssignment_10 )
+            // InternalSynthesizer.g:1561:1: ( ( rule__Slider__HeightAssignment_10 ) )
+            // InternalSynthesizer.g:1562:2: ( rule__Slider__HeightAssignment_10 )
             {
              before(grammarAccess.getSliderAccess().getHeightAssignment_10()); 
-            // InternalSynthesizer.g:1486:2: ( rule__Slider__HeightAssignment_10 )
-            // InternalSynthesizer.g:1486:3: rule__Slider__HeightAssignment_10
+            // InternalSynthesizer.g:1563:2: ( rule__Slider__HeightAssignment_10 )
+            // InternalSynthesizer.g:1563:3: rule__Slider__HeightAssignment_10
             {
             pushFollow(FOLLOW_2);
             rule__Slider__HeightAssignment_10();
@@ -4510,14 +4830,14 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Slider__Group__11"
-    // InternalSynthesizer.g:1494:1: rule__Slider__Group__11 : rule__Slider__Group__11__Impl rule__Slider__Group__12 ;
+    // InternalSynthesizer.g:1571:1: rule__Slider__Group__11 : rule__Slider__Group__11__Impl rule__Slider__Group__12 ;
     public final void rule__Slider__Group__11() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:1498:1: ( rule__Slider__Group__11__Impl rule__Slider__Group__12 )
-            // InternalSynthesizer.g:1499:2: rule__Slider__Group__11__Impl rule__Slider__Group__12
+            // InternalSynthesizer.g:1575:1: ( rule__Slider__Group__11__Impl rule__Slider__Group__12 )
+            // InternalSynthesizer.g:1576:2: rule__Slider__Group__11__Impl rule__Slider__Group__12
             {
             pushFollow(FOLLOW_11);
             rule__Slider__Group__11__Impl();
@@ -4548,20 +4868,20 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Slider__Group__11__Impl"
-    // InternalSynthesizer.g:1506:1: rule__Slider__Group__11__Impl : ( 'sound' ) ;
+    // InternalSynthesizer.g:1583:1: rule__Slider__Group__11__Impl : ( 'sound' ) ;
     public final void rule__Slider__Group__11__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:1510:1: ( ( 'sound' ) )
-            // InternalSynthesizer.g:1511:1: ( 'sound' )
+            // InternalSynthesizer.g:1587:1: ( ( 'sound' ) )
+            // InternalSynthesizer.g:1588:1: ( 'sound' )
             {
-            // InternalSynthesizer.g:1511:1: ( 'sound' )
-            // InternalSynthesizer.g:1512:2: 'sound'
+            // InternalSynthesizer.g:1588:1: ( 'sound' )
+            // InternalSynthesizer.g:1589:2: 'sound'
             {
              before(grammarAccess.getSliderAccess().getSoundKeyword_11()); 
-            match(input,26,FOLLOW_2); 
+            match(input,24,FOLLOW_2); 
              after(grammarAccess.getSliderAccess().getSoundKeyword_11()); 
 
             }
@@ -4585,16 +4905,16 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Slider__Group__12"
-    // InternalSynthesizer.g:1521:1: rule__Slider__Group__12 : rule__Slider__Group__12__Impl rule__Slider__Group__13 ;
+    // InternalSynthesizer.g:1598:1: rule__Slider__Group__12 : rule__Slider__Group__12__Impl rule__Slider__Group__13 ;
     public final void rule__Slider__Group__12() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:1525:1: ( rule__Slider__Group__12__Impl rule__Slider__Group__13 )
-            // InternalSynthesizer.g:1526:2: rule__Slider__Group__12__Impl rule__Slider__Group__13
+            // InternalSynthesizer.g:1602:1: ( rule__Slider__Group__12__Impl rule__Slider__Group__13 )
+            // InternalSynthesizer.g:1603:2: rule__Slider__Group__12__Impl rule__Slider__Group__13
             {
-            pushFollow(FOLLOW_20);
+            pushFollow(FOLLOW_19);
             rule__Slider__Group__12__Impl();
 
             state._fsp--;
@@ -4623,21 +4943,21 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Slider__Group__12__Impl"
-    // InternalSynthesizer.g:1533:1: rule__Slider__Group__12__Impl : ( ( rule__Slider__SoundAssignment_12 ) ) ;
+    // InternalSynthesizer.g:1610:1: rule__Slider__Group__12__Impl : ( ( rule__Slider__SoundAssignment_12 ) ) ;
     public final void rule__Slider__Group__12__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:1537:1: ( ( ( rule__Slider__SoundAssignment_12 ) ) )
-            // InternalSynthesizer.g:1538:1: ( ( rule__Slider__SoundAssignment_12 ) )
+            // InternalSynthesizer.g:1614:1: ( ( ( rule__Slider__SoundAssignment_12 ) ) )
+            // InternalSynthesizer.g:1615:1: ( ( rule__Slider__SoundAssignment_12 ) )
             {
-            // InternalSynthesizer.g:1538:1: ( ( rule__Slider__SoundAssignment_12 ) )
-            // InternalSynthesizer.g:1539:2: ( rule__Slider__SoundAssignment_12 )
+            // InternalSynthesizer.g:1615:1: ( ( rule__Slider__SoundAssignment_12 ) )
+            // InternalSynthesizer.g:1616:2: ( rule__Slider__SoundAssignment_12 )
             {
              before(grammarAccess.getSliderAccess().getSoundAssignment_12()); 
-            // InternalSynthesizer.g:1540:2: ( rule__Slider__SoundAssignment_12 )
-            // InternalSynthesizer.g:1540:3: rule__Slider__SoundAssignment_12
+            // InternalSynthesizer.g:1617:2: ( rule__Slider__SoundAssignment_12 )
+            // InternalSynthesizer.g:1617:3: rule__Slider__SoundAssignment_12
             {
             pushFollow(FOLLOW_2);
             rule__Slider__SoundAssignment_12();
@@ -4670,16 +4990,16 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Slider__Group__13"
-    // InternalSynthesizer.g:1548:1: rule__Slider__Group__13 : rule__Slider__Group__13__Impl rule__Slider__Group__14 ;
+    // InternalSynthesizer.g:1625:1: rule__Slider__Group__13 : rule__Slider__Group__13__Impl rule__Slider__Group__14 ;
     public final void rule__Slider__Group__13() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:1552:1: ( rule__Slider__Group__13__Impl rule__Slider__Group__14 )
-            // InternalSynthesizer.g:1553:2: rule__Slider__Group__13__Impl rule__Slider__Group__14
+            // InternalSynthesizer.g:1629:1: ( rule__Slider__Group__13__Impl rule__Slider__Group__14 )
+            // InternalSynthesizer.g:1630:2: rule__Slider__Group__13__Impl rule__Slider__Group__14
             {
-            pushFollow(FOLLOW_21);
+            pushFollow(FOLLOW_20);
             rule__Slider__Group__13__Impl();
 
             state._fsp--;
@@ -4708,20 +5028,20 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Slider__Group__13__Impl"
-    // InternalSynthesizer.g:1560:1: rule__Slider__Group__13__Impl : ( 'effect' ) ;
+    // InternalSynthesizer.g:1637:1: rule__Slider__Group__13__Impl : ( 'effect' ) ;
     public final void rule__Slider__Group__13__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:1564:1: ( ( 'effect' ) )
-            // InternalSynthesizer.g:1565:1: ( 'effect' )
+            // InternalSynthesizer.g:1641:1: ( ( 'effect' ) )
+            // InternalSynthesizer.g:1642:1: ( 'effect' )
             {
-            // InternalSynthesizer.g:1565:1: ( 'effect' )
-            // InternalSynthesizer.g:1566:2: 'effect'
+            // InternalSynthesizer.g:1642:1: ( 'effect' )
+            // InternalSynthesizer.g:1643:2: 'effect'
             {
              before(grammarAccess.getSliderAccess().getEffectKeyword_13()); 
-            match(input,27,FOLLOW_2); 
+            match(input,25,FOLLOW_2); 
              after(grammarAccess.getSliderAccess().getEffectKeyword_13()); 
 
             }
@@ -4745,16 +5065,16 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Slider__Group__14"
-    // InternalSynthesizer.g:1575:1: rule__Slider__Group__14 : rule__Slider__Group__14__Impl rule__Slider__Group__15 ;
+    // InternalSynthesizer.g:1652:1: rule__Slider__Group__14 : rule__Slider__Group__14__Impl rule__Slider__Group__15 ;
     public final void rule__Slider__Group__14() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:1579:1: ( rule__Slider__Group__14__Impl rule__Slider__Group__15 )
-            // InternalSynthesizer.g:1580:2: rule__Slider__Group__14__Impl rule__Slider__Group__15
+            // InternalSynthesizer.g:1656:1: ( rule__Slider__Group__14__Impl rule__Slider__Group__15 )
+            // InternalSynthesizer.g:1657:2: rule__Slider__Group__14__Impl rule__Slider__Group__15
             {
-            pushFollow(FOLLOW_18);
+            pushFollow(FOLLOW_21);
             rule__Slider__Group__14__Impl();
 
             state._fsp--;
@@ -4783,21 +5103,21 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Slider__Group__14__Impl"
-    // InternalSynthesizer.g:1587:1: rule__Slider__Group__14__Impl : ( ( rule__Slider__TypeAssignment_14 ) ) ;
+    // InternalSynthesizer.g:1664:1: rule__Slider__Group__14__Impl : ( ( rule__Slider__TypeAssignment_14 ) ) ;
     public final void rule__Slider__Group__14__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:1591:1: ( ( ( rule__Slider__TypeAssignment_14 ) ) )
-            // InternalSynthesizer.g:1592:1: ( ( rule__Slider__TypeAssignment_14 ) )
+            // InternalSynthesizer.g:1668:1: ( ( ( rule__Slider__TypeAssignment_14 ) ) )
+            // InternalSynthesizer.g:1669:1: ( ( rule__Slider__TypeAssignment_14 ) )
             {
-            // InternalSynthesizer.g:1592:1: ( ( rule__Slider__TypeAssignment_14 ) )
-            // InternalSynthesizer.g:1593:2: ( rule__Slider__TypeAssignment_14 )
+            // InternalSynthesizer.g:1669:1: ( ( rule__Slider__TypeAssignment_14 ) )
+            // InternalSynthesizer.g:1670:2: ( rule__Slider__TypeAssignment_14 )
             {
              before(grammarAccess.getSliderAccess().getTypeAssignment_14()); 
-            // InternalSynthesizer.g:1594:2: ( rule__Slider__TypeAssignment_14 )
-            // InternalSynthesizer.g:1594:3: rule__Slider__TypeAssignment_14
+            // InternalSynthesizer.g:1671:2: ( rule__Slider__TypeAssignment_14 )
+            // InternalSynthesizer.g:1671:3: rule__Slider__TypeAssignment_14
             {
             pushFollow(FOLLOW_2);
             rule__Slider__TypeAssignment_14();
@@ -4830,14 +5150,14 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Slider__Group__15"
-    // InternalSynthesizer.g:1602:1: rule__Slider__Group__15 : rule__Slider__Group__15__Impl ;
+    // InternalSynthesizer.g:1679:1: rule__Slider__Group__15 : rule__Slider__Group__15__Impl ;
     public final void rule__Slider__Group__15() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:1606:1: ( rule__Slider__Group__15__Impl )
-            // InternalSynthesizer.g:1607:2: rule__Slider__Group__15__Impl
+            // InternalSynthesizer.g:1683:1: ( rule__Slider__Group__15__Impl )
+            // InternalSynthesizer.g:1684:2: rule__Slider__Group__15__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Slider__Group__15__Impl();
@@ -4863,20 +5183,20 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Slider__Group__15__Impl"
-    // InternalSynthesizer.g:1613:1: rule__Slider__Group__15__Impl : ( ')' ) ;
+    // InternalSynthesizer.g:1690:1: rule__Slider__Group__15__Impl : ( ')' ) ;
     public final void rule__Slider__Group__15__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:1617:1: ( ( ')' ) )
-            // InternalSynthesizer.g:1618:1: ( ')' )
+            // InternalSynthesizer.g:1694:1: ( ( ')' ) )
+            // InternalSynthesizer.g:1695:1: ( ')' )
             {
-            // InternalSynthesizer.g:1618:1: ( ')' )
-            // InternalSynthesizer.g:1619:2: ')'
+            // InternalSynthesizer.g:1695:1: ( ')' )
+            // InternalSynthesizer.g:1696:2: ')'
             {
              before(grammarAccess.getSliderAccess().getRightParenthesisKeyword_15()); 
-            match(input,24,FOLLOW_2); 
+            match(input,26,FOLLOW_2); 
              after(grammarAccess.getSliderAccess().getRightParenthesisKeyword_15()); 
 
             }
@@ -4900,14 +5220,14 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Button__Group__0"
-    // InternalSynthesizer.g:1629:1: rule__Button__Group__0 : rule__Button__Group__0__Impl rule__Button__Group__1 ;
+    // InternalSynthesizer.g:1706:1: rule__Button__Group__0 : rule__Button__Group__0__Impl rule__Button__Group__1 ;
     public final void rule__Button__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:1633:1: ( rule__Button__Group__0__Impl rule__Button__Group__1 )
-            // InternalSynthesizer.g:1634:2: rule__Button__Group__0__Impl rule__Button__Group__1
+            // InternalSynthesizer.g:1710:1: ( rule__Button__Group__0__Impl rule__Button__Group__1 )
+            // InternalSynthesizer.g:1711:2: rule__Button__Group__0__Impl rule__Button__Group__1
             {
             pushFollow(FOLLOW_11);
             rule__Button__Group__0__Impl();
@@ -4938,17 +5258,17 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Button__Group__0__Impl"
-    // InternalSynthesizer.g:1641:1: rule__Button__Group__0__Impl : ( 'button' ) ;
+    // InternalSynthesizer.g:1718:1: rule__Button__Group__0__Impl : ( 'button' ) ;
     public final void rule__Button__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:1645:1: ( ( 'button' ) )
-            // InternalSynthesizer.g:1646:1: ( 'button' )
+            // InternalSynthesizer.g:1722:1: ( ( 'button' ) )
+            // InternalSynthesizer.g:1723:1: ( 'button' )
             {
-            // InternalSynthesizer.g:1646:1: ( 'button' )
-            // InternalSynthesizer.g:1647:2: 'button'
+            // InternalSynthesizer.g:1723:1: ( 'button' )
+            // InternalSynthesizer.g:1724:2: 'button'
             {
              before(grammarAccess.getButtonAccess().getButtonKeyword_0()); 
             match(input,28,FOLLOW_2); 
@@ -4975,14 +5295,14 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Button__Group__1"
-    // InternalSynthesizer.g:1656:1: rule__Button__Group__1 : rule__Button__Group__1__Impl rule__Button__Group__2 ;
+    // InternalSynthesizer.g:1733:1: rule__Button__Group__1 : rule__Button__Group__1__Impl rule__Button__Group__2 ;
     public final void rule__Button__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:1660:1: ( rule__Button__Group__1__Impl rule__Button__Group__2 )
-            // InternalSynthesizer.g:1661:2: rule__Button__Group__1__Impl rule__Button__Group__2
+            // InternalSynthesizer.g:1737:1: ( rule__Button__Group__1__Impl rule__Button__Group__2 )
+            // InternalSynthesizer.g:1738:2: rule__Button__Group__1__Impl rule__Button__Group__2
             {
             pushFollow(FOLLOW_12);
             rule__Button__Group__1__Impl();
@@ -5013,21 +5333,21 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Button__Group__1__Impl"
-    // InternalSynthesizer.g:1668:1: rule__Button__Group__1__Impl : ( ( rule__Button__NameAssignment_1 ) ) ;
+    // InternalSynthesizer.g:1745:1: rule__Button__Group__1__Impl : ( ( rule__Button__NameAssignment_1 ) ) ;
     public final void rule__Button__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:1672:1: ( ( ( rule__Button__NameAssignment_1 ) ) )
-            // InternalSynthesizer.g:1673:1: ( ( rule__Button__NameAssignment_1 ) )
+            // InternalSynthesizer.g:1749:1: ( ( ( rule__Button__NameAssignment_1 ) ) )
+            // InternalSynthesizer.g:1750:1: ( ( rule__Button__NameAssignment_1 ) )
             {
-            // InternalSynthesizer.g:1673:1: ( ( rule__Button__NameAssignment_1 ) )
-            // InternalSynthesizer.g:1674:2: ( rule__Button__NameAssignment_1 )
+            // InternalSynthesizer.g:1750:1: ( ( rule__Button__NameAssignment_1 ) )
+            // InternalSynthesizer.g:1751:2: ( rule__Button__NameAssignment_1 )
             {
              before(grammarAccess.getButtonAccess().getNameAssignment_1()); 
-            // InternalSynthesizer.g:1675:2: ( rule__Button__NameAssignment_1 )
-            // InternalSynthesizer.g:1675:3: rule__Button__NameAssignment_1
+            // InternalSynthesizer.g:1752:2: ( rule__Button__NameAssignment_1 )
+            // InternalSynthesizer.g:1752:3: rule__Button__NameAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__Button__NameAssignment_1();
@@ -5060,14 +5380,14 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Button__Group__2"
-    // InternalSynthesizer.g:1683:1: rule__Button__Group__2 : rule__Button__Group__2__Impl rule__Button__Group__3 ;
+    // InternalSynthesizer.g:1760:1: rule__Button__Group__2 : rule__Button__Group__2__Impl rule__Button__Group__3 ;
     public final void rule__Button__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:1687:1: ( rule__Button__Group__2__Impl rule__Button__Group__3 )
-            // InternalSynthesizer.g:1688:2: rule__Button__Group__2__Impl rule__Button__Group__3
+            // InternalSynthesizer.g:1764:1: ( rule__Button__Group__2__Impl rule__Button__Group__3 )
+            // InternalSynthesizer.g:1765:2: rule__Button__Group__2__Impl rule__Button__Group__3
             {
             pushFollow(FOLLOW_13);
             rule__Button__Group__2__Impl();
@@ -5098,17 +5418,17 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Button__Group__2__Impl"
-    // InternalSynthesizer.g:1695:1: rule__Button__Group__2__Impl : ( '(' ) ;
+    // InternalSynthesizer.g:1772:1: rule__Button__Group__2__Impl : ( '(' ) ;
     public final void rule__Button__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:1699:1: ( ( '(' ) )
-            // InternalSynthesizer.g:1700:1: ( '(' )
+            // InternalSynthesizer.g:1776:1: ( ( '(' ) )
+            // InternalSynthesizer.g:1777:1: ( '(' )
             {
-            // InternalSynthesizer.g:1700:1: ( '(' )
-            // InternalSynthesizer.g:1701:2: '('
+            // InternalSynthesizer.g:1777:1: ( '(' )
+            // InternalSynthesizer.g:1778:2: '('
             {
              before(grammarAccess.getButtonAccess().getLeftParenthesisKeyword_2()); 
             match(input,19,FOLLOW_2); 
@@ -5135,14 +5455,14 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Button__Group__3"
-    // InternalSynthesizer.g:1710:1: rule__Button__Group__3 : rule__Button__Group__3__Impl rule__Button__Group__4 ;
+    // InternalSynthesizer.g:1787:1: rule__Button__Group__3 : rule__Button__Group__3__Impl rule__Button__Group__4 ;
     public final void rule__Button__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:1714:1: ( rule__Button__Group__3__Impl rule__Button__Group__4 )
-            // InternalSynthesizer.g:1715:2: rule__Button__Group__3__Impl rule__Button__Group__4
+            // InternalSynthesizer.g:1791:1: ( rule__Button__Group__3__Impl rule__Button__Group__4 )
+            // InternalSynthesizer.g:1792:2: rule__Button__Group__3__Impl rule__Button__Group__4
             {
             pushFollow(FOLLOW_14);
             rule__Button__Group__3__Impl();
@@ -5173,17 +5493,17 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Button__Group__3__Impl"
-    // InternalSynthesizer.g:1722:1: rule__Button__Group__3__Impl : ( 'x' ) ;
+    // InternalSynthesizer.g:1799:1: rule__Button__Group__3__Impl : ( 'x' ) ;
     public final void rule__Button__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:1726:1: ( ( 'x' ) )
-            // InternalSynthesizer.g:1727:1: ( 'x' )
+            // InternalSynthesizer.g:1803:1: ( ( 'x' ) )
+            // InternalSynthesizer.g:1804:1: ( 'x' )
             {
-            // InternalSynthesizer.g:1727:1: ( 'x' )
-            // InternalSynthesizer.g:1728:2: 'x'
+            // InternalSynthesizer.g:1804:1: ( 'x' )
+            // InternalSynthesizer.g:1805:2: 'x'
             {
              before(grammarAccess.getButtonAccess().getXKeyword_3()); 
             match(input,20,FOLLOW_2); 
@@ -5210,14 +5530,14 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Button__Group__4"
-    // InternalSynthesizer.g:1737:1: rule__Button__Group__4 : rule__Button__Group__4__Impl rule__Button__Group__5 ;
+    // InternalSynthesizer.g:1814:1: rule__Button__Group__4 : rule__Button__Group__4__Impl rule__Button__Group__5 ;
     public final void rule__Button__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:1741:1: ( rule__Button__Group__4__Impl rule__Button__Group__5 )
-            // InternalSynthesizer.g:1742:2: rule__Button__Group__4__Impl rule__Button__Group__5
+            // InternalSynthesizer.g:1818:1: ( rule__Button__Group__4__Impl rule__Button__Group__5 )
+            // InternalSynthesizer.g:1819:2: rule__Button__Group__4__Impl rule__Button__Group__5
             {
             pushFollow(FOLLOW_15);
             rule__Button__Group__4__Impl();
@@ -5248,21 +5568,21 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Button__Group__4__Impl"
-    // InternalSynthesizer.g:1749:1: rule__Button__Group__4__Impl : ( ( rule__Button__XAssignment_4 ) ) ;
+    // InternalSynthesizer.g:1826:1: rule__Button__Group__4__Impl : ( ( rule__Button__XAssignment_4 ) ) ;
     public final void rule__Button__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:1753:1: ( ( ( rule__Button__XAssignment_4 ) ) )
-            // InternalSynthesizer.g:1754:1: ( ( rule__Button__XAssignment_4 ) )
+            // InternalSynthesizer.g:1830:1: ( ( ( rule__Button__XAssignment_4 ) ) )
+            // InternalSynthesizer.g:1831:1: ( ( rule__Button__XAssignment_4 ) )
             {
-            // InternalSynthesizer.g:1754:1: ( ( rule__Button__XAssignment_4 ) )
-            // InternalSynthesizer.g:1755:2: ( rule__Button__XAssignment_4 )
+            // InternalSynthesizer.g:1831:1: ( ( rule__Button__XAssignment_4 ) )
+            // InternalSynthesizer.g:1832:2: ( rule__Button__XAssignment_4 )
             {
              before(grammarAccess.getButtonAccess().getXAssignment_4()); 
-            // InternalSynthesizer.g:1756:2: ( rule__Button__XAssignment_4 )
-            // InternalSynthesizer.g:1756:3: rule__Button__XAssignment_4
+            // InternalSynthesizer.g:1833:2: ( rule__Button__XAssignment_4 )
+            // InternalSynthesizer.g:1833:3: rule__Button__XAssignment_4
             {
             pushFollow(FOLLOW_2);
             rule__Button__XAssignment_4();
@@ -5295,14 +5615,14 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Button__Group__5"
-    // InternalSynthesizer.g:1764:1: rule__Button__Group__5 : rule__Button__Group__5__Impl rule__Button__Group__6 ;
+    // InternalSynthesizer.g:1841:1: rule__Button__Group__5 : rule__Button__Group__5__Impl rule__Button__Group__6 ;
     public final void rule__Button__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:1768:1: ( rule__Button__Group__5__Impl rule__Button__Group__6 )
-            // InternalSynthesizer.g:1769:2: rule__Button__Group__5__Impl rule__Button__Group__6
+            // InternalSynthesizer.g:1845:1: ( rule__Button__Group__5__Impl rule__Button__Group__6 )
+            // InternalSynthesizer.g:1846:2: rule__Button__Group__5__Impl rule__Button__Group__6
             {
             pushFollow(FOLLOW_14);
             rule__Button__Group__5__Impl();
@@ -5333,17 +5653,17 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Button__Group__5__Impl"
-    // InternalSynthesizer.g:1776:1: rule__Button__Group__5__Impl : ( 'y' ) ;
+    // InternalSynthesizer.g:1853:1: rule__Button__Group__5__Impl : ( 'y' ) ;
     public final void rule__Button__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:1780:1: ( ( 'y' ) )
-            // InternalSynthesizer.g:1781:1: ( 'y' )
+            // InternalSynthesizer.g:1857:1: ( ( 'y' ) )
+            // InternalSynthesizer.g:1858:1: ( 'y' )
             {
-            // InternalSynthesizer.g:1781:1: ( 'y' )
-            // InternalSynthesizer.g:1782:2: 'y'
+            // InternalSynthesizer.g:1858:1: ( 'y' )
+            // InternalSynthesizer.g:1859:2: 'y'
             {
              before(grammarAccess.getButtonAccess().getYKeyword_5()); 
             match(input,21,FOLLOW_2); 
@@ -5370,14 +5690,14 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Button__Group__6"
-    // InternalSynthesizer.g:1791:1: rule__Button__Group__6 : rule__Button__Group__6__Impl rule__Button__Group__7 ;
+    // InternalSynthesizer.g:1868:1: rule__Button__Group__6 : rule__Button__Group__6__Impl rule__Button__Group__7 ;
     public final void rule__Button__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:1795:1: ( rule__Button__Group__6__Impl rule__Button__Group__7 )
-            // InternalSynthesizer.g:1796:2: rule__Button__Group__6__Impl rule__Button__Group__7
+            // InternalSynthesizer.g:1872:1: ( rule__Button__Group__6__Impl rule__Button__Group__7 )
+            // InternalSynthesizer.g:1873:2: rule__Button__Group__6__Impl rule__Button__Group__7
             {
             pushFollow(FOLLOW_16);
             rule__Button__Group__6__Impl();
@@ -5408,21 +5728,21 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Button__Group__6__Impl"
-    // InternalSynthesizer.g:1803:1: rule__Button__Group__6__Impl : ( ( rule__Button__YAssignment_6 ) ) ;
+    // InternalSynthesizer.g:1880:1: rule__Button__Group__6__Impl : ( ( rule__Button__YAssignment_6 ) ) ;
     public final void rule__Button__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:1807:1: ( ( ( rule__Button__YAssignment_6 ) ) )
-            // InternalSynthesizer.g:1808:1: ( ( rule__Button__YAssignment_6 ) )
+            // InternalSynthesizer.g:1884:1: ( ( ( rule__Button__YAssignment_6 ) ) )
+            // InternalSynthesizer.g:1885:1: ( ( rule__Button__YAssignment_6 ) )
             {
-            // InternalSynthesizer.g:1808:1: ( ( rule__Button__YAssignment_6 ) )
-            // InternalSynthesizer.g:1809:2: ( rule__Button__YAssignment_6 )
+            // InternalSynthesizer.g:1885:1: ( ( rule__Button__YAssignment_6 ) )
+            // InternalSynthesizer.g:1886:2: ( rule__Button__YAssignment_6 )
             {
              before(grammarAccess.getButtonAccess().getYAssignment_6()); 
-            // InternalSynthesizer.g:1810:2: ( rule__Button__YAssignment_6 )
-            // InternalSynthesizer.g:1810:3: rule__Button__YAssignment_6
+            // InternalSynthesizer.g:1887:2: ( rule__Button__YAssignment_6 )
+            // InternalSynthesizer.g:1887:3: rule__Button__YAssignment_6
             {
             pushFollow(FOLLOW_2);
             rule__Button__YAssignment_6();
@@ -5455,14 +5775,14 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Button__Group__7"
-    // InternalSynthesizer.g:1818:1: rule__Button__Group__7 : rule__Button__Group__7__Impl rule__Button__Group__8 ;
+    // InternalSynthesizer.g:1895:1: rule__Button__Group__7 : rule__Button__Group__7__Impl rule__Button__Group__8 ;
     public final void rule__Button__Group__7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:1822:1: ( rule__Button__Group__7__Impl rule__Button__Group__8 )
-            // InternalSynthesizer.g:1823:2: rule__Button__Group__7__Impl rule__Button__Group__8
+            // InternalSynthesizer.g:1899:1: ( rule__Button__Group__7__Impl rule__Button__Group__8 )
+            // InternalSynthesizer.g:1900:2: rule__Button__Group__7__Impl rule__Button__Group__8
             {
             pushFollow(FOLLOW_14);
             rule__Button__Group__7__Impl();
@@ -5493,17 +5813,17 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Button__Group__7__Impl"
-    // InternalSynthesizer.g:1830:1: rule__Button__Group__7__Impl : ( 'width' ) ;
+    // InternalSynthesizer.g:1907:1: rule__Button__Group__7__Impl : ( 'width' ) ;
     public final void rule__Button__Group__7__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:1834:1: ( ( 'width' ) )
-            // InternalSynthesizer.g:1835:1: ( 'width' )
+            // InternalSynthesizer.g:1911:1: ( ( 'width' ) )
+            // InternalSynthesizer.g:1912:1: ( 'width' )
             {
-            // InternalSynthesizer.g:1835:1: ( 'width' )
-            // InternalSynthesizer.g:1836:2: 'width'
+            // InternalSynthesizer.g:1912:1: ( 'width' )
+            // InternalSynthesizer.g:1913:2: 'width'
             {
              before(grammarAccess.getButtonAccess().getWidthKeyword_7()); 
             match(input,22,FOLLOW_2); 
@@ -5530,14 +5850,14 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Button__Group__8"
-    // InternalSynthesizer.g:1845:1: rule__Button__Group__8 : rule__Button__Group__8__Impl rule__Button__Group__9 ;
+    // InternalSynthesizer.g:1922:1: rule__Button__Group__8 : rule__Button__Group__8__Impl rule__Button__Group__9 ;
     public final void rule__Button__Group__8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:1849:1: ( rule__Button__Group__8__Impl rule__Button__Group__9 )
-            // InternalSynthesizer.g:1850:2: rule__Button__Group__8__Impl rule__Button__Group__9
+            // InternalSynthesizer.g:1926:1: ( rule__Button__Group__8__Impl rule__Button__Group__9 )
+            // InternalSynthesizer.g:1927:2: rule__Button__Group__8__Impl rule__Button__Group__9
             {
             pushFollow(FOLLOW_17);
             rule__Button__Group__8__Impl();
@@ -5568,21 +5888,21 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Button__Group__8__Impl"
-    // InternalSynthesizer.g:1857:1: rule__Button__Group__8__Impl : ( ( rule__Button__WidthAssignment_8 ) ) ;
+    // InternalSynthesizer.g:1934:1: rule__Button__Group__8__Impl : ( ( rule__Button__WidthAssignment_8 ) ) ;
     public final void rule__Button__Group__8__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:1861:1: ( ( ( rule__Button__WidthAssignment_8 ) ) )
-            // InternalSynthesizer.g:1862:1: ( ( rule__Button__WidthAssignment_8 ) )
+            // InternalSynthesizer.g:1938:1: ( ( ( rule__Button__WidthAssignment_8 ) ) )
+            // InternalSynthesizer.g:1939:1: ( ( rule__Button__WidthAssignment_8 ) )
             {
-            // InternalSynthesizer.g:1862:1: ( ( rule__Button__WidthAssignment_8 ) )
-            // InternalSynthesizer.g:1863:2: ( rule__Button__WidthAssignment_8 )
+            // InternalSynthesizer.g:1939:1: ( ( rule__Button__WidthAssignment_8 ) )
+            // InternalSynthesizer.g:1940:2: ( rule__Button__WidthAssignment_8 )
             {
              before(grammarAccess.getButtonAccess().getWidthAssignment_8()); 
-            // InternalSynthesizer.g:1864:2: ( rule__Button__WidthAssignment_8 )
-            // InternalSynthesizer.g:1864:3: rule__Button__WidthAssignment_8
+            // InternalSynthesizer.g:1941:2: ( rule__Button__WidthAssignment_8 )
+            // InternalSynthesizer.g:1941:3: rule__Button__WidthAssignment_8
             {
             pushFollow(FOLLOW_2);
             rule__Button__WidthAssignment_8();
@@ -5615,14 +5935,14 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Button__Group__9"
-    // InternalSynthesizer.g:1872:1: rule__Button__Group__9 : rule__Button__Group__9__Impl rule__Button__Group__10 ;
+    // InternalSynthesizer.g:1949:1: rule__Button__Group__9 : rule__Button__Group__9__Impl rule__Button__Group__10 ;
     public final void rule__Button__Group__9() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:1876:1: ( rule__Button__Group__9__Impl rule__Button__Group__10 )
-            // InternalSynthesizer.g:1877:2: rule__Button__Group__9__Impl rule__Button__Group__10
+            // InternalSynthesizer.g:1953:1: ( rule__Button__Group__9__Impl rule__Button__Group__10 )
+            // InternalSynthesizer.g:1954:2: rule__Button__Group__9__Impl rule__Button__Group__10
             {
             pushFollow(FOLLOW_14);
             rule__Button__Group__9__Impl();
@@ -5653,17 +5973,17 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Button__Group__9__Impl"
-    // InternalSynthesizer.g:1884:1: rule__Button__Group__9__Impl : ( 'height' ) ;
+    // InternalSynthesizer.g:1961:1: rule__Button__Group__9__Impl : ( 'height' ) ;
     public final void rule__Button__Group__9__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:1888:1: ( ( 'height' ) )
-            // InternalSynthesizer.g:1889:1: ( 'height' )
+            // InternalSynthesizer.g:1965:1: ( ( 'height' ) )
+            // InternalSynthesizer.g:1966:1: ( 'height' )
             {
-            // InternalSynthesizer.g:1889:1: ( 'height' )
-            // InternalSynthesizer.g:1890:2: 'height'
+            // InternalSynthesizer.g:1966:1: ( 'height' )
+            // InternalSynthesizer.g:1967:2: 'height'
             {
              before(grammarAccess.getButtonAccess().getHeightKeyword_9()); 
             match(input,23,FOLLOW_2); 
@@ -5690,16 +6010,16 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Button__Group__10"
-    // InternalSynthesizer.g:1899:1: rule__Button__Group__10 : rule__Button__Group__10__Impl rule__Button__Group__11 ;
+    // InternalSynthesizer.g:1976:1: rule__Button__Group__10 : rule__Button__Group__10__Impl rule__Button__Group__11 ;
     public final void rule__Button__Group__10() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:1903:1: ( rule__Button__Group__10__Impl rule__Button__Group__11 )
-            // InternalSynthesizer.g:1904:2: rule__Button__Group__10__Impl rule__Button__Group__11
+            // InternalSynthesizer.g:1980:1: ( rule__Button__Group__10__Impl rule__Button__Group__11 )
+            // InternalSynthesizer.g:1981:2: rule__Button__Group__10__Impl rule__Button__Group__11
             {
-            pushFollow(FOLLOW_19);
+            pushFollow(FOLLOW_18);
             rule__Button__Group__10__Impl();
 
             state._fsp--;
@@ -5728,21 +6048,21 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Button__Group__10__Impl"
-    // InternalSynthesizer.g:1911:1: rule__Button__Group__10__Impl : ( ( rule__Button__HeightAssignment_10 ) ) ;
+    // InternalSynthesizer.g:1988:1: rule__Button__Group__10__Impl : ( ( rule__Button__HeightAssignment_10 ) ) ;
     public final void rule__Button__Group__10__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:1915:1: ( ( ( rule__Button__HeightAssignment_10 ) ) )
-            // InternalSynthesizer.g:1916:1: ( ( rule__Button__HeightAssignment_10 ) )
+            // InternalSynthesizer.g:1992:1: ( ( ( rule__Button__HeightAssignment_10 ) ) )
+            // InternalSynthesizer.g:1993:1: ( ( rule__Button__HeightAssignment_10 ) )
             {
-            // InternalSynthesizer.g:1916:1: ( ( rule__Button__HeightAssignment_10 ) )
-            // InternalSynthesizer.g:1917:2: ( rule__Button__HeightAssignment_10 )
+            // InternalSynthesizer.g:1993:1: ( ( rule__Button__HeightAssignment_10 ) )
+            // InternalSynthesizer.g:1994:2: ( rule__Button__HeightAssignment_10 )
             {
              before(grammarAccess.getButtonAccess().getHeightAssignment_10()); 
-            // InternalSynthesizer.g:1918:2: ( rule__Button__HeightAssignment_10 )
-            // InternalSynthesizer.g:1918:3: rule__Button__HeightAssignment_10
+            // InternalSynthesizer.g:1995:2: ( rule__Button__HeightAssignment_10 )
+            // InternalSynthesizer.g:1995:3: rule__Button__HeightAssignment_10
             {
             pushFollow(FOLLOW_2);
             rule__Button__HeightAssignment_10();
@@ -5775,14 +6095,14 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Button__Group__11"
-    // InternalSynthesizer.g:1926:1: rule__Button__Group__11 : rule__Button__Group__11__Impl rule__Button__Group__12 ;
+    // InternalSynthesizer.g:2003:1: rule__Button__Group__11 : rule__Button__Group__11__Impl rule__Button__Group__12 ;
     public final void rule__Button__Group__11() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:1930:1: ( rule__Button__Group__11__Impl rule__Button__Group__12 )
-            // InternalSynthesizer.g:1931:2: rule__Button__Group__11__Impl rule__Button__Group__12
+            // InternalSynthesizer.g:2007:1: ( rule__Button__Group__11__Impl rule__Button__Group__12 )
+            // InternalSynthesizer.g:2008:2: rule__Button__Group__11__Impl rule__Button__Group__12
             {
             pushFollow(FOLLOW_11);
             rule__Button__Group__11__Impl();
@@ -5813,20 +6133,20 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Button__Group__11__Impl"
-    // InternalSynthesizer.g:1938:1: rule__Button__Group__11__Impl : ( 'sound' ) ;
+    // InternalSynthesizer.g:2015:1: rule__Button__Group__11__Impl : ( 'sound' ) ;
     public final void rule__Button__Group__11__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:1942:1: ( ( 'sound' ) )
-            // InternalSynthesizer.g:1943:1: ( 'sound' )
+            // InternalSynthesizer.g:2019:1: ( ( 'sound' ) )
+            // InternalSynthesizer.g:2020:1: ( 'sound' )
             {
-            // InternalSynthesizer.g:1943:1: ( 'sound' )
-            // InternalSynthesizer.g:1944:2: 'sound'
+            // InternalSynthesizer.g:2020:1: ( 'sound' )
+            // InternalSynthesizer.g:2021:2: 'sound'
             {
              before(grammarAccess.getButtonAccess().getSoundKeyword_11()); 
-            match(input,26,FOLLOW_2); 
+            match(input,24,FOLLOW_2); 
              after(grammarAccess.getButtonAccess().getSoundKeyword_11()); 
 
             }
@@ -5850,16 +6170,16 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Button__Group__12"
-    // InternalSynthesizer.g:1953:1: rule__Button__Group__12 : rule__Button__Group__12__Impl rule__Button__Group__13 ;
+    // InternalSynthesizer.g:2030:1: rule__Button__Group__12 : rule__Button__Group__12__Impl rule__Button__Group__13 ;
     public final void rule__Button__Group__12() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:1957:1: ( rule__Button__Group__12__Impl rule__Button__Group__13 )
-            // InternalSynthesizer.g:1958:2: rule__Button__Group__12__Impl rule__Button__Group__13
+            // InternalSynthesizer.g:2034:1: ( rule__Button__Group__12__Impl rule__Button__Group__13 )
+            // InternalSynthesizer.g:2035:2: rule__Button__Group__12__Impl rule__Button__Group__13
             {
-            pushFollow(FOLLOW_18);
+            pushFollow(FOLLOW_21);
             rule__Button__Group__12__Impl();
 
             state._fsp--;
@@ -5888,21 +6208,21 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Button__Group__12__Impl"
-    // InternalSynthesizer.g:1965:1: rule__Button__Group__12__Impl : ( ( rule__Button__SoundAssignment_12 ) ) ;
+    // InternalSynthesizer.g:2042:1: rule__Button__Group__12__Impl : ( ( rule__Button__SoundAssignment_12 ) ) ;
     public final void rule__Button__Group__12__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:1969:1: ( ( ( rule__Button__SoundAssignment_12 ) ) )
-            // InternalSynthesizer.g:1970:1: ( ( rule__Button__SoundAssignment_12 ) )
+            // InternalSynthesizer.g:2046:1: ( ( ( rule__Button__SoundAssignment_12 ) ) )
+            // InternalSynthesizer.g:2047:1: ( ( rule__Button__SoundAssignment_12 ) )
             {
-            // InternalSynthesizer.g:1970:1: ( ( rule__Button__SoundAssignment_12 ) )
-            // InternalSynthesizer.g:1971:2: ( rule__Button__SoundAssignment_12 )
+            // InternalSynthesizer.g:2047:1: ( ( rule__Button__SoundAssignment_12 ) )
+            // InternalSynthesizer.g:2048:2: ( rule__Button__SoundAssignment_12 )
             {
              before(grammarAccess.getButtonAccess().getSoundAssignment_12()); 
-            // InternalSynthesizer.g:1972:2: ( rule__Button__SoundAssignment_12 )
-            // InternalSynthesizer.g:1972:3: rule__Button__SoundAssignment_12
+            // InternalSynthesizer.g:2049:2: ( rule__Button__SoundAssignment_12 )
+            // InternalSynthesizer.g:2049:3: rule__Button__SoundAssignment_12
             {
             pushFollow(FOLLOW_2);
             rule__Button__SoundAssignment_12();
@@ -5935,14 +6255,14 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Button__Group__13"
-    // InternalSynthesizer.g:1980:1: rule__Button__Group__13 : rule__Button__Group__13__Impl ;
+    // InternalSynthesizer.g:2057:1: rule__Button__Group__13 : rule__Button__Group__13__Impl ;
     public final void rule__Button__Group__13() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:1984:1: ( rule__Button__Group__13__Impl )
-            // InternalSynthesizer.g:1985:2: rule__Button__Group__13__Impl
+            // InternalSynthesizer.g:2061:1: ( rule__Button__Group__13__Impl )
+            // InternalSynthesizer.g:2062:2: rule__Button__Group__13__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Button__Group__13__Impl();
@@ -5968,20 +6288,20 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Button__Group__13__Impl"
-    // InternalSynthesizer.g:1991:1: rule__Button__Group__13__Impl : ( ')' ) ;
+    // InternalSynthesizer.g:2068:1: rule__Button__Group__13__Impl : ( ')' ) ;
     public final void rule__Button__Group__13__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:1995:1: ( ( ')' ) )
-            // InternalSynthesizer.g:1996:1: ( ')' )
+            // InternalSynthesizer.g:2072:1: ( ( ')' ) )
+            // InternalSynthesizer.g:2073:1: ( ')' )
             {
-            // InternalSynthesizer.g:1996:1: ( ')' )
-            // InternalSynthesizer.g:1997:2: ')'
+            // InternalSynthesizer.g:2073:1: ( ')' )
+            // InternalSynthesizer.g:2074:2: ')'
             {
              before(grammarAccess.getButtonAccess().getRightParenthesisKeyword_13()); 
-            match(input,24,FOLLOW_2); 
+            match(input,26,FOLLOW_2); 
              after(grammarAccess.getButtonAccess().getRightParenthesisKeyword_13()); 
 
             }
@@ -6005,14 +6325,14 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__ConnectionElement__Group__0"
-    // InternalSynthesizer.g:2007:1: rule__ConnectionElement__Group__0 : rule__ConnectionElement__Group__0__Impl rule__ConnectionElement__Group__1 ;
+    // InternalSynthesizer.g:2084:1: rule__ConnectionElement__Group__0 : rule__ConnectionElement__Group__0__Impl rule__ConnectionElement__Group__1 ;
     public final void rule__ConnectionElement__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:2011:1: ( rule__ConnectionElement__Group__0__Impl rule__ConnectionElement__Group__1 )
-            // InternalSynthesizer.g:2012:2: rule__ConnectionElement__Group__0__Impl rule__ConnectionElement__Group__1
+            // InternalSynthesizer.g:2088:1: ( rule__ConnectionElement__Group__0__Impl rule__ConnectionElement__Group__1 )
+            // InternalSynthesizer.g:2089:2: rule__ConnectionElement__Group__0__Impl rule__ConnectionElement__Group__1
             {
             pushFollow(FOLLOW_11);
             rule__ConnectionElement__Group__0__Impl();
@@ -6043,17 +6363,17 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__ConnectionElement__Group__0__Impl"
-    // InternalSynthesizer.g:2019:1: rule__ConnectionElement__Group__0__Impl : ( 'linear' ) ;
+    // InternalSynthesizer.g:2096:1: rule__ConnectionElement__Group__0__Impl : ( 'linear' ) ;
     public final void rule__ConnectionElement__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:2023:1: ( ( 'linear' ) )
-            // InternalSynthesizer.g:2024:1: ( 'linear' )
+            // InternalSynthesizer.g:2100:1: ( ( 'linear' ) )
+            // InternalSynthesizer.g:2101:1: ( 'linear' )
             {
-            // InternalSynthesizer.g:2024:1: ( 'linear' )
-            // InternalSynthesizer.g:2025:2: 'linear'
+            // InternalSynthesizer.g:2101:1: ( 'linear' )
+            // InternalSynthesizer.g:2102:2: 'linear'
             {
              before(grammarAccess.getConnectionElementAccess().getLinearKeyword_0()); 
             match(input,29,FOLLOW_2); 
@@ -6080,14 +6400,14 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__ConnectionElement__Group__1"
-    // InternalSynthesizer.g:2034:1: rule__ConnectionElement__Group__1 : rule__ConnectionElement__Group__1__Impl rule__ConnectionElement__Group__2 ;
+    // InternalSynthesizer.g:2111:1: rule__ConnectionElement__Group__1 : rule__ConnectionElement__Group__1__Impl rule__ConnectionElement__Group__2 ;
     public final void rule__ConnectionElement__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:2038:1: ( rule__ConnectionElement__Group__1__Impl rule__ConnectionElement__Group__2 )
-            // InternalSynthesizer.g:2039:2: rule__ConnectionElement__Group__1__Impl rule__ConnectionElement__Group__2
+            // InternalSynthesizer.g:2115:1: ( rule__ConnectionElement__Group__1__Impl rule__ConnectionElement__Group__2 )
+            // InternalSynthesizer.g:2116:2: rule__ConnectionElement__Group__1__Impl rule__ConnectionElement__Group__2
             {
             pushFollow(FOLLOW_11);
             rule__ConnectionElement__Group__1__Impl();
@@ -6118,21 +6438,21 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__ConnectionElement__Group__1__Impl"
-    // InternalSynthesizer.g:2046:1: rule__ConnectionElement__Group__1__Impl : ( ( rule__ConnectionElement__CeAssignment_1 ) ) ;
+    // InternalSynthesizer.g:2123:1: rule__ConnectionElement__Group__1__Impl : ( ( rule__ConnectionElement__CeAssignment_1 ) ) ;
     public final void rule__ConnectionElement__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:2050:1: ( ( ( rule__ConnectionElement__CeAssignment_1 ) ) )
-            // InternalSynthesizer.g:2051:1: ( ( rule__ConnectionElement__CeAssignment_1 ) )
+            // InternalSynthesizer.g:2127:1: ( ( ( rule__ConnectionElement__CeAssignment_1 ) ) )
+            // InternalSynthesizer.g:2128:1: ( ( rule__ConnectionElement__CeAssignment_1 ) )
             {
-            // InternalSynthesizer.g:2051:1: ( ( rule__ConnectionElement__CeAssignment_1 ) )
-            // InternalSynthesizer.g:2052:2: ( rule__ConnectionElement__CeAssignment_1 )
+            // InternalSynthesizer.g:2128:1: ( ( rule__ConnectionElement__CeAssignment_1 ) )
+            // InternalSynthesizer.g:2129:2: ( rule__ConnectionElement__CeAssignment_1 )
             {
              before(grammarAccess.getConnectionElementAccess().getCeAssignment_1()); 
-            // InternalSynthesizer.g:2053:2: ( rule__ConnectionElement__CeAssignment_1 )
-            // InternalSynthesizer.g:2053:3: rule__ConnectionElement__CeAssignment_1
+            // InternalSynthesizer.g:2130:2: ( rule__ConnectionElement__CeAssignment_1 )
+            // InternalSynthesizer.g:2130:3: rule__ConnectionElement__CeAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__ConnectionElement__CeAssignment_1();
@@ -6165,14 +6485,14 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__ConnectionElement__Group__2"
-    // InternalSynthesizer.g:2061:1: rule__ConnectionElement__Group__2 : rule__ConnectionElement__Group__2__Impl ;
+    // InternalSynthesizer.g:2138:1: rule__ConnectionElement__Group__2 : rule__ConnectionElement__Group__2__Impl ;
     public final void rule__ConnectionElement__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:2065:1: ( rule__ConnectionElement__Group__2__Impl )
-            // InternalSynthesizer.g:2066:2: rule__ConnectionElement__Group__2__Impl
+            // InternalSynthesizer.g:2142:1: ( rule__ConnectionElement__Group__2__Impl )
+            // InternalSynthesizer.g:2143:2: rule__ConnectionElement__Group__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__ConnectionElement__Group__2__Impl();
@@ -6198,21 +6518,21 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__ConnectionElement__Group__2__Impl"
-    // InternalSynthesizer.g:2072:1: rule__ConnectionElement__Group__2__Impl : ( ( rule__ConnectionElement__SeAssignment_2 ) ) ;
+    // InternalSynthesizer.g:2149:1: rule__ConnectionElement__Group__2__Impl : ( ( rule__ConnectionElement__SeAssignment_2 ) ) ;
     public final void rule__ConnectionElement__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:2076:1: ( ( ( rule__ConnectionElement__SeAssignment_2 ) ) )
-            // InternalSynthesizer.g:2077:1: ( ( rule__ConnectionElement__SeAssignment_2 ) )
+            // InternalSynthesizer.g:2153:1: ( ( ( rule__ConnectionElement__SeAssignment_2 ) ) )
+            // InternalSynthesizer.g:2154:1: ( ( rule__ConnectionElement__SeAssignment_2 ) )
             {
-            // InternalSynthesizer.g:2077:1: ( ( rule__ConnectionElement__SeAssignment_2 ) )
-            // InternalSynthesizer.g:2078:2: ( rule__ConnectionElement__SeAssignment_2 )
+            // InternalSynthesizer.g:2154:1: ( ( rule__ConnectionElement__SeAssignment_2 ) )
+            // InternalSynthesizer.g:2155:2: ( rule__ConnectionElement__SeAssignment_2 )
             {
              before(grammarAccess.getConnectionElementAccess().getSeAssignment_2()); 
-            // InternalSynthesizer.g:2079:2: ( rule__ConnectionElement__SeAssignment_2 )
-            // InternalSynthesizer.g:2079:3: rule__ConnectionElement__SeAssignment_2
+            // InternalSynthesizer.g:2156:2: ( rule__ConnectionElement__SeAssignment_2 )
+            // InternalSynthesizer.g:2156:3: rule__ConnectionElement__SeAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__ConnectionElement__SeAssignment_2();
@@ -6245,14 +6565,14 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__SawToothOscillator__Group__0"
-    // InternalSynthesizer.g:2088:1: rule__SawToothOscillator__Group__0 : rule__SawToothOscillator__Group__0__Impl rule__SawToothOscillator__Group__1 ;
+    // InternalSynthesizer.g:2165:1: rule__SawToothOscillator__Group__0 : rule__SawToothOscillator__Group__0__Impl rule__SawToothOscillator__Group__1 ;
     public final void rule__SawToothOscillator__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:2092:1: ( rule__SawToothOscillator__Group__0__Impl rule__SawToothOscillator__Group__1 )
-            // InternalSynthesizer.g:2093:2: rule__SawToothOscillator__Group__0__Impl rule__SawToothOscillator__Group__1
+            // InternalSynthesizer.g:2169:1: ( rule__SawToothOscillator__Group__0__Impl rule__SawToothOscillator__Group__1 )
+            // InternalSynthesizer.g:2170:2: rule__SawToothOscillator__Group__0__Impl rule__SawToothOscillator__Group__1
             {
             pushFollow(FOLLOW_11);
             rule__SawToothOscillator__Group__0__Impl();
@@ -6283,17 +6603,17 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__SawToothOscillator__Group__0__Impl"
-    // InternalSynthesizer.g:2100:1: rule__SawToothOscillator__Group__0__Impl : ( 'sawToothOscillator' ) ;
+    // InternalSynthesizer.g:2177:1: rule__SawToothOscillator__Group__0__Impl : ( 'sawToothOscillator' ) ;
     public final void rule__SawToothOscillator__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:2104:1: ( ( 'sawToothOscillator' ) )
-            // InternalSynthesizer.g:2105:1: ( 'sawToothOscillator' )
+            // InternalSynthesizer.g:2181:1: ( ( 'sawToothOscillator' ) )
+            // InternalSynthesizer.g:2182:1: ( 'sawToothOscillator' )
             {
-            // InternalSynthesizer.g:2105:1: ( 'sawToothOscillator' )
-            // InternalSynthesizer.g:2106:2: 'sawToothOscillator'
+            // InternalSynthesizer.g:2182:1: ( 'sawToothOscillator' )
+            // InternalSynthesizer.g:2183:2: 'sawToothOscillator'
             {
              before(grammarAccess.getSawToothOscillatorAccess().getSawToothOscillatorKeyword_0()); 
             match(input,30,FOLLOW_2); 
@@ -6320,14 +6640,14 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__SawToothOscillator__Group__1"
-    // InternalSynthesizer.g:2115:1: rule__SawToothOscillator__Group__1 : rule__SawToothOscillator__Group__1__Impl rule__SawToothOscillator__Group__2 ;
+    // InternalSynthesizer.g:2192:1: rule__SawToothOscillator__Group__1 : rule__SawToothOscillator__Group__1__Impl rule__SawToothOscillator__Group__2 ;
     public final void rule__SawToothOscillator__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:2119:1: ( rule__SawToothOscillator__Group__1__Impl rule__SawToothOscillator__Group__2 )
-            // InternalSynthesizer.g:2120:2: rule__SawToothOscillator__Group__1__Impl rule__SawToothOscillator__Group__2
+            // InternalSynthesizer.g:2196:1: ( rule__SawToothOscillator__Group__1__Impl rule__SawToothOscillator__Group__2 )
+            // InternalSynthesizer.g:2197:2: rule__SawToothOscillator__Group__1__Impl rule__SawToothOscillator__Group__2
             {
             pushFollow(FOLLOW_12);
             rule__SawToothOscillator__Group__1__Impl();
@@ -6358,21 +6678,21 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__SawToothOscillator__Group__1__Impl"
-    // InternalSynthesizer.g:2127:1: rule__SawToothOscillator__Group__1__Impl : ( ( rule__SawToothOscillator__NameAssignment_1 ) ) ;
+    // InternalSynthesizer.g:2204:1: rule__SawToothOscillator__Group__1__Impl : ( ( rule__SawToothOscillator__NameAssignment_1 ) ) ;
     public final void rule__SawToothOscillator__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:2131:1: ( ( ( rule__SawToothOscillator__NameAssignment_1 ) ) )
-            // InternalSynthesizer.g:2132:1: ( ( rule__SawToothOscillator__NameAssignment_1 ) )
+            // InternalSynthesizer.g:2208:1: ( ( ( rule__SawToothOscillator__NameAssignment_1 ) ) )
+            // InternalSynthesizer.g:2209:1: ( ( rule__SawToothOscillator__NameAssignment_1 ) )
             {
-            // InternalSynthesizer.g:2132:1: ( ( rule__SawToothOscillator__NameAssignment_1 ) )
-            // InternalSynthesizer.g:2133:2: ( rule__SawToothOscillator__NameAssignment_1 )
+            // InternalSynthesizer.g:2209:1: ( ( rule__SawToothOscillator__NameAssignment_1 ) )
+            // InternalSynthesizer.g:2210:2: ( rule__SawToothOscillator__NameAssignment_1 )
             {
              before(grammarAccess.getSawToothOscillatorAccess().getNameAssignment_1()); 
-            // InternalSynthesizer.g:2134:2: ( rule__SawToothOscillator__NameAssignment_1 )
-            // InternalSynthesizer.g:2134:3: rule__SawToothOscillator__NameAssignment_1
+            // InternalSynthesizer.g:2211:2: ( rule__SawToothOscillator__NameAssignment_1 )
+            // InternalSynthesizer.g:2211:3: rule__SawToothOscillator__NameAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__SawToothOscillator__NameAssignment_1();
@@ -6405,14 +6725,14 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__SawToothOscillator__Group__2"
-    // InternalSynthesizer.g:2142:1: rule__SawToothOscillator__Group__2 : rule__SawToothOscillator__Group__2__Impl rule__SawToothOscillator__Group__3 ;
+    // InternalSynthesizer.g:2219:1: rule__SawToothOscillator__Group__2 : rule__SawToothOscillator__Group__2__Impl rule__SawToothOscillator__Group__3 ;
     public final void rule__SawToothOscillator__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:2146:1: ( rule__SawToothOscillator__Group__2__Impl rule__SawToothOscillator__Group__3 )
-            // InternalSynthesizer.g:2147:2: rule__SawToothOscillator__Group__2__Impl rule__SawToothOscillator__Group__3
+            // InternalSynthesizer.g:2223:1: ( rule__SawToothOscillator__Group__2__Impl rule__SawToothOscillator__Group__3 )
+            // InternalSynthesizer.g:2224:2: rule__SawToothOscillator__Group__2__Impl rule__SawToothOscillator__Group__3
             {
             pushFollow(FOLLOW_22);
             rule__SawToothOscillator__Group__2__Impl();
@@ -6443,17 +6763,17 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__SawToothOscillator__Group__2__Impl"
-    // InternalSynthesizer.g:2154:1: rule__SawToothOscillator__Group__2__Impl : ( '(' ) ;
+    // InternalSynthesizer.g:2231:1: rule__SawToothOscillator__Group__2__Impl : ( '(' ) ;
     public final void rule__SawToothOscillator__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:2158:1: ( ( '(' ) )
-            // InternalSynthesizer.g:2159:1: ( '(' )
+            // InternalSynthesizer.g:2235:1: ( ( '(' ) )
+            // InternalSynthesizer.g:2236:1: ( '(' )
             {
-            // InternalSynthesizer.g:2159:1: ( '(' )
-            // InternalSynthesizer.g:2160:2: '('
+            // InternalSynthesizer.g:2236:1: ( '(' )
+            // InternalSynthesizer.g:2237:2: '('
             {
              before(grammarAccess.getSawToothOscillatorAccess().getLeftParenthesisKeyword_2()); 
             match(input,19,FOLLOW_2); 
@@ -6480,14 +6800,14 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__SawToothOscillator__Group__3"
-    // InternalSynthesizer.g:2169:1: rule__SawToothOscillator__Group__3 : rule__SawToothOscillator__Group__3__Impl rule__SawToothOscillator__Group__4 ;
+    // InternalSynthesizer.g:2246:1: rule__SawToothOscillator__Group__3 : rule__SawToothOscillator__Group__3__Impl rule__SawToothOscillator__Group__4 ;
     public final void rule__SawToothOscillator__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:2173:1: ( rule__SawToothOscillator__Group__3__Impl rule__SawToothOscillator__Group__4 )
-            // InternalSynthesizer.g:2174:2: rule__SawToothOscillator__Group__3__Impl rule__SawToothOscillator__Group__4
+            // InternalSynthesizer.g:2250:1: ( rule__SawToothOscillator__Group__3__Impl rule__SawToothOscillator__Group__4 )
+            // InternalSynthesizer.g:2251:2: rule__SawToothOscillator__Group__3__Impl rule__SawToothOscillator__Group__4
             {
             pushFollow(FOLLOW_14);
             rule__SawToothOscillator__Group__3__Impl();
@@ -6518,17 +6838,17 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__SawToothOscillator__Group__3__Impl"
-    // InternalSynthesizer.g:2181:1: rule__SawToothOscillator__Group__3__Impl : ( 'frequency' ) ;
+    // InternalSynthesizer.g:2258:1: rule__SawToothOscillator__Group__3__Impl : ( 'frequency' ) ;
     public final void rule__SawToothOscillator__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:2185:1: ( ( 'frequency' ) )
-            // InternalSynthesizer.g:2186:1: ( 'frequency' )
+            // InternalSynthesizer.g:2262:1: ( ( 'frequency' ) )
+            // InternalSynthesizer.g:2263:1: ( 'frequency' )
             {
-            // InternalSynthesizer.g:2186:1: ( 'frequency' )
-            // InternalSynthesizer.g:2187:2: 'frequency'
+            // InternalSynthesizer.g:2263:1: ( 'frequency' )
+            // InternalSynthesizer.g:2264:2: 'frequency'
             {
              before(grammarAccess.getSawToothOscillatorAccess().getFrequencyKeyword_3()); 
             match(input,11,FOLLOW_2); 
@@ -6555,14 +6875,14 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__SawToothOscillator__Group__4"
-    // InternalSynthesizer.g:2196:1: rule__SawToothOscillator__Group__4 : rule__SawToothOscillator__Group__4__Impl rule__SawToothOscillator__Group__5 ;
+    // InternalSynthesizer.g:2273:1: rule__SawToothOscillator__Group__4 : rule__SawToothOscillator__Group__4__Impl rule__SawToothOscillator__Group__5 ;
     public final void rule__SawToothOscillator__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:2200:1: ( rule__SawToothOscillator__Group__4__Impl rule__SawToothOscillator__Group__5 )
-            // InternalSynthesizer.g:2201:2: rule__SawToothOscillator__Group__4__Impl rule__SawToothOscillator__Group__5
+            // InternalSynthesizer.g:2277:1: ( rule__SawToothOscillator__Group__4__Impl rule__SawToothOscillator__Group__5 )
+            // InternalSynthesizer.g:2278:2: rule__SawToothOscillator__Group__4__Impl rule__SawToothOscillator__Group__5
             {
             pushFollow(FOLLOW_23);
             rule__SawToothOscillator__Group__4__Impl();
@@ -6593,21 +6913,21 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__SawToothOscillator__Group__4__Impl"
-    // InternalSynthesizer.g:2208:1: rule__SawToothOscillator__Group__4__Impl : ( ( rule__SawToothOscillator__FrequencyAssignment_4 ) ) ;
+    // InternalSynthesizer.g:2285:1: rule__SawToothOscillator__Group__4__Impl : ( ( rule__SawToothOscillator__FrequencyAssignment_4 ) ) ;
     public final void rule__SawToothOscillator__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:2212:1: ( ( ( rule__SawToothOscillator__FrequencyAssignment_4 ) ) )
-            // InternalSynthesizer.g:2213:1: ( ( rule__SawToothOscillator__FrequencyAssignment_4 ) )
+            // InternalSynthesizer.g:2289:1: ( ( ( rule__SawToothOscillator__FrequencyAssignment_4 ) ) )
+            // InternalSynthesizer.g:2290:1: ( ( rule__SawToothOscillator__FrequencyAssignment_4 ) )
             {
-            // InternalSynthesizer.g:2213:1: ( ( rule__SawToothOscillator__FrequencyAssignment_4 ) )
-            // InternalSynthesizer.g:2214:2: ( rule__SawToothOscillator__FrequencyAssignment_4 )
+            // InternalSynthesizer.g:2290:1: ( ( rule__SawToothOscillator__FrequencyAssignment_4 ) )
+            // InternalSynthesizer.g:2291:2: ( rule__SawToothOscillator__FrequencyAssignment_4 )
             {
              before(grammarAccess.getSawToothOscillatorAccess().getFrequencyAssignment_4()); 
-            // InternalSynthesizer.g:2215:2: ( rule__SawToothOscillator__FrequencyAssignment_4 )
-            // InternalSynthesizer.g:2215:3: rule__SawToothOscillator__FrequencyAssignment_4
+            // InternalSynthesizer.g:2292:2: ( rule__SawToothOscillator__FrequencyAssignment_4 )
+            // InternalSynthesizer.g:2292:3: rule__SawToothOscillator__FrequencyAssignment_4
             {
             pushFollow(FOLLOW_2);
             rule__SawToothOscillator__FrequencyAssignment_4();
@@ -6640,14 +6960,14 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__SawToothOscillator__Group__5"
-    // InternalSynthesizer.g:2223:1: rule__SawToothOscillator__Group__5 : rule__SawToothOscillator__Group__5__Impl rule__SawToothOscillator__Group__6 ;
+    // InternalSynthesizer.g:2300:1: rule__SawToothOscillator__Group__5 : rule__SawToothOscillator__Group__5__Impl rule__SawToothOscillator__Group__6 ;
     public final void rule__SawToothOscillator__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:2227:1: ( rule__SawToothOscillator__Group__5__Impl rule__SawToothOscillator__Group__6 )
-            // InternalSynthesizer.g:2228:2: rule__SawToothOscillator__Group__5__Impl rule__SawToothOscillator__Group__6
+            // InternalSynthesizer.g:2304:1: ( rule__SawToothOscillator__Group__5__Impl rule__SawToothOscillator__Group__6 )
+            // InternalSynthesizer.g:2305:2: rule__SawToothOscillator__Group__5__Impl rule__SawToothOscillator__Group__6
             {
             pushFollow(FOLLOW_14);
             rule__SawToothOscillator__Group__5__Impl();
@@ -6678,17 +6998,17 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__SawToothOscillator__Group__5__Impl"
-    // InternalSynthesizer.g:2235:1: rule__SawToothOscillator__Group__5__Impl : ( 'amplitude' ) ;
+    // InternalSynthesizer.g:2312:1: rule__SawToothOscillator__Group__5__Impl : ( 'amplitude' ) ;
     public final void rule__SawToothOscillator__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:2239:1: ( ( 'amplitude' ) )
-            // InternalSynthesizer.g:2240:1: ( 'amplitude' )
+            // InternalSynthesizer.g:2316:1: ( ( 'amplitude' ) )
+            // InternalSynthesizer.g:2317:1: ( 'amplitude' )
             {
-            // InternalSynthesizer.g:2240:1: ( 'amplitude' )
-            // InternalSynthesizer.g:2241:2: 'amplitude'
+            // InternalSynthesizer.g:2317:1: ( 'amplitude' )
+            // InternalSynthesizer.g:2318:2: 'amplitude'
             {
              before(grammarAccess.getSawToothOscillatorAccess().getAmplitudeKeyword_5()); 
             match(input,12,FOLLOW_2); 
@@ -6715,16 +7035,16 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__SawToothOscillator__Group__6"
-    // InternalSynthesizer.g:2250:1: rule__SawToothOscillator__Group__6 : rule__SawToothOscillator__Group__6__Impl rule__SawToothOscillator__Group__7 ;
+    // InternalSynthesizer.g:2327:1: rule__SawToothOscillator__Group__6 : rule__SawToothOscillator__Group__6__Impl rule__SawToothOscillator__Group__7 ;
     public final void rule__SawToothOscillator__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:2254:1: ( rule__SawToothOscillator__Group__6__Impl rule__SawToothOscillator__Group__7 )
-            // InternalSynthesizer.g:2255:2: rule__SawToothOscillator__Group__6__Impl rule__SawToothOscillator__Group__7
+            // InternalSynthesizer.g:2331:1: ( rule__SawToothOscillator__Group__6__Impl rule__SawToothOscillator__Group__7 )
+            // InternalSynthesizer.g:2332:2: rule__SawToothOscillator__Group__6__Impl rule__SawToothOscillator__Group__7
             {
-            pushFollow(FOLLOW_18);
+            pushFollow(FOLLOW_21);
             rule__SawToothOscillator__Group__6__Impl();
 
             state._fsp--;
@@ -6753,21 +7073,21 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__SawToothOscillator__Group__6__Impl"
-    // InternalSynthesizer.g:2262:1: rule__SawToothOscillator__Group__6__Impl : ( ( rule__SawToothOscillator__AmplitudeAssignment_6 ) ) ;
+    // InternalSynthesizer.g:2339:1: rule__SawToothOscillator__Group__6__Impl : ( ( rule__SawToothOscillator__AmplitudeAssignment_6 ) ) ;
     public final void rule__SawToothOscillator__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:2266:1: ( ( ( rule__SawToothOscillator__AmplitudeAssignment_6 ) ) )
-            // InternalSynthesizer.g:2267:1: ( ( rule__SawToothOscillator__AmplitudeAssignment_6 ) )
+            // InternalSynthesizer.g:2343:1: ( ( ( rule__SawToothOscillator__AmplitudeAssignment_6 ) ) )
+            // InternalSynthesizer.g:2344:1: ( ( rule__SawToothOscillator__AmplitudeAssignment_6 ) )
             {
-            // InternalSynthesizer.g:2267:1: ( ( rule__SawToothOscillator__AmplitudeAssignment_6 ) )
-            // InternalSynthesizer.g:2268:2: ( rule__SawToothOscillator__AmplitudeAssignment_6 )
+            // InternalSynthesizer.g:2344:1: ( ( rule__SawToothOscillator__AmplitudeAssignment_6 ) )
+            // InternalSynthesizer.g:2345:2: ( rule__SawToothOscillator__AmplitudeAssignment_6 )
             {
              before(grammarAccess.getSawToothOscillatorAccess().getAmplitudeAssignment_6()); 
-            // InternalSynthesizer.g:2269:2: ( rule__SawToothOscillator__AmplitudeAssignment_6 )
-            // InternalSynthesizer.g:2269:3: rule__SawToothOscillator__AmplitudeAssignment_6
+            // InternalSynthesizer.g:2346:2: ( rule__SawToothOscillator__AmplitudeAssignment_6 )
+            // InternalSynthesizer.g:2346:3: rule__SawToothOscillator__AmplitudeAssignment_6
             {
             pushFollow(FOLLOW_2);
             rule__SawToothOscillator__AmplitudeAssignment_6();
@@ -6800,14 +7120,14 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__SawToothOscillator__Group__7"
-    // InternalSynthesizer.g:2277:1: rule__SawToothOscillator__Group__7 : rule__SawToothOscillator__Group__7__Impl ;
+    // InternalSynthesizer.g:2354:1: rule__SawToothOscillator__Group__7 : rule__SawToothOscillator__Group__7__Impl ;
     public final void rule__SawToothOscillator__Group__7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:2281:1: ( rule__SawToothOscillator__Group__7__Impl )
-            // InternalSynthesizer.g:2282:2: rule__SawToothOscillator__Group__7__Impl
+            // InternalSynthesizer.g:2358:1: ( rule__SawToothOscillator__Group__7__Impl )
+            // InternalSynthesizer.g:2359:2: rule__SawToothOscillator__Group__7__Impl
             {
             pushFollow(FOLLOW_2);
             rule__SawToothOscillator__Group__7__Impl();
@@ -6833,20 +7153,20 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__SawToothOscillator__Group__7__Impl"
-    // InternalSynthesizer.g:2288:1: rule__SawToothOscillator__Group__7__Impl : ( ')' ) ;
+    // InternalSynthesizer.g:2365:1: rule__SawToothOscillator__Group__7__Impl : ( ')' ) ;
     public final void rule__SawToothOscillator__Group__7__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:2292:1: ( ( ')' ) )
-            // InternalSynthesizer.g:2293:1: ( ')' )
+            // InternalSynthesizer.g:2369:1: ( ( ')' ) )
+            // InternalSynthesizer.g:2370:1: ( ')' )
             {
-            // InternalSynthesizer.g:2293:1: ( ')' )
-            // InternalSynthesizer.g:2294:2: ')'
+            // InternalSynthesizer.g:2370:1: ( ')' )
+            // InternalSynthesizer.g:2371:2: ')'
             {
              before(grammarAccess.getSawToothOscillatorAccess().getRightParenthesisKeyword_7()); 
-            match(input,24,FOLLOW_2); 
+            match(input,26,FOLLOW_2); 
              after(grammarAccess.getSawToothOscillatorAccess().getRightParenthesisKeyword_7()); 
 
             }
@@ -6870,14 +7190,14 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__SineOscillator__Group__0"
-    // InternalSynthesizer.g:2304:1: rule__SineOscillator__Group__0 : rule__SineOscillator__Group__0__Impl rule__SineOscillator__Group__1 ;
+    // InternalSynthesizer.g:2381:1: rule__SineOscillator__Group__0 : rule__SineOscillator__Group__0__Impl rule__SineOscillator__Group__1 ;
     public final void rule__SineOscillator__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:2308:1: ( rule__SineOscillator__Group__0__Impl rule__SineOscillator__Group__1 )
-            // InternalSynthesizer.g:2309:2: rule__SineOscillator__Group__0__Impl rule__SineOscillator__Group__1
+            // InternalSynthesizer.g:2385:1: ( rule__SineOscillator__Group__0__Impl rule__SineOscillator__Group__1 )
+            // InternalSynthesizer.g:2386:2: rule__SineOscillator__Group__0__Impl rule__SineOscillator__Group__1
             {
             pushFollow(FOLLOW_11);
             rule__SineOscillator__Group__0__Impl();
@@ -6908,17 +7228,17 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__SineOscillator__Group__0__Impl"
-    // InternalSynthesizer.g:2316:1: rule__SineOscillator__Group__0__Impl : ( 'sineOscillator' ) ;
+    // InternalSynthesizer.g:2393:1: rule__SineOscillator__Group__0__Impl : ( 'sineOscillator' ) ;
     public final void rule__SineOscillator__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:2320:1: ( ( 'sineOscillator' ) )
-            // InternalSynthesizer.g:2321:1: ( 'sineOscillator' )
+            // InternalSynthesizer.g:2397:1: ( ( 'sineOscillator' ) )
+            // InternalSynthesizer.g:2398:1: ( 'sineOscillator' )
             {
-            // InternalSynthesizer.g:2321:1: ( 'sineOscillator' )
-            // InternalSynthesizer.g:2322:2: 'sineOscillator'
+            // InternalSynthesizer.g:2398:1: ( 'sineOscillator' )
+            // InternalSynthesizer.g:2399:2: 'sineOscillator'
             {
              before(grammarAccess.getSineOscillatorAccess().getSineOscillatorKeyword_0()); 
             match(input,31,FOLLOW_2); 
@@ -6945,14 +7265,14 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__SineOscillator__Group__1"
-    // InternalSynthesizer.g:2331:1: rule__SineOscillator__Group__1 : rule__SineOscillator__Group__1__Impl rule__SineOscillator__Group__2 ;
+    // InternalSynthesizer.g:2408:1: rule__SineOscillator__Group__1 : rule__SineOscillator__Group__1__Impl rule__SineOscillator__Group__2 ;
     public final void rule__SineOscillator__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:2335:1: ( rule__SineOscillator__Group__1__Impl rule__SineOscillator__Group__2 )
-            // InternalSynthesizer.g:2336:2: rule__SineOscillator__Group__1__Impl rule__SineOscillator__Group__2
+            // InternalSynthesizer.g:2412:1: ( rule__SineOscillator__Group__1__Impl rule__SineOscillator__Group__2 )
+            // InternalSynthesizer.g:2413:2: rule__SineOscillator__Group__1__Impl rule__SineOscillator__Group__2
             {
             pushFollow(FOLLOW_12);
             rule__SineOscillator__Group__1__Impl();
@@ -6983,21 +7303,21 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__SineOscillator__Group__1__Impl"
-    // InternalSynthesizer.g:2343:1: rule__SineOscillator__Group__1__Impl : ( ( rule__SineOscillator__NameAssignment_1 ) ) ;
+    // InternalSynthesizer.g:2420:1: rule__SineOscillator__Group__1__Impl : ( ( rule__SineOscillator__NameAssignment_1 ) ) ;
     public final void rule__SineOscillator__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:2347:1: ( ( ( rule__SineOscillator__NameAssignment_1 ) ) )
-            // InternalSynthesizer.g:2348:1: ( ( rule__SineOscillator__NameAssignment_1 ) )
+            // InternalSynthesizer.g:2424:1: ( ( ( rule__SineOscillator__NameAssignment_1 ) ) )
+            // InternalSynthesizer.g:2425:1: ( ( rule__SineOscillator__NameAssignment_1 ) )
             {
-            // InternalSynthesizer.g:2348:1: ( ( rule__SineOscillator__NameAssignment_1 ) )
-            // InternalSynthesizer.g:2349:2: ( rule__SineOscillator__NameAssignment_1 )
+            // InternalSynthesizer.g:2425:1: ( ( rule__SineOscillator__NameAssignment_1 ) )
+            // InternalSynthesizer.g:2426:2: ( rule__SineOscillator__NameAssignment_1 )
             {
              before(grammarAccess.getSineOscillatorAccess().getNameAssignment_1()); 
-            // InternalSynthesizer.g:2350:2: ( rule__SineOscillator__NameAssignment_1 )
-            // InternalSynthesizer.g:2350:3: rule__SineOscillator__NameAssignment_1
+            // InternalSynthesizer.g:2427:2: ( rule__SineOscillator__NameAssignment_1 )
+            // InternalSynthesizer.g:2427:3: rule__SineOscillator__NameAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__SineOscillator__NameAssignment_1();
@@ -7030,14 +7350,14 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__SineOscillator__Group__2"
-    // InternalSynthesizer.g:2358:1: rule__SineOscillator__Group__2 : rule__SineOscillator__Group__2__Impl rule__SineOscillator__Group__3 ;
+    // InternalSynthesizer.g:2435:1: rule__SineOscillator__Group__2 : rule__SineOscillator__Group__2__Impl rule__SineOscillator__Group__3 ;
     public final void rule__SineOscillator__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:2362:1: ( rule__SineOscillator__Group__2__Impl rule__SineOscillator__Group__3 )
-            // InternalSynthesizer.g:2363:2: rule__SineOscillator__Group__2__Impl rule__SineOscillator__Group__3
+            // InternalSynthesizer.g:2439:1: ( rule__SineOscillator__Group__2__Impl rule__SineOscillator__Group__3 )
+            // InternalSynthesizer.g:2440:2: rule__SineOscillator__Group__2__Impl rule__SineOscillator__Group__3
             {
             pushFollow(FOLLOW_22);
             rule__SineOscillator__Group__2__Impl();
@@ -7068,17 +7388,17 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__SineOscillator__Group__2__Impl"
-    // InternalSynthesizer.g:2370:1: rule__SineOscillator__Group__2__Impl : ( '(' ) ;
+    // InternalSynthesizer.g:2447:1: rule__SineOscillator__Group__2__Impl : ( '(' ) ;
     public final void rule__SineOscillator__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:2374:1: ( ( '(' ) )
-            // InternalSynthesizer.g:2375:1: ( '(' )
+            // InternalSynthesizer.g:2451:1: ( ( '(' ) )
+            // InternalSynthesizer.g:2452:1: ( '(' )
             {
-            // InternalSynthesizer.g:2375:1: ( '(' )
-            // InternalSynthesizer.g:2376:2: '('
+            // InternalSynthesizer.g:2452:1: ( '(' )
+            // InternalSynthesizer.g:2453:2: '('
             {
              before(grammarAccess.getSineOscillatorAccess().getLeftParenthesisKeyword_2()); 
             match(input,19,FOLLOW_2); 
@@ -7105,14 +7425,14 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__SineOscillator__Group__3"
-    // InternalSynthesizer.g:2385:1: rule__SineOscillator__Group__3 : rule__SineOscillator__Group__3__Impl rule__SineOscillator__Group__4 ;
+    // InternalSynthesizer.g:2462:1: rule__SineOscillator__Group__3 : rule__SineOscillator__Group__3__Impl rule__SineOscillator__Group__4 ;
     public final void rule__SineOscillator__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:2389:1: ( rule__SineOscillator__Group__3__Impl rule__SineOscillator__Group__4 )
-            // InternalSynthesizer.g:2390:2: rule__SineOscillator__Group__3__Impl rule__SineOscillator__Group__4
+            // InternalSynthesizer.g:2466:1: ( rule__SineOscillator__Group__3__Impl rule__SineOscillator__Group__4 )
+            // InternalSynthesizer.g:2467:2: rule__SineOscillator__Group__3__Impl rule__SineOscillator__Group__4
             {
             pushFollow(FOLLOW_14);
             rule__SineOscillator__Group__3__Impl();
@@ -7143,17 +7463,17 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__SineOscillator__Group__3__Impl"
-    // InternalSynthesizer.g:2397:1: rule__SineOscillator__Group__3__Impl : ( 'frequency' ) ;
+    // InternalSynthesizer.g:2474:1: rule__SineOscillator__Group__3__Impl : ( 'frequency' ) ;
     public final void rule__SineOscillator__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:2401:1: ( ( 'frequency' ) )
-            // InternalSynthesizer.g:2402:1: ( 'frequency' )
+            // InternalSynthesizer.g:2478:1: ( ( 'frequency' ) )
+            // InternalSynthesizer.g:2479:1: ( 'frequency' )
             {
-            // InternalSynthesizer.g:2402:1: ( 'frequency' )
-            // InternalSynthesizer.g:2403:2: 'frequency'
+            // InternalSynthesizer.g:2479:1: ( 'frequency' )
+            // InternalSynthesizer.g:2480:2: 'frequency'
             {
              before(grammarAccess.getSineOscillatorAccess().getFrequencyKeyword_3()); 
             match(input,11,FOLLOW_2); 
@@ -7180,14 +7500,14 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__SineOscillator__Group__4"
-    // InternalSynthesizer.g:2412:1: rule__SineOscillator__Group__4 : rule__SineOscillator__Group__4__Impl rule__SineOscillator__Group__5 ;
+    // InternalSynthesizer.g:2489:1: rule__SineOscillator__Group__4 : rule__SineOscillator__Group__4__Impl rule__SineOscillator__Group__5 ;
     public final void rule__SineOscillator__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:2416:1: ( rule__SineOscillator__Group__4__Impl rule__SineOscillator__Group__5 )
-            // InternalSynthesizer.g:2417:2: rule__SineOscillator__Group__4__Impl rule__SineOscillator__Group__5
+            // InternalSynthesizer.g:2493:1: ( rule__SineOscillator__Group__4__Impl rule__SineOscillator__Group__5 )
+            // InternalSynthesizer.g:2494:2: rule__SineOscillator__Group__4__Impl rule__SineOscillator__Group__5
             {
             pushFollow(FOLLOW_23);
             rule__SineOscillator__Group__4__Impl();
@@ -7218,21 +7538,21 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__SineOscillator__Group__4__Impl"
-    // InternalSynthesizer.g:2424:1: rule__SineOscillator__Group__4__Impl : ( ( rule__SineOscillator__FrequencyAssignment_4 ) ) ;
+    // InternalSynthesizer.g:2501:1: rule__SineOscillator__Group__4__Impl : ( ( rule__SineOscillator__FrequencyAssignment_4 ) ) ;
     public final void rule__SineOscillator__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:2428:1: ( ( ( rule__SineOscillator__FrequencyAssignment_4 ) ) )
-            // InternalSynthesizer.g:2429:1: ( ( rule__SineOscillator__FrequencyAssignment_4 ) )
+            // InternalSynthesizer.g:2505:1: ( ( ( rule__SineOscillator__FrequencyAssignment_4 ) ) )
+            // InternalSynthesizer.g:2506:1: ( ( rule__SineOscillator__FrequencyAssignment_4 ) )
             {
-            // InternalSynthesizer.g:2429:1: ( ( rule__SineOscillator__FrequencyAssignment_4 ) )
-            // InternalSynthesizer.g:2430:2: ( rule__SineOscillator__FrequencyAssignment_4 )
+            // InternalSynthesizer.g:2506:1: ( ( rule__SineOscillator__FrequencyAssignment_4 ) )
+            // InternalSynthesizer.g:2507:2: ( rule__SineOscillator__FrequencyAssignment_4 )
             {
              before(grammarAccess.getSineOscillatorAccess().getFrequencyAssignment_4()); 
-            // InternalSynthesizer.g:2431:2: ( rule__SineOscillator__FrequencyAssignment_4 )
-            // InternalSynthesizer.g:2431:3: rule__SineOscillator__FrequencyAssignment_4
+            // InternalSynthesizer.g:2508:2: ( rule__SineOscillator__FrequencyAssignment_4 )
+            // InternalSynthesizer.g:2508:3: rule__SineOscillator__FrequencyAssignment_4
             {
             pushFollow(FOLLOW_2);
             rule__SineOscillator__FrequencyAssignment_4();
@@ -7265,14 +7585,14 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__SineOscillator__Group__5"
-    // InternalSynthesizer.g:2439:1: rule__SineOscillator__Group__5 : rule__SineOscillator__Group__5__Impl rule__SineOscillator__Group__6 ;
+    // InternalSynthesizer.g:2516:1: rule__SineOscillator__Group__5 : rule__SineOscillator__Group__5__Impl rule__SineOscillator__Group__6 ;
     public final void rule__SineOscillator__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:2443:1: ( rule__SineOscillator__Group__5__Impl rule__SineOscillator__Group__6 )
-            // InternalSynthesizer.g:2444:2: rule__SineOscillator__Group__5__Impl rule__SineOscillator__Group__6
+            // InternalSynthesizer.g:2520:1: ( rule__SineOscillator__Group__5__Impl rule__SineOscillator__Group__6 )
+            // InternalSynthesizer.g:2521:2: rule__SineOscillator__Group__5__Impl rule__SineOscillator__Group__6
             {
             pushFollow(FOLLOW_14);
             rule__SineOscillator__Group__5__Impl();
@@ -7303,17 +7623,17 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__SineOscillator__Group__5__Impl"
-    // InternalSynthesizer.g:2451:1: rule__SineOscillator__Group__5__Impl : ( 'amplitude' ) ;
+    // InternalSynthesizer.g:2528:1: rule__SineOscillator__Group__5__Impl : ( 'amplitude' ) ;
     public final void rule__SineOscillator__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:2455:1: ( ( 'amplitude' ) )
-            // InternalSynthesizer.g:2456:1: ( 'amplitude' )
+            // InternalSynthesizer.g:2532:1: ( ( 'amplitude' ) )
+            // InternalSynthesizer.g:2533:1: ( 'amplitude' )
             {
-            // InternalSynthesizer.g:2456:1: ( 'amplitude' )
-            // InternalSynthesizer.g:2457:2: 'amplitude'
+            // InternalSynthesizer.g:2533:1: ( 'amplitude' )
+            // InternalSynthesizer.g:2534:2: 'amplitude'
             {
              before(grammarAccess.getSineOscillatorAccess().getAmplitudeKeyword_5()); 
             match(input,12,FOLLOW_2); 
@@ -7340,16 +7660,16 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__SineOscillator__Group__6"
-    // InternalSynthesizer.g:2466:1: rule__SineOscillator__Group__6 : rule__SineOscillator__Group__6__Impl rule__SineOscillator__Group__7 ;
+    // InternalSynthesizer.g:2543:1: rule__SineOscillator__Group__6 : rule__SineOscillator__Group__6__Impl rule__SineOscillator__Group__7 ;
     public final void rule__SineOscillator__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:2470:1: ( rule__SineOscillator__Group__6__Impl rule__SineOscillator__Group__7 )
-            // InternalSynthesizer.g:2471:2: rule__SineOscillator__Group__6__Impl rule__SineOscillator__Group__7
+            // InternalSynthesizer.g:2547:1: ( rule__SineOscillator__Group__6__Impl rule__SineOscillator__Group__7 )
+            // InternalSynthesizer.g:2548:2: rule__SineOscillator__Group__6__Impl rule__SineOscillator__Group__7
             {
-            pushFollow(FOLLOW_18);
+            pushFollow(FOLLOW_21);
             rule__SineOscillator__Group__6__Impl();
 
             state._fsp--;
@@ -7378,21 +7698,21 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__SineOscillator__Group__6__Impl"
-    // InternalSynthesizer.g:2478:1: rule__SineOscillator__Group__6__Impl : ( ( rule__SineOscillator__AmplitudeAssignment_6 ) ) ;
+    // InternalSynthesizer.g:2555:1: rule__SineOscillator__Group__6__Impl : ( ( rule__SineOscillator__AmplitudeAssignment_6 ) ) ;
     public final void rule__SineOscillator__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:2482:1: ( ( ( rule__SineOscillator__AmplitudeAssignment_6 ) ) )
-            // InternalSynthesizer.g:2483:1: ( ( rule__SineOscillator__AmplitudeAssignment_6 ) )
+            // InternalSynthesizer.g:2559:1: ( ( ( rule__SineOscillator__AmplitudeAssignment_6 ) ) )
+            // InternalSynthesizer.g:2560:1: ( ( rule__SineOscillator__AmplitudeAssignment_6 ) )
             {
-            // InternalSynthesizer.g:2483:1: ( ( rule__SineOscillator__AmplitudeAssignment_6 ) )
-            // InternalSynthesizer.g:2484:2: ( rule__SineOscillator__AmplitudeAssignment_6 )
+            // InternalSynthesizer.g:2560:1: ( ( rule__SineOscillator__AmplitudeAssignment_6 ) )
+            // InternalSynthesizer.g:2561:2: ( rule__SineOscillator__AmplitudeAssignment_6 )
             {
              before(grammarAccess.getSineOscillatorAccess().getAmplitudeAssignment_6()); 
-            // InternalSynthesizer.g:2485:2: ( rule__SineOscillator__AmplitudeAssignment_6 )
-            // InternalSynthesizer.g:2485:3: rule__SineOscillator__AmplitudeAssignment_6
+            // InternalSynthesizer.g:2562:2: ( rule__SineOscillator__AmplitudeAssignment_6 )
+            // InternalSynthesizer.g:2562:3: rule__SineOscillator__AmplitudeAssignment_6
             {
             pushFollow(FOLLOW_2);
             rule__SineOscillator__AmplitudeAssignment_6();
@@ -7425,14 +7745,14 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__SineOscillator__Group__7"
-    // InternalSynthesizer.g:2493:1: rule__SineOscillator__Group__7 : rule__SineOscillator__Group__7__Impl ;
+    // InternalSynthesizer.g:2570:1: rule__SineOscillator__Group__7 : rule__SineOscillator__Group__7__Impl ;
     public final void rule__SineOscillator__Group__7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:2497:1: ( rule__SineOscillator__Group__7__Impl )
-            // InternalSynthesizer.g:2498:2: rule__SineOscillator__Group__7__Impl
+            // InternalSynthesizer.g:2574:1: ( rule__SineOscillator__Group__7__Impl )
+            // InternalSynthesizer.g:2575:2: rule__SineOscillator__Group__7__Impl
             {
             pushFollow(FOLLOW_2);
             rule__SineOscillator__Group__7__Impl();
@@ -7458,20 +7778,20 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__SineOscillator__Group__7__Impl"
-    // InternalSynthesizer.g:2504:1: rule__SineOscillator__Group__7__Impl : ( ')' ) ;
+    // InternalSynthesizer.g:2581:1: rule__SineOscillator__Group__7__Impl : ( ')' ) ;
     public final void rule__SineOscillator__Group__7__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:2508:1: ( ( ')' ) )
-            // InternalSynthesizer.g:2509:1: ( ')' )
+            // InternalSynthesizer.g:2585:1: ( ( ')' ) )
+            // InternalSynthesizer.g:2586:1: ( ')' )
             {
-            // InternalSynthesizer.g:2509:1: ( ')' )
-            // InternalSynthesizer.g:2510:2: ')'
+            // InternalSynthesizer.g:2586:1: ( ')' )
+            // InternalSynthesizer.g:2587:2: ')'
             {
              before(grammarAccess.getSineOscillatorAccess().getRightParenthesisKeyword_7()); 
-            match(input,24,FOLLOW_2); 
+            match(input,26,FOLLOW_2); 
              after(grammarAccess.getSineOscillatorAccess().getRightParenthesisKeyword_7()); 
 
             }
@@ -7495,14 +7815,14 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__TriangleOscillator__Group__0"
-    // InternalSynthesizer.g:2520:1: rule__TriangleOscillator__Group__0 : rule__TriangleOscillator__Group__0__Impl rule__TriangleOscillator__Group__1 ;
+    // InternalSynthesizer.g:2597:1: rule__TriangleOscillator__Group__0 : rule__TriangleOscillator__Group__0__Impl rule__TriangleOscillator__Group__1 ;
     public final void rule__TriangleOscillator__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:2524:1: ( rule__TriangleOscillator__Group__0__Impl rule__TriangleOscillator__Group__1 )
-            // InternalSynthesizer.g:2525:2: rule__TriangleOscillator__Group__0__Impl rule__TriangleOscillator__Group__1
+            // InternalSynthesizer.g:2601:1: ( rule__TriangleOscillator__Group__0__Impl rule__TriangleOscillator__Group__1 )
+            // InternalSynthesizer.g:2602:2: rule__TriangleOscillator__Group__0__Impl rule__TriangleOscillator__Group__1
             {
             pushFollow(FOLLOW_11);
             rule__TriangleOscillator__Group__0__Impl();
@@ -7533,17 +7853,17 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__TriangleOscillator__Group__0__Impl"
-    // InternalSynthesizer.g:2532:1: rule__TriangleOscillator__Group__0__Impl : ( 'triangleOscillator' ) ;
+    // InternalSynthesizer.g:2609:1: rule__TriangleOscillator__Group__0__Impl : ( 'triangleOscillator' ) ;
     public final void rule__TriangleOscillator__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:2536:1: ( ( 'triangleOscillator' ) )
-            // InternalSynthesizer.g:2537:1: ( 'triangleOscillator' )
+            // InternalSynthesizer.g:2613:1: ( ( 'triangleOscillator' ) )
+            // InternalSynthesizer.g:2614:1: ( 'triangleOscillator' )
             {
-            // InternalSynthesizer.g:2537:1: ( 'triangleOscillator' )
-            // InternalSynthesizer.g:2538:2: 'triangleOscillator'
+            // InternalSynthesizer.g:2614:1: ( 'triangleOscillator' )
+            // InternalSynthesizer.g:2615:2: 'triangleOscillator'
             {
              before(grammarAccess.getTriangleOscillatorAccess().getTriangleOscillatorKeyword_0()); 
             match(input,32,FOLLOW_2); 
@@ -7570,14 +7890,14 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__TriangleOscillator__Group__1"
-    // InternalSynthesizer.g:2547:1: rule__TriangleOscillator__Group__1 : rule__TriangleOscillator__Group__1__Impl rule__TriangleOscillator__Group__2 ;
+    // InternalSynthesizer.g:2624:1: rule__TriangleOscillator__Group__1 : rule__TriangleOscillator__Group__1__Impl rule__TriangleOscillator__Group__2 ;
     public final void rule__TriangleOscillator__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:2551:1: ( rule__TriangleOscillator__Group__1__Impl rule__TriangleOscillator__Group__2 )
-            // InternalSynthesizer.g:2552:2: rule__TriangleOscillator__Group__1__Impl rule__TriangleOscillator__Group__2
+            // InternalSynthesizer.g:2628:1: ( rule__TriangleOscillator__Group__1__Impl rule__TriangleOscillator__Group__2 )
+            // InternalSynthesizer.g:2629:2: rule__TriangleOscillator__Group__1__Impl rule__TriangleOscillator__Group__2
             {
             pushFollow(FOLLOW_12);
             rule__TriangleOscillator__Group__1__Impl();
@@ -7608,21 +7928,21 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__TriangleOscillator__Group__1__Impl"
-    // InternalSynthesizer.g:2559:1: rule__TriangleOscillator__Group__1__Impl : ( ( rule__TriangleOscillator__NameAssignment_1 ) ) ;
+    // InternalSynthesizer.g:2636:1: rule__TriangleOscillator__Group__1__Impl : ( ( rule__TriangleOscillator__NameAssignment_1 ) ) ;
     public final void rule__TriangleOscillator__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:2563:1: ( ( ( rule__TriangleOscillator__NameAssignment_1 ) ) )
-            // InternalSynthesizer.g:2564:1: ( ( rule__TriangleOscillator__NameAssignment_1 ) )
+            // InternalSynthesizer.g:2640:1: ( ( ( rule__TriangleOscillator__NameAssignment_1 ) ) )
+            // InternalSynthesizer.g:2641:1: ( ( rule__TriangleOscillator__NameAssignment_1 ) )
             {
-            // InternalSynthesizer.g:2564:1: ( ( rule__TriangleOscillator__NameAssignment_1 ) )
-            // InternalSynthesizer.g:2565:2: ( rule__TriangleOscillator__NameAssignment_1 )
+            // InternalSynthesizer.g:2641:1: ( ( rule__TriangleOscillator__NameAssignment_1 ) )
+            // InternalSynthesizer.g:2642:2: ( rule__TriangleOscillator__NameAssignment_1 )
             {
              before(grammarAccess.getTriangleOscillatorAccess().getNameAssignment_1()); 
-            // InternalSynthesizer.g:2566:2: ( rule__TriangleOscillator__NameAssignment_1 )
-            // InternalSynthesizer.g:2566:3: rule__TriangleOscillator__NameAssignment_1
+            // InternalSynthesizer.g:2643:2: ( rule__TriangleOscillator__NameAssignment_1 )
+            // InternalSynthesizer.g:2643:3: rule__TriangleOscillator__NameAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__TriangleOscillator__NameAssignment_1();
@@ -7655,14 +7975,14 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__TriangleOscillator__Group__2"
-    // InternalSynthesizer.g:2574:1: rule__TriangleOscillator__Group__2 : rule__TriangleOscillator__Group__2__Impl rule__TriangleOscillator__Group__3 ;
+    // InternalSynthesizer.g:2651:1: rule__TriangleOscillator__Group__2 : rule__TriangleOscillator__Group__2__Impl rule__TriangleOscillator__Group__3 ;
     public final void rule__TriangleOscillator__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:2578:1: ( rule__TriangleOscillator__Group__2__Impl rule__TriangleOscillator__Group__3 )
-            // InternalSynthesizer.g:2579:2: rule__TriangleOscillator__Group__2__Impl rule__TriangleOscillator__Group__3
+            // InternalSynthesizer.g:2655:1: ( rule__TriangleOscillator__Group__2__Impl rule__TriangleOscillator__Group__3 )
+            // InternalSynthesizer.g:2656:2: rule__TriangleOscillator__Group__2__Impl rule__TriangleOscillator__Group__3
             {
             pushFollow(FOLLOW_22);
             rule__TriangleOscillator__Group__2__Impl();
@@ -7693,17 +8013,17 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__TriangleOscillator__Group__2__Impl"
-    // InternalSynthesizer.g:2586:1: rule__TriangleOscillator__Group__2__Impl : ( '(' ) ;
+    // InternalSynthesizer.g:2663:1: rule__TriangleOscillator__Group__2__Impl : ( '(' ) ;
     public final void rule__TriangleOscillator__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:2590:1: ( ( '(' ) )
-            // InternalSynthesizer.g:2591:1: ( '(' )
+            // InternalSynthesizer.g:2667:1: ( ( '(' ) )
+            // InternalSynthesizer.g:2668:1: ( '(' )
             {
-            // InternalSynthesizer.g:2591:1: ( '(' )
-            // InternalSynthesizer.g:2592:2: '('
+            // InternalSynthesizer.g:2668:1: ( '(' )
+            // InternalSynthesizer.g:2669:2: '('
             {
              before(grammarAccess.getTriangleOscillatorAccess().getLeftParenthesisKeyword_2()); 
             match(input,19,FOLLOW_2); 
@@ -7730,14 +8050,14 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__TriangleOscillator__Group__3"
-    // InternalSynthesizer.g:2601:1: rule__TriangleOscillator__Group__3 : rule__TriangleOscillator__Group__3__Impl rule__TriangleOscillator__Group__4 ;
+    // InternalSynthesizer.g:2678:1: rule__TriangleOscillator__Group__3 : rule__TriangleOscillator__Group__3__Impl rule__TriangleOscillator__Group__4 ;
     public final void rule__TriangleOscillator__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:2605:1: ( rule__TriangleOscillator__Group__3__Impl rule__TriangleOscillator__Group__4 )
-            // InternalSynthesizer.g:2606:2: rule__TriangleOscillator__Group__3__Impl rule__TriangleOscillator__Group__4
+            // InternalSynthesizer.g:2682:1: ( rule__TriangleOscillator__Group__3__Impl rule__TriangleOscillator__Group__4 )
+            // InternalSynthesizer.g:2683:2: rule__TriangleOscillator__Group__3__Impl rule__TriangleOscillator__Group__4
             {
             pushFollow(FOLLOW_14);
             rule__TriangleOscillator__Group__3__Impl();
@@ -7768,17 +8088,17 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__TriangleOscillator__Group__3__Impl"
-    // InternalSynthesizer.g:2613:1: rule__TriangleOscillator__Group__3__Impl : ( 'frequency' ) ;
+    // InternalSynthesizer.g:2690:1: rule__TriangleOscillator__Group__3__Impl : ( 'frequency' ) ;
     public final void rule__TriangleOscillator__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:2617:1: ( ( 'frequency' ) )
-            // InternalSynthesizer.g:2618:1: ( 'frequency' )
+            // InternalSynthesizer.g:2694:1: ( ( 'frequency' ) )
+            // InternalSynthesizer.g:2695:1: ( 'frequency' )
             {
-            // InternalSynthesizer.g:2618:1: ( 'frequency' )
-            // InternalSynthesizer.g:2619:2: 'frequency'
+            // InternalSynthesizer.g:2695:1: ( 'frequency' )
+            // InternalSynthesizer.g:2696:2: 'frequency'
             {
              before(grammarAccess.getTriangleOscillatorAccess().getFrequencyKeyword_3()); 
             match(input,11,FOLLOW_2); 
@@ -7805,14 +8125,14 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__TriangleOscillator__Group__4"
-    // InternalSynthesizer.g:2628:1: rule__TriangleOscillator__Group__4 : rule__TriangleOscillator__Group__4__Impl rule__TriangleOscillator__Group__5 ;
+    // InternalSynthesizer.g:2705:1: rule__TriangleOscillator__Group__4 : rule__TriangleOscillator__Group__4__Impl rule__TriangleOscillator__Group__5 ;
     public final void rule__TriangleOscillator__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:2632:1: ( rule__TriangleOscillator__Group__4__Impl rule__TriangleOscillator__Group__5 )
-            // InternalSynthesizer.g:2633:2: rule__TriangleOscillator__Group__4__Impl rule__TriangleOscillator__Group__5
+            // InternalSynthesizer.g:2709:1: ( rule__TriangleOscillator__Group__4__Impl rule__TriangleOscillator__Group__5 )
+            // InternalSynthesizer.g:2710:2: rule__TriangleOscillator__Group__4__Impl rule__TriangleOscillator__Group__5
             {
             pushFollow(FOLLOW_23);
             rule__TriangleOscillator__Group__4__Impl();
@@ -7843,21 +8163,21 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__TriangleOscillator__Group__4__Impl"
-    // InternalSynthesizer.g:2640:1: rule__TriangleOscillator__Group__4__Impl : ( ( rule__TriangleOscillator__FrequencyAssignment_4 ) ) ;
+    // InternalSynthesizer.g:2717:1: rule__TriangleOscillator__Group__4__Impl : ( ( rule__TriangleOscillator__FrequencyAssignment_4 ) ) ;
     public final void rule__TriangleOscillator__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:2644:1: ( ( ( rule__TriangleOscillator__FrequencyAssignment_4 ) ) )
-            // InternalSynthesizer.g:2645:1: ( ( rule__TriangleOscillator__FrequencyAssignment_4 ) )
+            // InternalSynthesizer.g:2721:1: ( ( ( rule__TriangleOscillator__FrequencyAssignment_4 ) ) )
+            // InternalSynthesizer.g:2722:1: ( ( rule__TriangleOscillator__FrequencyAssignment_4 ) )
             {
-            // InternalSynthesizer.g:2645:1: ( ( rule__TriangleOscillator__FrequencyAssignment_4 ) )
-            // InternalSynthesizer.g:2646:2: ( rule__TriangleOscillator__FrequencyAssignment_4 )
+            // InternalSynthesizer.g:2722:1: ( ( rule__TriangleOscillator__FrequencyAssignment_4 ) )
+            // InternalSynthesizer.g:2723:2: ( rule__TriangleOscillator__FrequencyAssignment_4 )
             {
              before(grammarAccess.getTriangleOscillatorAccess().getFrequencyAssignment_4()); 
-            // InternalSynthesizer.g:2647:2: ( rule__TriangleOscillator__FrequencyAssignment_4 )
-            // InternalSynthesizer.g:2647:3: rule__TriangleOscillator__FrequencyAssignment_4
+            // InternalSynthesizer.g:2724:2: ( rule__TriangleOscillator__FrequencyAssignment_4 )
+            // InternalSynthesizer.g:2724:3: rule__TriangleOscillator__FrequencyAssignment_4
             {
             pushFollow(FOLLOW_2);
             rule__TriangleOscillator__FrequencyAssignment_4();
@@ -7890,14 +8210,14 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__TriangleOscillator__Group__5"
-    // InternalSynthesizer.g:2655:1: rule__TriangleOscillator__Group__5 : rule__TriangleOscillator__Group__5__Impl rule__TriangleOscillator__Group__6 ;
+    // InternalSynthesizer.g:2732:1: rule__TriangleOscillator__Group__5 : rule__TriangleOscillator__Group__5__Impl rule__TriangleOscillator__Group__6 ;
     public final void rule__TriangleOscillator__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:2659:1: ( rule__TriangleOscillator__Group__5__Impl rule__TriangleOscillator__Group__6 )
-            // InternalSynthesizer.g:2660:2: rule__TriangleOscillator__Group__5__Impl rule__TriangleOscillator__Group__6
+            // InternalSynthesizer.g:2736:1: ( rule__TriangleOscillator__Group__5__Impl rule__TriangleOscillator__Group__6 )
+            // InternalSynthesizer.g:2737:2: rule__TriangleOscillator__Group__5__Impl rule__TriangleOscillator__Group__6
             {
             pushFollow(FOLLOW_14);
             rule__TriangleOscillator__Group__5__Impl();
@@ -7928,17 +8248,17 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__TriangleOscillator__Group__5__Impl"
-    // InternalSynthesizer.g:2667:1: rule__TriangleOscillator__Group__5__Impl : ( 'amplitude' ) ;
+    // InternalSynthesizer.g:2744:1: rule__TriangleOscillator__Group__5__Impl : ( 'amplitude' ) ;
     public final void rule__TriangleOscillator__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:2671:1: ( ( 'amplitude' ) )
-            // InternalSynthesizer.g:2672:1: ( 'amplitude' )
+            // InternalSynthesizer.g:2748:1: ( ( 'amplitude' ) )
+            // InternalSynthesizer.g:2749:1: ( 'amplitude' )
             {
-            // InternalSynthesizer.g:2672:1: ( 'amplitude' )
-            // InternalSynthesizer.g:2673:2: 'amplitude'
+            // InternalSynthesizer.g:2749:1: ( 'amplitude' )
+            // InternalSynthesizer.g:2750:2: 'amplitude'
             {
              before(grammarAccess.getTriangleOscillatorAccess().getAmplitudeKeyword_5()); 
             match(input,12,FOLLOW_2); 
@@ -7965,16 +8285,16 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__TriangleOscillator__Group__6"
-    // InternalSynthesizer.g:2682:1: rule__TriangleOscillator__Group__6 : rule__TriangleOscillator__Group__6__Impl rule__TriangleOscillator__Group__7 ;
+    // InternalSynthesizer.g:2759:1: rule__TriangleOscillator__Group__6 : rule__TriangleOscillator__Group__6__Impl rule__TriangleOscillator__Group__7 ;
     public final void rule__TriangleOscillator__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:2686:1: ( rule__TriangleOscillator__Group__6__Impl rule__TriangleOscillator__Group__7 )
-            // InternalSynthesizer.g:2687:2: rule__TriangleOscillator__Group__6__Impl rule__TriangleOscillator__Group__7
+            // InternalSynthesizer.g:2763:1: ( rule__TriangleOscillator__Group__6__Impl rule__TriangleOscillator__Group__7 )
+            // InternalSynthesizer.g:2764:2: rule__TriangleOscillator__Group__6__Impl rule__TriangleOscillator__Group__7
             {
-            pushFollow(FOLLOW_18);
+            pushFollow(FOLLOW_21);
             rule__TriangleOscillator__Group__6__Impl();
 
             state._fsp--;
@@ -8003,21 +8323,21 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__TriangleOscillator__Group__6__Impl"
-    // InternalSynthesizer.g:2694:1: rule__TriangleOscillator__Group__6__Impl : ( ( rule__TriangleOscillator__AmplitudeAssignment_6 ) ) ;
+    // InternalSynthesizer.g:2771:1: rule__TriangleOscillator__Group__6__Impl : ( ( rule__TriangleOscillator__AmplitudeAssignment_6 ) ) ;
     public final void rule__TriangleOscillator__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:2698:1: ( ( ( rule__TriangleOscillator__AmplitudeAssignment_6 ) ) )
-            // InternalSynthesizer.g:2699:1: ( ( rule__TriangleOscillator__AmplitudeAssignment_6 ) )
+            // InternalSynthesizer.g:2775:1: ( ( ( rule__TriangleOscillator__AmplitudeAssignment_6 ) ) )
+            // InternalSynthesizer.g:2776:1: ( ( rule__TriangleOscillator__AmplitudeAssignment_6 ) )
             {
-            // InternalSynthesizer.g:2699:1: ( ( rule__TriangleOscillator__AmplitudeAssignment_6 ) )
-            // InternalSynthesizer.g:2700:2: ( rule__TriangleOscillator__AmplitudeAssignment_6 )
+            // InternalSynthesizer.g:2776:1: ( ( rule__TriangleOscillator__AmplitudeAssignment_6 ) )
+            // InternalSynthesizer.g:2777:2: ( rule__TriangleOscillator__AmplitudeAssignment_6 )
             {
              before(grammarAccess.getTriangleOscillatorAccess().getAmplitudeAssignment_6()); 
-            // InternalSynthesizer.g:2701:2: ( rule__TriangleOscillator__AmplitudeAssignment_6 )
-            // InternalSynthesizer.g:2701:3: rule__TriangleOscillator__AmplitudeAssignment_6
+            // InternalSynthesizer.g:2778:2: ( rule__TriangleOscillator__AmplitudeAssignment_6 )
+            // InternalSynthesizer.g:2778:3: rule__TriangleOscillator__AmplitudeAssignment_6
             {
             pushFollow(FOLLOW_2);
             rule__TriangleOscillator__AmplitudeAssignment_6();
@@ -8050,14 +8370,14 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__TriangleOscillator__Group__7"
-    // InternalSynthesizer.g:2709:1: rule__TriangleOscillator__Group__7 : rule__TriangleOscillator__Group__7__Impl ;
+    // InternalSynthesizer.g:2786:1: rule__TriangleOscillator__Group__7 : rule__TriangleOscillator__Group__7__Impl ;
     public final void rule__TriangleOscillator__Group__7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:2713:1: ( rule__TriangleOscillator__Group__7__Impl )
-            // InternalSynthesizer.g:2714:2: rule__TriangleOscillator__Group__7__Impl
+            // InternalSynthesizer.g:2790:1: ( rule__TriangleOscillator__Group__7__Impl )
+            // InternalSynthesizer.g:2791:2: rule__TriangleOscillator__Group__7__Impl
             {
             pushFollow(FOLLOW_2);
             rule__TriangleOscillator__Group__7__Impl();
@@ -8083,20 +8403,20 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__TriangleOscillator__Group__7__Impl"
-    // InternalSynthesizer.g:2720:1: rule__TriangleOscillator__Group__7__Impl : ( ')' ) ;
+    // InternalSynthesizer.g:2797:1: rule__TriangleOscillator__Group__7__Impl : ( ')' ) ;
     public final void rule__TriangleOscillator__Group__7__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:2724:1: ( ( ')' ) )
-            // InternalSynthesizer.g:2725:1: ( ')' )
+            // InternalSynthesizer.g:2801:1: ( ( ')' ) )
+            // InternalSynthesizer.g:2802:1: ( ')' )
             {
-            // InternalSynthesizer.g:2725:1: ( ')' )
-            // InternalSynthesizer.g:2726:2: ')'
+            // InternalSynthesizer.g:2802:1: ( ')' )
+            // InternalSynthesizer.g:2803:2: ')'
             {
              before(grammarAccess.getTriangleOscillatorAccess().getRightParenthesisKeyword_7()); 
-            match(input,24,FOLLOW_2); 
+            match(input,26,FOLLOW_2); 
              after(grammarAccess.getTriangleOscillatorAccess().getRightParenthesisKeyword_7()); 
 
             }
@@ -8120,14 +8440,14 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__SquareOscillator__Group__0"
-    // InternalSynthesizer.g:2736:1: rule__SquareOscillator__Group__0 : rule__SquareOscillator__Group__0__Impl rule__SquareOscillator__Group__1 ;
+    // InternalSynthesizer.g:2813:1: rule__SquareOscillator__Group__0 : rule__SquareOscillator__Group__0__Impl rule__SquareOscillator__Group__1 ;
     public final void rule__SquareOscillator__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:2740:1: ( rule__SquareOscillator__Group__0__Impl rule__SquareOscillator__Group__1 )
-            // InternalSynthesizer.g:2741:2: rule__SquareOscillator__Group__0__Impl rule__SquareOscillator__Group__1
+            // InternalSynthesizer.g:2817:1: ( rule__SquareOscillator__Group__0__Impl rule__SquareOscillator__Group__1 )
+            // InternalSynthesizer.g:2818:2: rule__SquareOscillator__Group__0__Impl rule__SquareOscillator__Group__1
             {
             pushFollow(FOLLOW_11);
             rule__SquareOscillator__Group__0__Impl();
@@ -8158,17 +8478,17 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__SquareOscillator__Group__0__Impl"
-    // InternalSynthesizer.g:2748:1: rule__SquareOscillator__Group__0__Impl : ( 'squareOscillator' ) ;
+    // InternalSynthesizer.g:2825:1: rule__SquareOscillator__Group__0__Impl : ( 'squareOscillator' ) ;
     public final void rule__SquareOscillator__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:2752:1: ( ( 'squareOscillator' ) )
-            // InternalSynthesizer.g:2753:1: ( 'squareOscillator' )
+            // InternalSynthesizer.g:2829:1: ( ( 'squareOscillator' ) )
+            // InternalSynthesizer.g:2830:1: ( 'squareOscillator' )
             {
-            // InternalSynthesizer.g:2753:1: ( 'squareOscillator' )
-            // InternalSynthesizer.g:2754:2: 'squareOscillator'
+            // InternalSynthesizer.g:2830:1: ( 'squareOscillator' )
+            // InternalSynthesizer.g:2831:2: 'squareOscillator'
             {
              before(grammarAccess.getSquareOscillatorAccess().getSquareOscillatorKeyword_0()); 
             match(input,33,FOLLOW_2); 
@@ -8195,14 +8515,14 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__SquareOscillator__Group__1"
-    // InternalSynthesizer.g:2763:1: rule__SquareOscillator__Group__1 : rule__SquareOscillator__Group__1__Impl rule__SquareOscillator__Group__2 ;
+    // InternalSynthesizer.g:2840:1: rule__SquareOscillator__Group__1 : rule__SquareOscillator__Group__1__Impl rule__SquareOscillator__Group__2 ;
     public final void rule__SquareOscillator__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:2767:1: ( rule__SquareOscillator__Group__1__Impl rule__SquareOscillator__Group__2 )
-            // InternalSynthesizer.g:2768:2: rule__SquareOscillator__Group__1__Impl rule__SquareOscillator__Group__2
+            // InternalSynthesizer.g:2844:1: ( rule__SquareOscillator__Group__1__Impl rule__SquareOscillator__Group__2 )
+            // InternalSynthesizer.g:2845:2: rule__SquareOscillator__Group__1__Impl rule__SquareOscillator__Group__2
             {
             pushFollow(FOLLOW_12);
             rule__SquareOscillator__Group__1__Impl();
@@ -8233,21 +8553,21 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__SquareOscillator__Group__1__Impl"
-    // InternalSynthesizer.g:2775:1: rule__SquareOscillator__Group__1__Impl : ( ( rule__SquareOscillator__NameAssignment_1 ) ) ;
+    // InternalSynthesizer.g:2852:1: rule__SquareOscillator__Group__1__Impl : ( ( rule__SquareOscillator__NameAssignment_1 ) ) ;
     public final void rule__SquareOscillator__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:2779:1: ( ( ( rule__SquareOscillator__NameAssignment_1 ) ) )
-            // InternalSynthesizer.g:2780:1: ( ( rule__SquareOscillator__NameAssignment_1 ) )
+            // InternalSynthesizer.g:2856:1: ( ( ( rule__SquareOscillator__NameAssignment_1 ) ) )
+            // InternalSynthesizer.g:2857:1: ( ( rule__SquareOscillator__NameAssignment_1 ) )
             {
-            // InternalSynthesizer.g:2780:1: ( ( rule__SquareOscillator__NameAssignment_1 ) )
-            // InternalSynthesizer.g:2781:2: ( rule__SquareOscillator__NameAssignment_1 )
+            // InternalSynthesizer.g:2857:1: ( ( rule__SquareOscillator__NameAssignment_1 ) )
+            // InternalSynthesizer.g:2858:2: ( rule__SquareOscillator__NameAssignment_1 )
             {
              before(grammarAccess.getSquareOscillatorAccess().getNameAssignment_1()); 
-            // InternalSynthesizer.g:2782:2: ( rule__SquareOscillator__NameAssignment_1 )
-            // InternalSynthesizer.g:2782:3: rule__SquareOscillator__NameAssignment_1
+            // InternalSynthesizer.g:2859:2: ( rule__SquareOscillator__NameAssignment_1 )
+            // InternalSynthesizer.g:2859:3: rule__SquareOscillator__NameAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__SquareOscillator__NameAssignment_1();
@@ -8280,14 +8600,14 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__SquareOscillator__Group__2"
-    // InternalSynthesizer.g:2790:1: rule__SquareOscillator__Group__2 : rule__SquareOscillator__Group__2__Impl rule__SquareOscillator__Group__3 ;
+    // InternalSynthesizer.g:2867:1: rule__SquareOscillator__Group__2 : rule__SquareOscillator__Group__2__Impl rule__SquareOscillator__Group__3 ;
     public final void rule__SquareOscillator__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:2794:1: ( rule__SquareOscillator__Group__2__Impl rule__SquareOscillator__Group__3 )
-            // InternalSynthesizer.g:2795:2: rule__SquareOscillator__Group__2__Impl rule__SquareOscillator__Group__3
+            // InternalSynthesizer.g:2871:1: ( rule__SquareOscillator__Group__2__Impl rule__SquareOscillator__Group__3 )
+            // InternalSynthesizer.g:2872:2: rule__SquareOscillator__Group__2__Impl rule__SquareOscillator__Group__3
             {
             pushFollow(FOLLOW_22);
             rule__SquareOscillator__Group__2__Impl();
@@ -8318,17 +8638,17 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__SquareOscillator__Group__2__Impl"
-    // InternalSynthesizer.g:2802:1: rule__SquareOscillator__Group__2__Impl : ( '(' ) ;
+    // InternalSynthesizer.g:2879:1: rule__SquareOscillator__Group__2__Impl : ( '(' ) ;
     public final void rule__SquareOscillator__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:2806:1: ( ( '(' ) )
-            // InternalSynthesizer.g:2807:1: ( '(' )
+            // InternalSynthesizer.g:2883:1: ( ( '(' ) )
+            // InternalSynthesizer.g:2884:1: ( '(' )
             {
-            // InternalSynthesizer.g:2807:1: ( '(' )
-            // InternalSynthesizer.g:2808:2: '('
+            // InternalSynthesizer.g:2884:1: ( '(' )
+            // InternalSynthesizer.g:2885:2: '('
             {
              before(grammarAccess.getSquareOscillatorAccess().getLeftParenthesisKeyword_2()); 
             match(input,19,FOLLOW_2); 
@@ -8355,14 +8675,14 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__SquareOscillator__Group__3"
-    // InternalSynthesizer.g:2817:1: rule__SquareOscillator__Group__3 : rule__SquareOscillator__Group__3__Impl rule__SquareOscillator__Group__4 ;
+    // InternalSynthesizer.g:2894:1: rule__SquareOscillator__Group__3 : rule__SquareOscillator__Group__3__Impl rule__SquareOscillator__Group__4 ;
     public final void rule__SquareOscillator__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:2821:1: ( rule__SquareOscillator__Group__3__Impl rule__SquareOscillator__Group__4 )
-            // InternalSynthesizer.g:2822:2: rule__SquareOscillator__Group__3__Impl rule__SquareOscillator__Group__4
+            // InternalSynthesizer.g:2898:1: ( rule__SquareOscillator__Group__3__Impl rule__SquareOscillator__Group__4 )
+            // InternalSynthesizer.g:2899:2: rule__SquareOscillator__Group__3__Impl rule__SquareOscillator__Group__4
             {
             pushFollow(FOLLOW_14);
             rule__SquareOscillator__Group__3__Impl();
@@ -8393,17 +8713,17 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__SquareOscillator__Group__3__Impl"
-    // InternalSynthesizer.g:2829:1: rule__SquareOscillator__Group__3__Impl : ( 'frequency' ) ;
+    // InternalSynthesizer.g:2906:1: rule__SquareOscillator__Group__3__Impl : ( 'frequency' ) ;
     public final void rule__SquareOscillator__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:2833:1: ( ( 'frequency' ) )
-            // InternalSynthesizer.g:2834:1: ( 'frequency' )
+            // InternalSynthesizer.g:2910:1: ( ( 'frequency' ) )
+            // InternalSynthesizer.g:2911:1: ( 'frequency' )
             {
-            // InternalSynthesizer.g:2834:1: ( 'frequency' )
-            // InternalSynthesizer.g:2835:2: 'frequency'
+            // InternalSynthesizer.g:2911:1: ( 'frequency' )
+            // InternalSynthesizer.g:2912:2: 'frequency'
             {
              before(grammarAccess.getSquareOscillatorAccess().getFrequencyKeyword_3()); 
             match(input,11,FOLLOW_2); 
@@ -8430,14 +8750,14 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__SquareOscillator__Group__4"
-    // InternalSynthesizer.g:2844:1: rule__SquareOscillator__Group__4 : rule__SquareOscillator__Group__4__Impl rule__SquareOscillator__Group__5 ;
+    // InternalSynthesizer.g:2921:1: rule__SquareOscillator__Group__4 : rule__SquareOscillator__Group__4__Impl rule__SquareOscillator__Group__5 ;
     public final void rule__SquareOscillator__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:2848:1: ( rule__SquareOscillator__Group__4__Impl rule__SquareOscillator__Group__5 )
-            // InternalSynthesizer.g:2849:2: rule__SquareOscillator__Group__4__Impl rule__SquareOscillator__Group__5
+            // InternalSynthesizer.g:2925:1: ( rule__SquareOscillator__Group__4__Impl rule__SquareOscillator__Group__5 )
+            // InternalSynthesizer.g:2926:2: rule__SquareOscillator__Group__4__Impl rule__SquareOscillator__Group__5
             {
             pushFollow(FOLLOW_23);
             rule__SquareOscillator__Group__4__Impl();
@@ -8468,21 +8788,21 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__SquareOscillator__Group__4__Impl"
-    // InternalSynthesizer.g:2856:1: rule__SquareOscillator__Group__4__Impl : ( ( rule__SquareOscillator__FrequencyAssignment_4 ) ) ;
+    // InternalSynthesizer.g:2933:1: rule__SquareOscillator__Group__4__Impl : ( ( rule__SquareOscillator__FrequencyAssignment_4 ) ) ;
     public final void rule__SquareOscillator__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:2860:1: ( ( ( rule__SquareOscillator__FrequencyAssignment_4 ) ) )
-            // InternalSynthesizer.g:2861:1: ( ( rule__SquareOscillator__FrequencyAssignment_4 ) )
+            // InternalSynthesizer.g:2937:1: ( ( ( rule__SquareOscillator__FrequencyAssignment_4 ) ) )
+            // InternalSynthesizer.g:2938:1: ( ( rule__SquareOscillator__FrequencyAssignment_4 ) )
             {
-            // InternalSynthesizer.g:2861:1: ( ( rule__SquareOscillator__FrequencyAssignment_4 ) )
-            // InternalSynthesizer.g:2862:2: ( rule__SquareOscillator__FrequencyAssignment_4 )
+            // InternalSynthesizer.g:2938:1: ( ( rule__SquareOscillator__FrequencyAssignment_4 ) )
+            // InternalSynthesizer.g:2939:2: ( rule__SquareOscillator__FrequencyAssignment_4 )
             {
              before(grammarAccess.getSquareOscillatorAccess().getFrequencyAssignment_4()); 
-            // InternalSynthesizer.g:2863:2: ( rule__SquareOscillator__FrequencyAssignment_4 )
-            // InternalSynthesizer.g:2863:3: rule__SquareOscillator__FrequencyAssignment_4
+            // InternalSynthesizer.g:2940:2: ( rule__SquareOscillator__FrequencyAssignment_4 )
+            // InternalSynthesizer.g:2940:3: rule__SquareOscillator__FrequencyAssignment_4
             {
             pushFollow(FOLLOW_2);
             rule__SquareOscillator__FrequencyAssignment_4();
@@ -8515,14 +8835,14 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__SquareOscillator__Group__5"
-    // InternalSynthesizer.g:2871:1: rule__SquareOscillator__Group__5 : rule__SquareOscillator__Group__5__Impl rule__SquareOscillator__Group__6 ;
+    // InternalSynthesizer.g:2948:1: rule__SquareOscillator__Group__5 : rule__SquareOscillator__Group__5__Impl rule__SquareOscillator__Group__6 ;
     public final void rule__SquareOscillator__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:2875:1: ( rule__SquareOscillator__Group__5__Impl rule__SquareOscillator__Group__6 )
-            // InternalSynthesizer.g:2876:2: rule__SquareOscillator__Group__5__Impl rule__SquareOscillator__Group__6
+            // InternalSynthesizer.g:2952:1: ( rule__SquareOscillator__Group__5__Impl rule__SquareOscillator__Group__6 )
+            // InternalSynthesizer.g:2953:2: rule__SquareOscillator__Group__5__Impl rule__SquareOscillator__Group__6
             {
             pushFollow(FOLLOW_14);
             rule__SquareOscillator__Group__5__Impl();
@@ -8553,17 +8873,17 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__SquareOscillator__Group__5__Impl"
-    // InternalSynthesizer.g:2883:1: rule__SquareOscillator__Group__5__Impl : ( 'amplitude' ) ;
+    // InternalSynthesizer.g:2960:1: rule__SquareOscillator__Group__5__Impl : ( 'amplitude' ) ;
     public final void rule__SquareOscillator__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:2887:1: ( ( 'amplitude' ) )
-            // InternalSynthesizer.g:2888:1: ( 'amplitude' )
+            // InternalSynthesizer.g:2964:1: ( ( 'amplitude' ) )
+            // InternalSynthesizer.g:2965:1: ( 'amplitude' )
             {
-            // InternalSynthesizer.g:2888:1: ( 'amplitude' )
-            // InternalSynthesizer.g:2889:2: 'amplitude'
+            // InternalSynthesizer.g:2965:1: ( 'amplitude' )
+            // InternalSynthesizer.g:2966:2: 'amplitude'
             {
              before(grammarAccess.getSquareOscillatorAccess().getAmplitudeKeyword_5()); 
             match(input,12,FOLLOW_2); 
@@ -8590,16 +8910,16 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__SquareOscillator__Group__6"
-    // InternalSynthesizer.g:2898:1: rule__SquareOscillator__Group__6 : rule__SquareOscillator__Group__6__Impl rule__SquareOscillator__Group__7 ;
+    // InternalSynthesizer.g:2975:1: rule__SquareOscillator__Group__6 : rule__SquareOscillator__Group__6__Impl rule__SquareOscillator__Group__7 ;
     public final void rule__SquareOscillator__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:2902:1: ( rule__SquareOscillator__Group__6__Impl rule__SquareOscillator__Group__7 )
-            // InternalSynthesizer.g:2903:2: rule__SquareOscillator__Group__6__Impl rule__SquareOscillator__Group__7
+            // InternalSynthesizer.g:2979:1: ( rule__SquareOscillator__Group__6__Impl rule__SquareOscillator__Group__7 )
+            // InternalSynthesizer.g:2980:2: rule__SquareOscillator__Group__6__Impl rule__SquareOscillator__Group__7
             {
-            pushFollow(FOLLOW_18);
+            pushFollow(FOLLOW_21);
             rule__SquareOscillator__Group__6__Impl();
 
             state._fsp--;
@@ -8628,21 +8948,21 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__SquareOscillator__Group__6__Impl"
-    // InternalSynthesizer.g:2910:1: rule__SquareOscillator__Group__6__Impl : ( ( rule__SquareOscillator__AmplitudeAssignment_6 ) ) ;
+    // InternalSynthesizer.g:2987:1: rule__SquareOscillator__Group__6__Impl : ( ( rule__SquareOscillator__AmplitudeAssignment_6 ) ) ;
     public final void rule__SquareOscillator__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:2914:1: ( ( ( rule__SquareOscillator__AmplitudeAssignment_6 ) ) )
-            // InternalSynthesizer.g:2915:1: ( ( rule__SquareOscillator__AmplitudeAssignment_6 ) )
+            // InternalSynthesizer.g:2991:1: ( ( ( rule__SquareOscillator__AmplitudeAssignment_6 ) ) )
+            // InternalSynthesizer.g:2992:1: ( ( rule__SquareOscillator__AmplitudeAssignment_6 ) )
             {
-            // InternalSynthesizer.g:2915:1: ( ( rule__SquareOscillator__AmplitudeAssignment_6 ) )
-            // InternalSynthesizer.g:2916:2: ( rule__SquareOscillator__AmplitudeAssignment_6 )
+            // InternalSynthesizer.g:2992:1: ( ( rule__SquareOscillator__AmplitudeAssignment_6 ) )
+            // InternalSynthesizer.g:2993:2: ( rule__SquareOscillator__AmplitudeAssignment_6 )
             {
              before(grammarAccess.getSquareOscillatorAccess().getAmplitudeAssignment_6()); 
-            // InternalSynthesizer.g:2917:2: ( rule__SquareOscillator__AmplitudeAssignment_6 )
-            // InternalSynthesizer.g:2917:3: rule__SquareOscillator__AmplitudeAssignment_6
+            // InternalSynthesizer.g:2994:2: ( rule__SquareOscillator__AmplitudeAssignment_6 )
+            // InternalSynthesizer.g:2994:3: rule__SquareOscillator__AmplitudeAssignment_6
             {
             pushFollow(FOLLOW_2);
             rule__SquareOscillator__AmplitudeAssignment_6();
@@ -8675,14 +8995,14 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__SquareOscillator__Group__7"
-    // InternalSynthesizer.g:2925:1: rule__SquareOscillator__Group__7 : rule__SquareOscillator__Group__7__Impl ;
+    // InternalSynthesizer.g:3002:1: rule__SquareOscillator__Group__7 : rule__SquareOscillator__Group__7__Impl ;
     public final void rule__SquareOscillator__Group__7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:2929:1: ( rule__SquareOscillator__Group__7__Impl )
-            // InternalSynthesizer.g:2930:2: rule__SquareOscillator__Group__7__Impl
+            // InternalSynthesizer.g:3006:1: ( rule__SquareOscillator__Group__7__Impl )
+            // InternalSynthesizer.g:3007:2: rule__SquareOscillator__Group__7__Impl
             {
             pushFollow(FOLLOW_2);
             rule__SquareOscillator__Group__7__Impl();
@@ -8708,20 +9028,20 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__SquareOscillator__Group__7__Impl"
-    // InternalSynthesizer.g:2936:1: rule__SquareOscillator__Group__7__Impl : ( ')' ) ;
+    // InternalSynthesizer.g:3013:1: rule__SquareOscillator__Group__7__Impl : ( ')' ) ;
     public final void rule__SquareOscillator__Group__7__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:2940:1: ( ( ')' ) )
-            // InternalSynthesizer.g:2941:1: ( ')' )
+            // InternalSynthesizer.g:3017:1: ( ( ')' ) )
+            // InternalSynthesizer.g:3018:1: ( ')' )
             {
-            // InternalSynthesizer.g:2941:1: ( ')' )
-            // InternalSynthesizer.g:2942:2: ')'
+            // InternalSynthesizer.g:3018:1: ( ')' )
+            // InternalSynthesizer.g:3019:2: ')'
             {
              before(grammarAccess.getSquareOscillatorAccess().getRightParenthesisKeyword_7()); 
-            match(input,24,FOLLOW_2); 
+            match(input,26,FOLLOW_2); 
              after(grammarAccess.getSquareOscillatorAccess().getRightParenthesisKeyword_7()); 
 
             }
@@ -8745,14 +9065,14 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__PulseOscillator__Group__0"
-    // InternalSynthesizer.g:2952:1: rule__PulseOscillator__Group__0 : rule__PulseOscillator__Group__0__Impl rule__PulseOscillator__Group__1 ;
+    // InternalSynthesizer.g:3029:1: rule__PulseOscillator__Group__0 : rule__PulseOscillator__Group__0__Impl rule__PulseOscillator__Group__1 ;
     public final void rule__PulseOscillator__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:2956:1: ( rule__PulseOscillator__Group__0__Impl rule__PulseOscillator__Group__1 )
-            // InternalSynthesizer.g:2957:2: rule__PulseOscillator__Group__0__Impl rule__PulseOscillator__Group__1
+            // InternalSynthesizer.g:3033:1: ( rule__PulseOscillator__Group__0__Impl rule__PulseOscillator__Group__1 )
+            // InternalSynthesizer.g:3034:2: rule__PulseOscillator__Group__0__Impl rule__PulseOscillator__Group__1
             {
             pushFollow(FOLLOW_11);
             rule__PulseOscillator__Group__0__Impl();
@@ -8783,17 +9103,17 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__PulseOscillator__Group__0__Impl"
-    // InternalSynthesizer.g:2964:1: rule__PulseOscillator__Group__0__Impl : ( 'pulseOscillator' ) ;
+    // InternalSynthesizer.g:3041:1: rule__PulseOscillator__Group__0__Impl : ( 'pulseOscillator' ) ;
     public final void rule__PulseOscillator__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:2968:1: ( ( 'pulseOscillator' ) )
-            // InternalSynthesizer.g:2969:1: ( 'pulseOscillator' )
+            // InternalSynthesizer.g:3045:1: ( ( 'pulseOscillator' ) )
+            // InternalSynthesizer.g:3046:1: ( 'pulseOscillator' )
             {
-            // InternalSynthesizer.g:2969:1: ( 'pulseOscillator' )
-            // InternalSynthesizer.g:2970:2: 'pulseOscillator'
+            // InternalSynthesizer.g:3046:1: ( 'pulseOscillator' )
+            // InternalSynthesizer.g:3047:2: 'pulseOscillator'
             {
              before(grammarAccess.getPulseOscillatorAccess().getPulseOscillatorKeyword_0()); 
             match(input,34,FOLLOW_2); 
@@ -8820,14 +9140,14 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__PulseOscillator__Group__1"
-    // InternalSynthesizer.g:2979:1: rule__PulseOscillator__Group__1 : rule__PulseOscillator__Group__1__Impl rule__PulseOscillator__Group__2 ;
+    // InternalSynthesizer.g:3056:1: rule__PulseOscillator__Group__1 : rule__PulseOscillator__Group__1__Impl rule__PulseOscillator__Group__2 ;
     public final void rule__PulseOscillator__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:2983:1: ( rule__PulseOscillator__Group__1__Impl rule__PulseOscillator__Group__2 )
-            // InternalSynthesizer.g:2984:2: rule__PulseOscillator__Group__1__Impl rule__PulseOscillator__Group__2
+            // InternalSynthesizer.g:3060:1: ( rule__PulseOscillator__Group__1__Impl rule__PulseOscillator__Group__2 )
+            // InternalSynthesizer.g:3061:2: rule__PulseOscillator__Group__1__Impl rule__PulseOscillator__Group__2
             {
             pushFollow(FOLLOW_12);
             rule__PulseOscillator__Group__1__Impl();
@@ -8858,21 +9178,21 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__PulseOscillator__Group__1__Impl"
-    // InternalSynthesizer.g:2991:1: rule__PulseOscillator__Group__1__Impl : ( ( rule__PulseOscillator__NameAssignment_1 ) ) ;
+    // InternalSynthesizer.g:3068:1: rule__PulseOscillator__Group__1__Impl : ( ( rule__PulseOscillator__NameAssignment_1 ) ) ;
     public final void rule__PulseOscillator__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:2995:1: ( ( ( rule__PulseOscillator__NameAssignment_1 ) ) )
-            // InternalSynthesizer.g:2996:1: ( ( rule__PulseOscillator__NameAssignment_1 ) )
+            // InternalSynthesizer.g:3072:1: ( ( ( rule__PulseOscillator__NameAssignment_1 ) ) )
+            // InternalSynthesizer.g:3073:1: ( ( rule__PulseOscillator__NameAssignment_1 ) )
             {
-            // InternalSynthesizer.g:2996:1: ( ( rule__PulseOscillator__NameAssignment_1 ) )
-            // InternalSynthesizer.g:2997:2: ( rule__PulseOscillator__NameAssignment_1 )
+            // InternalSynthesizer.g:3073:1: ( ( rule__PulseOscillator__NameAssignment_1 ) )
+            // InternalSynthesizer.g:3074:2: ( rule__PulseOscillator__NameAssignment_1 )
             {
              before(grammarAccess.getPulseOscillatorAccess().getNameAssignment_1()); 
-            // InternalSynthesizer.g:2998:2: ( rule__PulseOscillator__NameAssignment_1 )
-            // InternalSynthesizer.g:2998:3: rule__PulseOscillator__NameAssignment_1
+            // InternalSynthesizer.g:3075:2: ( rule__PulseOscillator__NameAssignment_1 )
+            // InternalSynthesizer.g:3075:3: rule__PulseOscillator__NameAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__PulseOscillator__NameAssignment_1();
@@ -8905,14 +9225,14 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__PulseOscillator__Group__2"
-    // InternalSynthesizer.g:3006:1: rule__PulseOscillator__Group__2 : rule__PulseOscillator__Group__2__Impl rule__PulseOscillator__Group__3 ;
+    // InternalSynthesizer.g:3083:1: rule__PulseOscillator__Group__2 : rule__PulseOscillator__Group__2__Impl rule__PulseOscillator__Group__3 ;
     public final void rule__PulseOscillator__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:3010:1: ( rule__PulseOscillator__Group__2__Impl rule__PulseOscillator__Group__3 )
-            // InternalSynthesizer.g:3011:2: rule__PulseOscillator__Group__2__Impl rule__PulseOscillator__Group__3
+            // InternalSynthesizer.g:3087:1: ( rule__PulseOscillator__Group__2__Impl rule__PulseOscillator__Group__3 )
+            // InternalSynthesizer.g:3088:2: rule__PulseOscillator__Group__2__Impl rule__PulseOscillator__Group__3
             {
             pushFollow(FOLLOW_22);
             rule__PulseOscillator__Group__2__Impl();
@@ -8943,17 +9263,17 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__PulseOscillator__Group__2__Impl"
-    // InternalSynthesizer.g:3018:1: rule__PulseOscillator__Group__2__Impl : ( '(' ) ;
+    // InternalSynthesizer.g:3095:1: rule__PulseOscillator__Group__2__Impl : ( '(' ) ;
     public final void rule__PulseOscillator__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:3022:1: ( ( '(' ) )
-            // InternalSynthesizer.g:3023:1: ( '(' )
+            // InternalSynthesizer.g:3099:1: ( ( '(' ) )
+            // InternalSynthesizer.g:3100:1: ( '(' )
             {
-            // InternalSynthesizer.g:3023:1: ( '(' )
-            // InternalSynthesizer.g:3024:2: '('
+            // InternalSynthesizer.g:3100:1: ( '(' )
+            // InternalSynthesizer.g:3101:2: '('
             {
              before(grammarAccess.getPulseOscillatorAccess().getLeftParenthesisKeyword_2()); 
             match(input,19,FOLLOW_2); 
@@ -8980,14 +9300,14 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__PulseOscillator__Group__3"
-    // InternalSynthesizer.g:3033:1: rule__PulseOscillator__Group__3 : rule__PulseOscillator__Group__3__Impl rule__PulseOscillator__Group__4 ;
+    // InternalSynthesizer.g:3110:1: rule__PulseOscillator__Group__3 : rule__PulseOscillator__Group__3__Impl rule__PulseOscillator__Group__4 ;
     public final void rule__PulseOscillator__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:3037:1: ( rule__PulseOscillator__Group__3__Impl rule__PulseOscillator__Group__4 )
-            // InternalSynthesizer.g:3038:2: rule__PulseOscillator__Group__3__Impl rule__PulseOscillator__Group__4
+            // InternalSynthesizer.g:3114:1: ( rule__PulseOscillator__Group__3__Impl rule__PulseOscillator__Group__4 )
+            // InternalSynthesizer.g:3115:2: rule__PulseOscillator__Group__3__Impl rule__PulseOscillator__Group__4
             {
             pushFollow(FOLLOW_14);
             rule__PulseOscillator__Group__3__Impl();
@@ -9018,17 +9338,17 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__PulseOscillator__Group__3__Impl"
-    // InternalSynthesizer.g:3045:1: rule__PulseOscillator__Group__3__Impl : ( 'frequency' ) ;
+    // InternalSynthesizer.g:3122:1: rule__PulseOscillator__Group__3__Impl : ( 'frequency' ) ;
     public final void rule__PulseOscillator__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:3049:1: ( ( 'frequency' ) )
-            // InternalSynthesizer.g:3050:1: ( 'frequency' )
+            // InternalSynthesizer.g:3126:1: ( ( 'frequency' ) )
+            // InternalSynthesizer.g:3127:1: ( 'frequency' )
             {
-            // InternalSynthesizer.g:3050:1: ( 'frequency' )
-            // InternalSynthesizer.g:3051:2: 'frequency'
+            // InternalSynthesizer.g:3127:1: ( 'frequency' )
+            // InternalSynthesizer.g:3128:2: 'frequency'
             {
              before(grammarAccess.getPulseOscillatorAccess().getFrequencyKeyword_3()); 
             match(input,11,FOLLOW_2); 
@@ -9055,14 +9375,14 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__PulseOscillator__Group__4"
-    // InternalSynthesizer.g:3060:1: rule__PulseOscillator__Group__4 : rule__PulseOscillator__Group__4__Impl rule__PulseOscillator__Group__5 ;
+    // InternalSynthesizer.g:3137:1: rule__PulseOscillator__Group__4 : rule__PulseOscillator__Group__4__Impl rule__PulseOscillator__Group__5 ;
     public final void rule__PulseOscillator__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:3064:1: ( rule__PulseOscillator__Group__4__Impl rule__PulseOscillator__Group__5 )
-            // InternalSynthesizer.g:3065:2: rule__PulseOscillator__Group__4__Impl rule__PulseOscillator__Group__5
+            // InternalSynthesizer.g:3141:1: ( rule__PulseOscillator__Group__4__Impl rule__PulseOscillator__Group__5 )
+            // InternalSynthesizer.g:3142:2: rule__PulseOscillator__Group__4__Impl rule__PulseOscillator__Group__5
             {
             pushFollow(FOLLOW_23);
             rule__PulseOscillator__Group__4__Impl();
@@ -9093,21 +9413,21 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__PulseOscillator__Group__4__Impl"
-    // InternalSynthesizer.g:3072:1: rule__PulseOscillator__Group__4__Impl : ( ( rule__PulseOscillator__FrequencyAssignment_4 ) ) ;
+    // InternalSynthesizer.g:3149:1: rule__PulseOscillator__Group__4__Impl : ( ( rule__PulseOscillator__FrequencyAssignment_4 ) ) ;
     public final void rule__PulseOscillator__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:3076:1: ( ( ( rule__PulseOscillator__FrequencyAssignment_4 ) ) )
-            // InternalSynthesizer.g:3077:1: ( ( rule__PulseOscillator__FrequencyAssignment_4 ) )
+            // InternalSynthesizer.g:3153:1: ( ( ( rule__PulseOscillator__FrequencyAssignment_4 ) ) )
+            // InternalSynthesizer.g:3154:1: ( ( rule__PulseOscillator__FrequencyAssignment_4 ) )
             {
-            // InternalSynthesizer.g:3077:1: ( ( rule__PulseOscillator__FrequencyAssignment_4 ) )
-            // InternalSynthesizer.g:3078:2: ( rule__PulseOscillator__FrequencyAssignment_4 )
+            // InternalSynthesizer.g:3154:1: ( ( rule__PulseOscillator__FrequencyAssignment_4 ) )
+            // InternalSynthesizer.g:3155:2: ( rule__PulseOscillator__FrequencyAssignment_4 )
             {
              before(grammarAccess.getPulseOscillatorAccess().getFrequencyAssignment_4()); 
-            // InternalSynthesizer.g:3079:2: ( rule__PulseOscillator__FrequencyAssignment_4 )
-            // InternalSynthesizer.g:3079:3: rule__PulseOscillator__FrequencyAssignment_4
+            // InternalSynthesizer.g:3156:2: ( rule__PulseOscillator__FrequencyAssignment_4 )
+            // InternalSynthesizer.g:3156:3: rule__PulseOscillator__FrequencyAssignment_4
             {
             pushFollow(FOLLOW_2);
             rule__PulseOscillator__FrequencyAssignment_4();
@@ -9140,14 +9460,14 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__PulseOscillator__Group__5"
-    // InternalSynthesizer.g:3087:1: rule__PulseOscillator__Group__5 : rule__PulseOscillator__Group__5__Impl rule__PulseOscillator__Group__6 ;
+    // InternalSynthesizer.g:3164:1: rule__PulseOscillator__Group__5 : rule__PulseOscillator__Group__5__Impl rule__PulseOscillator__Group__6 ;
     public final void rule__PulseOscillator__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:3091:1: ( rule__PulseOscillator__Group__5__Impl rule__PulseOscillator__Group__6 )
-            // InternalSynthesizer.g:3092:2: rule__PulseOscillator__Group__5__Impl rule__PulseOscillator__Group__6
+            // InternalSynthesizer.g:3168:1: ( rule__PulseOscillator__Group__5__Impl rule__PulseOscillator__Group__6 )
+            // InternalSynthesizer.g:3169:2: rule__PulseOscillator__Group__5__Impl rule__PulseOscillator__Group__6
             {
             pushFollow(FOLLOW_14);
             rule__PulseOscillator__Group__5__Impl();
@@ -9178,17 +9498,17 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__PulseOscillator__Group__5__Impl"
-    // InternalSynthesizer.g:3099:1: rule__PulseOscillator__Group__5__Impl : ( 'amplitude' ) ;
+    // InternalSynthesizer.g:3176:1: rule__PulseOscillator__Group__5__Impl : ( 'amplitude' ) ;
     public final void rule__PulseOscillator__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:3103:1: ( ( 'amplitude' ) )
-            // InternalSynthesizer.g:3104:1: ( 'amplitude' )
+            // InternalSynthesizer.g:3180:1: ( ( 'amplitude' ) )
+            // InternalSynthesizer.g:3181:1: ( 'amplitude' )
             {
-            // InternalSynthesizer.g:3104:1: ( 'amplitude' )
-            // InternalSynthesizer.g:3105:2: 'amplitude'
+            // InternalSynthesizer.g:3181:1: ( 'amplitude' )
+            // InternalSynthesizer.g:3182:2: 'amplitude'
             {
              before(grammarAccess.getPulseOscillatorAccess().getAmplitudeKeyword_5()); 
             match(input,12,FOLLOW_2); 
@@ -9215,16 +9535,16 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__PulseOscillator__Group__6"
-    // InternalSynthesizer.g:3114:1: rule__PulseOscillator__Group__6 : rule__PulseOscillator__Group__6__Impl rule__PulseOscillator__Group__7 ;
+    // InternalSynthesizer.g:3191:1: rule__PulseOscillator__Group__6 : rule__PulseOscillator__Group__6__Impl rule__PulseOscillator__Group__7 ;
     public final void rule__PulseOscillator__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:3118:1: ( rule__PulseOscillator__Group__6__Impl rule__PulseOscillator__Group__7 )
-            // InternalSynthesizer.g:3119:2: rule__PulseOscillator__Group__6__Impl rule__PulseOscillator__Group__7
+            // InternalSynthesizer.g:3195:1: ( rule__PulseOscillator__Group__6__Impl rule__PulseOscillator__Group__7 )
+            // InternalSynthesizer.g:3196:2: rule__PulseOscillator__Group__6__Impl rule__PulseOscillator__Group__7
             {
-            pushFollow(FOLLOW_18);
+            pushFollow(FOLLOW_21);
             rule__PulseOscillator__Group__6__Impl();
 
             state._fsp--;
@@ -9253,21 +9573,21 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__PulseOscillator__Group__6__Impl"
-    // InternalSynthesizer.g:3126:1: rule__PulseOscillator__Group__6__Impl : ( ( rule__PulseOscillator__AmplitudeAssignment_6 ) ) ;
+    // InternalSynthesizer.g:3203:1: rule__PulseOscillator__Group__6__Impl : ( ( rule__PulseOscillator__AmplitudeAssignment_6 ) ) ;
     public final void rule__PulseOscillator__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:3130:1: ( ( ( rule__PulseOscillator__AmplitudeAssignment_6 ) ) )
-            // InternalSynthesizer.g:3131:1: ( ( rule__PulseOscillator__AmplitudeAssignment_6 ) )
+            // InternalSynthesizer.g:3207:1: ( ( ( rule__PulseOscillator__AmplitudeAssignment_6 ) ) )
+            // InternalSynthesizer.g:3208:1: ( ( rule__PulseOscillator__AmplitudeAssignment_6 ) )
             {
-            // InternalSynthesizer.g:3131:1: ( ( rule__PulseOscillator__AmplitudeAssignment_6 ) )
-            // InternalSynthesizer.g:3132:2: ( rule__PulseOscillator__AmplitudeAssignment_6 )
+            // InternalSynthesizer.g:3208:1: ( ( rule__PulseOscillator__AmplitudeAssignment_6 ) )
+            // InternalSynthesizer.g:3209:2: ( rule__PulseOscillator__AmplitudeAssignment_6 )
             {
              before(grammarAccess.getPulseOscillatorAccess().getAmplitudeAssignment_6()); 
-            // InternalSynthesizer.g:3133:2: ( rule__PulseOscillator__AmplitudeAssignment_6 )
-            // InternalSynthesizer.g:3133:3: rule__PulseOscillator__AmplitudeAssignment_6
+            // InternalSynthesizer.g:3210:2: ( rule__PulseOscillator__AmplitudeAssignment_6 )
+            // InternalSynthesizer.g:3210:3: rule__PulseOscillator__AmplitudeAssignment_6
             {
             pushFollow(FOLLOW_2);
             rule__PulseOscillator__AmplitudeAssignment_6();
@@ -9300,14 +9620,14 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__PulseOscillator__Group__7"
-    // InternalSynthesizer.g:3141:1: rule__PulseOscillator__Group__7 : rule__PulseOscillator__Group__7__Impl ;
+    // InternalSynthesizer.g:3218:1: rule__PulseOscillator__Group__7 : rule__PulseOscillator__Group__7__Impl ;
     public final void rule__PulseOscillator__Group__7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:3145:1: ( rule__PulseOscillator__Group__7__Impl )
-            // InternalSynthesizer.g:3146:2: rule__PulseOscillator__Group__7__Impl
+            // InternalSynthesizer.g:3222:1: ( rule__PulseOscillator__Group__7__Impl )
+            // InternalSynthesizer.g:3223:2: rule__PulseOscillator__Group__7__Impl
             {
             pushFollow(FOLLOW_2);
             rule__PulseOscillator__Group__7__Impl();
@@ -9333,20 +9653,20 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__PulseOscillator__Group__7__Impl"
-    // InternalSynthesizer.g:3152:1: rule__PulseOscillator__Group__7__Impl : ( ')' ) ;
+    // InternalSynthesizer.g:3229:1: rule__PulseOscillator__Group__7__Impl : ( ')' ) ;
     public final void rule__PulseOscillator__Group__7__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:3156:1: ( ( ')' ) )
-            // InternalSynthesizer.g:3157:1: ( ')' )
+            // InternalSynthesizer.g:3233:1: ( ( ')' ) )
+            // InternalSynthesizer.g:3234:1: ( ')' )
             {
-            // InternalSynthesizer.g:3157:1: ( ')' )
-            // InternalSynthesizer.g:3158:2: ')'
+            // InternalSynthesizer.g:3234:1: ( ')' )
+            // InternalSynthesizer.g:3235:2: ')'
             {
              before(grammarAccess.getPulseOscillatorAccess().getRightParenthesisKeyword_7()); 
-            match(input,24,FOLLOW_2); 
+            match(input,26,FOLLOW_2); 
              after(grammarAccess.getPulseOscillatorAccess().getRightParenthesisKeyword_7()); 
 
             }
@@ -9369,18 +9689,22 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
     // $ANTLR end "rule__PulseOscillator__Group__7__Impl"
 
 
-    // $ANTLR start "rule__ImpulseOscillator__Group__0"
-    // InternalSynthesizer.g:3168:1: rule__ImpulseOscillator__Group__0 : rule__ImpulseOscillator__Group__0__Impl rule__ImpulseOscillator__Group__1 ;
-    public final void rule__ImpulseOscillator__Group__0() throws RecognitionException {
+    // $ANTLR start "rule__Model__ControlsAssignment_2"
+    // InternalSynthesizer.g:3245:1: rule__Model__ControlsAssignment_2 : ( ruleControlElement ) ;
+    public final void rule__Model__ControlsAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:3172:1: ( rule__ImpulseOscillator__Group__0__Impl rule__ImpulseOscillator__Group__1 )
-            // InternalSynthesizer.g:3173:2: rule__ImpulseOscillator__Group__0__Impl rule__ImpulseOscillator__Group__1
+            // InternalSynthesizer.g:3249:1: ( ( ruleControlElement ) )
+            // InternalSynthesizer.g:3250:2: ( ruleControlElement )
             {
-            pushFollow(FOLLOW_11);
-            rule__ImpulseOscillator__Group__0__Impl();
+            // InternalSynthesizer.g:3250:2: ( ruleControlElement )
+            // InternalSynthesizer.g:3251:3: ruleControlElement
+            {
+             before(grammarAccess.getModelAccess().getControlsControlElementParserRuleCall_2_0()); 
+            pushFollow(FOLLOW_2);
+            ruleControlElement();
 
             state._fsp--;
 
@@ -9407,18 +9731,18 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
     // $ANTLR end "rule__ImpulseOscillator__Group__0"
 
 
-    // $ANTLR start "rule__ImpulseOscillator__Group__0__Impl"
-    // InternalSynthesizer.g:3180:1: rule__ImpulseOscillator__Group__0__Impl : ( 'impulseOscillator' ) ;
-    public final void rule__ImpulseOscillator__Group__0__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Model__SoundsAssignment_4_2"
+    // InternalSynthesizer.g:3260:1: rule__Model__SoundsAssignment_4_2 : ( ruleSoundElement ) ;
+    public final void rule__Model__SoundsAssignment_4_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:3184:1: ( ( 'impulseOscillator' ) )
-            // InternalSynthesizer.g:3185:1: ( 'impulseOscillator' )
+            // InternalSynthesizer.g:3264:1: ( ( ruleSoundElement ) )
+            // InternalSynthesizer.g:3265:2: ( ruleSoundElement )
             {
-            // InternalSynthesizer.g:3185:1: ( 'impulseOscillator' )
-            // InternalSynthesizer.g:3186:2: 'impulseOscillator'
+            // InternalSynthesizer.g:3265:2: ( ruleSoundElement )
+            // InternalSynthesizer.g:3266:3: ruleSoundElement
             {
              before(grammarAccess.getImpulseOscillatorAccess().getImpulseOscillatorKeyword_0()); 
             match(input,35,FOLLOW_2); 
@@ -9444,18 +9768,22 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
     // $ANTLR end "rule__ImpulseOscillator__Group__0__Impl"
 
 
-    // $ANTLR start "rule__ImpulseOscillator__Group__1"
-    // InternalSynthesizer.g:3195:1: rule__ImpulseOscillator__Group__1 : rule__ImpulseOscillator__Group__1__Impl rule__ImpulseOscillator__Group__2 ;
-    public final void rule__ImpulseOscillator__Group__1() throws RecognitionException {
+    // $ANTLR start "rule__Model__ConnectionsAssignment_5_2"
+    // InternalSynthesizer.g:3275:1: rule__Model__ConnectionsAssignment_5_2 : ( ruleConnectionElement ) ;
+    public final void rule__Model__ConnectionsAssignment_5_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:3199:1: ( rule__ImpulseOscillator__Group__1__Impl rule__ImpulseOscillator__Group__2 )
-            // InternalSynthesizer.g:3200:2: rule__ImpulseOscillator__Group__1__Impl rule__ImpulseOscillator__Group__2
+            // InternalSynthesizer.g:3279:1: ( ( ruleConnectionElement ) )
+            // InternalSynthesizer.g:3280:2: ( ruleConnectionElement )
             {
-            pushFollow(FOLLOW_12);
-            rule__ImpulseOscillator__Group__1__Impl();
+            // InternalSynthesizer.g:3280:2: ( ruleConnectionElement )
+            // InternalSynthesizer.g:3281:3: ruleConnectionElement
+            {
+             before(grammarAccess.getModelAccess().getConnectionsConnectionElementParserRuleCall_5_2_0()); 
+            pushFollow(FOLLOW_2);
+            ruleConnectionElement();
 
             state._fsp--;
 
@@ -9482,18 +9810,18 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
     // $ANTLR end "rule__ImpulseOscillator__Group__1"
 
 
-    // $ANTLR start "rule__ImpulseOscillator__Group__1__Impl"
-    // InternalSynthesizer.g:3207:1: rule__ImpulseOscillator__Group__1__Impl : ( ( rule__ImpulseOscillator__NameAssignment_1 ) ) ;
-    public final void rule__ImpulseOscillator__Group__1__Impl() throws RecognitionException {
+    // $ANTLR start "rule__RotaryKnob__NameAssignment_1"
+    // InternalSynthesizer.g:3290:1: rule__RotaryKnob__NameAssignment_1 : ( RULE_ID ) ;
+    public final void rule__RotaryKnob__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:3211:1: ( ( ( rule__ImpulseOscillator__NameAssignment_1 ) ) )
-            // InternalSynthesizer.g:3212:1: ( ( rule__ImpulseOscillator__NameAssignment_1 ) )
+            // InternalSynthesizer.g:3294:1: ( ( RULE_ID ) )
+            // InternalSynthesizer.g:3295:2: ( RULE_ID )
             {
-            // InternalSynthesizer.g:3212:1: ( ( rule__ImpulseOscillator__NameAssignment_1 ) )
-            // InternalSynthesizer.g:3213:2: ( rule__ImpulseOscillator__NameAssignment_1 )
+            // InternalSynthesizer.g:3295:2: ( RULE_ID )
+            // InternalSynthesizer.g:3296:3: RULE_ID
             {
              before(grammarAccess.getImpulseOscillatorAccess().getNameAssignment_1()); 
             // InternalSynthesizer.g:3214:2: ( rule__ImpulseOscillator__NameAssignment_1 )
@@ -9529,18 +9857,22 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
     // $ANTLR end "rule__ImpulseOscillator__Group__1__Impl"
 
 
-    // $ANTLR start "rule__ImpulseOscillator__Group__2"
-    // InternalSynthesizer.g:3222:1: rule__ImpulseOscillator__Group__2 : rule__ImpulseOscillator__Group__2__Impl rule__ImpulseOscillator__Group__3 ;
-    public final void rule__ImpulseOscillator__Group__2() throws RecognitionException {
+    // $ANTLR start "rule__RotaryKnob__XAssignment_4"
+    // InternalSynthesizer.g:3305:1: rule__RotaryKnob__XAssignment_4 : ( RULE_INT ) ;
+    public final void rule__RotaryKnob__XAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:3226:1: ( rule__ImpulseOscillator__Group__2__Impl rule__ImpulseOscillator__Group__3 )
-            // InternalSynthesizer.g:3227:2: rule__ImpulseOscillator__Group__2__Impl rule__ImpulseOscillator__Group__3
+            // InternalSynthesizer.g:3309:1: ( ( RULE_INT ) )
+            // InternalSynthesizer.g:3310:2: ( RULE_INT )
             {
-            pushFollow(FOLLOW_22);
-            rule__ImpulseOscillator__Group__2__Impl();
+            // InternalSynthesizer.g:3310:2: ( RULE_INT )
+            // InternalSynthesizer.g:3311:3: RULE_INT
+            {
+             before(grammarAccess.getRotaryKnobAccess().getXINTTerminalRuleCall_4_0()); 
+            match(input,RULE_INT,FOLLOW_2); 
+             after(grammarAccess.getRotaryKnobAccess().getXINTTerminalRuleCall_4_0()); 
 
             state._fsp--;
 
@@ -9567,18 +9899,18 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
     // $ANTLR end "rule__ImpulseOscillator__Group__2"
 
 
-    // $ANTLR start "rule__ImpulseOscillator__Group__2__Impl"
-    // InternalSynthesizer.g:3234:1: rule__ImpulseOscillator__Group__2__Impl : ( '(' ) ;
-    public final void rule__ImpulseOscillator__Group__2__Impl() throws RecognitionException {
+    // $ANTLR start "rule__RotaryKnob__YAssignment_6"
+    // InternalSynthesizer.g:3320:1: rule__RotaryKnob__YAssignment_6 : ( RULE_INT ) ;
+    public final void rule__RotaryKnob__YAssignment_6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:3238:1: ( ( '(' ) )
-            // InternalSynthesizer.g:3239:1: ( '(' )
+            // InternalSynthesizer.g:3324:1: ( ( RULE_INT ) )
+            // InternalSynthesizer.g:3325:2: ( RULE_INT )
             {
-            // InternalSynthesizer.g:3239:1: ( '(' )
-            // InternalSynthesizer.g:3240:2: '('
+            // InternalSynthesizer.g:3325:2: ( RULE_INT )
+            // InternalSynthesizer.g:3326:3: RULE_INT
             {
              before(grammarAccess.getImpulseOscillatorAccess().getLeftParenthesisKeyword_2()); 
             match(input,19,FOLLOW_2); 
@@ -9604,15 +9936,18 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
     // $ANTLR end "rule__ImpulseOscillator__Group__2__Impl"
 
 
-    // $ANTLR start "rule__ImpulseOscillator__Group__3"
-    // InternalSynthesizer.g:3249:1: rule__ImpulseOscillator__Group__3 : rule__ImpulseOscillator__Group__3__Impl rule__ImpulseOscillator__Group__4 ;
-    public final void rule__ImpulseOscillator__Group__3() throws RecognitionException {
+    // $ANTLR start "rule__RotaryKnob__WidthAssignment_8"
+    // InternalSynthesizer.g:3335:1: rule__RotaryKnob__WidthAssignment_8 : ( RULE_INT ) ;
+    public final void rule__RotaryKnob__WidthAssignment_8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:3253:1: ( rule__ImpulseOscillator__Group__3__Impl rule__ImpulseOscillator__Group__4 )
-            // InternalSynthesizer.g:3254:2: rule__ImpulseOscillator__Group__3__Impl rule__ImpulseOscillator__Group__4
+            // InternalSynthesizer.g:3339:1: ( ( RULE_INT ) )
+            // InternalSynthesizer.g:3340:2: ( RULE_INT )
+            {
+            // InternalSynthesizer.g:3340:2: ( RULE_INT )
+            // InternalSynthesizer.g:3341:3: RULE_INT
             {
             pushFollow(FOLLOW_14);
             rule__ImpulseOscillator__Group__3__Impl();
@@ -9642,18 +9977,18 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
     // $ANTLR end "rule__ImpulseOscillator__Group__3"
 
 
-    // $ANTLR start "rule__ImpulseOscillator__Group__3__Impl"
-    // InternalSynthesizer.g:3261:1: rule__ImpulseOscillator__Group__3__Impl : ( 'frequency' ) ;
-    public final void rule__ImpulseOscillator__Group__3__Impl() throws RecognitionException {
+    // $ANTLR start "rule__RotaryKnob__HeightAssignment_10"
+    // InternalSynthesizer.g:3350:1: rule__RotaryKnob__HeightAssignment_10 : ( RULE_INT ) ;
+    public final void rule__RotaryKnob__HeightAssignment_10() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:3265:1: ( ( 'frequency' ) )
-            // InternalSynthesizer.g:3266:1: ( 'frequency' )
+            // InternalSynthesizer.g:3354:1: ( ( RULE_INT ) )
+            // InternalSynthesizer.g:3355:2: ( RULE_INT )
             {
-            // InternalSynthesizer.g:3266:1: ( 'frequency' )
-            // InternalSynthesizer.g:3267:2: 'frequency'
+            // InternalSynthesizer.g:3355:2: ( RULE_INT )
+            // InternalSynthesizer.g:3356:3: RULE_INT
             {
              before(grammarAccess.getImpulseOscillatorAccess().getFrequencyKeyword_3()); 
             match(input,11,FOLLOW_2); 
@@ -9679,18 +10014,108 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
     // $ANTLR end "rule__ImpulseOscillator__Group__3__Impl"
 
 
-    // $ANTLR start "rule__ImpulseOscillator__Group__4"
-    // InternalSynthesizer.g:3276:1: rule__ImpulseOscillator__Group__4 : rule__ImpulseOscillator__Group__4__Impl rule__ImpulseOscillator__Group__5 ;
-    public final void rule__ImpulseOscillator__Group__4() throws RecognitionException {
+    // $ANTLR start "rule__RotaryKnob__SoundAssignment_12"
+    // InternalSynthesizer.g:3365:1: rule__RotaryKnob__SoundAssignment_12 : ( ( RULE_ID ) ) ;
+    public final void rule__RotaryKnob__SoundAssignment_12() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:3280:1: ( rule__ImpulseOscillator__Group__4__Impl rule__ImpulseOscillator__Group__5 )
-            // InternalSynthesizer.g:3281:2: rule__ImpulseOscillator__Group__4__Impl rule__ImpulseOscillator__Group__5
+            // InternalSynthesizer.g:3369:1: ( ( ( RULE_ID ) ) )
+            // InternalSynthesizer.g:3370:2: ( ( RULE_ID ) )
             {
-            pushFollow(FOLLOW_23);
-            rule__ImpulseOscillator__Group__4__Impl();
+            // InternalSynthesizer.g:3370:2: ( ( RULE_ID ) )
+            // InternalSynthesizer.g:3371:3: ( RULE_ID )
+            {
+             before(grammarAccess.getRotaryKnobAccess().getSoundSoundElementCrossReference_12_0()); 
+            // InternalSynthesizer.g:3372:3: ( RULE_ID )
+            // InternalSynthesizer.g:3373:4: RULE_ID
+            {
+             before(grammarAccess.getRotaryKnobAccess().getSoundSoundElementIDTerminalRuleCall_12_0_1()); 
+            match(input,RULE_ID,FOLLOW_2); 
+             after(grammarAccess.getRotaryKnobAccess().getSoundSoundElementIDTerminalRuleCall_12_0_1()); 
+
+            }
+
+             after(grammarAccess.getRotaryKnobAccess().getSoundSoundElementCrossReference_12_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__RotaryKnob__SoundAssignment_12"
+
+
+    // $ANTLR start "rule__RotaryKnob__TypeAssignment_14"
+    // InternalSynthesizer.g:3384:1: rule__RotaryKnob__TypeAssignment_14 : ( ruleEffect ) ;
+    public final void rule__RotaryKnob__TypeAssignment_14() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSynthesizer.g:3388:1: ( ( ruleEffect ) )
+            // InternalSynthesizer.g:3389:2: ( ruleEffect )
+            {
+            // InternalSynthesizer.g:3389:2: ( ruleEffect )
+            // InternalSynthesizer.g:3390:3: ruleEffect
+            {
+             before(grammarAccess.getRotaryKnobAccess().getTypeEffectParserRuleCall_14_0()); 
+            pushFollow(FOLLOW_2);
+            ruleEffect();
+
+            state._fsp--;
+
+             after(grammarAccess.getRotaryKnobAccess().getTypeEffectParserRuleCall_14_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__RotaryKnob__TypeAssignment_14"
+
+
+    // $ANTLR start "rule__Slider__NameAssignment_1"
+    // InternalSynthesizer.g:3399:1: rule__Slider__NameAssignment_1 : ( RULE_ID ) ;
+    public final void rule__Slider__NameAssignment_1() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalSynthesizer.g:3403:1: ( ( RULE_ID ) )
+            // InternalSynthesizer.g:3404:2: ( RULE_ID )
+            {
+            // InternalSynthesizer.g:3404:2: ( RULE_ID )
+            // InternalSynthesizer.g:3405:3: RULE_ID
+            {
+             before(grammarAccess.getSliderAccess().getNameIDTerminalRuleCall_1_0()); 
+            match(input,RULE_ID,FOLLOW_2); 
+             after(grammarAccess.getSliderAccess().getNameIDTerminalRuleCall_1_0()); 
 
             state._fsp--;
 
@@ -9717,18 +10142,18 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
     // $ANTLR end "rule__ImpulseOscillator__Group__4"
 
 
-    // $ANTLR start "rule__ImpulseOscillator__Group__4__Impl"
-    // InternalSynthesizer.g:3288:1: rule__ImpulseOscillator__Group__4__Impl : ( ( rule__ImpulseOscillator__FrequencyAssignment_4 ) ) ;
-    public final void rule__ImpulseOscillator__Group__4__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Slider__XAssignment_4"
+    // InternalSynthesizer.g:3414:1: rule__Slider__XAssignment_4 : ( RULE_INT ) ;
+    public final void rule__Slider__XAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:3292:1: ( ( ( rule__ImpulseOscillator__FrequencyAssignment_4 ) ) )
-            // InternalSynthesizer.g:3293:1: ( ( rule__ImpulseOscillator__FrequencyAssignment_4 ) )
+            // InternalSynthesizer.g:3418:1: ( ( RULE_INT ) )
+            // InternalSynthesizer.g:3419:2: ( RULE_INT )
             {
-            // InternalSynthesizer.g:3293:1: ( ( rule__ImpulseOscillator__FrequencyAssignment_4 ) )
-            // InternalSynthesizer.g:3294:2: ( rule__ImpulseOscillator__FrequencyAssignment_4 )
+            // InternalSynthesizer.g:3419:2: ( RULE_INT )
+            // InternalSynthesizer.g:3420:3: RULE_INT
             {
              before(grammarAccess.getImpulseOscillatorAccess().getFrequencyAssignment_4()); 
             // InternalSynthesizer.g:3295:2: ( rule__ImpulseOscillator__FrequencyAssignment_4 )
@@ -9764,18 +10189,22 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
     // $ANTLR end "rule__ImpulseOscillator__Group__4__Impl"
 
 
-    // $ANTLR start "rule__ImpulseOscillator__Group__5"
-    // InternalSynthesizer.g:3303:1: rule__ImpulseOscillator__Group__5 : rule__ImpulseOscillator__Group__5__Impl rule__ImpulseOscillator__Group__6 ;
-    public final void rule__ImpulseOscillator__Group__5() throws RecognitionException {
+    // $ANTLR start "rule__Slider__YAssignment_6"
+    // InternalSynthesizer.g:3429:1: rule__Slider__YAssignment_6 : ( RULE_INT ) ;
+    public final void rule__Slider__YAssignment_6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:3307:1: ( rule__ImpulseOscillator__Group__5__Impl rule__ImpulseOscillator__Group__6 )
-            // InternalSynthesizer.g:3308:2: rule__ImpulseOscillator__Group__5__Impl rule__ImpulseOscillator__Group__6
+            // InternalSynthesizer.g:3433:1: ( ( RULE_INT ) )
+            // InternalSynthesizer.g:3434:2: ( RULE_INT )
             {
-            pushFollow(FOLLOW_14);
-            rule__ImpulseOscillator__Group__5__Impl();
+            // InternalSynthesizer.g:3434:2: ( RULE_INT )
+            // InternalSynthesizer.g:3435:3: RULE_INT
+            {
+             before(grammarAccess.getSliderAccess().getYINTTerminalRuleCall_6_0()); 
+            match(input,RULE_INT,FOLLOW_2); 
+             after(grammarAccess.getSliderAccess().getYINTTerminalRuleCall_6_0()); 
 
             state._fsp--;
 
@@ -9802,18 +10231,18 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
     // $ANTLR end "rule__ImpulseOscillator__Group__5"
 
 
-    // $ANTLR start "rule__ImpulseOscillator__Group__5__Impl"
-    // InternalSynthesizer.g:3315:1: rule__ImpulseOscillator__Group__5__Impl : ( 'amplitude' ) ;
-    public final void rule__ImpulseOscillator__Group__5__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Slider__WidthAssignment_8"
+    // InternalSynthesizer.g:3444:1: rule__Slider__WidthAssignment_8 : ( RULE_INT ) ;
+    public final void rule__Slider__WidthAssignment_8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:3319:1: ( ( 'amplitude' ) )
-            // InternalSynthesizer.g:3320:1: ( 'amplitude' )
+            // InternalSynthesizer.g:3448:1: ( ( RULE_INT ) )
+            // InternalSynthesizer.g:3449:2: ( RULE_INT )
             {
-            // InternalSynthesizer.g:3320:1: ( 'amplitude' )
-            // InternalSynthesizer.g:3321:2: 'amplitude'
+            // InternalSynthesizer.g:3449:2: ( RULE_INT )
+            // InternalSynthesizer.g:3450:3: RULE_INT
             {
              before(grammarAccess.getImpulseOscillatorAccess().getAmplitudeKeyword_5()); 
             match(input,12,FOLLOW_2); 
@@ -9839,15 +10268,18 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
     // $ANTLR end "rule__ImpulseOscillator__Group__5__Impl"
 
 
-    // $ANTLR start "rule__ImpulseOscillator__Group__6"
-    // InternalSynthesizer.g:3330:1: rule__ImpulseOscillator__Group__6 : rule__ImpulseOscillator__Group__6__Impl rule__ImpulseOscillator__Group__7 ;
-    public final void rule__ImpulseOscillator__Group__6() throws RecognitionException {
+    // $ANTLR start "rule__Slider__HeightAssignment_10"
+    // InternalSynthesizer.g:3459:1: rule__Slider__HeightAssignment_10 : ( RULE_INT ) ;
+    public final void rule__Slider__HeightAssignment_10() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:3334:1: ( rule__ImpulseOscillator__Group__6__Impl rule__ImpulseOscillator__Group__7 )
-            // InternalSynthesizer.g:3335:2: rule__ImpulseOscillator__Group__6__Impl rule__ImpulseOscillator__Group__7
+            // InternalSynthesizer.g:3463:1: ( ( RULE_INT ) )
+            // InternalSynthesizer.g:3464:2: ( RULE_INT )
+            {
+            // InternalSynthesizer.g:3464:2: ( RULE_INT )
+            // InternalSynthesizer.g:3465:3: RULE_INT
             {
             pushFollow(FOLLOW_18);
             rule__ImpulseOscillator__Group__6__Impl();
@@ -9877,22 +10309,22 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
     // $ANTLR end "rule__ImpulseOscillator__Group__6"
 
 
-    // $ANTLR start "rule__ImpulseOscillator__Group__6__Impl"
-    // InternalSynthesizer.g:3342:1: rule__ImpulseOscillator__Group__6__Impl : ( ( rule__ImpulseOscillator__AmplitudeAssignment_6 ) ) ;
-    public final void rule__ImpulseOscillator__Group__6__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Slider__SoundAssignment_12"
+    // InternalSynthesizer.g:3474:1: rule__Slider__SoundAssignment_12 : ( ( RULE_ID ) ) ;
+    public final void rule__Slider__SoundAssignment_12() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:3346:1: ( ( ( rule__ImpulseOscillator__AmplitudeAssignment_6 ) ) )
-            // InternalSynthesizer.g:3347:1: ( ( rule__ImpulseOscillator__AmplitudeAssignment_6 ) )
+            // InternalSynthesizer.g:3478:1: ( ( ( RULE_ID ) ) )
+            // InternalSynthesizer.g:3479:2: ( ( RULE_ID ) )
             {
-            // InternalSynthesizer.g:3347:1: ( ( rule__ImpulseOscillator__AmplitudeAssignment_6 ) )
-            // InternalSynthesizer.g:3348:2: ( rule__ImpulseOscillator__AmplitudeAssignment_6 )
+            // InternalSynthesizer.g:3479:2: ( ( RULE_ID ) )
+            // InternalSynthesizer.g:3480:3: ( RULE_ID )
             {
-             before(grammarAccess.getImpulseOscillatorAccess().getAmplitudeAssignment_6()); 
-            // InternalSynthesizer.g:3349:2: ( rule__ImpulseOscillator__AmplitudeAssignment_6 )
-            // InternalSynthesizer.g:3349:3: rule__ImpulseOscillator__AmplitudeAssignment_6
+             before(grammarAccess.getSliderAccess().getSoundSoundElementCrossReference_12_0()); 
+            // InternalSynthesizer.g:3481:3: ( RULE_ID )
+            // InternalSynthesizer.g:3482:4: RULE_ID
             {
             pushFollow(FOLLOW_2);
             rule__ImpulseOscillator__AmplitudeAssignment_6();
@@ -9924,15 +10356,18 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
     // $ANTLR end "rule__ImpulseOscillator__Group__6__Impl"
 
 
-    // $ANTLR start "rule__ImpulseOscillator__Group__7"
-    // InternalSynthesizer.g:3357:1: rule__ImpulseOscillator__Group__7 : rule__ImpulseOscillator__Group__7__Impl ;
-    public final void rule__ImpulseOscillator__Group__7() throws RecognitionException {
+    // $ANTLR start "rule__Slider__TypeAssignment_14"
+    // InternalSynthesizer.g:3493:1: rule__Slider__TypeAssignment_14 : ( ruleEffect ) ;
+    public final void rule__Slider__TypeAssignment_14() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:3361:1: ( rule__ImpulseOscillator__Group__7__Impl )
-            // InternalSynthesizer.g:3362:2: rule__ImpulseOscillator__Group__7__Impl
+            // InternalSynthesizer.g:3497:1: ( ( ruleEffect ) )
+            // InternalSynthesizer.g:3498:2: ( ruleEffect )
+            {
+            // InternalSynthesizer.g:3498:2: ( ruleEffect )
+            // InternalSynthesizer.g:3499:3: ruleEffect
             {
             pushFollow(FOLLOW_2);
             rule__ImpulseOscillator__Group__7__Impl();
@@ -9957,18 +10392,18 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
     // $ANTLR end "rule__ImpulseOscillator__Group__7"
 
 
-    // $ANTLR start "rule__ImpulseOscillator__Group__7__Impl"
-    // InternalSynthesizer.g:3368:1: rule__ImpulseOscillator__Group__7__Impl : ( ')' ) ;
-    public final void rule__ImpulseOscillator__Group__7__Impl() throws RecognitionException {
+    // $ANTLR start "rule__Button__NameAssignment_1"
+    // InternalSynthesizer.g:3508:1: rule__Button__NameAssignment_1 : ( RULE_ID ) ;
+    public final void rule__Button__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:3372:1: ( ( ')' ) )
-            // InternalSynthesizer.g:3373:1: ( ')' )
+            // InternalSynthesizer.g:3512:1: ( ( RULE_ID ) )
+            // InternalSynthesizer.g:3513:2: ( RULE_ID )
             {
-            // InternalSynthesizer.g:3373:1: ( ')' )
-            // InternalSynthesizer.g:3374:2: ')'
+            // InternalSynthesizer.g:3513:2: ( RULE_ID )
+            // InternalSynthesizer.g:3514:3: RULE_ID
             {
              before(grammarAccess.getImpulseOscillatorAccess().getRightParenthesisKeyword_7()); 
             match(input,24,FOLLOW_2); 
@@ -9994,634 +10429,18 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
     // $ANTLR end "rule__ImpulseOscillator__Group__7__Impl"
 
 
-    // $ANTLR start "rule__Model__ControlsAssignment_2"
-    // InternalSynthesizer.g:3384:1: rule__Model__ControlsAssignment_2 : ( ruleControlElement ) ;
-    public final void rule__Model__ControlsAssignment_2() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSynthesizer.g:3388:1: ( ( ruleControlElement ) )
-            // InternalSynthesizer.g:3389:2: ( ruleControlElement )
-            {
-            // InternalSynthesizer.g:3389:2: ( ruleControlElement )
-            // InternalSynthesizer.g:3390:3: ruleControlElement
-            {
-             before(grammarAccess.getModelAccess().getControlsControlElementParserRuleCall_2_0()); 
-            pushFollow(FOLLOW_2);
-            ruleControlElement();
-
-            state._fsp--;
-
-             after(grammarAccess.getModelAccess().getControlsControlElementParserRuleCall_2_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Model__ControlsAssignment_2"
-
-
-    // $ANTLR start "rule__Model__SoundsAssignment_4_2"
-    // InternalSynthesizer.g:3399:1: rule__Model__SoundsAssignment_4_2 : ( ruleSoundElement ) ;
-    public final void rule__Model__SoundsAssignment_4_2() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSynthesizer.g:3403:1: ( ( ruleSoundElement ) )
-            // InternalSynthesizer.g:3404:2: ( ruleSoundElement )
-            {
-            // InternalSynthesizer.g:3404:2: ( ruleSoundElement )
-            // InternalSynthesizer.g:3405:3: ruleSoundElement
-            {
-             before(grammarAccess.getModelAccess().getSoundsSoundElementParserRuleCall_4_2_0()); 
-            pushFollow(FOLLOW_2);
-            ruleSoundElement();
-
-            state._fsp--;
-
-             after(grammarAccess.getModelAccess().getSoundsSoundElementParserRuleCall_4_2_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Model__SoundsAssignment_4_2"
-
-
-    // $ANTLR start "rule__Model__ConnectionsAssignment_5_2"
-    // InternalSynthesizer.g:3414:1: rule__Model__ConnectionsAssignment_5_2 : ( ruleConnectionElement ) ;
-    public final void rule__Model__ConnectionsAssignment_5_2() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSynthesizer.g:3418:1: ( ( ruleConnectionElement ) )
-            // InternalSynthesizer.g:3419:2: ( ruleConnectionElement )
-            {
-            // InternalSynthesizer.g:3419:2: ( ruleConnectionElement )
-            // InternalSynthesizer.g:3420:3: ruleConnectionElement
-            {
-             before(grammarAccess.getModelAccess().getConnectionsConnectionElementParserRuleCall_5_2_0()); 
-            pushFollow(FOLLOW_2);
-            ruleConnectionElement();
-
-            state._fsp--;
-
-             after(grammarAccess.getModelAccess().getConnectionsConnectionElementParserRuleCall_5_2_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Model__ConnectionsAssignment_5_2"
-
-
-    // $ANTLR start "rule__RotaryKnob__NameAssignment_1"
-    // InternalSynthesizer.g:3429:1: rule__RotaryKnob__NameAssignment_1 : ( RULE_ID ) ;
-    public final void rule__RotaryKnob__NameAssignment_1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSynthesizer.g:3433:1: ( ( RULE_ID ) )
-            // InternalSynthesizer.g:3434:2: ( RULE_ID )
-            {
-            // InternalSynthesizer.g:3434:2: ( RULE_ID )
-            // InternalSynthesizer.g:3435:3: RULE_ID
-            {
-             before(grammarAccess.getRotaryKnobAccess().getNameIDTerminalRuleCall_1_0()); 
-            match(input,RULE_ID,FOLLOW_2); 
-             after(grammarAccess.getRotaryKnobAccess().getNameIDTerminalRuleCall_1_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__RotaryKnob__NameAssignment_1"
-
-
-    // $ANTLR start "rule__RotaryKnob__XAssignment_4"
-    // InternalSynthesizer.g:3444:1: rule__RotaryKnob__XAssignment_4 : ( RULE_INT ) ;
-    public final void rule__RotaryKnob__XAssignment_4() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSynthesizer.g:3448:1: ( ( RULE_INT ) )
-            // InternalSynthesizer.g:3449:2: ( RULE_INT )
-            {
-            // InternalSynthesizer.g:3449:2: ( RULE_INT )
-            // InternalSynthesizer.g:3450:3: RULE_INT
-            {
-             before(grammarAccess.getRotaryKnobAccess().getXINTTerminalRuleCall_4_0()); 
-            match(input,RULE_INT,FOLLOW_2); 
-             after(grammarAccess.getRotaryKnobAccess().getXINTTerminalRuleCall_4_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__RotaryKnob__XAssignment_4"
-
-
-    // $ANTLR start "rule__RotaryKnob__YAssignment_6"
-    // InternalSynthesizer.g:3459:1: rule__RotaryKnob__YAssignment_6 : ( RULE_INT ) ;
-    public final void rule__RotaryKnob__YAssignment_6() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSynthesizer.g:3463:1: ( ( RULE_INT ) )
-            // InternalSynthesizer.g:3464:2: ( RULE_INT )
-            {
-            // InternalSynthesizer.g:3464:2: ( RULE_INT )
-            // InternalSynthesizer.g:3465:3: RULE_INT
-            {
-             before(grammarAccess.getRotaryKnobAccess().getYINTTerminalRuleCall_6_0()); 
-            match(input,RULE_INT,FOLLOW_2); 
-             after(grammarAccess.getRotaryKnobAccess().getYINTTerminalRuleCall_6_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__RotaryKnob__YAssignment_6"
-
-
-    // $ANTLR start "rule__RotaryKnob__WidthAssignment_8"
-    // InternalSynthesizer.g:3474:1: rule__RotaryKnob__WidthAssignment_8 : ( RULE_INT ) ;
-    public final void rule__RotaryKnob__WidthAssignment_8() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSynthesizer.g:3478:1: ( ( RULE_INT ) )
-            // InternalSynthesizer.g:3479:2: ( RULE_INT )
-            {
-            // InternalSynthesizer.g:3479:2: ( RULE_INT )
-            // InternalSynthesizer.g:3480:3: RULE_INT
-            {
-             before(grammarAccess.getRotaryKnobAccess().getWidthINTTerminalRuleCall_8_0()); 
-            match(input,RULE_INT,FOLLOW_2); 
-             after(grammarAccess.getRotaryKnobAccess().getWidthINTTerminalRuleCall_8_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__RotaryKnob__WidthAssignment_8"
-
-
-    // $ANTLR start "rule__RotaryKnob__HeightAssignment_10"
-    // InternalSynthesizer.g:3489:1: rule__RotaryKnob__HeightAssignment_10 : ( RULE_INT ) ;
-    public final void rule__RotaryKnob__HeightAssignment_10() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSynthesizer.g:3493:1: ( ( RULE_INT ) )
-            // InternalSynthesizer.g:3494:2: ( RULE_INT )
-            {
-            // InternalSynthesizer.g:3494:2: ( RULE_INT )
-            // InternalSynthesizer.g:3495:3: RULE_INT
-            {
-             before(grammarAccess.getRotaryKnobAccess().getHeightINTTerminalRuleCall_10_0()); 
-            match(input,RULE_INT,FOLLOW_2); 
-             after(grammarAccess.getRotaryKnobAccess().getHeightINTTerminalRuleCall_10_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__RotaryKnob__HeightAssignment_10"
-
-
-    // $ANTLR start "rule__Slider__NameAssignment_1"
-    // InternalSynthesizer.g:3504:1: rule__Slider__NameAssignment_1 : ( RULE_ID ) ;
-    public final void rule__Slider__NameAssignment_1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSynthesizer.g:3508:1: ( ( RULE_ID ) )
-            // InternalSynthesizer.g:3509:2: ( RULE_ID )
-            {
-            // InternalSynthesizer.g:3509:2: ( RULE_ID )
-            // InternalSynthesizer.g:3510:3: RULE_ID
-            {
-             before(grammarAccess.getSliderAccess().getNameIDTerminalRuleCall_1_0()); 
-            match(input,RULE_ID,FOLLOW_2); 
-             after(grammarAccess.getSliderAccess().getNameIDTerminalRuleCall_1_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Slider__NameAssignment_1"
-
-
-    // $ANTLR start "rule__Slider__XAssignment_4"
-    // InternalSynthesizer.g:3519:1: rule__Slider__XAssignment_4 : ( RULE_INT ) ;
-    public final void rule__Slider__XAssignment_4() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSynthesizer.g:3523:1: ( ( RULE_INT ) )
-            // InternalSynthesizer.g:3524:2: ( RULE_INT )
-            {
-            // InternalSynthesizer.g:3524:2: ( RULE_INT )
-            // InternalSynthesizer.g:3525:3: RULE_INT
-            {
-             before(grammarAccess.getSliderAccess().getXINTTerminalRuleCall_4_0()); 
-            match(input,RULE_INT,FOLLOW_2); 
-             after(grammarAccess.getSliderAccess().getXINTTerminalRuleCall_4_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Slider__XAssignment_4"
-
-
-    // $ANTLR start "rule__Slider__YAssignment_6"
-    // InternalSynthesizer.g:3534:1: rule__Slider__YAssignment_6 : ( RULE_INT ) ;
-    public final void rule__Slider__YAssignment_6() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSynthesizer.g:3538:1: ( ( RULE_INT ) )
-            // InternalSynthesizer.g:3539:2: ( RULE_INT )
-            {
-            // InternalSynthesizer.g:3539:2: ( RULE_INT )
-            // InternalSynthesizer.g:3540:3: RULE_INT
-            {
-             before(grammarAccess.getSliderAccess().getYINTTerminalRuleCall_6_0()); 
-            match(input,RULE_INT,FOLLOW_2); 
-             after(grammarAccess.getSliderAccess().getYINTTerminalRuleCall_6_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Slider__YAssignment_6"
-
-
-    // $ANTLR start "rule__Slider__WidthAssignment_8"
-    // InternalSynthesizer.g:3549:1: rule__Slider__WidthAssignment_8 : ( RULE_INT ) ;
-    public final void rule__Slider__WidthAssignment_8() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSynthesizer.g:3553:1: ( ( RULE_INT ) )
-            // InternalSynthesizer.g:3554:2: ( RULE_INT )
-            {
-            // InternalSynthesizer.g:3554:2: ( RULE_INT )
-            // InternalSynthesizer.g:3555:3: RULE_INT
-            {
-             before(grammarAccess.getSliderAccess().getWidthINTTerminalRuleCall_8_0()); 
-            match(input,RULE_INT,FOLLOW_2); 
-             after(grammarAccess.getSliderAccess().getWidthINTTerminalRuleCall_8_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Slider__WidthAssignment_8"
-
-
-    // $ANTLR start "rule__Slider__HeightAssignment_10"
-    // InternalSynthesizer.g:3564:1: rule__Slider__HeightAssignment_10 : ( RULE_INT ) ;
-    public final void rule__Slider__HeightAssignment_10() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSynthesizer.g:3568:1: ( ( RULE_INT ) )
-            // InternalSynthesizer.g:3569:2: ( RULE_INT )
-            {
-            // InternalSynthesizer.g:3569:2: ( RULE_INT )
-            // InternalSynthesizer.g:3570:3: RULE_INT
-            {
-             before(grammarAccess.getSliderAccess().getHeightINTTerminalRuleCall_10_0()); 
-            match(input,RULE_INT,FOLLOW_2); 
-             after(grammarAccess.getSliderAccess().getHeightINTTerminalRuleCall_10_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Slider__HeightAssignment_10"
-
-
-    // $ANTLR start "rule__Slider__SoundAssignment_12"
-    // InternalSynthesizer.g:3579:1: rule__Slider__SoundAssignment_12 : ( ( RULE_ID ) ) ;
-    public final void rule__Slider__SoundAssignment_12() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSynthesizer.g:3583:1: ( ( ( RULE_ID ) ) )
-            // InternalSynthesizer.g:3584:2: ( ( RULE_ID ) )
-            {
-            // InternalSynthesizer.g:3584:2: ( ( RULE_ID ) )
-            // InternalSynthesizer.g:3585:3: ( RULE_ID )
-            {
-             before(grammarAccess.getSliderAccess().getSoundSoundElementCrossReference_12_0()); 
-            // InternalSynthesizer.g:3586:3: ( RULE_ID )
-            // InternalSynthesizer.g:3587:4: RULE_ID
-            {
-             before(grammarAccess.getSliderAccess().getSoundSoundElementIDTerminalRuleCall_12_0_1()); 
-            match(input,RULE_ID,FOLLOW_2); 
-             after(grammarAccess.getSliderAccess().getSoundSoundElementIDTerminalRuleCall_12_0_1()); 
-
-            }
-
-             after(grammarAccess.getSliderAccess().getSoundSoundElementCrossReference_12_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Slider__SoundAssignment_12"
-
-
-    // $ANTLR start "rule__Slider__TypeAssignment_14"
-    // InternalSynthesizer.g:3598:1: rule__Slider__TypeAssignment_14 : ( ruleEffect ) ;
-    public final void rule__Slider__TypeAssignment_14() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSynthesizer.g:3602:1: ( ( ruleEffect ) )
-            // InternalSynthesizer.g:3603:2: ( ruleEffect )
-            {
-            // InternalSynthesizer.g:3603:2: ( ruleEffect )
-            // InternalSynthesizer.g:3604:3: ruleEffect
-            {
-             before(grammarAccess.getSliderAccess().getTypeEffectParserRuleCall_14_0()); 
-            pushFollow(FOLLOW_2);
-            ruleEffect();
-
-            state._fsp--;
-
-             after(grammarAccess.getSliderAccess().getTypeEffectParserRuleCall_14_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Slider__TypeAssignment_14"
-
-
-    // $ANTLR start "rule__Button__NameAssignment_1"
-    // InternalSynthesizer.g:3613:1: rule__Button__NameAssignment_1 : ( RULE_ID ) ;
-    public final void rule__Button__NameAssignment_1() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalSynthesizer.g:3617:1: ( ( RULE_ID ) )
-            // InternalSynthesizer.g:3618:2: ( RULE_ID )
-            {
-            // InternalSynthesizer.g:3618:2: ( RULE_ID )
-            // InternalSynthesizer.g:3619:3: RULE_ID
-            {
-             before(grammarAccess.getButtonAccess().getNameIDTerminalRuleCall_1_0()); 
-            match(input,RULE_ID,FOLLOW_2); 
-             after(grammarAccess.getButtonAccess().getNameIDTerminalRuleCall_1_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__Button__NameAssignment_1"
-
-
     // $ANTLR start "rule__Button__XAssignment_4"
-    // InternalSynthesizer.g:3628:1: rule__Button__XAssignment_4 : ( RULE_INT ) ;
+    // InternalSynthesizer.g:3523:1: rule__Button__XAssignment_4 : ( RULE_INT ) ;
     public final void rule__Button__XAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:3632:1: ( ( RULE_INT ) )
-            // InternalSynthesizer.g:3633:2: ( RULE_INT )
+            // InternalSynthesizer.g:3527:1: ( ( RULE_INT ) )
+            // InternalSynthesizer.g:3528:2: ( RULE_INT )
             {
-            // InternalSynthesizer.g:3633:2: ( RULE_INT )
-            // InternalSynthesizer.g:3634:3: RULE_INT
+            // InternalSynthesizer.g:3528:2: ( RULE_INT )
+            // InternalSynthesizer.g:3529:3: RULE_INT
             {
              before(grammarAccess.getButtonAccess().getXINTTerminalRuleCall_4_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -10648,17 +10467,17 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Button__YAssignment_6"
-    // InternalSynthesizer.g:3643:1: rule__Button__YAssignment_6 : ( RULE_INT ) ;
+    // InternalSynthesizer.g:3538:1: rule__Button__YAssignment_6 : ( RULE_INT ) ;
     public final void rule__Button__YAssignment_6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:3647:1: ( ( RULE_INT ) )
-            // InternalSynthesizer.g:3648:2: ( RULE_INT )
+            // InternalSynthesizer.g:3542:1: ( ( RULE_INT ) )
+            // InternalSynthesizer.g:3543:2: ( RULE_INT )
             {
-            // InternalSynthesizer.g:3648:2: ( RULE_INT )
-            // InternalSynthesizer.g:3649:3: RULE_INT
+            // InternalSynthesizer.g:3543:2: ( RULE_INT )
+            // InternalSynthesizer.g:3544:3: RULE_INT
             {
              before(grammarAccess.getButtonAccess().getYINTTerminalRuleCall_6_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -10685,17 +10504,17 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Button__WidthAssignment_8"
-    // InternalSynthesizer.g:3658:1: rule__Button__WidthAssignment_8 : ( RULE_INT ) ;
+    // InternalSynthesizer.g:3553:1: rule__Button__WidthAssignment_8 : ( RULE_INT ) ;
     public final void rule__Button__WidthAssignment_8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:3662:1: ( ( RULE_INT ) )
-            // InternalSynthesizer.g:3663:2: ( RULE_INT )
+            // InternalSynthesizer.g:3557:1: ( ( RULE_INT ) )
+            // InternalSynthesizer.g:3558:2: ( RULE_INT )
             {
-            // InternalSynthesizer.g:3663:2: ( RULE_INT )
-            // InternalSynthesizer.g:3664:3: RULE_INT
+            // InternalSynthesizer.g:3558:2: ( RULE_INT )
+            // InternalSynthesizer.g:3559:3: RULE_INT
             {
              before(grammarAccess.getButtonAccess().getWidthINTTerminalRuleCall_8_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -10722,17 +10541,17 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Button__HeightAssignment_10"
-    // InternalSynthesizer.g:3673:1: rule__Button__HeightAssignment_10 : ( RULE_INT ) ;
+    // InternalSynthesizer.g:3568:1: rule__Button__HeightAssignment_10 : ( RULE_INT ) ;
     public final void rule__Button__HeightAssignment_10() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:3677:1: ( ( RULE_INT ) )
-            // InternalSynthesizer.g:3678:2: ( RULE_INT )
+            // InternalSynthesizer.g:3572:1: ( ( RULE_INT ) )
+            // InternalSynthesizer.g:3573:2: ( RULE_INT )
             {
-            // InternalSynthesizer.g:3678:2: ( RULE_INT )
-            // InternalSynthesizer.g:3679:3: RULE_INT
+            // InternalSynthesizer.g:3573:2: ( RULE_INT )
+            // InternalSynthesizer.g:3574:3: RULE_INT
             {
              before(grammarAccess.getButtonAccess().getHeightINTTerminalRuleCall_10_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -10759,21 +10578,21 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__Button__SoundAssignment_12"
-    // InternalSynthesizer.g:3688:1: rule__Button__SoundAssignment_12 : ( ( RULE_ID ) ) ;
+    // InternalSynthesizer.g:3583:1: rule__Button__SoundAssignment_12 : ( ( RULE_ID ) ) ;
     public final void rule__Button__SoundAssignment_12() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:3692:1: ( ( ( RULE_ID ) ) )
-            // InternalSynthesizer.g:3693:2: ( ( RULE_ID ) )
+            // InternalSynthesizer.g:3587:1: ( ( ( RULE_ID ) ) )
+            // InternalSynthesizer.g:3588:2: ( ( RULE_ID ) )
             {
-            // InternalSynthesizer.g:3693:2: ( ( RULE_ID ) )
-            // InternalSynthesizer.g:3694:3: ( RULE_ID )
+            // InternalSynthesizer.g:3588:2: ( ( RULE_ID ) )
+            // InternalSynthesizer.g:3589:3: ( RULE_ID )
             {
              before(grammarAccess.getButtonAccess().getSoundSoundElementCrossReference_12_0()); 
-            // InternalSynthesizer.g:3695:3: ( RULE_ID )
-            // InternalSynthesizer.g:3696:4: RULE_ID
+            // InternalSynthesizer.g:3590:3: ( RULE_ID )
+            // InternalSynthesizer.g:3591:4: RULE_ID
             {
              before(grammarAccess.getButtonAccess().getSoundSoundElementIDTerminalRuleCall_12_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -10804,21 +10623,21 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__ConnectionElement__CeAssignment_1"
-    // InternalSynthesizer.g:3707:1: rule__ConnectionElement__CeAssignment_1 : ( ( RULE_ID ) ) ;
+    // InternalSynthesizer.g:3602:1: rule__ConnectionElement__CeAssignment_1 : ( ( RULE_ID ) ) ;
     public final void rule__ConnectionElement__CeAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:3711:1: ( ( ( RULE_ID ) ) )
-            // InternalSynthesizer.g:3712:2: ( ( RULE_ID ) )
+            // InternalSynthesizer.g:3606:1: ( ( ( RULE_ID ) ) )
+            // InternalSynthesizer.g:3607:2: ( ( RULE_ID ) )
             {
-            // InternalSynthesizer.g:3712:2: ( ( RULE_ID ) )
-            // InternalSynthesizer.g:3713:3: ( RULE_ID )
+            // InternalSynthesizer.g:3607:2: ( ( RULE_ID ) )
+            // InternalSynthesizer.g:3608:3: ( RULE_ID )
             {
              before(grammarAccess.getConnectionElementAccess().getCeControlElementCrossReference_1_0()); 
-            // InternalSynthesizer.g:3714:3: ( RULE_ID )
-            // InternalSynthesizer.g:3715:4: RULE_ID
+            // InternalSynthesizer.g:3609:3: ( RULE_ID )
+            // InternalSynthesizer.g:3610:4: RULE_ID
             {
              before(grammarAccess.getConnectionElementAccess().getCeControlElementIDTerminalRuleCall_1_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -10849,21 +10668,21 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__ConnectionElement__SeAssignment_2"
-    // InternalSynthesizer.g:3726:1: rule__ConnectionElement__SeAssignment_2 : ( ( RULE_ID ) ) ;
+    // InternalSynthesizer.g:3621:1: rule__ConnectionElement__SeAssignment_2 : ( ( RULE_ID ) ) ;
     public final void rule__ConnectionElement__SeAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:3730:1: ( ( ( RULE_ID ) ) )
-            // InternalSynthesizer.g:3731:2: ( ( RULE_ID ) )
+            // InternalSynthesizer.g:3625:1: ( ( ( RULE_ID ) ) )
+            // InternalSynthesizer.g:3626:2: ( ( RULE_ID ) )
             {
-            // InternalSynthesizer.g:3731:2: ( ( RULE_ID ) )
-            // InternalSynthesizer.g:3732:3: ( RULE_ID )
+            // InternalSynthesizer.g:3626:2: ( ( RULE_ID ) )
+            // InternalSynthesizer.g:3627:3: ( RULE_ID )
             {
              before(grammarAccess.getConnectionElementAccess().getSeSoundElementCrossReference_2_0()); 
-            // InternalSynthesizer.g:3733:3: ( RULE_ID )
-            // InternalSynthesizer.g:3734:4: RULE_ID
+            // InternalSynthesizer.g:3628:3: ( RULE_ID )
+            // InternalSynthesizer.g:3629:4: RULE_ID
             {
              before(grammarAccess.getConnectionElementAccess().getSeSoundElementIDTerminalRuleCall_2_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -10894,17 +10713,17 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__SawToothOscillator__NameAssignment_1"
-    // InternalSynthesizer.g:3745:1: rule__SawToothOscillator__NameAssignment_1 : ( RULE_ID ) ;
+    // InternalSynthesizer.g:3640:1: rule__SawToothOscillator__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__SawToothOscillator__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:3749:1: ( ( RULE_ID ) )
-            // InternalSynthesizer.g:3750:2: ( RULE_ID )
+            // InternalSynthesizer.g:3644:1: ( ( RULE_ID ) )
+            // InternalSynthesizer.g:3645:2: ( RULE_ID )
             {
-            // InternalSynthesizer.g:3750:2: ( RULE_ID )
-            // InternalSynthesizer.g:3751:3: RULE_ID
+            // InternalSynthesizer.g:3645:2: ( RULE_ID )
+            // InternalSynthesizer.g:3646:3: RULE_ID
             {
              before(grammarAccess.getSawToothOscillatorAccess().getNameIDTerminalRuleCall_1_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -10931,17 +10750,17 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__SawToothOscillator__FrequencyAssignment_4"
-    // InternalSynthesizer.g:3760:1: rule__SawToothOscillator__FrequencyAssignment_4 : ( RULE_INT ) ;
+    // InternalSynthesizer.g:3655:1: rule__SawToothOscillator__FrequencyAssignment_4 : ( RULE_INT ) ;
     public final void rule__SawToothOscillator__FrequencyAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:3764:1: ( ( RULE_INT ) )
-            // InternalSynthesizer.g:3765:2: ( RULE_INT )
+            // InternalSynthesizer.g:3659:1: ( ( RULE_INT ) )
+            // InternalSynthesizer.g:3660:2: ( RULE_INT )
             {
-            // InternalSynthesizer.g:3765:2: ( RULE_INT )
-            // InternalSynthesizer.g:3766:3: RULE_INT
+            // InternalSynthesizer.g:3660:2: ( RULE_INT )
+            // InternalSynthesizer.g:3661:3: RULE_INT
             {
              before(grammarAccess.getSawToothOscillatorAccess().getFrequencyINTTerminalRuleCall_4_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -10968,17 +10787,17 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__SawToothOscillator__AmplitudeAssignment_6"
-    // InternalSynthesizer.g:3775:1: rule__SawToothOscillator__AmplitudeAssignment_6 : ( RULE_INT ) ;
+    // InternalSynthesizer.g:3670:1: rule__SawToothOscillator__AmplitudeAssignment_6 : ( RULE_INT ) ;
     public final void rule__SawToothOscillator__AmplitudeAssignment_6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:3779:1: ( ( RULE_INT ) )
-            // InternalSynthesizer.g:3780:2: ( RULE_INT )
+            // InternalSynthesizer.g:3674:1: ( ( RULE_INT ) )
+            // InternalSynthesizer.g:3675:2: ( RULE_INT )
             {
-            // InternalSynthesizer.g:3780:2: ( RULE_INT )
-            // InternalSynthesizer.g:3781:3: RULE_INT
+            // InternalSynthesizer.g:3675:2: ( RULE_INT )
+            // InternalSynthesizer.g:3676:3: RULE_INT
             {
              before(grammarAccess.getSawToothOscillatorAccess().getAmplitudeINTTerminalRuleCall_6_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -11005,17 +10824,17 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__SineOscillator__NameAssignment_1"
-    // InternalSynthesizer.g:3790:1: rule__SineOscillator__NameAssignment_1 : ( RULE_ID ) ;
+    // InternalSynthesizer.g:3685:1: rule__SineOscillator__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__SineOscillator__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:3794:1: ( ( RULE_ID ) )
-            // InternalSynthesizer.g:3795:2: ( RULE_ID )
+            // InternalSynthesizer.g:3689:1: ( ( RULE_ID ) )
+            // InternalSynthesizer.g:3690:2: ( RULE_ID )
             {
-            // InternalSynthesizer.g:3795:2: ( RULE_ID )
-            // InternalSynthesizer.g:3796:3: RULE_ID
+            // InternalSynthesizer.g:3690:2: ( RULE_ID )
+            // InternalSynthesizer.g:3691:3: RULE_ID
             {
              before(grammarAccess.getSineOscillatorAccess().getNameIDTerminalRuleCall_1_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -11042,17 +10861,17 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__SineOscillator__FrequencyAssignment_4"
-    // InternalSynthesizer.g:3805:1: rule__SineOscillator__FrequencyAssignment_4 : ( RULE_INT ) ;
+    // InternalSynthesizer.g:3700:1: rule__SineOscillator__FrequencyAssignment_4 : ( RULE_INT ) ;
     public final void rule__SineOscillator__FrequencyAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:3809:1: ( ( RULE_INT ) )
-            // InternalSynthesizer.g:3810:2: ( RULE_INT )
+            // InternalSynthesizer.g:3704:1: ( ( RULE_INT ) )
+            // InternalSynthesizer.g:3705:2: ( RULE_INT )
             {
-            // InternalSynthesizer.g:3810:2: ( RULE_INT )
-            // InternalSynthesizer.g:3811:3: RULE_INT
+            // InternalSynthesizer.g:3705:2: ( RULE_INT )
+            // InternalSynthesizer.g:3706:3: RULE_INT
             {
              before(grammarAccess.getSineOscillatorAccess().getFrequencyINTTerminalRuleCall_4_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -11079,17 +10898,17 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__SineOscillator__AmplitudeAssignment_6"
-    // InternalSynthesizer.g:3820:1: rule__SineOscillator__AmplitudeAssignment_6 : ( RULE_INT ) ;
+    // InternalSynthesizer.g:3715:1: rule__SineOscillator__AmplitudeAssignment_6 : ( RULE_INT ) ;
     public final void rule__SineOscillator__AmplitudeAssignment_6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:3824:1: ( ( RULE_INT ) )
-            // InternalSynthesizer.g:3825:2: ( RULE_INT )
+            // InternalSynthesizer.g:3719:1: ( ( RULE_INT ) )
+            // InternalSynthesizer.g:3720:2: ( RULE_INT )
             {
-            // InternalSynthesizer.g:3825:2: ( RULE_INT )
-            // InternalSynthesizer.g:3826:3: RULE_INT
+            // InternalSynthesizer.g:3720:2: ( RULE_INT )
+            // InternalSynthesizer.g:3721:3: RULE_INT
             {
              before(grammarAccess.getSineOscillatorAccess().getAmplitudeINTTerminalRuleCall_6_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -11116,17 +10935,17 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__TriangleOscillator__NameAssignment_1"
-    // InternalSynthesizer.g:3835:1: rule__TriangleOscillator__NameAssignment_1 : ( RULE_ID ) ;
+    // InternalSynthesizer.g:3730:1: rule__TriangleOscillator__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__TriangleOscillator__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:3839:1: ( ( RULE_ID ) )
-            // InternalSynthesizer.g:3840:2: ( RULE_ID )
+            // InternalSynthesizer.g:3734:1: ( ( RULE_ID ) )
+            // InternalSynthesizer.g:3735:2: ( RULE_ID )
             {
-            // InternalSynthesizer.g:3840:2: ( RULE_ID )
-            // InternalSynthesizer.g:3841:3: RULE_ID
+            // InternalSynthesizer.g:3735:2: ( RULE_ID )
+            // InternalSynthesizer.g:3736:3: RULE_ID
             {
              before(grammarAccess.getTriangleOscillatorAccess().getNameIDTerminalRuleCall_1_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -11153,17 +10972,17 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__TriangleOscillator__FrequencyAssignment_4"
-    // InternalSynthesizer.g:3850:1: rule__TriangleOscillator__FrequencyAssignment_4 : ( RULE_INT ) ;
+    // InternalSynthesizer.g:3745:1: rule__TriangleOscillator__FrequencyAssignment_4 : ( RULE_INT ) ;
     public final void rule__TriangleOscillator__FrequencyAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:3854:1: ( ( RULE_INT ) )
-            // InternalSynthesizer.g:3855:2: ( RULE_INT )
+            // InternalSynthesizer.g:3749:1: ( ( RULE_INT ) )
+            // InternalSynthesizer.g:3750:2: ( RULE_INT )
             {
-            // InternalSynthesizer.g:3855:2: ( RULE_INT )
-            // InternalSynthesizer.g:3856:3: RULE_INT
+            // InternalSynthesizer.g:3750:2: ( RULE_INT )
+            // InternalSynthesizer.g:3751:3: RULE_INT
             {
              before(grammarAccess.getTriangleOscillatorAccess().getFrequencyINTTerminalRuleCall_4_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -11190,17 +11009,17 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__TriangleOscillator__AmplitudeAssignment_6"
-    // InternalSynthesizer.g:3865:1: rule__TriangleOscillator__AmplitudeAssignment_6 : ( RULE_INT ) ;
+    // InternalSynthesizer.g:3760:1: rule__TriangleOscillator__AmplitudeAssignment_6 : ( RULE_INT ) ;
     public final void rule__TriangleOscillator__AmplitudeAssignment_6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:3869:1: ( ( RULE_INT ) )
-            // InternalSynthesizer.g:3870:2: ( RULE_INT )
+            // InternalSynthesizer.g:3764:1: ( ( RULE_INT ) )
+            // InternalSynthesizer.g:3765:2: ( RULE_INT )
             {
-            // InternalSynthesizer.g:3870:2: ( RULE_INT )
-            // InternalSynthesizer.g:3871:3: RULE_INT
+            // InternalSynthesizer.g:3765:2: ( RULE_INT )
+            // InternalSynthesizer.g:3766:3: RULE_INT
             {
              before(grammarAccess.getTriangleOscillatorAccess().getAmplitudeINTTerminalRuleCall_6_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -11227,17 +11046,17 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__SquareOscillator__NameAssignment_1"
-    // InternalSynthesizer.g:3880:1: rule__SquareOscillator__NameAssignment_1 : ( RULE_ID ) ;
+    // InternalSynthesizer.g:3775:1: rule__SquareOscillator__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__SquareOscillator__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:3884:1: ( ( RULE_ID ) )
-            // InternalSynthesizer.g:3885:2: ( RULE_ID )
+            // InternalSynthesizer.g:3779:1: ( ( RULE_ID ) )
+            // InternalSynthesizer.g:3780:2: ( RULE_ID )
             {
-            // InternalSynthesizer.g:3885:2: ( RULE_ID )
-            // InternalSynthesizer.g:3886:3: RULE_ID
+            // InternalSynthesizer.g:3780:2: ( RULE_ID )
+            // InternalSynthesizer.g:3781:3: RULE_ID
             {
              before(grammarAccess.getSquareOscillatorAccess().getNameIDTerminalRuleCall_1_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -11264,17 +11083,17 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__SquareOscillator__FrequencyAssignment_4"
-    // InternalSynthesizer.g:3895:1: rule__SquareOscillator__FrequencyAssignment_4 : ( RULE_INT ) ;
+    // InternalSynthesizer.g:3790:1: rule__SquareOscillator__FrequencyAssignment_4 : ( RULE_INT ) ;
     public final void rule__SquareOscillator__FrequencyAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:3899:1: ( ( RULE_INT ) )
-            // InternalSynthesizer.g:3900:2: ( RULE_INT )
+            // InternalSynthesizer.g:3794:1: ( ( RULE_INT ) )
+            // InternalSynthesizer.g:3795:2: ( RULE_INT )
             {
-            // InternalSynthesizer.g:3900:2: ( RULE_INT )
-            // InternalSynthesizer.g:3901:3: RULE_INT
+            // InternalSynthesizer.g:3795:2: ( RULE_INT )
+            // InternalSynthesizer.g:3796:3: RULE_INT
             {
              before(grammarAccess.getSquareOscillatorAccess().getFrequencyINTTerminalRuleCall_4_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -11301,17 +11120,17 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__SquareOscillator__AmplitudeAssignment_6"
-    // InternalSynthesizer.g:3910:1: rule__SquareOscillator__AmplitudeAssignment_6 : ( RULE_INT ) ;
+    // InternalSynthesizer.g:3805:1: rule__SquareOscillator__AmplitudeAssignment_6 : ( RULE_INT ) ;
     public final void rule__SquareOscillator__AmplitudeAssignment_6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:3914:1: ( ( RULE_INT ) )
-            // InternalSynthesizer.g:3915:2: ( RULE_INT )
+            // InternalSynthesizer.g:3809:1: ( ( RULE_INT ) )
+            // InternalSynthesizer.g:3810:2: ( RULE_INT )
             {
-            // InternalSynthesizer.g:3915:2: ( RULE_INT )
-            // InternalSynthesizer.g:3916:3: RULE_INT
+            // InternalSynthesizer.g:3810:2: ( RULE_INT )
+            // InternalSynthesizer.g:3811:3: RULE_INT
             {
              before(grammarAccess.getSquareOscillatorAccess().getAmplitudeINTTerminalRuleCall_6_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -11338,17 +11157,17 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__PulseOscillator__NameAssignment_1"
-    // InternalSynthesizer.g:3925:1: rule__PulseOscillator__NameAssignment_1 : ( RULE_ID ) ;
+    // InternalSynthesizer.g:3820:1: rule__PulseOscillator__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__PulseOscillator__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:3929:1: ( ( RULE_ID ) )
-            // InternalSynthesizer.g:3930:2: ( RULE_ID )
+            // InternalSynthesizer.g:3824:1: ( ( RULE_ID ) )
+            // InternalSynthesizer.g:3825:2: ( RULE_ID )
             {
-            // InternalSynthesizer.g:3930:2: ( RULE_ID )
-            // InternalSynthesizer.g:3931:3: RULE_ID
+            // InternalSynthesizer.g:3825:2: ( RULE_ID )
+            // InternalSynthesizer.g:3826:3: RULE_ID
             {
              before(grammarAccess.getPulseOscillatorAccess().getNameIDTerminalRuleCall_1_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -11375,17 +11194,17 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__PulseOscillator__FrequencyAssignment_4"
-    // InternalSynthesizer.g:3940:1: rule__PulseOscillator__FrequencyAssignment_4 : ( RULE_INT ) ;
+    // InternalSynthesizer.g:3835:1: rule__PulseOscillator__FrequencyAssignment_4 : ( RULE_INT ) ;
     public final void rule__PulseOscillator__FrequencyAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:3944:1: ( ( RULE_INT ) )
-            // InternalSynthesizer.g:3945:2: ( RULE_INT )
+            // InternalSynthesizer.g:3839:1: ( ( RULE_INT ) )
+            // InternalSynthesizer.g:3840:2: ( RULE_INT )
             {
-            // InternalSynthesizer.g:3945:2: ( RULE_INT )
-            // InternalSynthesizer.g:3946:3: RULE_INT
+            // InternalSynthesizer.g:3840:2: ( RULE_INT )
+            // InternalSynthesizer.g:3841:3: RULE_INT
             {
              before(grammarAccess.getPulseOscillatorAccess().getFrequencyINTTerminalRuleCall_4_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -11412,17 +11231,17 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
 
 
     // $ANTLR start "rule__PulseOscillator__AmplitudeAssignment_6"
-    // InternalSynthesizer.g:3955:1: rule__PulseOscillator__AmplitudeAssignment_6 : ( RULE_INT ) ;
+    // InternalSynthesizer.g:3850:1: rule__PulseOscillator__AmplitudeAssignment_6 : ( RULE_INT ) ;
     public final void rule__PulseOscillator__AmplitudeAssignment_6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalSynthesizer.g:3959:1: ( ( RULE_INT ) )
-            // InternalSynthesizer.g:3960:2: ( RULE_INT )
+            // InternalSynthesizer.g:3854:1: ( ( RULE_INT ) )
+            // InternalSynthesizer.g:3855:2: ( RULE_INT )
             {
-            // InternalSynthesizer.g:3960:2: ( RULE_INT )
-            // InternalSynthesizer.g:3961:3: RULE_INT
+            // InternalSynthesizer.g:3855:2: ( RULE_INT )
+            // InternalSynthesizer.g:3856:3: RULE_INT
             {
              before(grammarAccess.getPulseOscillatorAccess().getAmplitudeINTTerminalRuleCall_6_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -11566,8 +11385,8 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
     public static final BitSet FOLLOW_1 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_2 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000000004000L});
-    public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000012048000L});
-    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000012040002L});
+    public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000018048000L});
+    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000018040002L});
     public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000030000L});
     public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000FC0008000L});
     public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000FC0000002L});
@@ -11581,9 +11400,9 @@ public class InternalSynthesizerParser extends AbstractInternalContentAssistPars
     public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000000400000L});
     public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000000800000L});
     public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000001000000L});
-    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000000004000000L});
-    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000000008000000L});
-    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000000000001800L});
+    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000000002000000L});
+    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000000000001800L});
+    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000000004000000L});
     public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000000000000800L});
     public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000000000001000L});
 

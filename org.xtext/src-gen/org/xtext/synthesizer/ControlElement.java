@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link org.xtext.synthesizer.ControlElement#getY <em>Y</em>}</li>
  *   <li>{@link org.xtext.synthesizer.ControlElement#getWidth <em>Width</em>}</li>
  *   <li>{@link org.xtext.synthesizer.ControlElement#getHeight <em>Height</em>}</li>
+ *   <li>{@link org.xtext.synthesizer.ControlElement#getSound <em>Sound</em>}</li>
  * </ul>
  *
  * @see org.xtext.synthesizer.SynthesizerPackage#getControlElement()
@@ -156,5 +157,31 @@ public interface ControlElement extends EObject
    * @generated
    */
   void setHeight(int value);
+
+  /**
+   * Returns the value of the '<em><b>Sound</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Sound</em>' reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Sound</em>' reference.
+   * @see #setSound(SoundElement)
+   * @see org.xtext.synthesizer.SynthesizerPackage#getControlElement_Sound()
+   * @model
+   * @generated
+   */
+  SoundElement getSound();
+
+  /**
+   * Sets the value of the '{@link org.xtext.synthesizer.ControlElement#getSound <em>Sound</em>}' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Sound</em>' reference.
+   * @see #getSound()
+   * @generated
+   */
+  void setSound(SoundElement value);
 
 } // ControlElement

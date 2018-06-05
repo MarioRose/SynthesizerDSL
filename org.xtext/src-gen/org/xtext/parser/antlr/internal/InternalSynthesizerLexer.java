@@ -290,10 +290,11 @@ public class InternalSynthesizerLexer extends Lexer {
         try {
             int _type = T__22;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalSynthesizer.g:22:7: ( ')' )
-            // InternalSynthesizer.g:22:9: ')'
+            // InternalSynthesizer.g:22:7: ( 'sound' )
+            // InternalSynthesizer.g:22:9: 'sound'
             {
-            match(')'); 
+            match("sound"); 
+
 
             }
 
@@ -310,10 +311,10 @@ public class InternalSynthesizerLexer extends Lexer {
         try {
             int _type = T__23;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalSynthesizer.g:23:7: ( 'slider' )
-            // InternalSynthesizer.g:23:9: 'slider'
+            // InternalSynthesizer.g:23:7: ( 'effect' )
+            // InternalSynthesizer.g:23:9: 'effect'
             {
-            match("slider"); 
+            match("effect"); 
 
 
             }
@@ -331,11 +332,10 @@ public class InternalSynthesizerLexer extends Lexer {
         try {
             int _type = T__24;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalSynthesizer.g:24:7: ( 'sound' )
-            // InternalSynthesizer.g:24:9: 'sound'
+            // InternalSynthesizer.g:24:7: ( ')' )
+            // InternalSynthesizer.g:24:9: ')'
             {
-            match("sound"); 
-
+            match(')'); 
 
             }
 
@@ -352,10 +352,10 @@ public class InternalSynthesizerLexer extends Lexer {
         try {
             int _type = T__25;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalSynthesizer.g:25:7: ( 'effect' )
-            // InternalSynthesizer.g:25:9: 'effect'
+            // InternalSynthesizer.g:25:7: ( 'slider' )
+            // InternalSynthesizer.g:25:9: 'slider'
             {
-            match("effect"); 
+            match("slider"); 
 
 
             }
@@ -583,10 +583,10 @@ public class InternalSynthesizerLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalSynthesizer.g:1401:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // InternalSynthesizer.g:1401:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // InternalSynthesizer.g:1339:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // InternalSynthesizer.g:1339:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // InternalSynthesizer.g:1401:11: ( '^' )?
+            // InternalSynthesizer.g:1339:11: ( '^' )?
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -595,7 +595,7 @@ public class InternalSynthesizerLexer extends Lexer {
             }
             switch (alt1) {
                 case 1 :
-                    // InternalSynthesizer.g:1401:11: '^'
+                    // InternalSynthesizer.g:1339:11: '^'
                     {
                     match('^'); 
 
@@ -613,7 +613,7 @@ public class InternalSynthesizerLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // InternalSynthesizer.g:1401:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // InternalSynthesizer.g:1339:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop2:
             do {
                 int alt2=2;
@@ -662,10 +662,10 @@ public class InternalSynthesizerLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalSynthesizer.g:1403:10: ( ( '0' .. '9' )+ )
-            // InternalSynthesizer.g:1403:12: ( '0' .. '9' )+
+            // InternalSynthesizer.g:1341:10: ( ( '0' .. '9' )+ )
+            // InternalSynthesizer.g:1341:12: ( '0' .. '9' )+
             {
-            // InternalSynthesizer.g:1403:12: ( '0' .. '9' )+
+            // InternalSynthesizer.g:1341:12: ( '0' .. '9' )+
             int cnt3=0;
             loop3:
             do {
@@ -679,7 +679,7 @@ public class InternalSynthesizerLexer extends Lexer {
 
                 switch (alt3) {
             	case 1 :
-            	    // InternalSynthesizer.g:1403:13: '0' .. '9'
+            	    // InternalSynthesizer.g:1341:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -711,10 +711,10 @@ public class InternalSynthesizerLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalSynthesizer.g:1405:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // InternalSynthesizer.g:1405:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // InternalSynthesizer.g:1343:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // InternalSynthesizer.g:1343:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // InternalSynthesizer.g:1405:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // InternalSynthesizer.g:1343:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt6=2;
             int LA6_0 = input.LA(1);
 
@@ -732,10 +732,10 @@ public class InternalSynthesizerLexer extends Lexer {
             }
             switch (alt6) {
                 case 1 :
-                    // InternalSynthesizer.g:1405:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // InternalSynthesizer.g:1343:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // InternalSynthesizer.g:1405:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // InternalSynthesizer.g:1343:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop4:
                     do {
                         int alt4=3;
@@ -751,7 +751,7 @@ public class InternalSynthesizerLexer extends Lexer {
 
                         switch (alt4) {
                     	case 1 :
-                    	    // InternalSynthesizer.g:1405:21: '\\\\' .
+                    	    // InternalSynthesizer.g:1343:21: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -759,7 +759,7 @@ public class InternalSynthesizerLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // InternalSynthesizer.g:1405:28: ~ ( ( '\\\\' | '\"' ) )
+                    	    // InternalSynthesizer.g:1343:28: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -784,10 +784,10 @@ public class InternalSynthesizerLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // InternalSynthesizer.g:1405:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // InternalSynthesizer.g:1343:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // InternalSynthesizer.g:1405:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // InternalSynthesizer.g:1343:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop5:
                     do {
                         int alt5=3;
@@ -803,7 +803,7 @@ public class InternalSynthesizerLexer extends Lexer {
 
                         switch (alt5) {
                     	case 1 :
-                    	    // InternalSynthesizer.g:1405:54: '\\\\' .
+                    	    // InternalSynthesizer.g:1343:54: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -811,7 +811,7 @@ public class InternalSynthesizerLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // InternalSynthesizer.g:1405:61: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // InternalSynthesizer.g:1343:61: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -854,12 +854,12 @@ public class InternalSynthesizerLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalSynthesizer.g:1407:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // InternalSynthesizer.g:1407:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // InternalSynthesizer.g:1345:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // InternalSynthesizer.g:1345:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // InternalSynthesizer.g:1407:24: ( options {greedy=false; } : . )*
+            // InternalSynthesizer.g:1345:24: ( options {greedy=false; } : . )*
             loop7:
             do {
                 int alt7=2;
@@ -884,7 +884,7 @@ public class InternalSynthesizerLexer extends Lexer {
 
                 switch (alt7) {
             	case 1 :
-            	    // InternalSynthesizer.g:1407:52: .
+            	    // InternalSynthesizer.g:1345:52: .
             	    {
             	    matchAny(); 
 
@@ -914,12 +914,12 @@ public class InternalSynthesizerLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalSynthesizer.g:1409:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // InternalSynthesizer.g:1409:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // InternalSynthesizer.g:1347:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // InternalSynthesizer.g:1347:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // InternalSynthesizer.g:1409:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // InternalSynthesizer.g:1347:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop8:
             do {
                 int alt8=2;
@@ -932,7 +932,7 @@ public class InternalSynthesizerLexer extends Lexer {
 
                 switch (alt8) {
             	case 1 :
-            	    // InternalSynthesizer.g:1409:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // InternalSynthesizer.g:1347:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -952,7 +952,7 @@ public class InternalSynthesizerLexer extends Lexer {
                 }
             } while (true);
 
-            // InternalSynthesizer.g:1409:40: ( ( '\\r' )? '\\n' )?
+            // InternalSynthesizer.g:1347:40: ( ( '\\r' )? '\\n' )?
             int alt10=2;
             int LA10_0 = input.LA(1);
 
@@ -961,9 +961,9 @@ public class InternalSynthesizerLexer extends Lexer {
             }
             switch (alt10) {
                 case 1 :
-                    // InternalSynthesizer.g:1409:41: ( '\\r' )? '\\n'
+                    // InternalSynthesizer.g:1347:41: ( '\\r' )? '\\n'
                     {
-                    // InternalSynthesizer.g:1409:41: ( '\\r' )?
+                    // InternalSynthesizer.g:1347:41: ( '\\r' )?
                     int alt9=2;
                     int LA9_0 = input.LA(1);
 
@@ -972,7 +972,7 @@ public class InternalSynthesizerLexer extends Lexer {
                     }
                     switch (alt9) {
                         case 1 :
-                            // InternalSynthesizer.g:1409:41: '\\r'
+                            // InternalSynthesizer.g:1347:41: '\\r'
                             {
                             match('\r'); 
 
@@ -1004,10 +1004,10 @@ public class InternalSynthesizerLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalSynthesizer.g:1411:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // InternalSynthesizer.g:1411:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalSynthesizer.g:1349:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // InternalSynthesizer.g:1349:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // InternalSynthesizer.g:1411:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalSynthesizer.g:1349:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt11=0;
             loop11:
             do {
@@ -1061,8 +1061,8 @@ public class InternalSynthesizerLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalSynthesizer.g:1413:16: ( . )
-            // InternalSynthesizer.g:1413:18: .
+            // InternalSynthesizer.g:1351:16: ( . )
+            // InternalSynthesizer.g:1351:18: .
             {
             matchAny(); 
 
@@ -1313,20 +1313,20 @@ public class InternalSynthesizerLexer extends Lexer {
 
     protected DFA12 dfa12 = new DFA12(this);
     static final String DFA12_eotS =
-        "\1\uffff\1\36\2\uffff\2\36\1\uffff\1\44\1\45\2\36\1\uffff\11\36\1\34\2\uffff\3\34\2\uffff\1\36\3\uffff\2\36\3\uffff\2\36\1\uffff\15\36\5\uffff\47\36\1\165\1\36\1\167\2\36\1\172\15\36\1\uffff\1\36\1\uffff\1\u0089\1\u008a\1\uffff\3\36\1\u008e\2\36\1\u0091\1\u0092\6\36\2\uffff\3\36\1\uffff\2\36\2\uffff\3\36\1\u00a1\12\36\1\uffff\5\36\1\u00b1\1\u00b2\4\36\1\u00b7\3\36\2\uffff\3\36\1\u00be\1\uffff\6\36\1\uffff\15\36\1\u00d2\5\36\1\uffff\2\36\1\u00da\2\36\1\u00dd\1\36\1\uffff\2\36\1\uffff\1\36\1\u00e2\1\u00e3\1\u00e4\3\uffff";
+        "\1\uffff\1\35\2\uffff\2\35\1\uffff\1\43\1\44\4\35\1\uffff\6\35\1\33\2\uffff\3\33\2\uffff\1\35\3\uffff\2\35\3\uffff\10\35\1\uffff\6\35\5\uffff\45\35\1\160\1\35\1\162\1\35\1\164\15\35\1\uffff\1\35\1\uffff\1\u0083\1\uffff\1\u0084\3\35\1\u0088\2\35\1\u008b\1\u008c\5\35\2\uffff\3\35\1\uffff\2\35\2\uffff\2\35\1\u0099\11\35\1\uffff\5\35\1\u00a8\1\u00a9\3\35\1\u00ad\3\35\2\uffff\2\35\1\u00b3\1\uffff\5\35\1\uffff\13\35\1\u00c4\4\35\1\uffff\2\35\1\u00cb\1\35\1\u00cd\1\35\1\uffff\1\35\1\uffff\1\35\1\u00d1\1\u00d2\2\uffff";
     static final String DFA12_eofS =
         "\u00e5\uffff";
     static final String DFA12_minS =
-        "\1\0\1\157\2\uffff\2\157\1\uffff\2\60\1\151\1\145\1\uffff\1\141\1\146\1\162\1\155\1\165\1\151\1\162\1\165\1\155\1\101\2\uffff\2\0\1\52\2\uffff\1\156\3\uffff\1\165\1\164\3\uffff\1\144\1\151\1\uffff\1\151\1\165\1\167\1\156\1\165\1\146\1\145\1\160\1\164\1\156\1\151\1\154\1\160\5\uffff\2\156\1\141\1\164\1\147\1\144\1\156\1\124\1\145\1\141\1\145\1\161\1\154\1\164\1\145\1\141\1\163\1\165\1\162\1\145\1\144\1\162\2\150\1\145\1\144\1\157\1\117\1\162\1\143\1\165\1\151\1\157\1\141\1\156\1\145\1\154\1\157\1\143\1\60\1\171\1\60\1\164\1\162\1\60\1\157\1\163\1\145\1\164\1\145\1\164\1\156\1\162\1\147\1\117\1\163\1\154\1\164\1\uffff\1\113\1\uffff\2\60\1\uffff\1\164\1\143\1\117\1\60\1\156\1\165\2\60\1\154\1\163\1\145\1\163\1\151\1\156\2\uffff\1\150\1\151\1\163\1\uffff\1\143\1\144\2\uffff\1\145\1\143\1\117\1\60\2\157\1\117\1\154\1\143\1\171\1\145\1\117\1\151\1\163\1\uffff\1\156\1\142\1\163\1\154\1\151\2\60\1\163\1\154\1\143\1\163\1\60\1\143\1\141\1\154\2\uffff\1\143\1\154\1\151\1\60\1\uffff\1\151\1\164\1\154\1\151\1\141\1\154\1\uffff\1\154\1\157\1\141\1\154\1\164\2\154\1\162\1\164\1\154\1\157\2\141\1\60\1\157\1\141\1\162\2\164\1\uffff\1\162\1\164\1\60\2\157\1\60\1\157\1\uffff\2\162\1\uffff\1\162\3\60\3\uffff";
+        "\1\0\1\157\2\uffff\2\157\1\uffff\2\60\1\151\1\145\1\141\1\146\1\uffff\1\162\1\155\1\165\1\151\1\162\1\165\1\101\2\uffff\2\0\1\52\2\uffff\1\156\3\uffff\1\165\1\164\3\uffff\1\144\1\151\1\165\1\151\1\167\1\156\1\165\1\146\1\uffff\1\145\1\160\1\164\1\156\1\151\1\154\5\uffff\2\156\1\141\1\164\1\147\1\156\1\144\1\124\1\145\1\141\1\145\1\161\1\154\1\164\1\145\1\141\1\163\1\162\1\145\1\144\1\162\2\150\1\144\1\145\1\157\1\117\1\162\1\143\1\165\1\151\1\157\1\141\1\156\1\145\1\157\1\143\1\60\1\171\1\60\1\164\1\60\1\162\1\157\1\163\1\145\1\164\1\145\1\164\1\156\1\162\1\147\1\117\1\154\1\164\1\uffff\1\113\1\uffff\1\60\1\uffff\1\60\1\164\1\143\1\117\1\60\1\156\1\165\2\60\1\154\2\163\1\151\1\156\2\uffff\1\150\1\151\1\163\1\uffff\1\143\1\144\2\uffff\1\145\1\143\1\60\2\157\1\117\1\154\1\143\1\171\1\145\1\117\1\151\1\uffff\1\156\1\142\1\163\1\154\1\151\2\60\1\163\1\154\1\163\1\60\1\143\1\141\1\154\2\uffff\1\143\1\154\1\60\1\uffff\1\151\1\164\1\154\1\151\1\141\1\uffff\1\154\1\157\1\141\1\154\1\164\1\154\1\162\1\164\1\154\1\157\1\141\1\60\1\157\1\141\1\162\1\164\1\uffff\1\162\1\164\1\60\1\157\1\60\1\157\1\uffff\1\162\1\uffff\1\162\2\60\2\uffff";
     static final String DFA12_maxS =
-        "\1\uffff\1\157\2\uffff\2\157\1\uffff\2\172\1\151\1\145\1\uffff\1\161\1\146\1\162\1\155\1\165\1\151\1\162\1\165\1\155\1\172\2\uffff\2\uffff\1\57\2\uffff\1\156\3\uffff\1\165\1\164\3\uffff\1\144\1\151\1\uffff\1\151\1\165\1\167\1\156\1\165\1\146\1\145\1\160\1\164\1\156\1\151\1\154\1\160\5\uffff\1\164\1\156\1\141\1\164\1\147\1\144\1\156\1\124\1\145\1\141\1\145\1\161\1\154\1\164\1\145\1\141\1\163\1\165\1\162\1\145\1\144\1\162\2\150\1\145\1\144\1\157\1\117\1\162\1\143\1\165\1\151\1\157\1\141\1\156\1\145\1\154\1\157\1\143\1\172\1\171\1\172\1\164\1\162\1\172\1\157\1\163\1\145\1\164\1\145\1\164\1\156\1\162\1\147\1\117\1\163\1\154\1\164\1\uffff\1\113\1\uffff\2\172\1\uffff\1\164\1\143\1\117\1\172\1\156\1\165\2\172\1\154\1\163\1\145\1\163\1\151\1\156\2\uffff\1\150\1\151\1\163\1\uffff\1\143\1\144\2\uffff\1\145\1\143\1\117\1\172\2\157\1\117\1\154\1\143\1\171\1\145\1\117\1\151\1\163\1\uffff\1\156\1\142\1\163\1\154\1\151\2\172\1\163\1\154\1\143\1\163\1\172\1\143\1\141\1\154\2\uffff\1\143\1\154\1\151\1\172\1\uffff\1\151\1\164\1\154\1\151\1\141\1\154\1\uffff\1\154\1\157\1\141\1\154\1\164\2\154\1\162\1\164\1\154\1\157\2\141\1\172\1\157\1\141\1\162\2\164\1\uffff\1\162\1\164\1\172\2\157\1\172\1\157\1\uffff\2\162\1\uffff\1\162\3\172\3\uffff";
+        "\1\uffff\1\157\2\uffff\2\157\1\uffff\2\172\1\151\1\145\1\161\1\146\1\uffff\1\162\1\155\1\165\1\151\1\162\1\165\1\172\2\uffff\2\uffff\1\57\2\uffff\1\156\3\uffff\1\165\1\164\3\uffff\1\144\1\151\1\165\1\151\1\167\1\156\1\165\1\146\1\uffff\1\145\1\160\1\164\1\156\1\151\1\154\5\uffff\1\164\1\156\1\141\1\164\1\147\1\156\1\144\1\124\1\145\1\141\1\145\1\161\1\154\1\164\1\145\1\141\1\163\1\162\1\145\1\144\1\162\2\150\1\144\1\145\1\157\1\117\1\162\1\143\1\165\1\151\1\157\1\141\1\156\1\145\1\157\1\143\1\172\1\171\1\172\1\164\1\172\1\162\1\157\1\163\1\145\1\164\1\145\1\164\1\156\1\162\1\147\1\117\1\154\1\164\1\uffff\1\113\1\uffff\1\172\1\uffff\1\172\1\164\1\143\1\117\1\172\1\156\1\165\2\172\1\154\2\163\1\151\1\156\2\uffff\1\150\1\151\1\163\1\uffff\1\143\1\144\2\uffff\1\145\1\143\1\172\2\157\1\117\1\154\1\143\1\171\1\145\1\117\1\151\1\uffff\1\156\1\142\1\163\1\154\1\151\2\172\1\163\1\154\1\163\1\172\1\143\1\141\1\154\2\uffff\1\143\1\154\1\172\1\uffff\1\151\1\164\1\154\1\151\1\141\1\uffff\1\154\1\157\1\141\1\154\1\164\1\154\1\162\1\164\1\154\1\157\1\141\1\172\1\157\1\141\1\162\1\164\1\uffff\1\162\1\164\1\172\1\157\1\172\1\157\1\uffff\1\162\1\uffff\1\162\2\172\2\uffff";
     static final String DFA12_acceptS =
-        "\2\uffff\1\2\1\3\2\uffff\1\7\4\uffff\1\14\12\uffff\1\32\1\33\3\uffff\1\37\1\40\1\uffff\1\32\1\2\1\3\2\uffff\1\7\1\10\1\11\2\uffff\1\14\15\uffff\1\33\1\34\1\35\1\36\1\37\72\uffff\1\4\1\uffff\1\12\2\uffff\1\16\16\uffff\1\13\1\15\3\uffff\1\17\2\uffff\1\22\1\23\16\uffff\1\1\17\uffff\1\20\1\21\4\uffff\1\6\6\uffff\1\5\23\uffff\1\25\7\uffff\1\30\2\uffff\1\27\4\uffff\1\31\1\24\1\26";
+        "\2\uffff\1\2\1\3\2\uffff\1\7\6\uffff\1\16\7\uffff\1\31\1\32\3\uffff\1\36\1\37\1\uffff\1\31\1\2\1\3\2\uffff\1\7\1\10\1\11\10\uffff\1\16\6\uffff\1\32\1\33\1\34\1\35\1\36\67\uffff\1\4\1\uffff\1\12\1\uffff\1\14\16\uffff\1\13\1\17\3\uffff\1\15\2\uffff\1\22\1\23\14\uffff\1\1\16\uffff\1\20\1\21\3\uffff\1\6\5\uffff\1\5\20\uffff\1\25\6\uffff\1\30\1\uffff\1\27\3\uffff\1\24\1\26";
     static final String DFA12_specialS =
         "\1\2\27\uffff\1\0\1\1\u00cb\uffff}>";
     static final String[] DFA12_transitionS = {
-            "\11\34\2\33\2\34\1\33\22\34\1\33\1\34\1\30\4\34\1\31\1\6\1\13\5\34\1\32\12\27\7\34\2\26\1\1\17\26\1\4\7\26\3\34\1\25\1\26\1\34\1\17\1\20\2\26\1\15\1\16\1\26\1\12\1\24\2\26\1\21\3\26\1\23\1\26\1\5\1\14\1\22\2\26\1\11\1\7\1\10\1\26\1\2\1\34\1\3\uff82\34",
-            "\1\35",
+            "\11\33\2\32\2\33\1\32\22\33\1\32\1\33\1\27\4\33\1\30\1\6\1\15\5\33\1\31\12\26\7\33\2\25\1\1\17\25\1\4\7\25\3\33\1\24\1\25\1\33\1\17\1\20\2\25\1\14\1\16\1\25\1\12\3\25\1\21\3\25\1\23\1\25\1\5\1\13\1\22\2\25\1\11\1\7\1\10\1\25\1\2\1\33\1\3\uff82\33",
+            "\1\34",
             "",
             "",
             "\1\41",
@@ -1335,9 +1335,9 @@ public class InternalSynthesizerLexer extends Lexer {
             "\12\36\7\uffff\32\36\4\uffff\1\36\1\uffff\32\36",
             "\12\36\7\uffff\32\36\4\uffff\1\36\1\uffff\32\36",
             "\1\46",
-            "\1\47",
+            "\1\51\7\uffff\1\52\2\uffff\1\50\2\uffff\1\47\1\uffff\1\53",
+            "\1\54",
             "",
-            "\1\53\7\uffff\1\54\2\uffff\1\51\2\uffff\1\52\1\uffff\1\55",
             "\1\56",
             "\1\57",
             "\1\60",
@@ -1360,9 +1360,6 @@ public class InternalSynthesizerLexer extends Lexer {
             "",
             "\1\74",
             "\1\75",
-            "",
-            "",
-            "",
             "\1\76",
             "\1\77",
             "",
@@ -1370,6 +1367,7 @@ public class InternalSynthesizerLexer extends Lexer {
             "\1\101",
             "\1\102",
             "\1\103",
+            "",
             "\1\104",
             "\1\105",
             "\1\106",
@@ -1422,8 +1420,8 @@ public class InternalSynthesizerLexer extends Lexer {
             "\1\161",
             "\1\162",
             "\1\163",
-            "\1\164",
-            "\12\36\7\uffff\32\36\4\uffff\1\36\1\uffff\32\36",
+            "\12\35\7\uffff\32\35\4\uffff\1\35\1\uffff\32\35",
+            "\1\165",
             "\1\166",
             "\12\36\7\uffff\32\36\4\uffff\1\36\1\uffff\32\36",
             "\1\170",
@@ -1437,8 +1435,10 @@ public class InternalSynthesizerLexer extends Lexer {
             "\1\u0080",
             "\1\u0081",
             "\1\u0082",
-            "\1\u0083",
-            "\1\u0084",
+            "",
+            "\12\35\7\uffff\32\35\4\uffff\1\35\1\uffff\32\35",
+            "",
+            "\12\35\7\uffff\32\35\4\uffff\1\35\1\uffff\32\35",
             "\1\u0085",
             "\1\u0086",
             "\1\u0087",
@@ -1636,11 +1636,11 @@ public class InternalSynthesizerLexer extends Lexer {
 
                         else if ( (LA12_0=='h') ) {s = 10;}
 
-                        else if ( (LA12_0==')') ) {s = 11;}
+                        else if ( (LA12_0=='s') ) {s = 11;}
 
-                        else if ( (LA12_0=='s') ) {s = 12;}
+                        else if ( (LA12_0=='e') ) {s = 12;}
 
-                        else if ( (LA12_0=='e') ) {s = 13;}
+                        else if ( (LA12_0==')') ) {s = 13;}
 
                         else if ( (LA12_0=='f') ) {s = 14;}
 
