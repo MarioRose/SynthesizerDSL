@@ -45,7 +45,7 @@ Effect:
 ;
 
 SoundElement:
-	SawToothOscillator | SineOscillator | TriangleOscillator | SquareOscillator | PulseOscillator
+	SawToothOscillator | SineOscillator | TriangleOscillator | SquareOscillator | PulseOscillator | ImpulseOscillator
 ;
 
 Button:
