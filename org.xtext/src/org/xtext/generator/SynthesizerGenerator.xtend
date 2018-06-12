@@ -16,6 +16,7 @@ import org.xtext.synthesizer.PulseOscillator
 import org.xtext.synthesizer.SquareOscillator
 import org.xtext.synthesizer.TriangleOscillator
 import org.xtext.synthesizer.ImpulseOscillator
+import org.xtext.synthesizer.Image
 
 /**
  * Generates code from your model files on save.
@@ -362,6 +363,20 @@ class SynthesizerGenerator extends AbstractGenerator {
 				b' + name + '.setBounds(' + x + ', ' + y + ', ' + width + ', ' + height + ');  // x, y, width, height
     			b' + name + '.setPreferredSize(new Dimension(' + width +', ' + height +'));				
         		panel.add(b' + name + ');
+
+		        '].join('\n\t\t\t\t')
+		        + '
+
+				//Create Images
+				'+ resource.allContents
+				.filter(Image)
+				.map["ImageIcon image" + name + " = new ImageIcon(\"" + path + "\");\n"
+				+ '
+				JLabel imagelabel' + name + ' = new JLabel(image' + name + ');
+
+				imagelabel' + name + '.setBounds(' + x + ', ' + y + ', ' + width + ', ' + height + ');  // x, y, width, height
+    			imagelabel' + name + '.setPreferredSize(new Dimension(' + width +', ' + height +'));				
+        		panel.add(imagelabel' + name + ');
 
 		        '].join('\n\t\t\t\t')
 		        + '

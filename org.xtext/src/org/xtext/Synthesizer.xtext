@@ -16,7 +16,7 @@ Model:
 ;
 	
 ControlElement:
-	Button | RotaryKnob | Slider
+	Button | RotaryKnob | Slider | Image
 ;
 
 RotaryKnob:
@@ -61,6 +61,16 @@ Button:
 		'width' width = INT
 		'height' height = INT
 		'sound' sound = [SoundElement]
+	')'
+;
+
+Image:
+	'image' name = ID '('
+		'x' x = INT
+		'y' y = INT
+		'width' width = INT
+		'height' height = INT
+		'path' path = STRING
 	')'
 ;
 
