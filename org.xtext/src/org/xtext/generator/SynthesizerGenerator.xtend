@@ -17,6 +17,7 @@ import org.xtext.synthesizer.SquareOscillator
 import org.xtext.synthesizer.TriangleOscillator
 import org.xtext.synthesizer.ImpulseOscillator
 import org.xtext.synthesizer.Image
+import org.xtext.synthesizer.BgColor
 
 /**
  * Generates code from your model files on save.
@@ -47,6 +48,7 @@ class SynthesizerGenerator extends AbstractGenerator {
 		import java.awt.BorderLayout;
 		import java.awt.GridLayout;
 		import java.awt.Dimension;
+		import java.awt.Color;
 
 		import javax.swing.*;  
 		import javax.swing.JApplet;
@@ -352,7 +354,7 @@ class SynthesizerGenerator extends AbstractGenerator {
 		        //Create Buttons
 				'+ resource.allContents
 				.filter(Button)
-				.map["JButton b" + name + " = new JButton(\"b" + name + "\");\n
+				.map["JButton b" + name + " = new JButton();\n
 				b" + name + '.addActionListener(new ActionListener() {
 			        @Override
 			        public void actionPerformed(ActionEvent e) {
@@ -361,7 +363,11 @@ class SynthesizerGenerator extends AbstractGenerator {
 		    	});
 
 				b' + name + '.setBounds(' + x + ', ' + y + ', ' + width + ', ' + height + ');  // x, y, width, height
-    			b' + name + '.setPreferredSize(new Dimension(' + width +', ' + height +'));				
+    			b' + name + '.setPreferredSize(new Dimension(' + width +', ' + height +'));		
+				b' + name + '.setText(\"' + label + '\");
+				if (b' + name + '.getText().equals(\"null\"))
+					b' + name + '.setText("");
+				b' + name + '.setBackground(Color.' + bgColor + ');
         		panel.add(b' + name + ');
 
 		        '].join('\n\t\t\t\t')

@@ -61,6 +61,8 @@ Button:
 		'width' width = INT
 		'height' height = INT
 		'sound' sound = [SoundElement]
+		('label' label = STRING)?
+		('color' bgColor = BgColor)?
 	')'
 ;
 
@@ -122,4 +124,10 @@ ImpulseOscillator:
 
 DOUBLE:
 	predecimal = INT ('.' decimal = INT)?
+;
+
+enum BgColor:
+	WHITE = 'white' | GRAY = 'gray' | BLACK = 'black' | BLUE = 'blue' | RED = 'red' | GREEN = 'green' | YELLOW = 'yellow' |
+	CYAN = 'cyan' | MAGENTA = 'magenta' | ORANGE = 'orange'
+	
 ;
