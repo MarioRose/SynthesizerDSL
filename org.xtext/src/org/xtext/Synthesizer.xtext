@@ -80,11 +80,16 @@ ConnectionElement:
 	'linear' ce = [ControlElement] se = [SoundElement]
 ;
 
+enum Key:
+	 NO = "XX" | A = "A" | B = "B" | C = "C" | D = "D" | E = "E" | F = "F" | G = "G" |H = "H" |I = "I" | J = "J" | K = "K" | L = "L" | M = "M" | N = "N" |
+	 O = "O" | P = "P" | Q = "Q" | R = "R" | S = "S" | T = "T" | U = "U" | V = "V" | W = "W" | X = "X" | Y = "Y" | Z = "Z" 
+	 ;
+
 SawToothOscillator:
 	'sawToothOscillator' name = ID '('
 		'frequency' frequency = DOUBLE
 		'amplitude' amplitude = DOUBLE //should be float or INT.INT (e.g. 0.6)
-		('key' key = STRING)?
+		('key' key = Key)?
 	')'
 ;
 
@@ -92,7 +97,7 @@ SineOscillator:
 	'sineOscillator' name = ID '('
 		'frequency' frequency = DOUBLE
 		'amplitude' amplitude = DOUBLE //should be float or INT.INT (e.g. 0.6)
-		('key' key = STRING)?
+		('key' key = Key)?
 	')'
 ;
 
@@ -100,7 +105,7 @@ TriangleOscillator:
 	'triangleOscillator' name = ID '('
 		'frequency' frequency = DOUBLE
 		'amplitude' amplitude = DOUBLE //should be float or INT.INT (e.g. 0.6)
-		('key' key = STRING)?
+		('key' key = Key)?
 	')'
 ;
 
@@ -108,7 +113,7 @@ SquareOscillator:
 	'squareOscillator' name = ID '('
 		'frequency' frequency = DOUBLE
 		'amplitude' amplitude = DOUBLE //should be float or INT.INT (e.g. 0.6)
-		('key' key = STRING)?
+		('key' key = Key)?
 	')'
 ;
 
@@ -116,7 +121,7 @@ PulseOscillator:
 	'pulseOscillator' name = ID '('
 		'frequency' frequency = DOUBLE
 		'amplitude' amplitude = DOUBLE //should be float or INT.INT (e.g. 0.6)
-		('key' key = STRING)?
+		('key' key = Key)?
 	')'
 ;
 
@@ -124,7 +129,7 @@ ImpulseOscillator:
 	'impulseOscillator' name = ID '('
 		'frequency' frequency = DOUBLE
 		'amplitude' amplitude = DOUBLE //should be float or INT.INT (e.g. 0.6)
-		('key' key = STRING)?
+		('key' key = Key)?
 	')'
 ;
 

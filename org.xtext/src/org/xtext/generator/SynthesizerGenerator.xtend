@@ -83,37 +83,37 @@ class SynthesizerGenerator extends AbstractGenerator {
 			'+ resource.allContents
 				.filter(SineOscillator)
 				.map["private static UnitOscillator osc" + name + ";	
-				"+ if(key !== null) {"boolean pressed_" + key + " = true;"} else{""} + " 	              
+				"+ if(!key.toString.equals("XX")) {"boolean pressed_" + key + " = true;"} else{""} + " 	              
 				"].join('\n\t\t\t\t')
 			+
 			resource.allContents
 				.filter(SawToothOscillator)
 				.map["private static UnitOscillator osc" + name + ";
-				"+ if(key !== null) {"boolean pressed_" + key + " = true;"} else{""} + "    
+				"+ if(!key.toString.equals('XX')) {"boolean pressed_" + key + " = true;"} else{""} + "    
 				"].join('\n\t\t\t\t')
 			+
 			resource.allContents
 				.filter(TriangleOscillator)
 				.map["private static UnitOscillator osc" + name + ";	   
-				"+ if(key !== null) {"boolean pressed_" + key + " = true;"} else{""} + "	           
+				"+ if(!key.toString.equals("XX")) {"boolean pressed_" + key + " = true;"} else{""} + "	           
 				"].join('\n\t\t\t\t')
 			+
 			resource.allContents
 				.filter(SquareOscillator)
 				.map["private static UnitOscillator osc" + name + ";	
-				"+ if(key !== null) {"boolean pressed_" + key + " = true;"} else{""} + "	              
+				"+ if(!key.toString.equals("XX")) {"boolean pressed_" + key + " = true;"} else{""} + "	              
 				"].join('\n\t\t\t\t')
 			+
 			resource.allContents
 				.filter(PulseOscillator)
 				.map["private static UnitOscillator osc" + name + ";	   
-				"+ if(key !== null) {"boolean pressed_" + key + " = true;"} else{""} + "           
+				"+ if(!key.toString.equals("XX")) {"boolean pressed_" + key + " = true;"} else{""} + "           
 				"].join('\n\t\t\t\t')
 			+ 
 			resource.allContents
 				.filter(ImpulseOscillator)
 				.map["private static UnitOscillator osc" + name + ";	
-				"+ if(key !== null) {"boolean pressed_" + key + " = true;"} else{""} + " 	              
+				"+ if(!key.toString.equals("XX")) {"boolean pressed_" + key + " = true;"} else{""} + " 	              
 				"].join('\n\t\t\t\t')
 			+ '
 
@@ -423,7 +423,7 @@ class SynthesizerGenerator extends AbstractGenerator {
 		return 'private void setKeyBindings(final JPanel panel) {		 
 			'+ resource.allContents
 				.filter(SawToothOscillator)
-				.map[if(key !== null){'
+				.map[if(!key.toString.equals("XX")){'
 				panel.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke(KeyEvent.VK_' + key +', 0, false), "' + key + '_pressed");
 		        panel.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke(KeyEvent.VK_' + key + ', 0, true), "' + key + '_released");
 		
@@ -449,7 +449,7 @@ class SynthesizerGenerator extends AbstractGenerator {
 			+ '
 			'+ resource.allContents
 				.filter(SineOscillator)
-				.map[if(key !== null){'
+				.map[if(!key.toString.equals("XX")){'
 				panel.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke(KeyEvent.VK_' + key +', 0, false), "' + key + '_pressed");
 		        panel.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke(KeyEvent.VK_' + key + ', 0, true), "' + key + '_released");
 		
@@ -475,7 +475,7 @@ class SynthesizerGenerator extends AbstractGenerator {
 			+ '
 			'+ resource.allContents
 				.filter(TriangleOscillator)
-				.map[if(key !== null){'
+				.map[if(!key.toString.equals("XX")){'
 				panel.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke(KeyEvent.VK_' + key +', 0, false), "' + key + '_pressed");
 		        panel.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke(KeyEvent.VK_' + key + ', 0, true), "' + key + '_released");
 		
@@ -501,7 +501,7 @@ class SynthesizerGenerator extends AbstractGenerator {
 			+ '
 			'+ resource.allContents
 				.filter(SquareOscillator)
-				.map[if(key !== null){'
+				.map[if(!key.toString.equals("XX")){'
 				panel.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke(KeyEvent.VK_' + key +', 0, false), "' + key + '_pressed");
 		        panel.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke(KeyEvent.VK_' + key + ', 0, true), "' + key + '_released");
 		
@@ -527,7 +527,7 @@ class SynthesizerGenerator extends AbstractGenerator {
 			+ '
 			'+ resource.allContents
 				.filter(PulseOscillator)
-				.map[if(key !== null){'
+				.map[if(!key.toString.equals("XX")){'
 				panel.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke(KeyEvent.VK_' + key +', 0, false), "' + key + '_pressed");
 		        panel.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke(KeyEvent.VK_' + key + ', 0, true), "' + key + '_released");
 		
@@ -553,7 +553,7 @@ class SynthesizerGenerator extends AbstractGenerator {
 			+ '
 			'+ resource.allContents
 				.filter(ImpulseOscillator)
-				.map[if(key !== null){'
+				.map[if(!key.toString.equals("XX")){'
 				panel.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke(KeyEvent.VK_' + key +', 0, false), "' + key + '_pressed");
 		        panel.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke(KeyEvent.VK_' + key + ', 0, true), "' + key + '_released");
 		
