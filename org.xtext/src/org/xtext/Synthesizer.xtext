@@ -84,6 +84,7 @@ SawToothOscillator:
 	'sawToothOscillator' name = ID '('
 		'frequency' frequency = DOUBLE
 		'amplitude' amplitude = DOUBLE //should be float or INT.INT (e.g. 0.6)
+		('key' key = STRING)?
 	')'
 ;
 
@@ -91,6 +92,7 @@ SineOscillator:
 	'sineOscillator' name = ID '('
 		'frequency' frequency = DOUBLE
 		'amplitude' amplitude = DOUBLE //should be float or INT.INT (e.g. 0.6)
+		('key' key = STRING)?
 	')'
 ;
 
@@ -98,6 +100,7 @@ TriangleOscillator:
 	'triangleOscillator' name = ID '('
 		'frequency' frequency = DOUBLE
 		'amplitude' amplitude = DOUBLE //should be float or INT.INT (e.g. 0.6)
+		('key' key = STRING)?
 	')'
 ;
 
@@ -105,6 +108,7 @@ SquareOscillator:
 	'squareOscillator' name = ID '('
 		'frequency' frequency = DOUBLE
 		'amplitude' amplitude = DOUBLE //should be float or INT.INT (e.g. 0.6)
+		('key' key = STRING)?
 	')'
 ;
 
@@ -112,6 +116,7 @@ PulseOscillator:
 	'pulseOscillator' name = ID '('
 		'frequency' frequency = DOUBLE
 		'amplitude' amplitude = DOUBLE //should be float or INT.INT (e.g. 0.6)
+		('key' key = STRING)?
 	')'
 ;
 
@@ -119,6 +124,7 @@ ImpulseOscillator:
 	'impulseOscillator' name = ID '('
 		'frequency' frequency = DOUBLE
 		'amplitude' amplitude = DOUBLE //should be float or INT.INT (e.g. 0.6)
+		('key' key = STRING)?
 	')'
 ;
 

@@ -49,6 +49,7 @@ class SynthesizerGenerator extends AbstractGenerator {
 		import java.awt.GridLayout;
 		import java.awt.Dimension;
 		import java.awt.Color;
+		import java.awt.event.KeyEvent;
 
 		import javax.swing.*;  
 		import javax.swing.JApplet;
@@ -81,46 +82,40 @@ class SynthesizerGenerator extends AbstractGenerator {
 			//SOUNDS
 			'+ resource.allContents
 				.filter(SineOscillator)
-				.map["private static UnitOscillator osc" + name + ";	       
+				.map["private static UnitOscillator osc" + name + ";	
+				"+ if(key !== null) {"boolean pressed_" + key + " = true;"} else{""} + " 	              
 				"].join('\n\t\t\t\t')
-				
-			+ '
-
-			'+ resource.allContents
+			+
+			resource.allContents
 				.filter(SawToothOscillator)
-				.map["private static UnitOscillator osc" + name + ";	       
+				.map["private static UnitOscillator osc" + name + ";
+				"+ if(key !== null) {"boolean pressed_" + key + " = true;"} else{""} + "    
 				"].join('\n\t\t\t\t')
-				
-			+ '
-
-			'+ resource.allContents
+			+
+			resource.allContents
 				.filter(TriangleOscillator)
-				.map["private static UnitOscillator osc" + name + ";	       
+				.map["private static UnitOscillator osc" + name + ";	   
+				"+ if(key !== null) {"boolean pressed_" + key + " = true;"} else{""} + "	           
 				"].join('\n\t\t\t\t')
-				
-			+ '
-
-			'+ resource.allContents
+			+
+			resource.allContents
 				.filter(SquareOscillator)
-				.map["private static UnitOscillator osc" + name + ";	       
+				.map["private static UnitOscillator osc" + name + ";	
+				"+ if(key !== null) {"boolean pressed_" + key + " = true;"} else{""} + "	              
 				"].join('\n\t\t\t\t')
-				
-			+ '
-
-			'+ resource.allContents
+			+
+			resource.allContents
 				.filter(PulseOscillator)
-				.map["private static UnitOscillator osc" + name + ";	       
+				.map["private static UnitOscillator osc" + name + ";	   
+				"+ if(key !== null) {"boolean pressed_" + key + " = true;"} else{""} + "           
 				"].join('\n\t\t\t\t')
-				
-			+ '
-
-			'+ resource.allContents
+			+ 
+			resource.allContents
 				.filter(ImpulseOscillator)
-				.map["private static UnitOscillator osc" + name + ";	       
+				.map["private static UnitOscillator osc" + name + ";	
+				"+ if(key !== null) {"boolean pressed_" + key + " = true;"} else{""} + " 	              
 				"].join('\n\t\t\t\t')
-				
 			+ '
-
 
 			' + generateUI(resource) + '
 
@@ -337,6 +332,8 @@ class SynthesizerGenerator extends AbstractGenerator {
 		        frame.test();
 		        frame.validate();
 			}
+
+			' + generateKeyBinding(resource) +'
 		}' 
 		)
 	}
@@ -348,8 +345,10 @@ class SynthesizerGenerator extends AbstractGenerator {
 		        
 				//Create Panels
 				JPanel panel = new JPanel();
+				setKeyBindings(panel);
         		panel.setLayout(null);
         		add(BorderLayout.CENTER, panel);
+        		panel.requestFocusInWindow();
 
 		        //Create Buttons
 				'+ resource.allContents
@@ -419,5 +418,166 @@ class SynthesizerGenerator extends AbstractGenerator {
 				+ '
 			}'
 		}
+		
+		def String generateKeyBinding(Resource resource){
+		return 'private void setKeyBindings(final JPanel panel) {		 
+			'+ resource.allContents
+				.filter(SawToothOscillator)
+				.map[if(key !== null){'
+				panel.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke(KeyEvent.VK_' + key +', 0, false), "' + key + '_pressed");
+		        panel.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke(KeyEvent.VK_' + key + ', 0, true), "' + key + '_released");
+		
+		        panel.getActionMap().put("' + key + '_pressed", new AbstractAction() {
+		            @Override
+		            public void actionPerformed(ActionEvent ae) {
+		            	if(pressed_' + key + ') {
+		            		pressed_' + key + ' = false;
+			            	playSound' + name + '();
+		            	}
+		            }
+		        });
+		        panel.getActionMap().put("' + key + '_released", new AbstractAction() {
+		            @Override
+		            public void actionPerformed(ActionEvent ae) {
+		            	if(!pressed_' + key + ') {
+		            		pressed_' + key + ' = true;
+			            	playSound' + name + '();
+		            	}
+		            }
+		        });'} else{""}
+				].join('\n\t\t\t\t')
+			+ '
+			'+ resource.allContents
+				.filter(SineOscillator)
+				.map[if(key !== null){'
+				panel.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke(KeyEvent.VK_' + key +', 0, false), "' + key + '_pressed");
+		        panel.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke(KeyEvent.VK_' + key + ', 0, true), "' + key + '_released");
+		
+		        panel.getActionMap().put("' + key + '_pressed", new AbstractAction() {
+		            @Override
+		            public void actionPerformed(ActionEvent ae) {
+		            	if(pressed_' + key + ') {
+		            		pressed_' + key + ' = false;
+			            	playSound' + name + '();
+		            	}
+		            }
+		        });
+		        panel.getActionMap().put("' + key + '_released", new AbstractAction() {
+		            @Override
+		            public void actionPerformed(ActionEvent ae) {
+		            	if(!pressed_' + key + ') {
+		            		pressed_' + key + ' = true;
+			            	playSound' + name + '();
+		            	}
+		            }
+		        });'} else{""}
+				].join('\n\t\t\t\t')
+			+ '
+			'+ resource.allContents
+				.filter(TriangleOscillator)
+				.map[if(key !== null){'
+				panel.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke(KeyEvent.VK_' + key +', 0, false), "' + key + '_pressed");
+		        panel.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke(KeyEvent.VK_' + key + ', 0, true), "' + key + '_released");
+		
+		        panel.getActionMap().put("' + key + '_pressed", new AbstractAction() {
+		            @Override
+		            public void actionPerformed(ActionEvent ae) {
+		            	if(pressed_' + key + ') {
+		            		pressed_' + key + ' = false;
+			            	playSound' + name + '();
+		            	}
+		            }
+		        });
+		        panel.getActionMap().put("' + key + '_released", new AbstractAction() {
+		            @Override
+		            public void actionPerformed(ActionEvent ae) {
+		            	if(!pressed_' + key + ') {
+		            		pressed_' + key + ' = true;
+			            	playSound' + name + '();
+		            	}
+		            }
+		        });'} else{""}
+				].join('\n\t\t\t\t')
+			+ '
+			'+ resource.allContents
+				.filter(SquareOscillator)
+				.map[if(key !== null){'
+				panel.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke(KeyEvent.VK_' + key +', 0, false), "' + key + '_pressed");
+		        panel.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke(KeyEvent.VK_' + key + ', 0, true), "' + key + '_released");
+		
+		        panel.getActionMap().put("' + key + '_pressed", new AbstractAction() {
+		            @Override
+		            public void actionPerformed(ActionEvent ae) {
+		            	if(pressed_' + key + ') {
+		            		pressed_' + key + ' = false;
+			            	playSound' + name + '();
+		            	}
+		            }
+		        });
+		        panel.getActionMap().put("' + key + '_released", new AbstractAction() {
+		            @Override
+		            public void actionPerformed(ActionEvent ae) {
+		            	if(!pressed_' + key + ') {
+		            		pressed_' + key + ' = true;
+			            	playSound' + name + '();
+		            	}
+		            }
+		        });'} else{}
+				].join('\n\t\t\t\t')
+			+ '
+			'+ resource.allContents
+				.filter(PulseOscillator)
+				.map[if(key !== null){'
+				panel.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke(KeyEvent.VK_' + key +', 0, false), "' + key + '_pressed");
+		        panel.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke(KeyEvent.VK_' + key + ', 0, true), "' + key + '_released");
+		
+		        panel.getActionMap().put("' + key + '_pressed", new AbstractAction() {
+		            @Override
+		            public void actionPerformed(ActionEvent ae) {
+		            	if(pressed_' + key + ') {
+		            		pressed_' + key + ' = false;
+			            	playSound' + name + '();
+		            	}
+		            }
+		        });
+		        panel.getActionMap().put("' + key + '_released", new AbstractAction() {
+		            @Override
+		            public void actionPerformed(ActionEvent ae) {
+		            	if(!pressed_' + key + ') {
+		            		pressed_' + key + ' = true;
+			            	playSound' + name + '();
+		            	}
+		            }
+		        });'} else {""}
+				].join('\n\t\t\t\t')
+			+ '
+			'+ resource.allContents
+				.filter(ImpulseOscillator)
+				.map[if(key !== null){'
+				panel.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke(KeyEvent.VK_' + key +', 0, false), "' + key + '_pressed");
+		        panel.getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW).put(KeyStroke.getKeyStroke(KeyEvent.VK_' + key + ', 0, true), "' + key + '_released");
+		
+		        panel.getActionMap().put("' + key + '_pressed", new AbstractAction() {
+		            @Override
+		            public void actionPerformed(ActionEvent ae) {
+		            	if(pressed_' + key + ') {
+		            		pressed_' + key + ' = false;
+			            	playSound' + name + '();
+		            	}
+		            }
+		        });
+		        panel.getActionMap().put("' + key + '_released", new AbstractAction() {
+		            @Override
+		            public void actionPerformed(ActionEvent ae) {
+		            	if(!pressed_' + key + ') {
+		            		pressed_' + key + ' = true;
+			            	playSound' + name + '();
+		            	}
+		            }
+		        });'} else{""}
+				].join('\n\t\t\t\t')
+			+ '
+		}'
+	}
 		
 }
