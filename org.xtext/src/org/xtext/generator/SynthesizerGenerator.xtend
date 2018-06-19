@@ -50,6 +50,8 @@ class SynthesizerGenerator extends AbstractGenerator {
 		import java.awt.Dimension;
 		import java.awt.Color;
 		import java.awt.event.KeyEvent;
+		import java.awt.event.MouseEvent;
+		import java.awt.event.MouseListener;
 
 		import javax.swing.*;  
 		import javax.swing.JApplet;
@@ -472,12 +474,26 @@ class SynthesizerGenerator extends AbstractGenerator {
 		        //Create Buttons
 				'+ resource.allContents
 				.filter(Button)
-				.map["JButton b" + name + " = new JButton();\n
-				b" + name + '.addActionListener(new ActionListener() {
-			        @Override
-			        public void actionPerformed(ActionEvent e) {
+				.map["JButton b" + name + " = new JButton();
+				b" + name + '.addMouseListener(new MouseListener(){
+					public void mousePressed(MouseEvent e) {
 			            playSound' + sound.name + '();
-			        }
+					}
+	
+					public void mouseReleased(MouseEvent e) {
+			            playSound' + sound.name + '();
+					}
+	
+					public void mouseClicked(MouseEvent e) {
+					}
+	
+					@Override
+					public void mouseEntered(MouseEvent arg0) {						
+					}
+	
+					@Override
+					public void mouseExited(MouseEvent e) {						
+					}
 		    	});
 
 				b' + name + '.setBounds(' + x + ', ' + y + ', ' + width + ', ' + height + ');  // x, y, width, height
