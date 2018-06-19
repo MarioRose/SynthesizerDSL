@@ -86,7 +86,7 @@ enum Key:
 	 ;
 
 enum Filter:
-	NO = "XX" | BandPass = "FilterBandPass()" | LowPass = "FilterLowPass()" | HighPass = "FilterHighPass()"
+	NO = "XX" | BandPass = "FilterBandPass" | LowPass = "FilterLowPass" | HighPass = "FilterHighPass"
 ;
 
 SawToothOscillator:

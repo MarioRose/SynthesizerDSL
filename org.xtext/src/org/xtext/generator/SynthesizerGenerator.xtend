@@ -163,7 +163,7 @@ class SynthesizerGenerator extends AbstractGenerator {
 				'+ resource.allContents
 				.filter(SineOscillator)
 				.map["createSound" + name + "();
-				"+ if(!filter.toString.equals("XX")) {"filter_" + name + " = new " + filter.toString() + ";
+				"+ if(!filter.toString.equals("XX")) {"filter_" + name + " = new " + filter.toString() + "();
 				synth.add(filter_" + name + ");
 				filter_" + name + ".output.connect(0, lineOut.input, 0);
 	            filter_" + name + ".output.connect(0, lineOut.input, 1);
@@ -173,7 +173,7 @@ class SynthesizerGenerator extends AbstractGenerator {
 				resource.allContents
 				.filter(SawToothOscillator)
 				.map["createSound" + name + "();
-				"+ if(!filter.toString.equals("XX")) {"filter_" + name + " = new " + filter.toString() + ";
+				"+ if(!filter.toString.equals("XX")) {"filter_" + name + " = new " + filter.toString() + "();
 				synth.add(filter_" + name + ");
 				filter_" + name + ".output.connect(0, lineOut.input, 0);
 	            filter_" + name + ".output.connect(0, lineOut.input, 1);
@@ -183,7 +183,7 @@ class SynthesizerGenerator extends AbstractGenerator {
 				resource.allContents
 				.filter(TriangleOscillator)
 				.map["createSound" + name + "();
-				"+ if(!filter.toString.equals("XX")) {"filter_" + name + " = new " + filter.toString() + ";
+				"+ if(!filter.toString.equals("XX")) {"filter_" + name + " = new " + filter.toString() + "();
 				synth.add(filter_" + name + ");
 				filter_" + name + ".output.connect(0, lineOut.input, 0);
 	            filter_" + name + ".output.connect(0, lineOut.input, 1);
@@ -193,7 +193,7 @@ class SynthesizerGenerator extends AbstractGenerator {
 				resource.allContents
 				.filter(SquareOscillator)
 				.map["createSound" + name + "();
-				"+ if(!filter.toString.equals("XX")) {"filter_" + name + " = new " + filter.toString() + ";
+				"+ if(!filter.toString.equals("XX")) {"filter_" + name + " = new " + filter.toString() + "();
 				synth.add(filter_" + name + ");
 				filter_" + name + ".output.connect(0, lineOut.input, 0);
 	            filter_" + name + ".output.connect(0, lineOut.input, 1);
@@ -203,7 +203,7 @@ class SynthesizerGenerator extends AbstractGenerator {
 				resource.allContents
 				.filter(PulseOscillator)
 				.map["createSound" + name + "();
-				"+ if(!filter.toString.equals("XX")) {"filter_" + name + " = new " + filter.toString() + ";
+				"+ if(!filter.toString.equals("XX")) {"filter_" + name + " = new " + filter.toString() + "();
 				synth.add(filter_" + name + ");
 				filter_" + name + ".output.connect(0, lineOut.input, 0);
 	            filter_" + name + ".output.connect(0, lineOut.input, 1);
