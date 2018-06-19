@@ -73,7 +73,10 @@ class SynthesizerGenerator extends AbstractGenerator {
 		import com.jsyn.unitgen.SquareOscillator;
 		import com.jsyn.unitgen.PulseOscillator;
 		import com.jsyn.unitgen.ImpulseOscillator;
-
+		import com.jsyn.unitgen.UnitFilter;
+		import com.jsyn.unitgen.FilterBandPass;
+		import com.jsyn.unitgen.FilterLowPass;
+		import com.jsyn.unitgen.FilterHighPass;
 
 		public class SynthesizerDSL extends JApplet{
 		    static Synthesizer synth;
@@ -83,38 +86,62 @@ class SynthesizerGenerator extends AbstractGenerator {
 			'+ resource.allContents
 				.filter(SineOscillator)
 				.map["private static UnitOscillator osc" + name + ";	
-				"+ if(!key.toString.equals("XX")) {"boolean pressed_" + key + " = true;"} else{""} + " 	              
+				"+ if(!key.toString.equals("XX")) {"boolean pressed_" + key + " = true;"} else{" "} +" 	             
 				"].join('\n\t\t\t\t')
+			+ resource.allContents
+				.filter(SineOscillator)
+				.map[if(!filter.toString.equals("XX")) {"static UnitFilter filter_" + name + ";"} else{""} 	             				
+				].join('\n\t\t\t\t')
 			+
 			resource.allContents
 				.filter(SawToothOscillator)
 				.map["private static UnitOscillator osc" + name + ";
 				"+ if(!key.toString.equals('XX')) {"boolean pressed_" + key + " = true;"} else{""} + "    
 				"].join('\n\t\t\t\t')
+			+ resource.allContents
+			.filter(SawToothOscillator)
+				.map[if(!filter.toString.equals("XX")) {"static UnitFilter filter_" + name + ";"} else{""} 	              								
+				].join('\n\t\t\t\t')
 			+
 			resource.allContents
 				.filter(TriangleOscillator)
 				.map["private static UnitOscillator osc" + name + ";	   
 				"+ if(!key.toString.equals("XX")) {"boolean pressed_" + key + " = true;"} else{""} + "	           
 				"].join('\n\t\t\t\t')
+			+ resource.allContents
+			.filter(TriangleOscillator)
+				.map[if(!filter.toString.equals("XX")) {"static UnitFilter filter_" + name + ";"} else{""} 	              								
+				].join('\n\t\t\t\t')
 			+
 			resource.allContents
 				.filter(SquareOscillator)
 				.map["private static UnitOscillator osc" + name + ";	
 				"+ if(!key.toString.equals("XX")) {"boolean pressed_" + key + " = true;"} else{""} + "	              
 				"].join('\n\t\t\t\t')
+			+ resource.allContents
+			.filter(SquareOscillator)
+				.map[if(!filter.toString.equals("XX")) {"static UnitFilter filter_" + name + ";"} else{""} 	              								
+				].join('\n\t\t\t\t')
 			+
 			resource.allContents
 				.filter(PulseOscillator)
 				.map["private static UnitOscillator osc" + name + ";	   
 				"+ if(!key.toString.equals("XX")) {"boolean pressed_" + key + " = true;"} else{""} + "           
 				"].join('\n\t\t\t\t')
-			+ 
+			+ resource.allContents
+			.filter(PulseOscillator)
+				.map[if(!filter.toString.equals("XX")) {"static UnitFilter filter_" + name + ";"} else{""} 	              								
+				].join('\n\t\t\t\t')
+			+
 			resource.allContents
 				.filter(ImpulseOscillator)
 				.map["private static UnitOscillator osc" + name + ";	
 				"+ if(!key.toString.equals("XX")) {"boolean pressed_" + key + " = true;"} else{""} + " 	              
 				"].join('\n\t\t\t\t')
+			+ resource.allContents
+			.filter(ImpulseOscillator)
+				.map[if(!filter.toString.equals("XX")) {"static UnitFilter filter_" + name + ";"} else{""} 	              								
+				].join('\n\t\t\t\t')
 			+ '
 
 			' + generateUI(resource) + '
@@ -133,27 +160,52 @@ class SynthesizerGenerator extends AbstractGenerator {
 
 				'+ resource.allContents
 				.filter(SineOscillator)
-				.map["createSound" + name + "();	       
+				.map["createSound" + name + "();
+				"+ if(!filter.toString.equals("XX")) {"filter_" + name + " = new " + filter.toString() + ";
+				synth.add(filter_" + name + ");
+				filter_" + name + ".output.connect(0, lineOut.input, 0);
+	            filter_" + name + ".output.connect(0, lineOut.input, 1);
+				"} else{""} + " 	              					       
 				"].join('\n\t\t\t\t')
 				+
 				resource.allContents
 				.filter(SawToothOscillator)
-				.map["createSound" + name + "();	       
+				.map["createSound" + name + "();
+				"+ if(!filter.toString.equals("XX")) {"filter_" + name + " = new " + filter.toString() + ";
+				synth.add(filter_" + name + ");
+				filter_" + name + ".output.connect(0, lineOut.input, 0);
+	            filter_" + name + ".output.connect(0, lineOut.input, 1);
+				"} else{""} + " 	              					       	       
 				"].join('\n\t\t\t\t')
 				+ 
 				resource.allContents
 				.filter(TriangleOscillator)
-				.map["createSound" + name + "();	       
+				.map["createSound" + name + "();
+				"+ if(!filter.toString.equals("XX")) {"filter_" + name + " = new " + filter.toString() + ";
+				synth.add(filter_" + name + ");
+				filter_" + name + ".output.connect(0, lineOut.input, 0);
+	            filter_" + name + ".output.connect(0, lineOut.input, 1);
+				"} else{""} + " 	              					       	       	       
 				"].join('\n\t\t\t\t')
 				+
 				resource.allContents
 				.filter(SquareOscillator)
-				.map["createSound" + name + "();	       
+				.map["createSound" + name + "();
+				"+ if(!filter.toString.equals("XX")) {"filter_" + name + " = new " + filter.toString() + ";
+				synth.add(filter_" + name + ");
+				filter_" + name + ".output.connect(0, lineOut.input, 0);
+	            filter_" + name + ".output.connect(0, lineOut.input, 1);
+				"} else{""} + " 	              					       	       	       
 				"].join('\n\t\t\t\t')
 				+
 				resource.allContents
 				.filter(PulseOscillator)
-				.map["createSound" + name + "();	       
+				.map["createSound" + name + "();
+				"+ if(!filter.toString.equals("XX")) {"filter_" + name + " = new " + filter.toString() + ";
+				synth.add(filter_" + name + ");
+				filter_" + name + ".output.connect(0, lineOut.input, 0);
+	            filter_" + name + ".output.connect(0, lineOut.input, 1);
+				"} else{""} + " 	              					       	       	       
 				"].join('\n\t\t\t\t')
 				+ '
 		    	createAndShowGUI();
@@ -175,6 +227,17 @@ class SynthesizerGenerator extends AbstractGenerator {
 				}
 			
 				private static void playSound' + name + '(){
+
+				'+ if(!filter.toString.equals("XX")) {'
+					if(!osc' + name + '.output.isConnected()) {
+			            osc' + name + '.output.connect(filter_' + name + '.input);
+					}
+					else {
+			            osc' + name + '.output.disconnect(filter_' + name + '.input);
+					}
+				}
+					'} 
+					else{'
 					if(!osc' + name + '.output.isConnected()) {
 			            osc' + name + '.output.connect(0, lineOut.input, 0);
 			            osc' + name + '.output.connect(0, lineOut.input, 1);
@@ -183,6 +246,7 @@ class SynthesizerGenerator extends AbstractGenerator {
 			            osc' + name + '.output.disconnect(0, lineOut.input, 0);
 			            osc' + name + '.output.disconnect(0, lineOut.input, 1);
 					}
+					'} + '	              					       
 				}
 	        '].join('\n\t\t\t\t')
 
@@ -202,6 +266,16 @@ class SynthesizerGenerator extends AbstractGenerator {
 				}
 			
 				private static void playSound' + name + '(){
+				'+ if(!filter.toString.equals("XX")) {'
+					if(!osc' + name + '.output.isConnected()) {
+			            osc' + name + '.output.connect(filter_' + name + '.input);
+					}
+					else {
+			            osc' + name + '.output.disconnect(filter_' + name + '.input);
+					}
+				}
+					'} 
+					else{'
 					if(!osc' + name + '.output.isConnected()) {
 			            osc' + name + '.output.connect(0, lineOut.input, 0);
 			            osc' + name + '.output.connect(0, lineOut.input, 1);
@@ -210,6 +284,7 @@ class SynthesizerGenerator extends AbstractGenerator {
 			            osc' + name + '.output.disconnect(0, lineOut.input, 0);
 			            osc' + name + '.output.disconnect(0, lineOut.input, 1);
 					}
+					'} + '}	              					       
 				}
 	        '].join('\n\t\t\t\t')
 
@@ -229,6 +304,16 @@ class SynthesizerGenerator extends AbstractGenerator {
 				}
 			
 				private static void playSound' + name + '(){
+				'+ if(!filter.toString.equals("XX")) {'
+					if(!osc' + name + '.output.isConnected()) {
+			            osc' + name + '.output.connect(filter_' + name + '.input);
+					}
+					else {
+			            osc' + name + '.output.disconnect(filter_' + name + '.input);
+					}
+				}
+					'} 
+					else{'
 					if(!osc' + name + '.output.isConnected()) {
 			            osc' + name + '.output.connect(0, lineOut.input, 0);
 			            osc' + name + '.output.connect(0, lineOut.input, 1);
@@ -237,6 +322,7 @@ class SynthesizerGenerator extends AbstractGenerator {
 			            osc' + name + '.output.disconnect(0, lineOut.input, 0);
 			            osc' + name + '.output.disconnect(0, lineOut.input, 1);
 					}
+					'} + '}	              					       
 				}
 	        '].join('\n\t\t\t\t')
 
@@ -256,6 +342,16 @@ class SynthesizerGenerator extends AbstractGenerator {
 				}
 			
 				private static void playSound' + name + '(){
+				'+ if(!filter.toString.equals("XX")) {'
+					if(!osc' + name + '.output.isConnected()) {
+			            osc' + name + '.output.connect(filter_' + name + '.input);
+					}
+					else {
+			            osc' + name + '.output.disconnect(filter_' + name + '.input);
+					}
+				}
+					'} 
+					else{'
 					if(!osc' + name + '.output.isConnected()) {
 			            osc' + name + '.output.connect(0, lineOut.input, 0);
 			            osc' + name + '.output.connect(0, lineOut.input, 1);
@@ -264,6 +360,7 @@ class SynthesizerGenerator extends AbstractGenerator {
 			            osc' + name + '.output.disconnect(0, lineOut.input, 0);
 			            osc' + name + '.output.disconnect(0, lineOut.input, 1);
 					}
+					'} + '}	              					       
 				}
 	        '].join('\n\t\t\t\t')
 
@@ -283,6 +380,16 @@ class SynthesizerGenerator extends AbstractGenerator {
 				}
 			
 				private static void playSound' + name + '(){
+				'+ if(!filter.toString.equals("XX")) {'
+					if(!osc' + name + '.output.isConnected()) {
+			            osc' + name + '.output.connect(filter_' + name + '.input);
+					}
+					else {
+			            osc' + name + '.output.disconnect(filter_' + name + '.input);
+					}
+				}
+					'} 
+					else{'
 					if(!osc' + name + '.output.isConnected()) {
 			            osc' + name + '.output.connect(0, lineOut.input, 0);
 			            osc' + name + '.output.connect(0, lineOut.input, 1);
@@ -291,6 +398,7 @@ class SynthesizerGenerator extends AbstractGenerator {
 			            osc' + name + '.output.disconnect(0, lineOut.input, 0);
 			            osc' + name + '.output.disconnect(0, lineOut.input, 1);
 					}
+					'} +'	              					       
 				}
 	        '].join('\n\t\t\t\t')
 
@@ -310,6 +418,16 @@ class SynthesizerGenerator extends AbstractGenerator {
 				}
 			
 				private static void playSound' + name + '(){
+				'+ if(!filter.toString.equals("XX")) {'
+					if(!osc' + name + '.output.isConnected()) {
+			            osc' + name + '.output.connect(filter_' + name + '.input);
+					}
+					else {
+			            osc' + name + '.output.disconnect(filter_' + name + '.input);
+					}
+				}
+					'} 
+					else{'
 					if(!osc' + name + '.output.isConnected()) {
 			            osc' + name + '.output.connect(0, lineOut.input, 0);
 			            osc' + name + '.output.connect(0, lineOut.input, 1);
@@ -318,6 +436,7 @@ class SynthesizerGenerator extends AbstractGenerator {
 			            osc' + name + '.output.disconnect(0, lineOut.input, 0);
 			            osc' + name + '.output.disconnect(0, lineOut.input, 1);
 					}
+					'} + '}	              					       
 				}
 	        '].join('\n\t\t\t\t')
 
@@ -443,7 +562,7 @@ class SynthesizerGenerator extends AbstractGenerator {
 		            		pressed_' + key + ' = true;
 			            	playSound' + name + '();
 		            	}
-		            }
+		            }b
 		        });'} else{""}
 				].join('\n\t\t\t\t')
 			+ '

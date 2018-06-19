@@ -85,11 +85,16 @@ enum Key:
 	 O = "O" | P = "P" | Q = "Q" | R = "R" | S = "S" | T = "T" | U = "U" | V = "V" | W = "W" | X = "X" | Y = "Y" | Z = "Z" 
 	 ;
 
+enum Filter:
+	NO = "XX" | BandPass = "FilterBandPass()" | LowPass = "FilterLowPass()" | HighPass = "FilterHighPass()"
+;
+
 SawToothOscillator:
 	'sawToothOscillator' name = ID '('
 		'frequency' frequency = DOUBLE
 		'amplitude' amplitude = DOUBLE //should be float or INT.INT (e.g. 0.6)
 		('key' key = Key)?
+		('filter' filter = Filter)?
 	')'
 ;
 
@@ -98,6 +103,7 @@ SineOscillator:
 		'frequency' frequency = DOUBLE
 		'amplitude' amplitude = DOUBLE //should be float or INT.INT (e.g. 0.6)
 		('key' key = Key)?
+		('filter' filter = Filter)?
 	')'
 ;
 
@@ -106,6 +112,7 @@ TriangleOscillator:
 		'frequency' frequency = DOUBLE
 		'amplitude' amplitude = DOUBLE //should be float or INT.INT (e.g. 0.6)
 		('key' key = Key)?
+		('filter' filter = Filter)?
 	')'
 ;
 
@@ -114,6 +121,7 @@ SquareOscillator:
 		'frequency' frequency = DOUBLE
 		'amplitude' amplitude = DOUBLE //should be float or INT.INT (e.g. 0.6)
 		('key' key = Key)?
+		('filter' filter = Filter)?
 	')'
 ;
 
@@ -122,6 +130,7 @@ PulseOscillator:
 		'frequency' frequency = DOUBLE
 		'amplitude' amplitude = DOUBLE //should be float or INT.INT (e.g. 0.6)
 		('key' key = Key)?
+		('filter' filter = Filter)?
 	')'
 ;
 
@@ -130,6 +139,7 @@ ImpulseOscillator:
 		'frequency' frequency = DOUBLE
 		'amplitude' amplitude = DOUBLE //should be float or INT.INT (e.g. 0.6)
 		('key' key = Key)?
+		('filter' filter = Filter)?
 	')'
 ;
 
