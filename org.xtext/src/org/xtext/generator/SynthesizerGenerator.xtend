@@ -18,6 +18,7 @@ import org.xtext.synthesizer.TriangleOscillator
 import org.xtext.synthesizer.ImpulseOscillator
 import org.xtext.synthesizer.Image
 import org.xtext.synthesizer.BgColor
+import org.xtext.synthesizer.Piano
 
 /**
  * Generates code from your model files on save.
@@ -83,7 +84,8 @@ class SynthesizerGenerator extends AbstractGenerator {
 		public class SynthesizerDSL extends JApplet{
 		    static Synthesizer synth;
             static LineOut lineOut;
-
+			double fr = 1.059463094;
+				
 			//SOUNDS
 			'+ resource.allContents
 				.filter(SineOscillator)
@@ -519,6 +521,89 @@ class SynthesizerGenerator extends AbstractGenerator {
         		panel.add(imagelabel' + name + ');
 
 		        '].join('\n\t\t\t\t')
+		        + '
+
+				//Create Pianos
+				'+ resource.allContents
+				.filter(Piano)
+				.map['for (int i = (4 + (' + octave + ' - 1)*12); i < (16 + (' + octave + ' - 1)*12); i++) {
+        			UnitOscillator oscb = new SineOscillator();
+		            synth.add(oscb);
+		            oscb.frequency.set(Math.pow(fr, i-49) * 440.00);
+		            oscb.amplitude.set(1.0);
+		            int key = i % 12;
+		            if (key == 0)
+		            	key = 12;
+		            System.out.println("key: " + key);
+        			JButton b = new JButton();
+    				b.addMouseListener(new MouseListener(){
+    					public void mousePressed(MouseEvent e) {
+    						oscb.output.connect(0, lineOut.input, 0);
+    			            oscb.output.connect(0, lineOut.input, 1);
+    					}
+    	
+    					public void mouseReleased(MouseEvent e) {
+    						oscb.output.disconnect(0, lineOut.input, 0);
+    			            oscb.output.disconnect(0, lineOut.input, 1);
+    					}
+    	
+    					public void mouseClicked(MouseEvent e) {
+    					}
+    	
+    					@Override
+    					public void mouseEntered(MouseEvent arg0) {						
+    					}
+    	
+    					@Override
+    					public void mouseExited(MouseEvent e) {						
+    					}
+    		    	});
+    				int startX = ' + x + ';
+    				int startY = ' + y + ';
+    				int kw = (int) ' + (width / 9) + ';
+    				int kwb = (int) ' + (width / 22.5) + ';
+    				int kh = (int) ' + height + ';
+    				int khb = (int) ' + height * 0.8 + ';
+    				if (key == 2 || key == 5 || key == 7 || key == 10 || key == 12) {
+    					b.setBackground(Color.black);
+    					if (key == 5)
+    						b.setBounds(startX + kw, startY, kwb, khb);
+    					else if (key == 7)
+    						b.setBounds(startX + kw*2 + kwb, startY, kwb, khb);
+    					else if (key == 10)
+    						b.setBounds(startX + kw*4 + kwb*2, startY, kwb, khb);
+    					else if (key == 12)
+    						b.setBounds(startX + kw*5 + kwb*3, startY, kwb, khb);
+    					if (key == 2)
+    						b.setBounds(startX + kw*6 + kwb*4, startY, kwb, khb);
+    				}
+    				else {
+    					b.setBackground(Color.white);
+    				    if (key == 4) {
+    						b.setText("C");
+        					b.setBounds(startX, startY, kw, kh);
+    					} else if (key == 6) {
+    						b.setText("D");
+        					b.setBounds(startX + kw + kwb, startY, kw, kh);
+    					} else if (key == 8) {
+    						b.setText("E");
+        					b.setBounds(startX + kw*2 + kwb*2, startY, kw, kh);
+    					} else if (key == 9) {
+    						b.setText("F");
+        					b.setBounds(startX + kw*3 + kwb*2, startY, kw, kh);
+    					} else if (key == 11) {
+    						b.setText("G");
+        					b.setBounds(startX + kw*4 + kwb*3, startY, kw, kh);
+    					} else if (key == 1) {
+    						b.setText("A");
+        					b.setBounds(startX + kw*5 + kwb*4, startY, kw, kh);
+    					} else if (key == 3) {
+    						b.setText("B");
+        					b.setBounds(startX + kw*6 + kwb*5, startY, kw, kh);
+    					}
+    				}
+            		panel.add(b);
+        		}'].join('\n\t\t\t\t')
 		        + '
 
 		        //Create Sliders

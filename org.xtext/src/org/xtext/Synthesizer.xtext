@@ -16,7 +16,7 @@ Model:
 ;
 	
 ControlElement:
-	Button | RotaryKnob | Slider | Image
+	Button | RotaryKnob | Slider | Piano | Image 
 ;
 
 RotaryKnob:
@@ -39,6 +39,16 @@ Slider:
 		'sound' sound = [SoundElement]
 		'effect' type = Effect
 		(rampType = Ramp rampValue = DOUBLE)?
+	')'
+;
+
+Piano:
+	'piano' name = ID '('
+		'x' x = INT
+		'y' y = INT
+		'width' width = INT
+		'height' height = INT
+		'octave' octave = INT
 	')'
 ;
 
