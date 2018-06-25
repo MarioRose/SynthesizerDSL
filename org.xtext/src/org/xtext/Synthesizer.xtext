@@ -4,19 +4,27 @@ generate synthesizer "http://www.xtext.org/Synthesizer"
 
 Model:
 	{Model}
+	('Window' '{'
+		window = WindowElement
+	'}')?
 	('Controls' '{'
 	controls+=ControlElement*
 	'}')?
 	('Sound' '{'
 	sounds+=SoundElement*
 	'}')?
-	('Connections' '{' // should we really use this?????
+	('Connections' '{'
 	connections+=ConnectionElement*
 	'}')?
 ;
 	
 ControlElement:
 	Button | RotaryKnob | Slider | Piano | Image 
+;
+
+WindowElement:
+	'width'  width = INT
+	'height' height = INT
 ;
 
 RotaryKnob:

@@ -18,6 +18,7 @@ import org.xtext.synthesizer.TriangleOscillator
 import org.xtext.synthesizer.ImpulseOscillator
 import org.xtext.synthesizer.Image
 import org.xtext.synthesizer.BgColor
+import org.xtext.synthesizer.WindowElement
 import org.xtext.synthesizer.Piano
 
 /**
@@ -450,11 +451,24 @@ class SynthesizerGenerator extends AbstractGenerator {
 				System.out.println("Synthesizer started!");
 		        SynthesizerDSL applet = new SynthesizerDSL();
 		        JAppletFrame frame = new JAppletFrame("Synthesizer", applet);
-		        frame.setSize(640, 500);
+				int width = 0;
+				int height = 0;
+				'+ resource.allContents
+				.filter(WindowElement)
+				.map['width = ' + width + ';
+ 				height = ' + height + ';'].join('\n\t\t\t\t') + '
+				if (width < 300)
+					width = 800;
+				if (height < 200)
+					height = 600;
+		        frame.setSize(width, height);
 		        frame.setVisible(true);
 		        frame.test();
 		        frame.validate();
 			}
+
+
+
 
 			' + generateKeyBinding(resource) +'
 		}' 
@@ -601,6 +615,8 @@ class SynthesizerGenerator extends AbstractGenerator {
     						b.setText("B");
         					b.setBounds(startX + kw*6 + kwb*5, startY, kw, kh);
     					}
+						if (kw < 42)
+    				    	b.setText("");
     				}
             		panel.add(b);
         		}'].join('\n\t\t\t\t')
