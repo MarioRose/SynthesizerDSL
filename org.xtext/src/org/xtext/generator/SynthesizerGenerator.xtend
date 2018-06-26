@@ -477,8 +477,6 @@ class SynthesizerGenerator extends AbstractGenerator {
 		
 	def String generateUI(Resource resource){	
 			return 'private void createAndShowGUI() {
-		        //Create and set up the window.
-        		add(BorderLayout.NORTH, new JLabel("Show Oscillators in an AudioScope"));
 		        
 				//Create Panels
 				JPanel panel = new JPanel();
